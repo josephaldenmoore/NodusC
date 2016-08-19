@@ -1,0 +1,521 @@
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccElbO1S.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"Comp_1_PM.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Comp_1_SaveConfig,"ax",%progbits
+  18              		.align	2
+  19              		.global	Comp_1_SaveConfig
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	Comp_1_SaveConfig, %function
+  23              	Comp_1_SaveConfig:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\Comp_1_PM.c"
+   1:.\Generated_Source\PSoC4/Comp_1_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/Comp_1_PM.c **** * File Name: Comp_1.c
+   3:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Version 2.20
+   4:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+   5:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Description:
+   6:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  This file provides the power management source code APIs for the
+   7:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  Analog Low Power Comparator component.
+   8:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+   9:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Note:
+  10:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  None
+  11:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  12:.\Generated_Source\PSoC4/Comp_1_PM.c **** ********************************************************************************
+  13:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Copyright 2013-2016, Cypress Semiconductor Corporation.  All rights reserved.
+  14:.\Generated_Source\PSoC4/Comp_1_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  15:.\Generated_Source\PSoC4/Comp_1_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:.\Generated_Source\PSoC4/Comp_1_PM.c **** * the software package with which this file was provided.
+  17:.\Generated_Source\PSoC4/Comp_1_PM.c **** *******************************************************************************/
+  18:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  19:.\Generated_Source\PSoC4/Comp_1_PM.c **** #include "Comp_1.h"
+  20:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  21:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  22:.\Generated_Source\PSoC4/Comp_1_PM.c **** /*******************************************************************************
+  23:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Function Name: Comp_1_SaveConfig
+  24:.\Generated_Source\PSoC4/Comp_1_PM.c **** ********************************************************************************
+  25:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  26:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Summary:
+  27:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  Empty function. Included for consistency with other components.
+  28:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  29:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Parameters:
+  30:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  None
+  31:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  32:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Return:
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccElbO1S.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  None
+  34:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  35:.\Generated_Source\PSoC4/Comp_1_PM.c **** *******************************************************************************/
+  36:.\Generated_Source\PSoC4/Comp_1_PM.c **** void Comp_1_SaveConfig(void)
+  37:.\Generated_Source\PSoC4/Comp_1_PM.c **** {
+  26              		.loc 1 37 0
+  27              		.cfi_startproc
+  38:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  39:.\Generated_Source\PSoC4/Comp_1_PM.c **** }
+  28              		.loc 1 39 0
+  29              		@ sp needed
+  30 0000 7047     		bx	lr
+  31              		.cfi_endproc
+  32              	.LFE0:
+  33              		.size	Comp_1_SaveConfig, .-Comp_1_SaveConfig
+  34 0002 C046     		.section	.text.Comp_1_RestoreConfig,"ax",%progbits
+  35              		.align	2
+  36              		.global	Comp_1_RestoreConfig
+  37              		.code	16
+  38              		.thumb_func
+  39              		.type	Comp_1_RestoreConfig, %function
+  40              	Comp_1_RestoreConfig:
+  41              	.LFB1:
+  40:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  41:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  42:.\Generated_Source\PSoC4/Comp_1_PM.c **** /*******************************************************************************
+  43:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Function Name: Comp_1_RestoreConfig
+  44:.\Generated_Source\PSoC4/Comp_1_PM.c **** ********************************************************************************
+  45:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  46:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Summary:
+  47:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  Empty function. Included for consistency with other components.
+  48:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  49:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Parameters:
+  50:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  None
+  51:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  52:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Return:
+  53:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  None
+  54:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  55:.\Generated_Source\PSoC4/Comp_1_PM.c **** ********************************************************************************/
+  56:.\Generated_Source\PSoC4/Comp_1_PM.c **** void Comp_1_RestoreConfig(void)
+  57:.\Generated_Source\PSoC4/Comp_1_PM.c **** {
+  42              		.loc 1 57 0
+  43              		.cfi_startproc
+  58:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  59:.\Generated_Source\PSoC4/Comp_1_PM.c **** }
+  44              		.loc 1 59 0
+  45              		@ sp needed
+  46 0000 7047     		bx	lr
+  47              		.cfi_endproc
+  48              	.LFE1:
+  49              		.size	Comp_1_RestoreConfig, .-Comp_1_RestoreConfig
+  50 0002 C046     		.section	.text.Comp_1_Sleep,"ax",%progbits
+  51              		.align	2
+  52              		.global	Comp_1_Sleep
+  53              		.code	16
+  54              		.thumb_func
+  55              		.type	Comp_1_Sleep, %function
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccElbO1S.s 			page 3
+
+
+  56              	Comp_1_Sleep:
+  57              	.LFB2:
+  60:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  61:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  62:.\Generated_Source\PSoC4/Comp_1_PM.c **** /*******************************************************************************
+  63:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Function Name: Comp_1_Sleep
+  64:.\Generated_Source\PSoC4/Comp_1_PM.c **** ********************************************************************************
+  65:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  66:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Summary:
+  67:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  Empty function. Included for consistency with other components.
+  68:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  69:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Parameters:
+  70:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  None
+  71:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  72:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Return:
+  73:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  None
+  74:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  75:.\Generated_Source\PSoC4/Comp_1_PM.c **** *******************************************************************************/
+  76:.\Generated_Source\PSoC4/Comp_1_PM.c **** void Comp_1_Sleep(void)
+  77:.\Generated_Source\PSoC4/Comp_1_PM.c **** {
+  58              		.loc 1 77 0
+  59              		.cfi_startproc
+  78:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  79:.\Generated_Source\PSoC4/Comp_1_PM.c **** }
+  60              		.loc 1 79 0
+  61              		@ sp needed
+  62 0000 7047     		bx	lr
+  63              		.cfi_endproc
+  64              	.LFE2:
+  65              		.size	Comp_1_Sleep, .-Comp_1_Sleep
+  66 0002 C046     		.section	.text.Comp_1_Wakeup,"ax",%progbits
+  67              		.align	2
+  68              		.global	Comp_1_Wakeup
+  69              		.code	16
+  70              		.thumb_func
+  71              		.type	Comp_1_Wakeup, %function
+  72              	Comp_1_Wakeup:
+  73              	.LFB3:
+  80:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  81:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  82:.\Generated_Source\PSoC4/Comp_1_PM.c **** /*******************************************************************************
+  83:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Function Name: Comp_1_Wakeup
+  84:.\Generated_Source\PSoC4/Comp_1_PM.c **** ********************************************************************************
+  85:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  86:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Summary:
+  87:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  Empty function. Included for consistency with other components.
+  88:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  89:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Parameters:
+  90:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  None
+  91:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  92:.\Generated_Source\PSoC4/Comp_1_PM.c **** * Return:
+  93:.\Generated_Source\PSoC4/Comp_1_PM.c **** *  None
+  94:.\Generated_Source\PSoC4/Comp_1_PM.c **** *
+  95:.\Generated_Source\PSoC4/Comp_1_PM.c **** *******************************************************************************/
+  96:.\Generated_Source\PSoC4/Comp_1_PM.c **** void Comp_1_Wakeup(void)
+  97:.\Generated_Source\PSoC4/Comp_1_PM.c **** {
+  74              		.loc 1 97 0
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccElbO1S.s 			page 4
+
+
+  75              		.cfi_startproc
+  98:.\Generated_Source\PSoC4/Comp_1_PM.c **** 
+  99:.\Generated_Source\PSoC4/Comp_1_PM.c **** }
+  76              		.loc 1 99 0
+  77              		@ sp needed
+  78 0000 7047     		bx	lr
+  79              		.cfi_endproc
+  80              	.LFE3:
+  81              		.size	Comp_1_Wakeup, .-Comp_1_Wakeup
+  82 0002 C046     		.text
+  83              	.Letext0:
+  84              		.section	.debug_info,"",%progbits
+  85              	.Ldebug_info0:
+  86 0000 C1000000 		.4byte	0xc1
+  87 0004 0400     		.2byte	0x4
+  88 0006 00000000 		.4byte	.Ldebug_abbrev0
+  89 000a 04       		.byte	0x4
+  90 000b 01       		.uleb128 0x1
+  91 000c CC000000 		.4byte	.LASF16
+  92 0010 01       		.byte	0x1
+  93 0011 00000000 		.4byte	.LASF17
+  94 0015 6C010000 		.4byte	.LASF18
+  95 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  96 001d 00000000 		.4byte	0
+  97 0021 00000000 		.4byte	.Ldebug_line0
+  98 0025 02       		.uleb128 0x2
+  99 0026 01       		.byte	0x1
+ 100 0027 06       		.byte	0x6
+ 101 0028 BC010000 		.4byte	.LASF0
+ 102 002c 02       		.uleb128 0x2
+ 103 002d 01       		.byte	0x1
+ 104 002e 08       		.byte	0x8
+ 105 002f 40000000 		.4byte	.LASF1
+ 106 0033 02       		.uleb128 0x2
+ 107 0034 02       		.byte	0x2
+ 108 0035 05       		.byte	0x5
+ 109 0036 A9010000 		.4byte	.LASF2
+ 110 003a 02       		.uleb128 0x2
+ 111 003b 02       		.byte	0x2
+ 112 003c 07       		.byte	0x7
+ 113 003d 60000000 		.4byte	.LASF3
+ 114 0041 02       		.uleb128 0x2
+ 115 0042 04       		.byte	0x4
+ 116 0043 05       		.byte	0x5
+ 117 0044 B3010000 		.4byte	.LASF4
+ 118 0048 02       		.uleb128 0x2
+ 119 0049 04       		.byte	0x4
+ 120 004a 07       		.byte	0x7
+ 121 004b 4E000000 		.4byte	.LASF5
+ 122 004f 02       		.uleb128 0x2
+ 123 0050 08       		.byte	0x8
+ 124 0051 05       		.byte	0x5
+ 125 0052 B9000000 		.4byte	.LASF6
+ 126 0056 02       		.uleb128 0x2
+ 127 0057 08       		.byte	0x8
+ 128 0058 07       		.byte	0x7
+ 129 0059 A2000000 		.4byte	.LASF7
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccElbO1S.s 			page 5
+
+
+ 130 005d 03       		.uleb128 0x3
+ 131 005e 04       		.byte	0x4
+ 132 005f 05       		.byte	0x5
+ 133 0060 696E7400 		.ascii	"int\000"
+ 134 0064 02       		.uleb128 0x2
+ 135 0065 04       		.byte	0x4
+ 136 0066 07       		.byte	0x7
+ 137 0067 95000000 		.4byte	.LASF8
+ 138 006b 02       		.uleb128 0x2
+ 139 006c 04       		.byte	0x4
+ 140 006d 04       		.byte	0x4
+ 141 006e 3A000000 		.4byte	.LASF9
+ 142 0072 02       		.uleb128 0x2
+ 143 0073 08       		.byte	0x8
+ 144 0074 04       		.byte	0x4
+ 145 0075 73000000 		.4byte	.LASF10
+ 146 0079 02       		.uleb128 0x2
+ 147 007a 01       		.byte	0x1
+ 148 007b 08       		.byte	0x8
+ 149 007c C7000000 		.4byte	.LASF11
+ 150 0080 04       		.uleb128 0x4
+ 151 0081 5A010000 		.4byte	.LASF12
+ 152 0085 01       		.byte	0x1
+ 153 0086 24       		.byte	0x24
+ 154 0087 00000000 		.4byte	.LFB0
+ 155 008b 02000000 		.4byte	.LFE0-.LFB0
+ 156 008f 01       		.uleb128 0x1
+ 157 0090 9C       		.byte	0x9c
+ 158 0091 04       		.uleb128 0x4
+ 159 0092 25000000 		.4byte	.LASF13
+ 160 0096 01       		.byte	0x1
+ 161 0097 38       		.byte	0x38
+ 162 0098 00000000 		.4byte	.LFB1
+ 163 009c 02000000 		.4byte	.LFE1-.LFB1
+ 164 00a0 01       		.uleb128 0x1
+ 165 00a1 9C       		.byte	0x9c
+ 166 00a2 04       		.uleb128 0x4
+ 167 00a3 88000000 		.4byte	.LASF14
+ 168 00a7 01       		.byte	0x1
+ 169 00a8 4C       		.byte	0x4c
+ 170 00a9 00000000 		.4byte	.LFB2
+ 171 00ad 02000000 		.4byte	.LFE2-.LFB2
+ 172 00b1 01       		.uleb128 0x1
+ 173 00b2 9C       		.byte	0x9c
+ 174 00b3 04       		.uleb128 0x4
+ 175 00b4 7A000000 		.4byte	.LASF15
+ 176 00b8 01       		.byte	0x1
+ 177 00b9 60       		.byte	0x60
+ 178 00ba 00000000 		.4byte	.LFB3
+ 179 00be 02000000 		.4byte	.LFE3-.LFB3
+ 180 00c2 01       		.uleb128 0x1
+ 181 00c3 9C       		.byte	0x9c
+ 182 00c4 00       		.byte	0
+ 183              		.section	.debug_abbrev,"",%progbits
+ 184              	.Ldebug_abbrev0:
+ 185 0000 01       		.uleb128 0x1
+ 186 0001 11       		.uleb128 0x11
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccElbO1S.s 			page 6
+
+
+ 187 0002 01       		.byte	0x1
+ 188 0003 25       		.uleb128 0x25
+ 189 0004 0E       		.uleb128 0xe
+ 190 0005 13       		.uleb128 0x13
+ 191 0006 0B       		.uleb128 0xb
+ 192 0007 03       		.uleb128 0x3
+ 193 0008 0E       		.uleb128 0xe
+ 194 0009 1B       		.uleb128 0x1b
+ 195 000a 0E       		.uleb128 0xe
+ 196 000b 55       		.uleb128 0x55
+ 197 000c 17       		.uleb128 0x17
+ 198 000d 11       		.uleb128 0x11
+ 199 000e 01       		.uleb128 0x1
+ 200 000f 10       		.uleb128 0x10
+ 201 0010 17       		.uleb128 0x17
+ 202 0011 00       		.byte	0
+ 203 0012 00       		.byte	0
+ 204 0013 02       		.uleb128 0x2
+ 205 0014 24       		.uleb128 0x24
+ 206 0015 00       		.byte	0
+ 207 0016 0B       		.uleb128 0xb
+ 208 0017 0B       		.uleb128 0xb
+ 209 0018 3E       		.uleb128 0x3e
+ 210 0019 0B       		.uleb128 0xb
+ 211 001a 03       		.uleb128 0x3
+ 212 001b 0E       		.uleb128 0xe
+ 213 001c 00       		.byte	0
+ 214 001d 00       		.byte	0
+ 215 001e 03       		.uleb128 0x3
+ 216 001f 24       		.uleb128 0x24
+ 217 0020 00       		.byte	0
+ 218 0021 0B       		.uleb128 0xb
+ 219 0022 0B       		.uleb128 0xb
+ 220 0023 3E       		.uleb128 0x3e
+ 221 0024 0B       		.uleb128 0xb
+ 222 0025 03       		.uleb128 0x3
+ 223 0026 08       		.uleb128 0x8
+ 224 0027 00       		.byte	0
+ 225 0028 00       		.byte	0
+ 226 0029 04       		.uleb128 0x4
+ 227 002a 2E       		.uleb128 0x2e
+ 228 002b 00       		.byte	0
+ 229 002c 3F       		.uleb128 0x3f
+ 230 002d 19       		.uleb128 0x19
+ 231 002e 03       		.uleb128 0x3
+ 232 002f 0E       		.uleb128 0xe
+ 233 0030 3A       		.uleb128 0x3a
+ 234 0031 0B       		.uleb128 0xb
+ 235 0032 3B       		.uleb128 0x3b
+ 236 0033 0B       		.uleb128 0xb
+ 237 0034 27       		.uleb128 0x27
+ 238 0035 19       		.uleb128 0x19
+ 239 0036 11       		.uleb128 0x11
+ 240 0037 01       		.uleb128 0x1
+ 241 0038 12       		.uleb128 0x12
+ 242 0039 06       		.uleb128 0x6
+ 243 003a 40       		.uleb128 0x40
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccElbO1S.s 			page 7
+
+
+ 244 003b 18       		.uleb128 0x18
+ 245 003c 9742     		.uleb128 0x2117
+ 246 003e 19       		.uleb128 0x19
+ 247 003f 00       		.byte	0
+ 248 0040 00       		.byte	0
+ 249 0041 00       		.byte	0
+ 250              		.section	.debug_aranges,"",%progbits
+ 251 0000 34000000 		.4byte	0x34
+ 252 0004 0200     		.2byte	0x2
+ 253 0006 00000000 		.4byte	.Ldebug_info0
+ 254 000a 04       		.byte	0x4
+ 255 000b 00       		.byte	0
+ 256 000c 0000     		.2byte	0
+ 257 000e 0000     		.2byte	0
+ 258 0010 00000000 		.4byte	.LFB0
+ 259 0014 02000000 		.4byte	.LFE0-.LFB0
+ 260 0018 00000000 		.4byte	.LFB1
+ 261 001c 02000000 		.4byte	.LFE1-.LFB1
+ 262 0020 00000000 		.4byte	.LFB2
+ 263 0024 02000000 		.4byte	.LFE2-.LFB2
+ 264 0028 00000000 		.4byte	.LFB3
+ 265 002c 02000000 		.4byte	.LFE3-.LFB3
+ 266 0030 00000000 		.4byte	0
+ 267 0034 00000000 		.4byte	0
+ 268              		.section	.debug_ranges,"",%progbits
+ 269              	.Ldebug_ranges0:
+ 270 0000 00000000 		.4byte	.LFB0
+ 271 0004 02000000 		.4byte	.LFE0
+ 272 0008 00000000 		.4byte	.LFB1
+ 273 000c 02000000 		.4byte	.LFE1
+ 274 0010 00000000 		.4byte	.LFB2
+ 275 0014 02000000 		.4byte	.LFE2
+ 276 0018 00000000 		.4byte	.LFB3
+ 277 001c 02000000 		.4byte	.LFE3
+ 278 0020 00000000 		.4byte	0
+ 279 0024 00000000 		.4byte	0
+ 280              		.section	.debug_line,"",%progbits
+ 281              	.Ldebug_line0:
+ 282 0000 83000000 		.section	.debug_str,"MS",%progbits,1
+ 282      02003B00 
+ 282      00000201 
+ 282      FB0E0D00 
+ 282      01010101 
+ 283              	.LASF17:
+ 284 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Comp_1_PM.c\000"
+ 284      6E657261 
+ 284      7465645F 
+ 284      536F7572 
+ 284      63655C50 
+ 285              	.LASF13:
+ 286 0025 436F6D70 		.ascii	"Comp_1_RestoreConfig\000"
+ 286      5F315F52 
+ 286      6573746F 
+ 286      7265436F 
+ 286      6E666967 
+ 287              	.LASF9:
+ 288 003a 666C6F61 		.ascii	"float\000"
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccElbO1S.s 			page 8
+
+
+ 288      7400
+ 289              	.LASF1:
+ 290 0040 756E7369 		.ascii	"unsigned char\000"
+ 290      676E6564 
+ 290      20636861 
+ 290      7200
+ 291              	.LASF5:
+ 292 004e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 292      20756E73 
+ 292      69676E65 
+ 292      6420696E 
+ 292      7400
+ 293              	.LASF3:
+ 294 0060 73686F72 		.ascii	"short unsigned int\000"
+ 294      7420756E 
+ 294      7369676E 
+ 294      65642069 
+ 294      6E7400
+ 295              	.LASF10:
+ 296 0073 646F7562 		.ascii	"double\000"
+ 296      6C6500
+ 297              	.LASF15:
+ 298 007a 436F6D70 		.ascii	"Comp_1_Wakeup\000"
+ 298      5F315F57 
+ 298      616B6575 
+ 298      7000
+ 299              	.LASF14:
+ 300 0088 436F6D70 		.ascii	"Comp_1_Sleep\000"
+ 300      5F315F53 
+ 300      6C656570 
+ 300      00
+ 301              	.LASF8:
+ 302 0095 756E7369 		.ascii	"unsigned int\000"
+ 302      676E6564 
+ 302      20696E74 
+ 302      00
+ 303              	.LASF7:
+ 304 00a2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 304      206C6F6E 
+ 304      6720756E 
+ 304      7369676E 
+ 304      65642069 
+ 305              	.LASF6:
+ 306 00b9 6C6F6E67 		.ascii	"long long int\000"
+ 306      206C6F6E 
+ 306      6720696E 
+ 306      7400
+ 307              	.LASF11:
+ 308 00c7 63686172 		.ascii	"char\000"
+ 308      00
+ 309              	.LASF16:
+ 310 00cc 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 310      4320342E 
+ 310      392E3320 
+ 310      32303135 
+ 310      30333033 
+ 311 00ff 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccElbO1S.s 			page 9
+
+
+ 311      20726576 
+ 311      6973696F 
+ 311      6E203232 
+ 311      31323230 
+ 312 0132 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 312      66756E63 
+ 312      74696F6E 
+ 312      2D736563 
+ 312      74696F6E 
+ 313              	.LASF12:
+ 314 015a 436F6D70 		.ascii	"Comp_1_SaveConfig\000"
+ 314      5F315F53 
+ 314      61766543 
+ 314      6F6E6669 
+ 314      6700
+ 315              	.LASF18:
+ 316 016c 433A5C55 		.ascii	"C:\\Users\\mlgjmoor\\Documents\\PSoC Creator\\Nodus"
+ 316      73657273 
+ 316      5C6D6C67 
+ 316      6A6D6F6F 
+ 316      725C446F 
+ 317 019a 435C6E6F 		.ascii	"C\\nodusC.cydsn\000"
+ 317      64757343 
+ 317      2E637964 
+ 317      736E00
+ 318              	.LASF2:
+ 319 01a9 73686F72 		.ascii	"short int\000"
+ 319      7420696E 
+ 319      7400
+ 320              	.LASF4:
+ 321 01b3 6C6F6E67 		.ascii	"long int\000"
+ 321      20696E74 
+ 321      00
+ 322              	.LASF0:
+ 323 01bc 7369676E 		.ascii	"signed char\000"
+ 323      65642063 
+ 323      68617200 
+ 324              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

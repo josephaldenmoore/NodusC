@@ -1,0 +1,3208 @@
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"Comp_1.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Comp_1_Init,"ax",%progbits
+  18              		.align	2
+  19              		.global	Comp_1_Init
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	Comp_1_Init, %function
+  23              	Comp_1_Init:
+  24              	.LFB4:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\Comp_1.c"
+   1:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/Comp_1.c **** * File Name: Comp_1.c
+   3:.\Generated_Source\PSoC4/Comp_1.c **** * Version 2.20
+   4:.\Generated_Source\PSoC4/Comp_1.c **** *
+   5:.\Generated_Source\PSoC4/Comp_1.c **** * Description:
+   6:.\Generated_Source\PSoC4/Comp_1.c **** *  This file provides the source code to the API for the Low Power Comparator
+   7:.\Generated_Source\PSoC4/Comp_1.c **** *  component.
+   8:.\Generated_Source\PSoC4/Comp_1.c **** *
+   9:.\Generated_Source\PSoC4/Comp_1.c **** * Note:
+  10:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+  11:.\Generated_Source\PSoC4/Comp_1.c **** *
+  12:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+  13:.\Generated_Source\PSoC4/Comp_1.c **** * Copyright 2013-2016, Cypress Semiconductor Corporation.  All rights reserved.
+  14:.\Generated_Source\PSoC4/Comp_1.c **** * You may use this file only in accordance with the license, terms, conditions,
+  15:.\Generated_Source\PSoC4/Comp_1.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:.\Generated_Source\PSoC4/Comp_1.c **** * the software package with which this file was provided.
+  17:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+  18:.\Generated_Source\PSoC4/Comp_1.c **** 
+  19:.\Generated_Source\PSoC4/Comp_1.c **** #include "Comp_1.h"
+  20:.\Generated_Source\PSoC4/Comp_1.c **** #include "CyLib.h"
+  21:.\Generated_Source\PSoC4/Comp_1.c **** #include "cyPm.h"
+  22:.\Generated_Source\PSoC4/Comp_1.c **** 
+  23:.\Generated_Source\PSoC4/Comp_1.c **** uint8 Comp_1_initVar = 0u;
+  24:.\Generated_Source\PSoC4/Comp_1.c **** static uint32 Comp_1_internalIntr = 0u;
+  25:.\Generated_Source\PSoC4/Comp_1.c **** #if(Comp_1_CY_LPCOMP_V2)
+  26:.\Generated_Source\PSoC4/Comp_1.c ****     #if(CY_IP_SRSSV2)
+  27:.\Generated_Source\PSoC4/Comp_1.c ****         /* This variable saves INTR_MASK register since it get reset after wakeup 
+  28:.\Generated_Source\PSoC4/Comp_1.c ****         * from Hibernate. Attribute CY_NOINIT puts SRAM variable in memory section 
+  29:.\Generated_Source\PSoC4/Comp_1.c ****         * which is retained in low power modes 
+  30:.\Generated_Source\PSoC4/Comp_1.c ****         */
+  31:.\Generated_Source\PSoC4/Comp_1.c ****         CY_NOINIT static uint32 Comp_1_intrMaskRegState;
+  32:.\Generated_Source\PSoC4/Comp_1.c ****     #endif /* (CY_IP_SRSSV2) */
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/Comp_1.c **** #endif /* (Comp_1_CY_LPCOMP_V2) */
+  34:.\Generated_Source\PSoC4/Comp_1.c **** 
+  35:.\Generated_Source\PSoC4/Comp_1.c **** 
+  36:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+  37:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_Start
+  38:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+  39:.\Generated_Source\PSoC4/Comp_1.c **** *
+  40:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+  41:.\Generated_Source\PSoC4/Comp_1.c **** *  Performs all of the required initialization for the component and enables
+  42:.\Generated_Source\PSoC4/Comp_1.c **** *  power to the block. The first time the routine is executed, the component is
+  43:.\Generated_Source\PSoC4/Comp_1.c **** *  initialized to the configuration from the customizer. When called to restart
+  44:.\Generated_Source\PSoC4/Comp_1.c **** *  the comparator following a Comp_1_Stop() call, the current
+  45:.\Generated_Source\PSoC4/Comp_1.c **** *  component parameter settings are retained.
+  46:.\Generated_Source\PSoC4/Comp_1.c **** *
+  47:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+  48:.\Generated_Source\PSoC4/Comp_1.c **** *   None
+  49:.\Generated_Source\PSoC4/Comp_1.c **** *
+  50:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+  51:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+  52:.\Generated_Source\PSoC4/Comp_1.c **** *
+  53:.\Generated_Source\PSoC4/Comp_1.c **** * Global variables:
+  54:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_initVar: Is modified when this function is called for the
+  55:.\Generated_Source\PSoC4/Comp_1.c **** *   first time. Is used to ensure that initialization happens only once.
+  56:.\Generated_Source\PSoC4/Comp_1.c **** *
+  57:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+  58:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_Start(void)
+  59:.\Generated_Source\PSoC4/Comp_1.c **** {
+  60:.\Generated_Source\PSoC4/Comp_1.c ****     if(0u == Comp_1_initVar)
+  61:.\Generated_Source\PSoC4/Comp_1.c ****     {
+  62:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_Init();
+  63:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_initVar = 1u;
+  64:.\Generated_Source\PSoC4/Comp_1.c ****     }
+  65:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_Enable();
+  66:.\Generated_Source\PSoC4/Comp_1.c **** }
+  67:.\Generated_Source\PSoC4/Comp_1.c **** 
+  68:.\Generated_Source\PSoC4/Comp_1.c **** 
+  69:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+  70:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_Init
+  71:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+  72:.\Generated_Source\PSoC4/Comp_1.c **** *
+  73:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+  74:.\Generated_Source\PSoC4/Comp_1.c **** *  Initializes or restores the component according to the customizer settings.
+  75:.\Generated_Source\PSoC4/Comp_1.c **** *  It is not necessary to call Comp_1_Init() because the
+  76:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_Start() API calls this function and is the preferred method
+  77:.\Generated_Source\PSoC4/Comp_1.c **** *  to begin component operation.
+  78:.\Generated_Source\PSoC4/Comp_1.c **** *
+  79:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+  80:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+  81:.\Generated_Source\PSoC4/Comp_1.c **** *
+  82:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+  83:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+  84:.\Generated_Source\PSoC4/Comp_1.c **** *
+  85:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+  86:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_Init(void)
+  87:.\Generated_Source\PSoC4/Comp_1.c **** {
+  26              		.loc 1 87 0
+  27              		.cfi_startproc
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 3
+
+
+  28 0000 10B5     		push	{r4, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 4, -8
+  31              		.cfi_offset 14, -4
+  88:.\Generated_Source\PSoC4/Comp_1.c ****     uint8 enableInterrupts;
+  89:.\Generated_Source\PSoC4/Comp_1.c **** 
+  90:.\Generated_Source\PSoC4/Comp_1.c ****     enableInterrupts = CyEnterCriticalSection();
+  32              		.loc 1 90 0
+  33 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+  34              	.LVL0:
+  35 0006 041C     		mov	r4, r0
+  36              	.LVL1:
+  91:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_CONFIG_REG |= Comp_1_CONFIG_REG_DEFAULT;
+  37              		.loc 1 91 0
+  38 0008 0E4A     		ldr	r2, .L4
+  39 000a 1368     		ldr	r3, [r2]
+  40 000c 0E49     		ldr	r1, .L4+4
+  41 000e 0B43     		orr	r3, r1
+  42 0010 1360     		str	r3, [r2]
+  92:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_internalIntr = Comp_1_GET_CONFIG_INTR(Comp_1_INTERRUPT);
+  43              		.loc 1 92 0
+  44 0012 3022     		mov	r2, #48
+  45 0014 0D4B     		ldr	r3, .L4+8
+  46 0016 1A60     		str	r2, [r3]
+  93:.\Generated_Source\PSoC4/Comp_1.c ****     
+  94:.\Generated_Source\PSoC4/Comp_1.c ****     #if (Comp_1_CY_LPCOMP_V2)
+  95:.\Generated_Source\PSoC4/Comp_1.c ****         #if(CY_IP_SRSSV2)
+  96:.\Generated_Source\PSoC4/Comp_1.c ****             if (CySysPmGetResetReason() == CY_PM_RESET_REASON_WAKEUP_HIB)
+  47              		.loc 1 96 0
+  48 0018 FFF7FEFF 		bl	CySysPmGetResetReason
+  49              	.LVL2:
+  50 001c 0228     		cmp	r0, #2
+  51 001e 06D1     		bne	.L2
+  97:.\Generated_Source\PSoC4/Comp_1.c ****             {
+  98:.\Generated_Source\PSoC4/Comp_1.c ****                 /* Restore the INTR_MASK register state since it get reset after 
+  99:.\Generated_Source\PSoC4/Comp_1.c ****                 * wakeup from Hibernate.  
+ 100:.\Generated_Source\PSoC4/Comp_1.c ****                 */
+ 101:.\Generated_Source\PSoC4/Comp_1.c ****                 Comp_1_INTR_MASK_REG |= Comp_1_intrMaskRegState;  
+  52              		.loc 1 101 0
+  53 0020 0B4A     		ldr	r2, .L4+12
+  54 0022 1168     		ldr	r1, [r2]
+  55 0024 0B4B     		ldr	r3, .L4+16
+  56 0026 1B68     		ldr	r3, [r3]
+  57 0028 0B43     		orr	r3, r1
+  58 002a 1360     		str	r3, [r2]
+  59 002c 05E0     		b	.L3
+  60              	.L2:
+ 102:.\Generated_Source\PSoC4/Comp_1.c ****             }
+ 103:.\Generated_Source\PSoC4/Comp_1.c ****             else
+ 104:.\Generated_Source\PSoC4/Comp_1.c ****             {
+ 105:.\Generated_Source\PSoC4/Comp_1.c ****                 Comp_1_INTR_MASK_REG |= Comp_1_INTR_MASK_REG_DEFAULT;    
+  61              		.loc 1 105 0
+  62 002e 084B     		ldr	r3, .L4+12
+  63 0030 1A68     		ldr	r2, [r3]
+  64 0032 1A60     		str	r2, [r3]
+ 106:.\Generated_Source\PSoC4/Comp_1.c ****                 Comp_1_intrMaskRegState = Comp_1_INTR_MASK_REG;
+  65              		.loc 1 106 0
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 4
+
+
+  66 0034 1A68     		ldr	r2, [r3]
+  67 0036 074B     		ldr	r3, .L4+16
+  68 0038 1A60     		str	r2, [r3]
+  69              	.L3:
+ 107:.\Generated_Source\PSoC4/Comp_1.c ****             }
+ 108:.\Generated_Source\PSoC4/Comp_1.c ****         #else
+ 109:.\Generated_Source\PSoC4/Comp_1.c ****             Comp_1_INTR_MASK_REG |= Comp_1_INTR_MASK_REG_DEFAULT;
+ 110:.\Generated_Source\PSoC4/Comp_1.c ****         #endif /* (Comp_1_CY_LPCOMP_V2) */
+ 111:.\Generated_Source\PSoC4/Comp_1.c ****     #endif /* (Comp_1_CY_LPCOMP_V2) */
+ 112:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 113:.\Generated_Source\PSoC4/Comp_1.c ****     CyExitCriticalSection(enableInterrupts);
+  70              		.loc 1 113 0
+  71 003a 201C     		mov	r0, r4
+  72 003c FFF7FEFF 		bl	CyExitCriticalSection
+  73              	.LVL3:
+ 114:.\Generated_Source\PSoC4/Comp_1.c **** }
+  74              		.loc 1 114 0
+  75              		@ sp needed
+  76              	.LVL4:
+  77 0040 10BD     		pop	{r4, pc}
+  78              	.L5:
+  79 0042 C046     		.align	2
+  80              	.L4:
+  81 0044 04002B40 		.word	1076559876
+  82 0048 05000100 		.word	65541
+  83 004c 00000000 		.word	.LANCHOR0
+  84 0050 18002B40 		.word	1076559896
+  85 0054 00000000 		.word	.LANCHOR1
+  86              		.cfi_endproc
+  87              	.LFE4:
+  88              		.size	Comp_1_Init, .-Comp_1_Init
+  89              		.section	.text.Comp_1_Enable,"ax",%progbits
+  90              		.align	2
+  91              		.global	Comp_1_Enable
+  92              		.code	16
+  93              		.thumb_func
+  94              		.type	Comp_1_Enable, %function
+  95              	Comp_1_Enable:
+  96              	.LFB5:
+ 115:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 116:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 117:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 118:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_Enable
+ 119:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 120:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 121:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 122:.\Generated_Source\PSoC4/Comp_1.c **** *  Activates the hardware and begins component operation. It is not necessary
+ 123:.\Generated_Source\PSoC4/Comp_1.c **** *  to call Comp_1_Enable() because the Comp_1_Start() API
+ 124:.\Generated_Source\PSoC4/Comp_1.c **** *  calls this function, which is the preferred method to begin component
+ 125:.\Generated_Source\PSoC4/Comp_1.c **** *  operation.
+ 126:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 127:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 128:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 129:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 130:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 131:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 132:.\Generated_Source\PSoC4/Comp_1.c **** *
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 5
+
+
+ 133:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 134:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_Enable(void)
+ 135:.\Generated_Source\PSoC4/Comp_1.c **** {
+  97              		.loc 1 135 0
+  98              		.cfi_startproc
+  99 0000 08B5     		push	{r3, lr}
+ 100              		.cfi_def_cfa_offset 8
+ 101              		.cfi_offset 3, -8
+ 102              		.cfi_offset 14, -4
+ 136:.\Generated_Source\PSoC4/Comp_1.c ****     uint8 enableInterrupts;
+ 137:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 138:.\Generated_Source\PSoC4/Comp_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 103              		.loc 1 138 0
+ 104 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+ 105              	.LVL5:
+ 139:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_CONFIG_REG |= Comp_1_CONFIG_EN;
+ 106              		.loc 1 139 0
+ 107 0006 064B     		ldr	r3, .L7
+ 108 0008 1968     		ldr	r1, [r3]
+ 109 000a 8022     		mov	r2, #128
+ 110 000c 0A43     		orr	r2, r1
+ 111 000e 1A60     		str	r2, [r3]
+ 140:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 141:.\Generated_Source\PSoC4/Comp_1.c ****     /*******************************************************
+ 142:.\Generated_Source\PSoC4/Comp_1.c ****     * When the Enable() API is called the CONFIG_EN bit is set. 
+ 143:.\Generated_Source\PSoC4/Comp_1.c ****     * This can cause fake interrupt because of the output delay 
+ 144:.\Generated_Source\PSoC4/Comp_1.c ****     * of the analog. This requires setting the CONFIG_INTR bits 
+ 145:.\Generated_Source\PSoC4/Comp_1.c ****     * after the CONFIG_EN bit is set.
+ 146:.\Generated_Source\PSoC4/Comp_1.c ****     *******************************************************/
+ 147:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_CONFIG_REG |= Comp_1_internalIntr;
+ 112              		.loc 1 147 0
+ 113 0010 1968     		ldr	r1, [r3]
+ 114 0012 044A     		ldr	r2, .L7+4
+ 115 0014 1268     		ldr	r2, [r2]
+ 116 0016 0A43     		orr	r2, r1
+ 117 0018 1A60     		str	r2, [r3]
+ 148:.\Generated_Source\PSoC4/Comp_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 118              		.loc 1 148 0
+ 119 001a FFF7FEFF 		bl	CyExitCriticalSection
+ 120              	.LVL6:
+ 149:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 121              		.loc 1 149 0
+ 122              		@ sp needed
+ 123 001e 08BD     		pop	{r3, pc}
+ 124              	.L8:
+ 125              		.align	2
+ 126              	.L7:
+ 127 0020 04002B40 		.word	1076559876
+ 128 0024 00000000 		.word	.LANCHOR0
+ 129              		.cfi_endproc
+ 130              	.LFE5:
+ 131              		.size	Comp_1_Enable, .-Comp_1_Enable
+ 132              		.section	.text.Comp_1_Start,"ax",%progbits
+ 133              		.align	2
+ 134              		.global	Comp_1_Start
+ 135              		.code	16
+ 136              		.thumb_func
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 6
+
+
+ 137              		.type	Comp_1_Start, %function
+ 138              	Comp_1_Start:
+ 139              	.LFB3:
+  59:.\Generated_Source\PSoC4/Comp_1.c ****     if(0u == Comp_1_initVar)
+ 140              		.loc 1 59 0
+ 141              		.cfi_startproc
+ 142 0000 08B5     		push	{r3, lr}
+ 143              		.cfi_def_cfa_offset 8
+ 144              		.cfi_offset 3, -8
+ 145              		.cfi_offset 14, -4
+  60:.\Generated_Source\PSoC4/Comp_1.c ****     {
+ 146              		.loc 1 60 0
+ 147 0002 064B     		ldr	r3, .L11
+ 148 0004 1B79     		ldrb	r3, [r3, #4]
+ 149 0006 002B     		cmp	r3, #0
+ 150 0008 04D1     		bne	.L10
+  62:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_initVar = 1u;
+ 151              		.loc 1 62 0
+ 152 000a FFF7FEFF 		bl	Comp_1_Init
+ 153              	.LVL7:
+  63:.\Generated_Source\PSoC4/Comp_1.c ****     }
+ 154              		.loc 1 63 0
+ 155 000e 0122     		mov	r2, #1
+ 156 0010 024B     		ldr	r3, .L11
+ 157 0012 1A71     		strb	r2, [r3, #4]
+ 158              	.L10:
+  65:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 159              		.loc 1 65 0
+ 160 0014 FFF7FEFF 		bl	Comp_1_Enable
+ 161              	.LVL8:
+  66:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 162              		.loc 1 66 0
+ 163              		@ sp needed
+ 164 0018 08BD     		pop	{r3, pc}
+ 165              	.L12:
+ 166 001a C046     		.align	2
+ 167              	.L11:
+ 168 001c 00000000 		.word	.LANCHOR0
+ 169              		.cfi_endproc
+ 170              	.LFE3:
+ 171              		.size	Comp_1_Start, .-Comp_1_Start
+ 172              		.section	.text.Comp_1_Stop,"ax",%progbits
+ 173              		.align	2
+ 174              		.global	Comp_1_Stop
+ 175              		.code	16
+ 176              		.thumb_func
+ 177              		.type	Comp_1_Stop, %function
+ 178              	Comp_1_Stop:
+ 179              	.LFB6:
+ 150:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 151:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 152:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 153:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_Stop
+ 154:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 155:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 156:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 157:.\Generated_Source\PSoC4/Comp_1.c **** *  Turns off the LP Comparator.
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 7
+
+
+ 158:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 159:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 160:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 161:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 162:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 163:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 164:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 165:.\Generated_Source\PSoC4/Comp_1.c **** * Side Effects:
+ 166:.\Generated_Source\PSoC4/Comp_1.c **** *  The function doesn't change component Speed settings.
+ 167:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 168:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 169:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_Stop(void)
+ 170:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 180              		.loc 1 170 0
+ 181              		.cfi_startproc
+ 182 0000 08B5     		push	{r3, lr}
+ 183              		.cfi_def_cfa_offset 8
+ 184              		.cfi_offset 3, -8
+ 185              		.cfi_offset 14, -4
+ 171:.\Generated_Source\PSoC4/Comp_1.c ****     uint8 enableInterrupts;
+ 172:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 173:.\Generated_Source\PSoC4/Comp_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 186              		.loc 1 173 0
+ 187 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+ 188              	.LVL9:
+ 174:.\Generated_Source\PSoC4/Comp_1.c ****     #if (Comp_1_CY_LPCOMP_V0)
+ 175:.\Generated_Source\PSoC4/Comp_1.c ****         /*******************************************************
+ 176:.\Generated_Source\PSoC4/Comp_1.c ****         * When the Stop() API is called the CONFIG_EN bit is 
+ 177:.\Generated_Source\PSoC4/Comp_1.c ****         * cleared. This causes the output of the comparator to go 
+ 178:.\Generated_Source\PSoC4/Comp_1.c ****         * low. If the comparator output was high and the Interrupt 
+ 179:.\Generated_Source\PSoC4/Comp_1.c ****         * Configuration is set for Falling edge disabling the 
+ 180:.\Generated_Source\PSoC4/Comp_1.c ****         * comparator will cause an fake interrupt. This requires 
+ 181:.\Generated_Source\PSoC4/Comp_1.c ****         * to clear the CONFIG_INTR bits before the CONFIG_EN bit 
+ 182:.\Generated_Source\PSoC4/Comp_1.c ****         * is cleared.
+ 183:.\Generated_Source\PSoC4/Comp_1.c ****         *******************************************************/
+ 184:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_CONFIG_REG &= (uint32)~Comp_1_CONFIG_INTR_MASK;
+ 185:.\Generated_Source\PSoC4/Comp_1.c ****     #endif /* (Comp_1_CY_LPCOMP_V0) */
+ 186:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 187:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_CONFIG_REG &= (uint32)~Comp_1_CONFIG_EN;
+ 189              		.loc 1 187 0
+ 190 0006 044A     		ldr	r2, .L14
+ 191 0008 1368     		ldr	r3, [r2]
+ 192 000a 8021     		mov	r1, #128
+ 193 000c 8B43     		bic	r3, r1
+ 194 000e 1360     		str	r3, [r2]
+ 188:.\Generated_Source\PSoC4/Comp_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 195              		.loc 1 188 0
+ 196 0010 FFF7FEFF 		bl	CyExitCriticalSection
+ 197              	.LVL10:
+ 189:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 198              		.loc 1 189 0
+ 199              		@ sp needed
+ 200 0014 08BD     		pop	{r3, pc}
+ 201              	.L15:
+ 202 0016 C046     		.align	2
+ 203              	.L14:
+ 204 0018 04002B40 		.word	1076559876
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 8
+
+
+ 205              		.cfi_endproc
+ 206              	.LFE6:
+ 207              		.size	Comp_1_Stop, .-Comp_1_Stop
+ 208              		.section	.text.Comp_1_SetSpeed,"ax",%progbits
+ 209              		.align	2
+ 210              		.global	Comp_1_SetSpeed
+ 211              		.code	16
+ 212              		.thumb_func
+ 213              		.type	Comp_1_SetSpeed, %function
+ 214              	Comp_1_SetSpeed:
+ 215              	.LFB7:
+ 190:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 191:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 192:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 193:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_SetSpeed
+ 194:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 195:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 196:.\Generated_Source\PSoC4/Comp_1.c **** *  Sets the drive power and speed to one of three settings.
+ 197:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 198:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 199:.\Generated_Source\PSoC4/Comp_1.c **** *  uint32 speed: Sets operation mode of the component:
+ 200:.\Generated_Source\PSoC4/Comp_1.c **** *   Comp_1_LOW_SPEED  - Slow/ultra low 
+ 201:.\Generated_Source\PSoC4/Comp_1.c **** *   Comp_1_MED_SPEED  - Medium/low 
+ 202:.\Generated_Source\PSoC4/Comp_1.c **** *   Comp_1_HIGH_SPEED - Fast/normal 
+ 203:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 204:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 205:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 206:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 207:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 208:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_SetSpeed(uint32 speed)
+ 209:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 216              		.loc 1 209 0
+ 217              		.cfi_startproc
+ 218              	.LVL11:
+ 219 0000 10B5     		push	{r4, lr}
+ 220              		.cfi_def_cfa_offset 8
+ 221              		.cfi_offset 4, -8
+ 222              		.cfi_offset 14, -4
+ 223 0002 041C     		mov	r4, r0
+ 210:.\Generated_Source\PSoC4/Comp_1.c ****     uint32 config;
+ 211:.\Generated_Source\PSoC4/Comp_1.c ****     uint8 enableInterrupts;
+ 212:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 213:.\Generated_Source\PSoC4/Comp_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 224              		.loc 1 213 0
+ 225 0004 FFF7FEFF 		bl	CyEnterCriticalSection
+ 226              	.LVL12:
+ 214:.\Generated_Source\PSoC4/Comp_1.c ****     config = Comp_1_CONFIG_REG & (uint32)~Comp_1_CONFIG_SPEED_MODE_MASK;
+ 227              		.loc 1 214 0
+ 228 0008 0449     		ldr	r1, .L17
+ 229 000a 0A68     		ldr	r2, [r1]
+ 230 000c 0323     		mov	r3, #3
+ 231 000e 9A43     		bic	r2, r3
+ 232              	.LVL13:
+ 215:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_CONFIG_REG = config | Comp_1_GET_CONFIG_SPEED_MODE(speed);
+ 233              		.loc 1 215 0
+ 234 0010 2340     		and	r3, r4
+ 235 0012 1343     		orr	r3, r2
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 9
+
+
+ 236 0014 0B60     		str	r3, [r1]
+ 216:.\Generated_Source\PSoC4/Comp_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 237              		.loc 1 216 0
+ 238 0016 FFF7FEFF 		bl	CyExitCriticalSection
+ 239              	.LVL14:
+ 217:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 240              		.loc 1 217 0
+ 241              		@ sp needed
+ 242              	.LVL15:
+ 243 001a 10BD     		pop	{r4, pc}
+ 244              	.L18:
+ 245              		.align	2
+ 246              	.L17:
+ 247 001c 04002B40 		.word	1076559876
+ 248              		.cfi_endproc
+ 249              	.LFE7:
+ 250              		.size	Comp_1_SetSpeed, .-Comp_1_SetSpeed
+ 251              		.section	.text.Comp_1_SetInterruptMode,"ax",%progbits
+ 252              		.align	2
+ 253              		.global	Comp_1_SetInterruptMode
+ 254              		.code	16
+ 255              		.thumb_func
+ 256              		.type	Comp_1_SetInterruptMode, %function
+ 257              	Comp_1_SetInterruptMode:
+ 258              	.LFB8:
+ 218:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 219:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 220:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 221:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_SetInterruptMode
+ 222:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 223:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 224:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 225:.\Generated_Source\PSoC4/Comp_1.c **** *  Sets the interrupt edge detect mode. This also controls the value provided
+ 226:.\Generated_Source\PSoC4/Comp_1.c **** *  on the output.
+ 227:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 228:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 229:.\Generated_Source\PSoC4/Comp_1.c **** *  uint32 mode: Enumerated edge detect mode value:
+ 230:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_INTR_DISABLE - Disable
+ 231:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_INTR_RISING  - Rising edge detect
+ 232:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_INTR_FALLING - Falling edge detect
+ 233:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_INTR_BOTH    - Detect both edges
+ 234:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 235:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 236:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 237:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 238:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 239:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_SetInterruptMode(uint32 mode)
+ 240:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 259              		.loc 1 240 0
+ 260              		.cfi_startproc
+ 261              	.LVL16:
+ 262 0000 38B5     		push	{r3, r4, r5, lr}
+ 263              		.cfi_def_cfa_offset 16
+ 264              		.cfi_offset 3, -16
+ 265              		.cfi_offset 4, -12
+ 266              		.cfi_offset 5, -8
+ 267              		.cfi_offset 14, -4
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 10
+
+
+ 241:.\Generated_Source\PSoC4/Comp_1.c ****     uint32 config;
+ 242:.\Generated_Source\PSoC4/Comp_1.c ****     uint8 enableInterrupts;
+ 243:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 244:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_internalIntr = Comp_1_GET_CONFIG_INTR(mode);
+ 268              		.loc 1 244 0
+ 269 0002 0001     		lsl	r0, r0, #4
+ 270              	.LVL17:
+ 271 0004 3025     		mov	r5, #48
+ 272 0006 2840     		and	r0, r5
+ 273 0008 064C     		ldr	r4, .L20
+ 274 000a 2060     		str	r0, [r4]
+ 245:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 246:.\Generated_Source\PSoC4/Comp_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 275              		.loc 1 246 0
+ 276 000c FFF7FEFF 		bl	CyEnterCriticalSection
+ 277              	.LVL18:
+ 247:.\Generated_Source\PSoC4/Comp_1.c ****     config = Comp_1_CONFIG_REG & (uint32)~Comp_1_CONFIG_INTR_MASK;
+ 278              		.loc 1 247 0
+ 279 0010 0549     		ldr	r1, .L20+4
+ 280 0012 0B68     		ldr	r3, [r1]
+ 281 0014 AB43     		bic	r3, r5
+ 282              	.LVL19:
+ 248:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_CONFIG_REG = config | Comp_1_internalIntr;
+ 283              		.loc 1 248 0
+ 284 0016 2268     		ldr	r2, [r4]
+ 285 0018 1343     		orr	r3, r2
+ 286              	.LVL20:
+ 287 001a 0B60     		str	r3, [r1]
+ 249:.\Generated_Source\PSoC4/Comp_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 288              		.loc 1 249 0
+ 289 001c FFF7FEFF 		bl	CyExitCriticalSection
+ 290              	.LVL21:
+ 250:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 291              		.loc 1 250 0
+ 292              		@ sp needed
+ 293 0020 38BD     		pop	{r3, r4, r5, pc}
+ 294              	.L21:
+ 295 0022 C046     		.align	2
+ 296              	.L20:
+ 297 0024 00000000 		.word	.LANCHOR0
+ 298 0028 04002B40 		.word	1076559876
+ 299              		.cfi_endproc
+ 300              	.LFE8:
+ 301              		.size	Comp_1_SetInterruptMode, .-Comp_1_SetInterruptMode
+ 302              		.section	.text.Comp_1_GetInterruptSource,"ax",%progbits
+ 303              		.align	2
+ 304              		.global	Comp_1_GetInterruptSource
+ 305              		.code	16
+ 306              		.thumb_func
+ 307              		.type	Comp_1_GetInterruptSource, %function
+ 308              	Comp_1_GetInterruptSource:
+ 309              	.LFB9:
+ 251:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 252:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 253:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 254:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_GetInterruptSource
+ 255:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 11
+
+
+ 256:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 257:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 258:.\Generated_Source\PSoC4/Comp_1.c **** *  Gets the interrupt requests. This function is for use when using the combined
+ 259:.\Generated_Source\PSoC4/Comp_1.c **** *  interrupt signal from the global signal reference. This function from either
+ 260:.\Generated_Source\PSoC4/Comp_1.c **** *  component instance can be used to determine the interrupt source for both the
+ 261:.\Generated_Source\PSoC4/Comp_1.c **** *  interrupts combined.
+ 262:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 263:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 264:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 265:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 266:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 267:.\Generated_Source\PSoC4/Comp_1.c **** *  uint32: Interrupt source. Each component instance has a mask value:
+ 268:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_INTR.
+ 269:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 270:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 271:.\Generated_Source\PSoC4/Comp_1.c **** uint32 Comp_1_GetInterruptSource(void)
+ 272:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 310              		.loc 1 272 0
+ 311              		.cfi_startproc
+ 273:.\Generated_Source\PSoC4/Comp_1.c ****     return (Comp_1_INTR_REG); 
+ 312              		.loc 1 273 0
+ 313 0000 014B     		ldr	r3, .L23
+ 314 0002 1868     		ldr	r0, [r3]
+ 274:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 315              		.loc 1 274 0
+ 316              		@ sp needed
+ 317 0004 7047     		bx	lr
+ 318              	.L24:
+ 319 0006 C046     		.align	2
+ 320              	.L23:
+ 321 0008 10002B40 		.word	1076559888
+ 322              		.cfi_endproc
+ 323              	.LFE9:
+ 324              		.size	Comp_1_GetInterruptSource, .-Comp_1_GetInterruptSource
+ 325              		.section	.text.Comp_1_ClearInterrupt,"ax",%progbits
+ 326              		.align	2
+ 327              		.global	Comp_1_ClearInterrupt
+ 328              		.code	16
+ 329              		.thumb_func
+ 330              		.type	Comp_1_ClearInterrupt, %function
+ 331              	Comp_1_ClearInterrupt:
+ 332              	.LFB10:
+ 275:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 276:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 277:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 278:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_ClearInterrupt
+ 279:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 280:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 281:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 282:.\Generated_Source\PSoC4/Comp_1.c **** *  Clears the interrupt request. This function is for use when using the
+ 283:.\Generated_Source\PSoC4/Comp_1.c **** *  combined interrupt signal from the global signal reference. This function
+ 284:.\Generated_Source\PSoC4/Comp_1.c **** *  from either component instance can be used to clear either or both
+ 285:.\Generated_Source\PSoC4/Comp_1.c **** *  interrupts.
+ 286:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 287:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 288:.\Generated_Source\PSoC4/Comp_1.c **** *  uint32 interruptMask: Mask of interrupts to clear. Each component instance
+ 289:.\Generated_Source\PSoC4/Comp_1.c **** *  has a mask value: Comp_1_INTR.
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 12
+
+
+ 290:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 291:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 292:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 293:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 294:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 295:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_ClearInterrupt(uint32 interruptMask)
+ 296:.\Generated_Source\PSoC4/Comp_1.c **** {   
+ 333              		.loc 1 296 0
+ 334              		.cfi_startproc
+ 335              	.LVL22:
+ 297:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_INTR_REG = interruptMask;
+ 336              		.loc 1 297 0
+ 337 0000 014B     		ldr	r3, .L26
+ 338 0002 1860     		str	r0, [r3]
+ 298:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 339              		.loc 1 298 0
+ 340              		@ sp needed
+ 341 0004 7047     		bx	lr
+ 342              	.L27:
+ 343 0006 C046     		.align	2
+ 344              	.L26:
+ 345 0008 10002B40 		.word	1076559888
+ 346              		.cfi_endproc
+ 347              	.LFE10:
+ 348              		.size	Comp_1_ClearInterrupt, .-Comp_1_ClearInterrupt
+ 349              		.section	.text.Comp_1_SetInterrupt,"ax",%progbits
+ 350              		.align	2
+ 351              		.global	Comp_1_SetInterrupt
+ 352              		.code	16
+ 353              		.thumb_func
+ 354              		.type	Comp_1_SetInterrupt, %function
+ 355              	Comp_1_SetInterrupt:
+ 356              	.LFB11:
+ 299:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 300:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 301:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 302:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_SetInterrupt
+ 303:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 304:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 305:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 306:.\Generated_Source\PSoC4/Comp_1.c **** *  Sets a software interrupt request. This function is for use when using the
+ 307:.\Generated_Source\PSoC4/Comp_1.c **** *  combined interrupt signal from the global signal reference. This function
+ 308:.\Generated_Source\PSoC4/Comp_1.c **** *  from either component instance can be used to trigger either or both software
+ 309:.\Generated_Source\PSoC4/Comp_1.c **** *  interrupts.
+ 310:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 311:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 312:.\Generated_Source\PSoC4/Comp_1.c **** *  uint32 interruptMask: Mask of interrupts to set. Each component instance has
+ 313:.\Generated_Source\PSoC4/Comp_1.c **** *  a mask value: Comp_1_INTR_SET.
+ 314:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 315:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 316:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 317:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 318:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 319:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_SetInterrupt(uint32 interruptMask)
+ 320:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 357              		.loc 1 320 0
+ 358              		.cfi_startproc
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 13
+
+
+ 359              	.LVL23:
+ 360 0000 10B5     		push	{r4, lr}
+ 361              		.cfi_def_cfa_offset 8
+ 362              		.cfi_offset 4, -8
+ 363              		.cfi_offset 14, -4
+ 364 0002 041C     		mov	r4, r0
+ 321:.\Generated_Source\PSoC4/Comp_1.c ****     uint8 enableInterrupts;
+ 322:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 323:.\Generated_Source\PSoC4/Comp_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 365              		.loc 1 323 0
+ 366 0004 FFF7FEFF 		bl	CyEnterCriticalSection
+ 367              	.LVL24:
+ 324:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_INTR_SET_REG |= interruptMask;
+ 368              		.loc 1 324 0
+ 369 0008 034B     		ldr	r3, .L29
+ 370 000a 1A68     		ldr	r2, [r3]
+ 371 000c 1443     		orr	r4, r2
+ 372              	.LVL25:
+ 373 000e 1C60     		str	r4, [r3]
+ 325:.\Generated_Source\PSoC4/Comp_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 374              		.loc 1 325 0
+ 375 0010 FFF7FEFF 		bl	CyExitCriticalSection
+ 376              	.LVL26:
+ 326:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 377              		.loc 1 326 0
+ 378              		@ sp needed
+ 379 0014 10BD     		pop	{r4, pc}
+ 380              	.L30:
+ 381 0016 C046     		.align	2
+ 382              	.L29:
+ 383 0018 14002B40 		.word	1076559892
+ 384              		.cfi_endproc
+ 385              	.LFE11:
+ 386              		.size	Comp_1_SetInterrupt, .-Comp_1_SetInterrupt
+ 387              		.section	.text.Comp_1_SetHysteresis,"ax",%progbits
+ 388              		.align	2
+ 389              		.global	Comp_1_SetHysteresis
+ 390              		.code	16
+ 391              		.thumb_func
+ 392              		.type	Comp_1_SetHysteresis, %function
+ 393              	Comp_1_SetHysteresis:
+ 394              	.LFB12:
+ 327:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 328:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 329:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 330:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_SetHysteresis
+ 331:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 332:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 333:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 334:.\Generated_Source\PSoC4/Comp_1.c **** *  Enables or disables the hysteresis.
+ 335:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 336:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 337:.\Generated_Source\PSoC4/Comp_1.c **** *  hysteresis: (uint32) Enables or disables the hysteresis setting.
+ 338:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_HYST_ENABLE     - Enable hysteresis
+ 339:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_HYST_DISABLE    - Disable hysteresis
+ 340:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 341:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 14
+
+
+ 342:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 343:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 344:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 345:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_SetHysteresis(uint32 hysteresis)
+ 346:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 395              		.loc 1 346 0
+ 396              		.cfi_startproc
+ 397              	.LVL27:
+ 398 0000 10B5     		push	{r4, lr}
+ 399              		.cfi_def_cfa_offset 8
+ 400              		.cfi_offset 4, -8
+ 401              		.cfi_offset 14, -4
+ 402 0002 041C     		mov	r4, r0
+ 347:.\Generated_Source\PSoC4/Comp_1.c ****     uint8 enableInterrupts;
+ 348:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 349:.\Generated_Source\PSoC4/Comp_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 403              		.loc 1 349 0
+ 404 0004 FFF7FEFF 		bl	CyEnterCriticalSection
+ 405              	.LVL28:
+ 350:.\Generated_Source\PSoC4/Comp_1.c ****     if(0u != hysteresis)
+ 406              		.loc 1 350 0
+ 407 0008 002C     		cmp	r4, #0
+ 408 000a 05D0     		beq	.L32
+ 351:.\Generated_Source\PSoC4/Comp_1.c ****     {
+ 352:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_CONFIG_REG |= Comp_1_CONFIG_HYST;
+ 409              		.loc 1 352 0
+ 410 000c 064A     		ldr	r2, .L34
+ 411 000e 1168     		ldr	r1, [r2]
+ 412 0010 0423     		mov	r3, #4
+ 413 0012 0B43     		orr	r3, r1
+ 414 0014 1360     		str	r3, [r2]
+ 415 0016 04E0     		b	.L33
+ 416              	.L32:
+ 353:.\Generated_Source\PSoC4/Comp_1.c ****     }
+ 354:.\Generated_Source\PSoC4/Comp_1.c ****     else
+ 355:.\Generated_Source\PSoC4/Comp_1.c ****     {
+ 356:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_CONFIG_REG &= (uint32)~Comp_1_CONFIG_HYST;
+ 417              		.loc 1 356 0
+ 418 0018 034A     		ldr	r2, .L34
+ 419 001a 1368     		ldr	r3, [r2]
+ 420 001c 0421     		mov	r1, #4
+ 421 001e 8B43     		bic	r3, r1
+ 422 0020 1360     		str	r3, [r2]
+ 423              	.L33:
+ 357:.\Generated_Source\PSoC4/Comp_1.c ****     }
+ 358:.\Generated_Source\PSoC4/Comp_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 424              		.loc 1 358 0
+ 425 0022 FFF7FEFF 		bl	CyExitCriticalSection
+ 426              	.LVL29:
+ 359:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 427              		.loc 1 359 0
+ 428              		@ sp needed
+ 429              	.LVL30:
+ 430 0026 10BD     		pop	{r4, pc}
+ 431              	.L35:
+ 432              		.align	2
+ 433              	.L34:
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 15
+
+
+ 434 0028 04002B40 		.word	1076559876
+ 435              		.cfi_endproc
+ 436              	.LFE12:
+ 437              		.size	Comp_1_SetHysteresis, .-Comp_1_SetHysteresis
+ 438              		.section	.text.Comp_1_SetFilter,"ax",%progbits
+ 439              		.align	2
+ 440              		.global	Comp_1_SetFilter
+ 441              		.code	16
+ 442              		.thumb_func
+ 443              		.type	Comp_1_SetFilter, %function
+ 444              	Comp_1_SetFilter:
+ 445              	.LFB13:
+ 360:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 361:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 362:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 363:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_SetFilter
+ 364:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 365:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 366:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 367:.\Generated_Source\PSoC4/Comp_1.c **** *  Enables or disables the digital filter. This still exists for saving backward 
+ 368:.\Generated_Source\PSoC4/Comp_1.c **** *  compatibility, but not recommended for using.
+ 369:.\Generated_Source\PSoC4/Comp_1.c **** *  This API is DEPRECATED and should not be used in new projects.
+ 370:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 371:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 372:.\Generated_Source\PSoC4/Comp_1.c **** *  uint32 filter: filter enable.
+ 373:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_FILT_ENABLE  - Enable filter
+ 374:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_FILT_DISABLE - Disable filter
+ 375:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 376:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 377:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 378:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 379:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 380:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_SetFilter(uint32 filter)
+ 381:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 446              		.loc 1 381 0
+ 447              		.cfi_startproc
+ 448              	.LVL31:
+ 449 0000 10B5     		push	{r4, lr}
+ 450              		.cfi_def_cfa_offset 8
+ 451              		.cfi_offset 4, -8
+ 452              		.cfi_offset 14, -4
+ 453 0002 041C     		mov	r4, r0
+ 382:.\Generated_Source\PSoC4/Comp_1.c ****     uint8 enableInterrupts;
+ 383:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 384:.\Generated_Source\PSoC4/Comp_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 454              		.loc 1 384 0
+ 455 0004 FFF7FEFF 		bl	CyEnterCriticalSection
+ 456              	.LVL32:
+ 385:.\Generated_Source\PSoC4/Comp_1.c ****     if( 0u != filter)
+ 457              		.loc 1 385 0
+ 458 0008 002C     		cmp	r4, #0
+ 459 000a 05D0     		beq	.L37
+ 386:.\Generated_Source\PSoC4/Comp_1.c ****     {
+ 387:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_CONFIG_REG |= Comp_1_CONFIG_FILT;
+ 460              		.loc 1 387 0
+ 461 000c 064A     		ldr	r2, .L39
+ 462 000e 1168     		ldr	r1, [r2]
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 16
+
+
+ 463 0010 0823     		mov	r3, #8
+ 464 0012 0B43     		orr	r3, r1
+ 465 0014 1360     		str	r3, [r2]
+ 466 0016 04E0     		b	.L38
+ 467              	.L37:
+ 388:.\Generated_Source\PSoC4/Comp_1.c ****     }
+ 389:.\Generated_Source\PSoC4/Comp_1.c ****     else
+ 390:.\Generated_Source\PSoC4/Comp_1.c ****     {
+ 391:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_CONFIG_REG &= (uint32)~Comp_1_CONFIG_FILT;
+ 468              		.loc 1 391 0
+ 469 0018 034A     		ldr	r2, .L39
+ 470 001a 1368     		ldr	r3, [r2]
+ 471 001c 0821     		mov	r1, #8
+ 472 001e 8B43     		bic	r3, r1
+ 473 0020 1360     		str	r3, [r2]
+ 474              	.L38:
+ 392:.\Generated_Source\PSoC4/Comp_1.c ****     }
+ 393:.\Generated_Source\PSoC4/Comp_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 475              		.loc 1 393 0
+ 476 0022 FFF7FEFF 		bl	CyExitCriticalSection
+ 477              	.LVL33:
+ 394:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 478              		.loc 1 394 0
+ 479              		@ sp needed
+ 480              	.LVL34:
+ 481 0026 10BD     		pop	{r4, pc}
+ 482              	.L40:
+ 483              		.align	2
+ 484              	.L39:
+ 485 0028 04002B40 		.word	1076559876
+ 486              		.cfi_endproc
+ 487              	.LFE13:
+ 488              		.size	Comp_1_SetFilter, .-Comp_1_SetFilter
+ 489              		.section	.text.Comp_1_GetCompare,"ax",%progbits
+ 490              		.align	2
+ 491              		.global	Comp_1_GetCompare
+ 492              		.code	16
+ 493              		.thumb_func
+ 494              		.type	Comp_1_GetCompare, %function
+ 495              	Comp_1_GetCompare:
+ 496              	.LFB14:
+ 395:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 396:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 397:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 398:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_GetCompare
+ 399:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 400:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 401:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 402:.\Generated_Source\PSoC4/Comp_1.c **** *  This function returns a nonzero value when the voltage connected to the
+ 403:.\Generated_Source\PSoC4/Comp_1.c **** *  positive input is greater than the negative input voltage.
+ 404:.\Generated_Source\PSoC4/Comp_1.c **** *  This function reads the direct (unflopped) comparator output which can also be 
+ 405:.\Generated_Source\PSoC4/Comp_1.c **** *  metastable (since it may result in incorrect data).
+ 406:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 407:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 408:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 409:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 410:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 17
+
+
+ 411:.\Generated_Source\PSoC4/Comp_1.c **** *  (uint32) Comparator output state. This value is not impacted by the interrupt
+ 412:.\Generated_Source\PSoC4/Comp_1.c **** *  edge detect setting:
+ 413:.\Generated_Source\PSoC4/Comp_1.c **** *   0 - if positive input is less than negative one.
+ 414:.\Generated_Source\PSoC4/Comp_1.c **** *   1 - if positive input greater than negative one.
+ 415:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 416:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 417:.\Generated_Source\PSoC4/Comp_1.c **** uint32 Comp_1_GetCompare(void)
+ 418:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 497              		.loc 1 418 0
+ 498              		.cfi_startproc
+ 419:.\Generated_Source\PSoC4/Comp_1.c ****     return((uint32)((0u == (Comp_1_CONFIG_REG & Comp_1_CONFIG_OUT)) ? 0u : 1u));
+ 499              		.loc 1 419 0
+ 500 0000 024B     		ldr	r3, .L42
+ 501 0002 1868     		ldr	r0, [r3]
+ 502 0004 4006     		lsl	r0, r0, #25
+ 503 0006 C00F     		lsr	r0, r0, #31
+ 420:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 504              		.loc 1 420 0
+ 505              		@ sp needed
+ 506 0008 7047     		bx	lr
+ 507              	.L43:
+ 508 000a C046     		.align	2
+ 509              	.L42:
+ 510 000c 04002B40 		.word	1076559876
+ 511              		.cfi_endproc
+ 512              	.LFE14:
+ 513              		.size	Comp_1_GetCompare, .-Comp_1_GetCompare
+ 514              		.section	.text.Comp_1_ZeroCal,"ax",%progbits
+ 515              		.align	2
+ 516              		.global	Comp_1_ZeroCal
+ 517              		.code	16
+ 518              		.thumb_func
+ 519              		.type	Comp_1_ZeroCal, %function
+ 520              	Comp_1_ZeroCal:
+ 521              	.LFB15:
+ 421:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 422:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 423:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 424:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_ZeroCal
+ 425:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 426:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 427:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 428:.\Generated_Source\PSoC4/Comp_1.c **** *  Performs custom calibration of the input offset to minimize error for a
+ 429:.\Generated_Source\PSoC4/Comp_1.c **** *  specific set of conditions: comparator reference voltage, supply voltage,
+ 430:.\Generated_Source\PSoC4/Comp_1.c **** *  and operating temperature. A reference voltage in the range at which the
+ 431:.\Generated_Source\PSoC4/Comp_1.c **** *  comparator will be used must be applied to one of the inputs. The two inputs
+ 432:.\Generated_Source\PSoC4/Comp_1.c **** *  will be shorted internally to perform the offset calibration.
+ 433:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 434:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 435:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 436:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 437:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 438:.\Generated_Source\PSoC4/Comp_1.c **** *  The value from the comparator trim register after the offset calibration is
+ 439:.\Generated_Source\PSoC4/Comp_1.c **** *  complete. This value has the same format as the input parameter for the
+ 440:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_LoadTrim() API routine.
+ 441:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 442:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 18
+
+
+ 443:.\Generated_Source\PSoC4/Comp_1.c **** uint32 Comp_1_ZeroCal(void)
+ 444:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 522              		.loc 1 444 0
+ 523              		.cfi_startproc
+ 524 0000 38B5     		push	{r3, r4, r5, lr}
+ 525              		.cfi_def_cfa_offset 16
+ 526              		.cfi_offset 3, -16
+ 527              		.cfi_offset 4, -12
+ 528              		.cfi_offset 5, -8
+ 529              		.cfi_offset 14, -4
+ 445:.\Generated_Source\PSoC4/Comp_1.c ****     uint32 cmpOut;
+ 446:.\Generated_Source\PSoC4/Comp_1.c ****     uint32 i;
+ 447:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 448:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_DFT_REG |= Comp_1_DFT_CAL_EN;
+ 530              		.loc 1 448 0
+ 531 0002 254A     		ldr	r2, .L53
+ 532 0004 1168     		ldr	r1, [r2]
+ 533 0006 0123     		mov	r3, #1
+ 534 0008 0B43     		orr	r3, r1
+ 535 000a 1360     		str	r3, [r2]
+ 449:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_TRIMA_REG = 0u;
+ 536              		.loc 1 449 0
+ 537 000c 0023     		mov	r3, #0
+ 538 000e 234A     		ldr	r2, .L53+4
+ 539 0010 1360     		str	r3, [r2]
+ 450:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_TRIMB_REG = 0u;
+ 540              		.loc 1 450 0
+ 541 0012 234A     		ldr	r2, .L53+8
+ 542 0014 1360     		str	r3, [r2]
+ 451:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 452:.\Generated_Source\PSoC4/Comp_1.c ****     CyDelayUs(1u);
+ 543              		.loc 1 452 0
+ 544 0016 0120     		mov	r0, #1
+ 545 0018 FFF7FEFF 		bl	CyDelayUs
+ 546              	.LVL35:
+ 453:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 454:.\Generated_Source\PSoC4/Comp_1.c ****     cmpOut = Comp_1_GetCompare();
+ 547              		.loc 1 454 0
+ 548 001c FFF7FEFF 		bl	Comp_1_GetCompare
+ 549              	.LVL36:
+ 550 0020 051E     		sub	r5, r0, #0
+ 551              	.LVL37:
+ 455:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 456:.\Generated_Source\PSoC4/Comp_1.c ****     if(0u != cmpOut)
+ 552              		.loc 1 456 0
+ 553 0022 02D0     		beq	.L45
+ 457:.\Generated_Source\PSoC4/Comp_1.c ****     {
+ 458:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_TRIMA_REG = ((uint32) 0x01u << Comp_1_TRIMA_SIGNBIT);
+ 554              		.loc 1 458 0
+ 555 0024 1022     		mov	r2, #16
+ 556 0026 1D4B     		ldr	r3, .L53+4
+ 557 0028 1A60     		str	r2, [r3]
+ 558              	.L45:
+ 444:.\Generated_Source\PSoC4/Comp_1.c ****     uint32 cmpOut;
+ 559              		.loc 1 444 0 discriminator 1
+ 560 002a 1024     		mov	r4, #16
+ 561 002c 0BE0     		b	.L46
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 19
+
+
+ 562              	.LVL38:
+ 563              	.L48:
+ 459:.\Generated_Source\PSoC4/Comp_1.c ****     }
+ 460:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 461:.\Generated_Source\PSoC4/Comp_1.c ****     for(i = (Comp_1_TRIMA_MAX_VALUE +1u ); i != 0u; i--)
+ 462:.\Generated_Source\PSoC4/Comp_1.c ****     {
+ 463:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_TRIMA_REG++;
+ 564              		.loc 1 463 0
+ 565 002e 1B4A     		ldr	r2, .L53+4
+ 566 0030 1368     		ldr	r3, [r2]
+ 567 0032 0133     		add	r3, r3, #1
+ 568 0034 1360     		str	r3, [r2]
+ 464:.\Generated_Source\PSoC4/Comp_1.c ****         CyDelayUs(1u);
+ 569              		.loc 1 464 0
+ 570 0036 0120     		mov	r0, #1
+ 571 0038 FFF7FEFF 		bl	CyDelayUs
+ 572              	.LVL39:
+ 465:.\Generated_Source\PSoC4/Comp_1.c ****         if(cmpOut != Comp_1_GetCompare())
+ 573              		.loc 1 465 0
+ 574 003c FFF7FEFF 		bl	Comp_1_GetCompare
+ 575              	.LVL40:
+ 576 0040 A842     		cmp	r0, r5
+ 577 0042 02D1     		bne	.L47
+ 461:.\Generated_Source\PSoC4/Comp_1.c ****     {
+ 578              		.loc 1 461 0 discriminator 2
+ 579 0044 013C     		sub	r4, r4, #1
+ 580              	.LVL41:
+ 581              	.L46:
+ 461:.\Generated_Source\PSoC4/Comp_1.c ****     {
+ 582              		.loc 1 461 0 is_stmt 0 discriminator 1
+ 583 0046 002C     		cmp	r4, #0
+ 584 0048 F1D1     		bne	.L48
+ 585              	.L47:
+ 466:.\Generated_Source\PSoC4/Comp_1.c ****         {
+ 467:.\Generated_Source\PSoC4/Comp_1.c ****             break;
+ 468:.\Generated_Source\PSoC4/Comp_1.c ****         }
+ 469:.\Generated_Source\PSoC4/Comp_1.c ****     }
+ 470:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 471:.\Generated_Source\PSoC4/Comp_1.c ****     if(((uint32)(Comp_1_CONFIG_REG >> Comp_1_CONFIG_REG_SHIFT) &
+ 586              		.loc 1 471 0 is_stmt 1
+ 587 004a 164B     		ldr	r3, .L53+12
+ 588 004c 1B68     		ldr	r3, [r3]
+ 589 004e 9B07     		lsl	r3, r3, #30
+ 590 0050 16D1     		bne	.L49
+ 472:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_SPEED_PARAM_MASK) == Comp_1_MED_SPEED)
+ 473:.\Generated_Source\PSoC4/Comp_1.c ****     {
+ 474:.\Generated_Source\PSoC4/Comp_1.c ****         cmpOut = Comp_1_GetCompare();
+ 591              		.loc 1 474 0
+ 592 0052 FFF7FEFF 		bl	Comp_1_GetCompare
+ 593              	.LVL42:
+ 594 0056 051E     		sub	r5, r0, #0
+ 595              	.LVL43:
+ 475:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 476:.\Generated_Source\PSoC4/Comp_1.c ****         if(0u == cmpOut)
+ 596              		.loc 1 476 0
+ 597 0058 02D1     		bne	.L50
+ 477:.\Generated_Source\PSoC4/Comp_1.c ****         {
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 20
+
+
+ 478:.\Generated_Source\PSoC4/Comp_1.c ****             Comp_1_TRIMB_REG = ((uint32)1u << Comp_1_TRIMB_SIGNBIT);
+ 598              		.loc 1 478 0
+ 599 005a 1022     		mov	r2, #16
+ 600 005c 104B     		ldr	r3, .L53+8
+ 601 005e 1A60     		str	r2, [r3]
+ 602              	.L50:
+ 444:.\Generated_Source\PSoC4/Comp_1.c ****     uint32 cmpOut;
+ 603              		.loc 1 444 0 discriminator 1
+ 604 0060 1024     		mov	r4, #16
+ 605              	.LVL44:
+ 606 0062 0BE0     		b	.L51
+ 607              	.LVL45:
+ 608              	.L52:
+ 479:.\Generated_Source\PSoC4/Comp_1.c ****         }
+ 480:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 481:.\Generated_Source\PSoC4/Comp_1.c ****         for(i = (Comp_1_TRIMB_MAX_VALUE +1u ); i != 0u; i--)
+ 482:.\Generated_Source\PSoC4/Comp_1.c ****         {
+ 483:.\Generated_Source\PSoC4/Comp_1.c ****             Comp_1_TRIMB_REG++;
+ 609              		.loc 1 483 0
+ 610 0064 0E4A     		ldr	r2, .L53+8
+ 611 0066 1368     		ldr	r3, [r2]
+ 612 0068 0133     		add	r3, r3, #1
+ 613 006a 1360     		str	r3, [r2]
+ 484:.\Generated_Source\PSoC4/Comp_1.c ****             CyDelayUs(1u);
+ 614              		.loc 1 484 0
+ 615 006c 0120     		mov	r0, #1
+ 616 006e FFF7FEFF 		bl	CyDelayUs
+ 617              	.LVL46:
+ 485:.\Generated_Source\PSoC4/Comp_1.c ****             if(cmpOut != Comp_1_GetCompare())
+ 618              		.loc 1 485 0
+ 619 0072 FFF7FEFF 		bl	Comp_1_GetCompare
+ 620              	.LVL47:
+ 621 0076 A842     		cmp	r0, r5
+ 622 0078 02D1     		bne	.L49
+ 481:.\Generated_Source\PSoC4/Comp_1.c ****         {
+ 623              		.loc 1 481 0 discriminator 2
+ 624 007a 013C     		sub	r4, r4, #1
+ 625              	.LVL48:
+ 626              	.L51:
+ 481:.\Generated_Source\PSoC4/Comp_1.c ****         {
+ 627              		.loc 1 481 0 is_stmt 0 discriminator 1
+ 628 007c 002C     		cmp	r4, #0
+ 629 007e F1D1     		bne	.L52
+ 630              	.L49:
+ 486:.\Generated_Source\PSoC4/Comp_1.c ****             {
+ 487:.\Generated_Source\PSoC4/Comp_1.c ****                 break;
+ 488:.\Generated_Source\PSoC4/Comp_1.c ****             }
+ 489:.\Generated_Source\PSoC4/Comp_1.c ****         }
+ 490:.\Generated_Source\PSoC4/Comp_1.c ****     }
+ 491:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 492:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_DFT_REG &= ((uint32)~Comp_1_DFT_CAL_EN);
+ 631              		.loc 1 492 0 is_stmt 1
+ 632 0080 054A     		ldr	r2, .L53
+ 633 0082 1368     		ldr	r3, [r2]
+ 634 0084 0121     		mov	r1, #1
+ 635 0086 8B43     		bic	r3, r1
+ 636 0088 1360     		str	r3, [r2]
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 21
+
+
+ 493:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 494:.\Generated_Source\PSoC4/Comp_1.c ****     return (Comp_1_TRIMA_REG | ((uint32)Comp_1_TRIMB_REG << Comp_1_TRIMB_SHIFT));
+ 637              		.loc 1 494 0
+ 638 008a 044B     		ldr	r3, .L53+4
+ 639 008c 1B68     		ldr	r3, [r3]
+ 640 008e 044A     		ldr	r2, .L53+8
+ 641 0090 1068     		ldr	r0, [r2]
+ 642 0092 0002     		lsl	r0, r0, #8
+ 643 0094 1843     		orr	r0, r3
+ 495:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 644              		.loc 1 495 0
+ 645              		@ sp needed
+ 646              	.LVL49:
+ 647              	.LVL50:
+ 648 0096 38BD     		pop	{r3, r4, r5, pc}
+ 649              	.L54:
+ 650              		.align	2
+ 651              	.L53:
+ 652 0098 08002B40 		.word	1076559880
+ 653 009c 00FF2B40 		.word	1076625152
+ 654 00a0 04FF2B40 		.word	1076625156
+ 655 00a4 04002B40 		.word	1076559876
+ 656              		.cfi_endproc
+ 657              	.LFE15:
+ 658              		.size	Comp_1_ZeroCal, .-Comp_1_ZeroCal
+ 659              		.section	.text.Comp_1_LoadTrim,"ax",%progbits
+ 660              		.align	2
+ 661              		.global	Comp_1_LoadTrim
+ 662              		.code	16
+ 663              		.thumb_func
+ 664              		.type	Comp_1_LoadTrim, %function
+ 665              	Comp_1_LoadTrim:
+ 666              	.LFB16:
+ 496:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 497:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 498:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 499:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_LoadTrim
+ 500:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 501:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 502:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 503:.\Generated_Source\PSoC4/Comp_1.c **** *  This function writes a value into the comparator offset trim register.
+ 504:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 505:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 506:.\Generated_Source\PSoC4/Comp_1.c **** *  trimVal: Value to be stored in the comparator offset trim register. This
+ 507:.\Generated_Source\PSoC4/Comp_1.c **** *  value has the same format as the parameter returned by the
+ 508:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_ZeroCal() API routine.
+ 509:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 510:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 511:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 512:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 513:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 514:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_LoadTrim(uint32 trimVal)
+ 515:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 667              		.loc 1 515 0
+ 668              		.cfi_startproc
+ 669              	.LVL51:
+ 516:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_TRIMA_REG = (trimVal & Comp_1_TRIMA_MASK);
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 22
+
+
+ 670              		.loc 1 516 0
+ 671 0000 1F23     		mov	r3, #31
+ 672 0002 191C     		mov	r1, r3
+ 673 0004 0140     		and	r1, r0
+ 674 0006 034A     		ldr	r2, .L56
+ 675 0008 1160     		str	r1, [r2]
+ 517:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_TRIMB_REG = ((trimVal >> Comp_1_TRIMB_SHIFT) & Comp_1_TRIMB_MASK);
+ 676              		.loc 1 517 0
+ 677 000a 000A     		lsr	r0, r0, #8
+ 678              	.LVL52:
+ 679 000c 1840     		and	r0, r3
+ 680 000e 024B     		ldr	r3, .L56+4
+ 681 0010 1860     		str	r0, [r3]
+ 518:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 682              		.loc 1 518 0
+ 683              		@ sp needed
+ 684 0012 7047     		bx	lr
+ 685              	.L57:
+ 686              		.align	2
+ 687              	.L56:
+ 688 0014 00FF2B40 		.word	1076625152
+ 689 0018 04FF2B40 		.word	1076625156
+ 690              		.cfi_endproc
+ 691              	.LFE16:
+ 692              		.size	Comp_1_LoadTrim, .-Comp_1_LoadTrim
+ 693              		.section	.text.Comp_1_SetOutputMode,"ax",%progbits
+ 694              		.align	2
+ 695              		.global	Comp_1_SetOutputMode
+ 696              		.code	16
+ 697              		.thumb_func
+ 698              		.type	Comp_1_SetOutputMode, %function
+ 699              	Comp_1_SetOutputMode:
+ 700              	.LFB17:
+ 519:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 520:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 521:.\Generated_Source\PSoC4/Comp_1.c **** #if (Comp_1_CY_LPCOMP_V2)
+ 522:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 523:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 524:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_SetOutputMode
+ 525:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 526:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 527:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 528:.\Generated_Source\PSoC4/Comp_1.c **** *  Set comparator output mode. 
+ 529:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 530:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 531:.\Generated_Source\PSoC4/Comp_1.c **** *  uint32 mode: Comparator output mode value
+ 532:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_OUT_DIRECT - Direct output
+ 533:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_OUT_SYNC   - Synchronized output
+ 534:.\Generated_Source\PSoC4/Comp_1.c **** *  Comp_1_OUT_PULSE  - Pulse output
+ 535:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 536:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 537:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 538:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 539:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 540:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_SetOutputMode(uint32 mode)
+ 541:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 701              		.loc 1 541 0
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 23
+
+
+ 702              		.cfi_startproc
+ 703              	.LVL53:
+ 704 0000 10B5     		push	{r4, lr}
+ 705              		.cfi_def_cfa_offset 8
+ 706              		.cfi_offset 4, -8
+ 707              		.cfi_offset 14, -4
+ 708 0002 041C     		mov	r4, r0
+ 542:.\Generated_Source\PSoC4/Comp_1.c ****     uint32 config;
+ 543:.\Generated_Source\PSoC4/Comp_1.c ****     uint8 enableInterrupts;
+ 544:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 545:.\Generated_Source\PSoC4/Comp_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 709              		.loc 1 545 0
+ 710 0004 FFF7FEFF 		bl	CyEnterCriticalSection
+ 711              	.LVL54:
+ 546:.\Generated_Source\PSoC4/Comp_1.c ****     config = Comp_1_CONFIG_REG & ((uint32)~(Comp_1_CONFIG_DSI_BYPASS | \
+ 712              		.loc 1 546 0
+ 713 0008 0B4B     		ldr	r3, .L61
+ 714 000a 1A68     		ldr	r2, [r3]
+ 715 000c 0B4B     		ldr	r3, .L61+4
+ 716 000e 1A40     		and	r2, r3
+ 717 0010 111C     		mov	r1, r2
+ 718              	.LVL55:
+ 547:.\Generated_Source\PSoC4/Comp_1.c ****                                                      Comp_1_CONFIG_DSI_LEVEL));
+ 548:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_CONFIG_REG = config | Comp_1_GET_CONFIG_DSI_BYPASS(mode) | \
+ 719              		.loc 1 548 0
+ 720 0012 0223     		mov	r3, #2
+ 721 0014 2340     		and	r3, r4
+ 722 0016 01D0     		beq	.L59
+ 723 0018 8023     		mov	r3, #128
+ 724 001a 5B02     		lsl	r3, r3, #9
+ 725              	.L59:
+ 726              		.loc 1 548 0 is_stmt 0 discriminator 4
+ 727 001c 0B43     		orr	r3, r1
+ 728 001e 1A1C     		mov	r2, r3
+ 549:.\Generated_Source\PSoC4/Comp_1.c ****                                            Comp_1_GET_CONFIG_DSI_LEVEL(mode);
+ 729              		.loc 1 549 0 is_stmt 1 discriminator 4
+ 730 0020 0123     		mov	r3, #1
+ 731 0022 2340     		and	r3, r4
+ 732 0024 01D0     		beq	.L60
+ 733              		.loc 1 549 0 is_stmt 0
+ 734 0026 8023     		mov	r3, #128
+ 735 0028 9B02     		lsl	r3, r3, #10
+ 736              	.L60:
+ 548:.\Generated_Source\PSoC4/Comp_1.c ****                                            Comp_1_GET_CONFIG_DSI_LEVEL(mode);
+ 737              		.loc 1 548 0 is_stmt 1
+ 738 002a 1343     		orr	r3, r2
+ 739 002c 024A     		ldr	r2, .L61
+ 740 002e 1360     		str	r3, [r2]
+ 550:.\Generated_Source\PSoC4/Comp_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 741              		.loc 1 550 0
+ 742 0030 FFF7FEFF 		bl	CyExitCriticalSection
+ 743              	.LVL56:
+ 551:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 744              		.loc 1 551 0
+ 745              		@ sp needed
+ 746              	.LVL57:
+ 747 0034 10BD     		pop	{r4, pc}
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 24
+
+
+ 748              	.L62:
+ 749 0036 C046     		.align	2
+ 750              	.L61:
+ 751 0038 04002B40 		.word	1076559876
+ 752 003c FFFFFCFF 		.word	-196609
+ 753              		.cfi_endproc
+ 754              	.LFE17:
+ 755              		.size	Comp_1_SetOutputMode, .-Comp_1_SetOutputMode
+ 756              		.section	.text.Comp_1_SetInterruptMask,"ax",%progbits
+ 757              		.align	2
+ 758              		.global	Comp_1_SetInterruptMask
+ 759              		.code	16
+ 760              		.thumb_func
+ 761              		.type	Comp_1_SetInterruptMask, %function
+ 762              	Comp_1_SetInterruptMask:
+ 763              	.LFB18:
+ 552:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 553:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 554:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 555:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_SetInterruptMask
+ 556:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 557:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 558:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 559:.\Generated_Source\PSoC4/Comp_1.c **** *  Configures which bits of interrupt request register will trigger an interrupt 
+ 560:.\Generated_Source\PSoC4/Comp_1.c **** *  event.
+ 561:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 562:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 563:.\Generated_Source\PSoC4/Comp_1.c **** *  uint32 interruptMask: Mask of interrupts to set. Each component instance has
+ 564:.\Generated_Source\PSoC4/Comp_1.c **** *  a mask value: Comp_1_INTR_MASK.
+ 565:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 566:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 567:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 568:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 569:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 570:.\Generated_Source\PSoC4/Comp_1.c **** void Comp_1_SetInterruptMask(uint32 interruptMask)
+ 571:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 764              		.loc 1 571 0
+ 765              		.cfi_startproc
+ 766              	.LVL58:
+ 572:.\Generated_Source\PSoC4/Comp_1.c ****     #if(CY_IP_SRSSV2)
+ 573:.\Generated_Source\PSoC4/Comp_1.c ****         Comp_1_intrMaskRegState = interruptMask;
+ 767              		.loc 1 573 0
+ 768 0000 024B     		ldr	r3, .L64
+ 769 0002 1860     		str	r0, [r3]
+ 574:.\Generated_Source\PSoC4/Comp_1.c ****     #endif /* (CY_IP_SRSSV2) */
+ 575:.\Generated_Source\PSoC4/Comp_1.c ****     
+ 576:.\Generated_Source\PSoC4/Comp_1.c ****     Comp_1_INTR_MASK_REG = interruptMask;
+ 770              		.loc 1 576 0
+ 771 0004 024B     		ldr	r3, .L64+4
+ 772 0006 1860     		str	r0, [r3]
+ 577:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 773              		.loc 1 577 0
+ 774              		@ sp needed
+ 775 0008 7047     		bx	lr
+ 776              	.L65:
+ 777 000a C046     		.align	2
+ 778              	.L64:
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 25
+
+
+ 779 000c 00000000 		.word	.LANCHOR1
+ 780 0010 18002B40 		.word	1076559896
+ 781              		.cfi_endproc
+ 782              	.LFE18:
+ 783              		.size	Comp_1_SetInterruptMask, .-Comp_1_SetInterruptMask
+ 784              		.section	.text.Comp_1_GetInterruptMask,"ax",%progbits
+ 785              		.align	2
+ 786              		.global	Comp_1_GetInterruptMask
+ 787              		.code	16
+ 788              		.thumb_func
+ 789              		.type	Comp_1_GetInterruptMask, %function
+ 790              	Comp_1_GetInterruptMask:
+ 791              	.LFB19:
+ 578:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 579:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 580:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 581:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_GetInterruptMask
+ 582:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 583:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 584:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 585:.\Generated_Source\PSoC4/Comp_1.c **** *  Returns interrupt mask.
+ 586:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 587:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 588:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 589:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 590:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 591:.\Generated_Source\PSoC4/Comp_1.c **** *  uint32:  Mask of enabled interrupt source. Each component instance 
+ 592:.\Generated_Source\PSoC4/Comp_1.c **** *  has a mask value: Comp_1_INTR_MASK.
+ 593:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 594:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 595:.\Generated_Source\PSoC4/Comp_1.c **** uint32 Comp_1_GetInterruptMask(void)
+ 596:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 792              		.loc 1 596 0
+ 793              		.cfi_startproc
+ 597:.\Generated_Source\PSoC4/Comp_1.c ****     return (Comp_1_INTR_MASK_REG);
+ 794              		.loc 1 597 0
+ 795 0000 014B     		ldr	r3, .L67
+ 796 0002 1868     		ldr	r0, [r3]
+ 598:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 797              		.loc 1 598 0
+ 798              		@ sp needed
+ 799 0004 7047     		bx	lr
+ 800              	.L68:
+ 801 0006 C046     		.align	2
+ 802              	.L67:
+ 803 0008 18002B40 		.word	1076559896
+ 804              		.cfi_endproc
+ 805              	.LFE19:
+ 806              		.size	Comp_1_GetInterruptMask, .-Comp_1_GetInterruptMask
+ 807              		.section	.text.Comp_1_GetInterruptSourceMasked,"ax",%progbits
+ 808              		.align	2
+ 809              		.global	Comp_1_GetInterruptSourceMasked
+ 810              		.code	16
+ 811              		.thumb_func
+ 812              		.type	Comp_1_GetInterruptSourceMasked, %function
+ 813              	Comp_1_GetInterruptSourceMasked:
+ 814              	.LFB20:
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 26
+
+
+ 599:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 600:.\Generated_Source\PSoC4/Comp_1.c **** 
+ 601:.\Generated_Source\PSoC4/Comp_1.c **** /*******************************************************************************
+ 602:.\Generated_Source\PSoC4/Comp_1.c **** * Function Name: Comp_1_GetInterruptSourceMasked
+ 603:.\Generated_Source\PSoC4/Comp_1.c **** ********************************************************************************
+ 604:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 605:.\Generated_Source\PSoC4/Comp_1.c **** * Summary:
+ 606:.\Generated_Source\PSoC4/Comp_1.c **** *  Returns interrupt request register masked by interrupt mask. Returns the result 
+ 607:.\Generated_Source\PSoC4/Comp_1.c **** *  of bitwise AND operation between corresponding interrupt request and mask bits.
+ 608:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 609:.\Generated_Source\PSoC4/Comp_1.c **** * Parameters:
+ 610:.\Generated_Source\PSoC4/Comp_1.c **** *  None
+ 611:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 612:.\Generated_Source\PSoC4/Comp_1.c **** * Return:
+ 613:.\Generated_Source\PSoC4/Comp_1.c **** *  uint32: Status of enabled interrupt source. Each component instance 
+ 614:.\Generated_Source\PSoC4/Comp_1.c **** *  has a mask value: Comp_1_INTR_MASKED.
+ 615:.\Generated_Source\PSoC4/Comp_1.c **** *
+ 616:.\Generated_Source\PSoC4/Comp_1.c **** *******************************************************************************/
+ 617:.\Generated_Source\PSoC4/Comp_1.c **** uint32 Comp_1_GetInterruptSourceMasked(void)
+ 618:.\Generated_Source\PSoC4/Comp_1.c **** {
+ 815              		.loc 1 618 0
+ 816              		.cfi_startproc
+ 619:.\Generated_Source\PSoC4/Comp_1.c ****     return (Comp_1_INTR_MASKED_REG);
+ 817              		.loc 1 619 0
+ 818 0000 014B     		ldr	r3, .L70
+ 819 0002 1868     		ldr	r0, [r3]
+ 620:.\Generated_Source\PSoC4/Comp_1.c **** }
+ 820              		.loc 1 620 0
+ 821              		@ sp needed
+ 822 0004 7047     		bx	lr
+ 823              	.L71:
+ 824 0006 C046     		.align	2
+ 825              	.L70:
+ 826 0008 1C002B40 		.word	1076559900
+ 827              		.cfi_endproc
+ 828              	.LFE20:
+ 829              		.size	Comp_1_GetInterruptSourceMasked, .-Comp_1_GetInterruptSourceMasked
+ 830              		.global	Comp_1_initVar
+ 831              		.section	.noinit,"aw",%progbits
+ 832              		.align	2
+ 833              		.set	.LANCHOR1,. + 0
+ 834              		.type	Comp_1_intrMaskRegState, %object
+ 835              		.size	Comp_1_intrMaskRegState, 4
+ 836              	Comp_1_intrMaskRegState:
+ 837 0000 00000000 		.space	4
+ 838              		.bss
+ 839              		.align	2
+ 840              		.set	.LANCHOR0,. + 0
+ 841              		.type	Comp_1_internalIntr, %object
+ 842              		.size	Comp_1_internalIntr, 4
+ 843              	Comp_1_internalIntr:
+ 844 0000 00000000 		.space	4
+ 845              		.type	Comp_1_initVar, %object
+ 846              		.size	Comp_1_initVar, 1
+ 847              	Comp_1_initVar:
+ 848 0004 00       		.space	1
+ 849 0005 000000   		.text
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 27
+
+
+ 850              	.Letext0:
+ 851              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 852              		.file 3 ".\\Generated_Source\\PSoC4\\CyLib.h"
+ 853              		.file 4 ".\\Generated_Source\\PSoC4\\cyPm.h"
+ 854              		.section	.debug_info,"",%progbits
+ 855              	.Ldebug_info0:
+ 856 0000 3A050000 		.4byte	0x53a
+ 857 0004 0400     		.2byte	0x4
+ 858 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 859 000a 04       		.byte	0x4
+ 860 000b 01       		.uleb128 0x1
+ 861 000c 45020000 		.4byte	.LASF47
+ 862 0010 01       		.byte	0x1
+ 863 0011 37030000 		.4byte	.LASF48
+ 864 0015 D3020000 		.4byte	.LASF49
+ 865 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 866 001d 00000000 		.4byte	0
+ 867 0021 00000000 		.4byte	.Ldebug_line0
+ 868 0025 02       		.uleb128 0x2
+ 869 0026 01       		.byte	0x1
+ 870 0027 06       		.byte	0x6
+ 871 0028 7E030000 		.4byte	.LASF0
+ 872 002c 02       		.uleb128 0x2
+ 873 002d 01       		.byte	0x1
+ 874 002e 08       		.byte	0x8
+ 875 002f C1000000 		.4byte	.LASF1
+ 876 0033 02       		.uleb128 0x2
+ 877 0034 02       		.byte	0x2
+ 878 0035 05       		.byte	0x5
+ 879 0036 10030000 		.4byte	.LASF2
+ 880 003a 02       		.uleb128 0x2
+ 881 003b 02       		.byte	0x2
+ 882 003c 07       		.byte	0x7
+ 883 003d 48000000 		.4byte	.LASF3
+ 884 0041 02       		.uleb128 0x2
+ 885 0042 04       		.byte	0x4
+ 886 0043 05       		.byte	0x5
+ 887 0044 67030000 		.4byte	.LASF4
+ 888 0048 02       		.uleb128 0x2
+ 889 0049 04       		.byte	0x4
+ 890 004a 07       		.byte	0x7
+ 891 004b DE000000 		.4byte	.LASF5
+ 892 004f 02       		.uleb128 0x2
+ 893 0050 08       		.byte	0x8
+ 894 0051 05       		.byte	0x5
+ 895 0052 13020000 		.4byte	.LASF6
+ 896 0056 02       		.uleb128 0x2
+ 897 0057 08       		.byte	0x8
+ 898 0058 07       		.byte	0x7
+ 899 0059 85000000 		.4byte	.LASF7
+ 900 005d 03       		.uleb128 0x3
+ 901 005e 04       		.byte	0x4
+ 902 005f 05       		.byte	0x5
+ 903 0060 696E7400 		.ascii	"int\000"
+ 904 0064 02       		.uleb128 0x2
+ 905 0065 04       		.byte	0x4
+ 906 0066 07       		.byte	0x7
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 28
+
+
+ 907 0067 60010000 		.4byte	.LASF8
+ 908 006b 04       		.uleb128 0x4
+ 909 006c F0000000 		.4byte	.LASF9
+ 910 0070 02       		.byte	0x2
+ 911 0071 9801     		.2byte	0x198
+ 912 0073 2C000000 		.4byte	0x2c
+ 913 0077 04       		.uleb128 0x4
+ 914 0078 3B010000 		.4byte	.LASF10
+ 915 007c 02       		.byte	0x2
+ 916 007d 9901     		.2byte	0x199
+ 917 007f 3A000000 		.4byte	0x3a
+ 918 0083 04       		.uleb128 0x4
+ 919 0084 42010000 		.4byte	.LASF11
+ 920 0088 02       		.byte	0x2
+ 921 0089 9A01     		.2byte	0x19a
+ 922 008b 48000000 		.4byte	0x48
+ 923 008f 02       		.uleb128 0x2
+ 924 0090 04       		.byte	0x4
+ 925 0091 04       		.byte	0x4
+ 926 0092 2A000000 		.4byte	.LASF12
+ 927 0096 02       		.uleb128 0x2
+ 928 0097 08       		.byte	0x8
+ 929 0098 04       		.byte	0x4
+ 930 0099 1C010000 		.4byte	.LASF13
+ 931 009d 02       		.uleb128 0x2
+ 932 009e 01       		.byte	0x1
+ 933 009f 08       		.byte	0x8
+ 934 00a0 40020000 		.4byte	.LASF14
+ 935 00a4 04       		.uleb128 0x4
+ 936 00a5 18000000 		.4byte	.LASF15
+ 937 00a9 02       		.byte	0x2
+ 938 00aa 4402     		.2byte	0x244
+ 939 00ac B0000000 		.4byte	0xb0
+ 940 00b0 05       		.uleb128 0x5
+ 941 00b1 83000000 		.4byte	0x83
+ 942 00b5 02       		.uleb128 0x2
+ 943 00b6 04       		.byte	0x4
+ 944 00b7 07       		.byte	0x7
+ 945 00b8 F9010000 		.4byte	.LASF16
+ 946 00bc 06       		.uleb128 0x6
+ 947 00bd 1E000000 		.4byte	.LASF17
+ 948 00c1 01       		.byte	0x1
+ 949 00c2 56       		.byte	0x56
+ 950 00c3 00000000 		.4byte	.LFB4
+ 951 00c7 58000000 		.4byte	.LFE4-.LFB4
+ 952 00cb 01       		.uleb128 0x1
+ 953 00cc 9C       		.byte	0x9c
+ 954 00cd 03010000 		.4byte	0x103
+ 955 00d1 07       		.uleb128 0x7
+ 956 00d2 9C000000 		.4byte	.LASF19
+ 957 00d6 01       		.byte	0x1
+ 958 00d7 58       		.byte	0x58
+ 959 00d8 6B000000 		.4byte	0x6b
+ 960 00dc 00000000 		.4byte	.LLST0
+ 961 00e0 08       		.uleb128 0x8
+ 962 00e1 06000000 		.4byte	.LVL0
+ 963 00e5 09050000 		.4byte	0x509
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 29
+
+
+ 964 00e9 08       		.uleb128 0x8
+ 965 00ea 1C000000 		.4byte	.LVL2
+ 966 00ee 14050000 		.4byte	0x514
+ 967 00f2 09       		.uleb128 0x9
+ 968 00f3 40000000 		.4byte	.LVL3
+ 969 00f7 1F050000 		.4byte	0x51f
+ 970 00fb 0A       		.uleb128 0xa
+ 971 00fc 01       		.uleb128 0x1
+ 972 00fd 50       		.byte	0x50
+ 973 00fe 02       		.uleb128 0x2
+ 974 00ff 74       		.byte	0x74
+ 975 0100 00       		.sleb128 0
+ 976 0101 00       		.byte	0
+ 977 0102 00       		.byte	0
+ 978 0103 06       		.uleb128 0x6
+ 979 0104 70030000 		.4byte	.LASF18
+ 980 0108 01       		.byte	0x1
+ 981 0109 86       		.byte	0x86
+ 982 010a 00000000 		.4byte	.LFB5
+ 983 010e 28000000 		.4byte	.LFE5-.LFB5
+ 984 0112 01       		.uleb128 0x1
+ 985 0113 9C       		.byte	0x9c
+ 986 0114 3A010000 		.4byte	0x13a
+ 987 0118 07       		.uleb128 0x7
+ 988 0119 9C000000 		.4byte	.LASF19
+ 989 011d 01       		.byte	0x1
+ 990 011e 88       		.byte	0x88
+ 991 011f 6B000000 		.4byte	0x6b
+ 992 0123 13000000 		.4byte	.LLST1
+ 993 0127 08       		.uleb128 0x8
+ 994 0128 06000000 		.4byte	.LVL5
+ 995 012c 09050000 		.4byte	0x509
+ 996 0130 08       		.uleb128 0x8
+ 997 0131 1E000000 		.4byte	.LVL6
+ 998 0135 1F050000 		.4byte	0x51f
+ 999 0139 00       		.byte	0
+ 1000 013a 06       		.uleb128 0x6
+ 1001 013b B9030000 		.4byte	.LASF20
+ 1002 013f 01       		.byte	0x1
+ 1003 0140 3A       		.byte	0x3a
+ 1004 0141 00000000 		.4byte	.LFB3
+ 1005 0145 20000000 		.4byte	.LFE3-.LFB3
+ 1006 0149 01       		.uleb128 0x1
+ 1007 014a 9C       		.byte	0x9c
+ 1008 014b 62010000 		.4byte	0x162
+ 1009 014f 08       		.uleb128 0x8
+ 1010 0150 0E000000 		.4byte	.LVL7
+ 1011 0154 BC000000 		.4byte	0xbc
+ 1012 0158 08       		.uleb128 0x8
+ 1013 0159 18000000 		.4byte	.LVL8
+ 1014 015d 03010000 		.4byte	0x103
+ 1015 0161 00       		.byte	0
+ 1016 0162 06       		.uleb128 0x6
+ 1017 0163 97010000 		.4byte	.LASF21
+ 1018 0167 01       		.byte	0x1
+ 1019 0168 A9       		.byte	0xa9
+ 1020 0169 00000000 		.4byte	.LFB6
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 30
+
+
+ 1021 016d 1C000000 		.4byte	.LFE6-.LFB6
+ 1022 0171 01       		.uleb128 0x1
+ 1023 0172 9C       		.byte	0x9c
+ 1024 0173 99010000 		.4byte	0x199
+ 1025 0177 07       		.uleb128 0x7
+ 1026 0178 9C000000 		.4byte	.LASF19
+ 1027 017c 01       		.byte	0x1
+ 1028 017d AB       		.byte	0xab
+ 1029 017e 6B000000 		.4byte	0x6b
+ 1030 0182 26000000 		.4byte	.LLST2
+ 1031 0186 08       		.uleb128 0x8
+ 1032 0187 06000000 		.4byte	.LVL9
+ 1033 018b 09050000 		.4byte	0x509
+ 1034 018f 08       		.uleb128 0x8
+ 1035 0190 14000000 		.4byte	.LVL10
+ 1036 0194 1F050000 		.4byte	0x51f
+ 1037 0198 00       		.byte	0
+ 1038 0199 06       		.uleb128 0x6
+ 1039 019a 08000000 		.4byte	.LASF22
+ 1040 019e 01       		.byte	0x1
+ 1041 019f D0       		.byte	0xd0
+ 1042 01a0 00000000 		.4byte	.LFB7
+ 1043 01a4 20000000 		.4byte	.LFE7-.LFB7
+ 1044 01a8 01       		.uleb128 0x1
+ 1045 01a9 9C       		.byte	0x9c
+ 1046 01aa EE010000 		.4byte	0x1ee
+ 1047 01ae 0B       		.uleb128 0xb
+ 1048 01af F3010000 		.4byte	.LASF25
+ 1049 01b3 01       		.byte	0x1
+ 1050 01b4 D0       		.byte	0xd0
+ 1051 01b5 83000000 		.4byte	0x83
+ 1052 01b9 39000000 		.4byte	.LLST3
+ 1053 01bd 07       		.uleb128 0x7
+ 1054 01be 15010000 		.4byte	.LASF23
+ 1055 01c2 01       		.byte	0x1
+ 1056 01c3 D2       		.byte	0xd2
+ 1057 01c4 83000000 		.4byte	0x83
+ 1058 01c8 65000000 		.4byte	.LLST4
+ 1059 01cc 07       		.uleb128 0x7
+ 1060 01cd 9C000000 		.4byte	.LASF19
+ 1061 01d1 01       		.byte	0x1
+ 1062 01d2 D3       		.byte	0xd3
+ 1063 01d3 6B000000 		.4byte	0x6b
+ 1064 01d7 78000000 		.4byte	.LLST5
+ 1065 01db 08       		.uleb128 0x8
+ 1066 01dc 08000000 		.4byte	.LVL12
+ 1067 01e0 09050000 		.4byte	0x509
+ 1068 01e4 08       		.uleb128 0x8
+ 1069 01e5 1A000000 		.4byte	.LVL14
+ 1070 01e9 1F050000 		.4byte	0x51f
+ 1071 01ed 00       		.byte	0
+ 1072 01ee 06       		.uleb128 0x6
+ 1073 01ef 30000000 		.4byte	.LASF24
+ 1074 01f3 01       		.byte	0x1
+ 1075 01f4 EF       		.byte	0xef
+ 1076 01f5 00000000 		.4byte	.LFB8
+ 1077 01f9 2C000000 		.4byte	.LFE8-.LFB8
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 31
+
+
+ 1078 01fd 01       		.uleb128 0x1
+ 1079 01fe 9C       		.byte	0x9c
+ 1080 01ff 43020000 		.4byte	0x243
+ 1081 0203 0B       		.uleb128 0xb
+ 1082 0204 BD010000 		.4byte	.LASF26
+ 1083 0208 01       		.byte	0x1
+ 1084 0209 EF       		.byte	0xef
+ 1085 020a 83000000 		.4byte	0x83
+ 1086 020e 8B000000 		.4byte	.LLST6
+ 1087 0212 07       		.uleb128 0x7
+ 1088 0213 15010000 		.4byte	.LASF23
+ 1089 0217 01       		.byte	0x1
+ 1090 0218 F1       		.byte	0xf1
+ 1091 0219 83000000 		.4byte	0x83
+ 1092 021d AC000000 		.4byte	.LLST7
+ 1093 0221 07       		.uleb128 0x7
+ 1094 0222 9C000000 		.4byte	.LASF19
+ 1095 0226 01       		.byte	0x1
+ 1096 0227 F2       		.byte	0xf2
+ 1097 0228 6B000000 		.4byte	0x6b
+ 1098 022c BF000000 		.4byte	.LLST8
+ 1099 0230 08       		.uleb128 0x8
+ 1100 0231 10000000 		.4byte	.LVL18
+ 1101 0235 09050000 		.4byte	0x509
+ 1102 0239 08       		.uleb128 0x8
+ 1103 023a 20000000 		.4byte	.LVL21
+ 1104 023e 1F050000 		.4byte	0x51f
+ 1105 0242 00       		.byte	0
+ 1106 0243 0C       		.uleb128 0xc
+ 1107 0244 A3010000 		.4byte	.LASF34
+ 1108 0248 01       		.byte	0x1
+ 1109 0249 0F01     		.2byte	0x10f
+ 1110 024b 83000000 		.4byte	0x83
+ 1111 024f 00000000 		.4byte	.LFB9
+ 1112 0253 0C000000 		.4byte	.LFE9-.LFB9
+ 1113 0257 01       		.uleb128 0x1
+ 1114 0258 9C       		.byte	0x9c
+ 1115 0259 0D       		.uleb128 0xd
+ 1116 025a D2010000 		.4byte	.LASF27
+ 1117 025e 01       		.byte	0x1
+ 1118 025f 2701     		.2byte	0x127
+ 1119 0261 00000000 		.4byte	.LFB10
+ 1120 0265 0C000000 		.4byte	.LFE10-.LFB10
+ 1121 0269 01       		.uleb128 0x1
+ 1122 026a 9C       		.byte	0x9c
+ 1123 026b 7E020000 		.4byte	0x27e
+ 1124 026f 0E       		.uleb128 0xe
+ 1125 0270 59030000 		.4byte	.LASF28
+ 1126 0274 01       		.byte	0x1
+ 1127 0275 2701     		.2byte	0x127
+ 1128 0277 83000000 		.4byte	0x83
+ 1129 027b 01       		.uleb128 0x1
+ 1130 027c 50       		.byte	0x50
+ 1131 027d 00       		.byte	0
+ 1132 027e 0D       		.uleb128 0xd
+ 1133 027f AD000000 		.4byte	.LASF29
+ 1134 0283 01       		.byte	0x1
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 32
+
+
+ 1135 0284 3F01     		.2byte	0x13f
+ 1136 0286 00000000 		.4byte	.LFB11
+ 1137 028a 1C000000 		.4byte	.LFE11-.LFB11
+ 1138 028e 01       		.uleb128 0x1
+ 1139 028f 9C       		.byte	0x9c
+ 1140 0290 C7020000 		.4byte	0x2c7
+ 1141 0294 0F       		.uleb128 0xf
+ 1142 0295 59030000 		.4byte	.LASF28
+ 1143 0299 01       		.byte	0x1
+ 1144 029a 3F01     		.2byte	0x13f
+ 1145 029c 83000000 		.4byte	0x83
+ 1146 02a0 D2000000 		.4byte	.LLST9
+ 1147 02a4 10       		.uleb128 0x10
+ 1148 02a5 9C000000 		.4byte	.LASF19
+ 1149 02a9 01       		.byte	0x1
+ 1150 02aa 4101     		.2byte	0x141
+ 1151 02ac 6B000000 		.4byte	0x6b
+ 1152 02b0 FE000000 		.4byte	.LLST10
+ 1153 02b4 08       		.uleb128 0x8
+ 1154 02b5 08000000 		.4byte	.LVL24
+ 1155 02b9 09050000 		.4byte	0x509
+ 1156 02bd 08       		.uleb128 0x8
+ 1157 02be 14000000 		.4byte	.LVL26
+ 1158 02c2 1F050000 		.4byte	0x51f
+ 1159 02c6 00       		.byte	0
+ 1160 02c7 0D       		.uleb128 0xd
+ 1161 02c8 21020000 		.4byte	.LASF30
+ 1162 02cc 01       		.byte	0x1
+ 1163 02cd 5901     		.2byte	0x159
+ 1164 02cf 00000000 		.4byte	.LFB12
+ 1165 02d3 2C000000 		.4byte	.LFE12-.LFB12
+ 1166 02d7 01       		.uleb128 0x1
+ 1167 02d8 9C       		.byte	0x9c
+ 1168 02d9 10030000 		.4byte	0x310
+ 1169 02dd 0F       		.uleb128 0xf
+ 1170 02de E8010000 		.4byte	.LASF31
+ 1171 02e2 01       		.byte	0x1
+ 1172 02e3 5901     		.2byte	0x159
+ 1173 02e5 83000000 		.4byte	0x83
+ 1174 02e9 11010000 		.4byte	.LLST11
+ 1175 02ed 10       		.uleb128 0x10
+ 1176 02ee 9C000000 		.4byte	.LASF19
+ 1177 02f2 01       		.byte	0x1
+ 1178 02f3 5B01     		.2byte	0x15b
+ 1179 02f5 6B000000 		.4byte	0x6b
+ 1180 02f9 3D010000 		.4byte	.LLST12
+ 1181 02fd 08       		.uleb128 0x8
+ 1182 02fe 08000000 		.4byte	.LVL28
+ 1183 0302 09050000 		.4byte	0x509
+ 1184 0306 08       		.uleb128 0x8
+ 1185 0307 26000000 		.4byte	.LVL29
+ 1186 030b 1F050000 		.4byte	0x51f
+ 1187 030f 00       		.byte	0
+ 1188 0310 0D       		.uleb128 0xd
+ 1189 0311 02020000 		.4byte	.LASF32
+ 1190 0315 01       		.byte	0x1
+ 1191 0316 7C01     		.2byte	0x17c
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 33
+
+
+ 1192 0318 00000000 		.4byte	.LFB13
+ 1193 031c 2C000000 		.4byte	.LFE13-.LFB13
+ 1194 0320 01       		.uleb128 0x1
+ 1195 0321 9C       		.byte	0x9c
+ 1196 0322 59030000 		.4byte	0x359
+ 1197 0326 0F       		.uleb128 0xf
+ 1198 0327 0E010000 		.4byte	.LASF33
+ 1199 032b 01       		.byte	0x1
+ 1200 032c 7C01     		.2byte	0x17c
+ 1201 032e 83000000 		.4byte	0x83
+ 1202 0332 50010000 		.4byte	.LLST13
+ 1203 0336 10       		.uleb128 0x10
+ 1204 0337 9C000000 		.4byte	.LASF19
+ 1205 033b 01       		.byte	0x1
+ 1206 033c 7E01     		.2byte	0x17e
+ 1207 033e 6B000000 		.4byte	0x6b
+ 1208 0342 7C010000 		.4byte	.LLST14
+ 1209 0346 08       		.uleb128 0x8
+ 1210 0347 08000000 		.4byte	.LVL32
+ 1211 034b 09050000 		.4byte	0x509
+ 1212 034f 08       		.uleb128 0x8
+ 1213 0350 26000000 		.4byte	.LVL33
+ 1214 0354 1F050000 		.4byte	0x51f
+ 1215 0358 00       		.byte	0
+ 1216 0359 0C       		.uleb128 0xc
+ 1217 035a 73000000 		.4byte	.LASF35
+ 1218 035e 01       		.byte	0x1
+ 1219 035f A101     		.2byte	0x1a1
+ 1220 0361 83000000 		.4byte	0x83
+ 1221 0365 00000000 		.4byte	.LFB14
+ 1222 0369 10000000 		.4byte	.LFE14-.LFB14
+ 1223 036d 01       		.uleb128 0x1
+ 1224 036e 9C       		.byte	0x9c
+ 1225 036f 11       		.uleb128 0x11
+ 1226 0370 CF000000 		.4byte	.LASF50
+ 1227 0374 01       		.byte	0x1
+ 1228 0375 BB01     		.2byte	0x1bb
+ 1229 0377 83000000 		.4byte	0x83
+ 1230 037b 00000000 		.4byte	.LFB15
+ 1231 037f A8000000 		.4byte	.LFE15-.LFB15
+ 1232 0383 01       		.uleb128 0x1
+ 1233 0384 9C       		.byte	0x9c
+ 1234 0385 05040000 		.4byte	0x405
+ 1235 0389 10       		.uleb128 0x10
+ 1236 038a 30030000 		.4byte	.LASF36
+ 1237 038e 01       		.byte	0x1
+ 1238 038f BD01     		.2byte	0x1bd
+ 1239 0391 83000000 		.4byte	0x83
+ 1240 0395 8F010000 		.4byte	.LLST15
+ 1241 0399 12       		.uleb128 0x12
+ 1242 039a 6900     		.ascii	"i\000"
+ 1243 039c 01       		.byte	0x1
+ 1244 039d BE01     		.2byte	0x1be
+ 1245 039f 83000000 		.4byte	0x83
+ 1246 03a3 C3010000 		.4byte	.LLST16
+ 1247 03a7 13       		.uleb128 0x13
+ 1248 03a8 1C000000 		.4byte	.LVL35
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 34
+
+
+ 1249 03ac 30050000 		.4byte	0x530
+ 1250 03b0 BA030000 		.4byte	0x3ba
+ 1251 03b4 0A       		.uleb128 0xa
+ 1252 03b5 01       		.uleb128 0x1
+ 1253 03b6 50       		.byte	0x50
+ 1254 03b7 01       		.uleb128 0x1
+ 1255 03b8 31       		.byte	0x31
+ 1256 03b9 00       		.byte	0
+ 1257 03ba 08       		.uleb128 0x8
+ 1258 03bb 20000000 		.4byte	.LVL36
+ 1259 03bf 59030000 		.4byte	0x359
+ 1260 03c3 13       		.uleb128 0x13
+ 1261 03c4 3C000000 		.4byte	.LVL39
+ 1262 03c8 30050000 		.4byte	0x530
+ 1263 03cc D6030000 		.4byte	0x3d6
+ 1264 03d0 0A       		.uleb128 0xa
+ 1265 03d1 01       		.uleb128 0x1
+ 1266 03d2 50       		.byte	0x50
+ 1267 03d3 01       		.uleb128 0x1
+ 1268 03d4 31       		.byte	0x31
+ 1269 03d5 00       		.byte	0
+ 1270 03d6 08       		.uleb128 0x8
+ 1271 03d7 40000000 		.4byte	.LVL40
+ 1272 03db 59030000 		.4byte	0x359
+ 1273 03df 08       		.uleb128 0x8
+ 1274 03e0 56000000 		.4byte	.LVL42
+ 1275 03e4 59030000 		.4byte	0x359
+ 1276 03e8 13       		.uleb128 0x13
+ 1277 03e9 72000000 		.4byte	.LVL46
+ 1278 03ed 30050000 		.4byte	0x530
+ 1279 03f1 FB030000 		.4byte	0x3fb
+ 1280 03f5 0A       		.uleb128 0xa
+ 1281 03f6 01       		.uleb128 0x1
+ 1282 03f7 50       		.byte	0x50
+ 1283 03f8 01       		.uleb128 0x1
+ 1284 03f9 31       		.byte	0x31
+ 1285 03fa 00       		.byte	0
+ 1286 03fb 08       		.uleb128 0x8
+ 1287 03fc 76000000 		.4byte	.LVL47
+ 1288 0400 59030000 		.4byte	0x359
+ 1289 0404 00       		.byte	0
+ 1290 0405 0D       		.uleb128 0xd
+ 1291 0406 C2010000 		.4byte	.LASF37
+ 1292 040a 01       		.byte	0x1
+ 1293 040b 0202     		.2byte	0x202
+ 1294 040d 00000000 		.4byte	.LFB16
+ 1295 0411 1C000000 		.4byte	.LFE16-.LFB16
+ 1296 0415 01       		.uleb128 0x1
+ 1297 0416 9C       		.byte	0x9c
+ 1298 0417 2C040000 		.4byte	0x42c
+ 1299 041b 0F       		.uleb128 0xf
+ 1300 041c 00000000 		.4byte	.LASF38
+ 1301 0420 01       		.byte	0x1
+ 1302 0421 0202     		.2byte	0x202
+ 1303 0423 83000000 		.4byte	0x83
+ 1304 0427 E1010000 		.4byte	.LLST17
+ 1305 042b 00       		.byte	0
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 35
+
+
+ 1306 042c 0D       		.uleb128 0xd
+ 1307 042d C6030000 		.4byte	.LASF39
+ 1308 0431 01       		.byte	0x1
+ 1309 0432 1C02     		.2byte	0x21c
+ 1310 0434 00000000 		.4byte	.LFB17
+ 1311 0438 40000000 		.4byte	.LFE17-.LFB17
+ 1312 043c 01       		.uleb128 0x1
+ 1313 043d 9C       		.byte	0x9c
+ 1314 043e 85040000 		.4byte	0x485
+ 1315 0442 0F       		.uleb128 0xf
+ 1316 0443 BD010000 		.4byte	.LASF26
+ 1317 0447 01       		.byte	0x1
+ 1318 0448 1C02     		.2byte	0x21c
+ 1319 044a 83000000 		.4byte	0x83
+ 1320 044e 02020000 		.4byte	.LLST18
+ 1321 0452 10       		.uleb128 0x10
+ 1322 0453 15010000 		.4byte	.LASF23
+ 1323 0457 01       		.byte	0x1
+ 1324 0458 1E02     		.2byte	0x21e
+ 1325 045a 83000000 		.4byte	0x83
+ 1326 045e 2E020000 		.4byte	.LLST19
+ 1327 0462 10       		.uleb128 0x10
+ 1328 0463 9C000000 		.4byte	.LASF19
+ 1329 0467 01       		.byte	0x1
+ 1330 0468 1F02     		.2byte	0x21f
+ 1331 046a 6B000000 		.4byte	0x6b
+ 1332 046e 41020000 		.4byte	.LLST20
+ 1333 0472 08       		.uleb128 0x8
+ 1334 0473 08000000 		.4byte	.LVL54
+ 1335 0477 09050000 		.4byte	0x509
+ 1336 047b 08       		.uleb128 0x8
+ 1337 047c 34000000 		.4byte	.LVL56
+ 1338 0480 1F050000 		.4byte	0x51f
+ 1339 0484 00       		.byte	0
+ 1340 0485 0D       		.uleb128 0xd
+ 1341 0486 5B000000 		.4byte	.LASF40
+ 1342 048a 01       		.byte	0x1
+ 1343 048b 3A02     		.2byte	0x23a
+ 1344 048d 00000000 		.4byte	.LFB18
+ 1345 0491 14000000 		.4byte	.LFE18-.LFB18
+ 1346 0495 01       		.uleb128 0x1
+ 1347 0496 9C       		.byte	0x9c
+ 1348 0497 AA040000 		.4byte	0x4aa
+ 1349 049b 0E       		.uleb128 0xe
+ 1350 049c 59030000 		.4byte	.LASF28
+ 1351 04a0 01       		.byte	0x1
+ 1352 04a1 3A02     		.2byte	0x23a
+ 1353 04a3 83000000 		.4byte	0x83
+ 1354 04a7 01       		.uleb128 0x1
+ 1355 04a8 50       		.byte	0x50
+ 1356 04a9 00       		.byte	0
+ 1357 04aa 0C       		.uleb128 0xc
+ 1358 04ab 23010000 		.4byte	.LASF41
+ 1359 04af 01       		.byte	0x1
+ 1360 04b0 5302     		.2byte	0x253
+ 1361 04b2 83000000 		.4byte	0x83
+ 1362 04b6 00000000 		.4byte	.LFB19
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 36
+
+
+ 1363 04ba 0C000000 		.4byte	.LFE19-.LFB19
+ 1364 04be 01       		.uleb128 0x1
+ 1365 04bf 9C       		.byte	0x9c
+ 1366 04c0 0C       		.uleb128 0xc
+ 1367 04c1 99030000 		.4byte	.LASF42
+ 1368 04c5 01       		.byte	0x1
+ 1369 04c6 6902     		.2byte	0x269
+ 1370 04c8 83000000 		.4byte	0x83
+ 1371 04cc 00000000 		.4byte	.LFB20
+ 1372 04d0 0C000000 		.4byte	.LFE20-.LFB20
+ 1373 04d4 01       		.uleb128 0x1
+ 1374 04d5 9C       		.byte	0x9c
+ 1375 04d6 14       		.uleb128 0x14
+ 1376 04d7 6D010000 		.4byte	.LASF43
+ 1377 04db 01       		.byte	0x1
+ 1378 04dc 18       		.byte	0x18
+ 1379 04dd 83000000 		.4byte	0x83
+ 1380 04e1 05       		.uleb128 0x5
+ 1381 04e2 03       		.byte	0x3
+ 1382 04e3 00000000 		.4byte	Comp_1_internalIntr
+ 1383 04e7 14       		.uleb128 0x14
+ 1384 04e8 F6000000 		.4byte	.LASF44
+ 1385 04ec 01       		.byte	0x1
+ 1386 04ed 1F       		.byte	0x1f
+ 1387 04ee 83000000 		.4byte	0x83
+ 1388 04f2 05       		.uleb128 0x5
+ 1389 04f3 03       		.byte	0x3
+ 1390 04f4 00000000 		.4byte	Comp_1_intrMaskRegState
+ 1391 04f8 15       		.uleb128 0x15
+ 1392 04f9 8A030000 		.4byte	.LASF51
+ 1393 04fd 01       		.byte	0x1
+ 1394 04fe 17       		.byte	0x17
+ 1395 04ff 6B000000 		.4byte	0x6b
+ 1396 0503 05       		.uleb128 0x5
+ 1397 0504 03       		.byte	0x3
+ 1398 0505 00000000 		.4byte	Comp_1_initVar
+ 1399 0509 16       		.uleb128 0x16
+ 1400 050a 49010000 		.4byte	.LASF45
+ 1401 050e 03       		.byte	0x3
+ 1402 050f E3       		.byte	0xe3
+ 1403 0510 6B000000 		.4byte	0x6b
+ 1404 0514 16       		.uleb128 0x16
+ 1405 0515 1A030000 		.4byte	.LASF46
+ 1406 0519 04       		.byte	0x4
+ 1407 051a 5D       		.byte	0x5d
+ 1408 051b 83000000 		.4byte	0x83
+ 1409 051f 17       		.uleb128 0x17
+ 1410 0520 81010000 		.4byte	.LASF52
+ 1411 0524 03       		.byte	0x3
+ 1412 0525 E4       		.byte	0xe4
+ 1413 0526 30050000 		.4byte	0x530
+ 1414 052a 18       		.uleb128 0x18
+ 1415 052b 6B000000 		.4byte	0x6b
+ 1416 052f 00       		.byte	0
+ 1417 0530 19       		.uleb128 0x19
+ 1418 0531 36020000 		.4byte	.LASF53
+ 1419 0535 03       		.byte	0x3
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 37
+
+
+ 1420 0536 D8       		.byte	0xd8
+ 1421 0537 18       		.uleb128 0x18
+ 1422 0538 77000000 		.4byte	0x77
+ 1423 053c 00       		.byte	0
+ 1424 053d 00       		.byte	0
+ 1425              		.section	.debug_abbrev,"",%progbits
+ 1426              	.Ldebug_abbrev0:
+ 1427 0000 01       		.uleb128 0x1
+ 1428 0001 11       		.uleb128 0x11
+ 1429 0002 01       		.byte	0x1
+ 1430 0003 25       		.uleb128 0x25
+ 1431 0004 0E       		.uleb128 0xe
+ 1432 0005 13       		.uleb128 0x13
+ 1433 0006 0B       		.uleb128 0xb
+ 1434 0007 03       		.uleb128 0x3
+ 1435 0008 0E       		.uleb128 0xe
+ 1436 0009 1B       		.uleb128 0x1b
+ 1437 000a 0E       		.uleb128 0xe
+ 1438 000b 55       		.uleb128 0x55
+ 1439 000c 17       		.uleb128 0x17
+ 1440 000d 11       		.uleb128 0x11
+ 1441 000e 01       		.uleb128 0x1
+ 1442 000f 10       		.uleb128 0x10
+ 1443 0010 17       		.uleb128 0x17
+ 1444 0011 00       		.byte	0
+ 1445 0012 00       		.byte	0
+ 1446 0013 02       		.uleb128 0x2
+ 1447 0014 24       		.uleb128 0x24
+ 1448 0015 00       		.byte	0
+ 1449 0016 0B       		.uleb128 0xb
+ 1450 0017 0B       		.uleb128 0xb
+ 1451 0018 3E       		.uleb128 0x3e
+ 1452 0019 0B       		.uleb128 0xb
+ 1453 001a 03       		.uleb128 0x3
+ 1454 001b 0E       		.uleb128 0xe
+ 1455 001c 00       		.byte	0
+ 1456 001d 00       		.byte	0
+ 1457 001e 03       		.uleb128 0x3
+ 1458 001f 24       		.uleb128 0x24
+ 1459 0020 00       		.byte	0
+ 1460 0021 0B       		.uleb128 0xb
+ 1461 0022 0B       		.uleb128 0xb
+ 1462 0023 3E       		.uleb128 0x3e
+ 1463 0024 0B       		.uleb128 0xb
+ 1464 0025 03       		.uleb128 0x3
+ 1465 0026 08       		.uleb128 0x8
+ 1466 0027 00       		.byte	0
+ 1467 0028 00       		.byte	0
+ 1468 0029 04       		.uleb128 0x4
+ 1469 002a 16       		.uleb128 0x16
+ 1470 002b 00       		.byte	0
+ 1471 002c 03       		.uleb128 0x3
+ 1472 002d 0E       		.uleb128 0xe
+ 1473 002e 3A       		.uleb128 0x3a
+ 1474 002f 0B       		.uleb128 0xb
+ 1475 0030 3B       		.uleb128 0x3b
+ 1476 0031 05       		.uleb128 0x5
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 38
+
+
+ 1477 0032 49       		.uleb128 0x49
+ 1478 0033 13       		.uleb128 0x13
+ 1479 0034 00       		.byte	0
+ 1480 0035 00       		.byte	0
+ 1481 0036 05       		.uleb128 0x5
+ 1482 0037 35       		.uleb128 0x35
+ 1483 0038 00       		.byte	0
+ 1484 0039 49       		.uleb128 0x49
+ 1485 003a 13       		.uleb128 0x13
+ 1486 003b 00       		.byte	0
+ 1487 003c 00       		.byte	0
+ 1488 003d 06       		.uleb128 0x6
+ 1489 003e 2E       		.uleb128 0x2e
+ 1490 003f 01       		.byte	0x1
+ 1491 0040 3F       		.uleb128 0x3f
+ 1492 0041 19       		.uleb128 0x19
+ 1493 0042 03       		.uleb128 0x3
+ 1494 0043 0E       		.uleb128 0xe
+ 1495 0044 3A       		.uleb128 0x3a
+ 1496 0045 0B       		.uleb128 0xb
+ 1497 0046 3B       		.uleb128 0x3b
+ 1498 0047 0B       		.uleb128 0xb
+ 1499 0048 27       		.uleb128 0x27
+ 1500 0049 19       		.uleb128 0x19
+ 1501 004a 11       		.uleb128 0x11
+ 1502 004b 01       		.uleb128 0x1
+ 1503 004c 12       		.uleb128 0x12
+ 1504 004d 06       		.uleb128 0x6
+ 1505 004e 40       		.uleb128 0x40
+ 1506 004f 18       		.uleb128 0x18
+ 1507 0050 9742     		.uleb128 0x2117
+ 1508 0052 19       		.uleb128 0x19
+ 1509 0053 01       		.uleb128 0x1
+ 1510 0054 13       		.uleb128 0x13
+ 1511 0055 00       		.byte	0
+ 1512 0056 00       		.byte	0
+ 1513 0057 07       		.uleb128 0x7
+ 1514 0058 34       		.uleb128 0x34
+ 1515 0059 00       		.byte	0
+ 1516 005a 03       		.uleb128 0x3
+ 1517 005b 0E       		.uleb128 0xe
+ 1518 005c 3A       		.uleb128 0x3a
+ 1519 005d 0B       		.uleb128 0xb
+ 1520 005e 3B       		.uleb128 0x3b
+ 1521 005f 0B       		.uleb128 0xb
+ 1522 0060 49       		.uleb128 0x49
+ 1523 0061 13       		.uleb128 0x13
+ 1524 0062 02       		.uleb128 0x2
+ 1525 0063 17       		.uleb128 0x17
+ 1526 0064 00       		.byte	0
+ 1527 0065 00       		.byte	0
+ 1528 0066 08       		.uleb128 0x8
+ 1529 0067 898201   		.uleb128 0x4109
+ 1530 006a 00       		.byte	0
+ 1531 006b 11       		.uleb128 0x11
+ 1532 006c 01       		.uleb128 0x1
+ 1533 006d 31       		.uleb128 0x31
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 39
+
+
+ 1534 006e 13       		.uleb128 0x13
+ 1535 006f 00       		.byte	0
+ 1536 0070 00       		.byte	0
+ 1537 0071 09       		.uleb128 0x9
+ 1538 0072 898201   		.uleb128 0x4109
+ 1539 0075 01       		.byte	0x1
+ 1540 0076 11       		.uleb128 0x11
+ 1541 0077 01       		.uleb128 0x1
+ 1542 0078 31       		.uleb128 0x31
+ 1543 0079 13       		.uleb128 0x13
+ 1544 007a 00       		.byte	0
+ 1545 007b 00       		.byte	0
+ 1546 007c 0A       		.uleb128 0xa
+ 1547 007d 8A8201   		.uleb128 0x410a
+ 1548 0080 00       		.byte	0
+ 1549 0081 02       		.uleb128 0x2
+ 1550 0082 18       		.uleb128 0x18
+ 1551 0083 9142     		.uleb128 0x2111
+ 1552 0085 18       		.uleb128 0x18
+ 1553 0086 00       		.byte	0
+ 1554 0087 00       		.byte	0
+ 1555 0088 0B       		.uleb128 0xb
+ 1556 0089 05       		.uleb128 0x5
+ 1557 008a 00       		.byte	0
+ 1558 008b 03       		.uleb128 0x3
+ 1559 008c 0E       		.uleb128 0xe
+ 1560 008d 3A       		.uleb128 0x3a
+ 1561 008e 0B       		.uleb128 0xb
+ 1562 008f 3B       		.uleb128 0x3b
+ 1563 0090 0B       		.uleb128 0xb
+ 1564 0091 49       		.uleb128 0x49
+ 1565 0092 13       		.uleb128 0x13
+ 1566 0093 02       		.uleb128 0x2
+ 1567 0094 17       		.uleb128 0x17
+ 1568 0095 00       		.byte	0
+ 1569 0096 00       		.byte	0
+ 1570 0097 0C       		.uleb128 0xc
+ 1571 0098 2E       		.uleb128 0x2e
+ 1572 0099 00       		.byte	0
+ 1573 009a 3F       		.uleb128 0x3f
+ 1574 009b 19       		.uleb128 0x19
+ 1575 009c 03       		.uleb128 0x3
+ 1576 009d 0E       		.uleb128 0xe
+ 1577 009e 3A       		.uleb128 0x3a
+ 1578 009f 0B       		.uleb128 0xb
+ 1579 00a0 3B       		.uleb128 0x3b
+ 1580 00a1 05       		.uleb128 0x5
+ 1581 00a2 27       		.uleb128 0x27
+ 1582 00a3 19       		.uleb128 0x19
+ 1583 00a4 49       		.uleb128 0x49
+ 1584 00a5 13       		.uleb128 0x13
+ 1585 00a6 11       		.uleb128 0x11
+ 1586 00a7 01       		.uleb128 0x1
+ 1587 00a8 12       		.uleb128 0x12
+ 1588 00a9 06       		.uleb128 0x6
+ 1589 00aa 40       		.uleb128 0x40
+ 1590 00ab 18       		.uleb128 0x18
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 40
+
+
+ 1591 00ac 9742     		.uleb128 0x2117
+ 1592 00ae 19       		.uleb128 0x19
+ 1593 00af 00       		.byte	0
+ 1594 00b0 00       		.byte	0
+ 1595 00b1 0D       		.uleb128 0xd
+ 1596 00b2 2E       		.uleb128 0x2e
+ 1597 00b3 01       		.byte	0x1
+ 1598 00b4 3F       		.uleb128 0x3f
+ 1599 00b5 19       		.uleb128 0x19
+ 1600 00b6 03       		.uleb128 0x3
+ 1601 00b7 0E       		.uleb128 0xe
+ 1602 00b8 3A       		.uleb128 0x3a
+ 1603 00b9 0B       		.uleb128 0xb
+ 1604 00ba 3B       		.uleb128 0x3b
+ 1605 00bb 05       		.uleb128 0x5
+ 1606 00bc 27       		.uleb128 0x27
+ 1607 00bd 19       		.uleb128 0x19
+ 1608 00be 11       		.uleb128 0x11
+ 1609 00bf 01       		.uleb128 0x1
+ 1610 00c0 12       		.uleb128 0x12
+ 1611 00c1 06       		.uleb128 0x6
+ 1612 00c2 40       		.uleb128 0x40
+ 1613 00c3 18       		.uleb128 0x18
+ 1614 00c4 9742     		.uleb128 0x2117
+ 1615 00c6 19       		.uleb128 0x19
+ 1616 00c7 01       		.uleb128 0x1
+ 1617 00c8 13       		.uleb128 0x13
+ 1618 00c9 00       		.byte	0
+ 1619 00ca 00       		.byte	0
+ 1620 00cb 0E       		.uleb128 0xe
+ 1621 00cc 05       		.uleb128 0x5
+ 1622 00cd 00       		.byte	0
+ 1623 00ce 03       		.uleb128 0x3
+ 1624 00cf 0E       		.uleb128 0xe
+ 1625 00d0 3A       		.uleb128 0x3a
+ 1626 00d1 0B       		.uleb128 0xb
+ 1627 00d2 3B       		.uleb128 0x3b
+ 1628 00d3 05       		.uleb128 0x5
+ 1629 00d4 49       		.uleb128 0x49
+ 1630 00d5 13       		.uleb128 0x13
+ 1631 00d6 02       		.uleb128 0x2
+ 1632 00d7 18       		.uleb128 0x18
+ 1633 00d8 00       		.byte	0
+ 1634 00d9 00       		.byte	0
+ 1635 00da 0F       		.uleb128 0xf
+ 1636 00db 05       		.uleb128 0x5
+ 1637 00dc 00       		.byte	0
+ 1638 00dd 03       		.uleb128 0x3
+ 1639 00de 0E       		.uleb128 0xe
+ 1640 00df 3A       		.uleb128 0x3a
+ 1641 00e0 0B       		.uleb128 0xb
+ 1642 00e1 3B       		.uleb128 0x3b
+ 1643 00e2 05       		.uleb128 0x5
+ 1644 00e3 49       		.uleb128 0x49
+ 1645 00e4 13       		.uleb128 0x13
+ 1646 00e5 02       		.uleb128 0x2
+ 1647 00e6 17       		.uleb128 0x17
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 41
+
+
+ 1648 00e7 00       		.byte	0
+ 1649 00e8 00       		.byte	0
+ 1650 00e9 10       		.uleb128 0x10
+ 1651 00ea 34       		.uleb128 0x34
+ 1652 00eb 00       		.byte	0
+ 1653 00ec 03       		.uleb128 0x3
+ 1654 00ed 0E       		.uleb128 0xe
+ 1655 00ee 3A       		.uleb128 0x3a
+ 1656 00ef 0B       		.uleb128 0xb
+ 1657 00f0 3B       		.uleb128 0x3b
+ 1658 00f1 05       		.uleb128 0x5
+ 1659 00f2 49       		.uleb128 0x49
+ 1660 00f3 13       		.uleb128 0x13
+ 1661 00f4 02       		.uleb128 0x2
+ 1662 00f5 17       		.uleb128 0x17
+ 1663 00f6 00       		.byte	0
+ 1664 00f7 00       		.byte	0
+ 1665 00f8 11       		.uleb128 0x11
+ 1666 00f9 2E       		.uleb128 0x2e
+ 1667 00fa 01       		.byte	0x1
+ 1668 00fb 3F       		.uleb128 0x3f
+ 1669 00fc 19       		.uleb128 0x19
+ 1670 00fd 03       		.uleb128 0x3
+ 1671 00fe 0E       		.uleb128 0xe
+ 1672 00ff 3A       		.uleb128 0x3a
+ 1673 0100 0B       		.uleb128 0xb
+ 1674 0101 3B       		.uleb128 0x3b
+ 1675 0102 05       		.uleb128 0x5
+ 1676 0103 27       		.uleb128 0x27
+ 1677 0104 19       		.uleb128 0x19
+ 1678 0105 49       		.uleb128 0x49
+ 1679 0106 13       		.uleb128 0x13
+ 1680 0107 11       		.uleb128 0x11
+ 1681 0108 01       		.uleb128 0x1
+ 1682 0109 12       		.uleb128 0x12
+ 1683 010a 06       		.uleb128 0x6
+ 1684 010b 40       		.uleb128 0x40
+ 1685 010c 18       		.uleb128 0x18
+ 1686 010d 9742     		.uleb128 0x2117
+ 1687 010f 19       		.uleb128 0x19
+ 1688 0110 01       		.uleb128 0x1
+ 1689 0111 13       		.uleb128 0x13
+ 1690 0112 00       		.byte	0
+ 1691 0113 00       		.byte	0
+ 1692 0114 12       		.uleb128 0x12
+ 1693 0115 34       		.uleb128 0x34
+ 1694 0116 00       		.byte	0
+ 1695 0117 03       		.uleb128 0x3
+ 1696 0118 08       		.uleb128 0x8
+ 1697 0119 3A       		.uleb128 0x3a
+ 1698 011a 0B       		.uleb128 0xb
+ 1699 011b 3B       		.uleb128 0x3b
+ 1700 011c 05       		.uleb128 0x5
+ 1701 011d 49       		.uleb128 0x49
+ 1702 011e 13       		.uleb128 0x13
+ 1703 011f 02       		.uleb128 0x2
+ 1704 0120 17       		.uleb128 0x17
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 42
+
+
+ 1705 0121 00       		.byte	0
+ 1706 0122 00       		.byte	0
+ 1707 0123 13       		.uleb128 0x13
+ 1708 0124 898201   		.uleb128 0x4109
+ 1709 0127 01       		.byte	0x1
+ 1710 0128 11       		.uleb128 0x11
+ 1711 0129 01       		.uleb128 0x1
+ 1712 012a 31       		.uleb128 0x31
+ 1713 012b 13       		.uleb128 0x13
+ 1714 012c 01       		.uleb128 0x1
+ 1715 012d 13       		.uleb128 0x13
+ 1716 012e 00       		.byte	0
+ 1717 012f 00       		.byte	0
+ 1718 0130 14       		.uleb128 0x14
+ 1719 0131 34       		.uleb128 0x34
+ 1720 0132 00       		.byte	0
+ 1721 0133 03       		.uleb128 0x3
+ 1722 0134 0E       		.uleb128 0xe
+ 1723 0135 3A       		.uleb128 0x3a
+ 1724 0136 0B       		.uleb128 0xb
+ 1725 0137 3B       		.uleb128 0x3b
+ 1726 0138 0B       		.uleb128 0xb
+ 1727 0139 49       		.uleb128 0x49
+ 1728 013a 13       		.uleb128 0x13
+ 1729 013b 02       		.uleb128 0x2
+ 1730 013c 18       		.uleb128 0x18
+ 1731 013d 00       		.byte	0
+ 1732 013e 00       		.byte	0
+ 1733 013f 15       		.uleb128 0x15
+ 1734 0140 34       		.uleb128 0x34
+ 1735 0141 00       		.byte	0
+ 1736 0142 03       		.uleb128 0x3
+ 1737 0143 0E       		.uleb128 0xe
+ 1738 0144 3A       		.uleb128 0x3a
+ 1739 0145 0B       		.uleb128 0xb
+ 1740 0146 3B       		.uleb128 0x3b
+ 1741 0147 0B       		.uleb128 0xb
+ 1742 0148 49       		.uleb128 0x49
+ 1743 0149 13       		.uleb128 0x13
+ 1744 014a 3F       		.uleb128 0x3f
+ 1745 014b 19       		.uleb128 0x19
+ 1746 014c 02       		.uleb128 0x2
+ 1747 014d 18       		.uleb128 0x18
+ 1748 014e 00       		.byte	0
+ 1749 014f 00       		.byte	0
+ 1750 0150 16       		.uleb128 0x16
+ 1751 0151 2E       		.uleb128 0x2e
+ 1752 0152 00       		.byte	0
+ 1753 0153 3F       		.uleb128 0x3f
+ 1754 0154 19       		.uleb128 0x19
+ 1755 0155 03       		.uleb128 0x3
+ 1756 0156 0E       		.uleb128 0xe
+ 1757 0157 3A       		.uleb128 0x3a
+ 1758 0158 0B       		.uleb128 0xb
+ 1759 0159 3B       		.uleb128 0x3b
+ 1760 015a 0B       		.uleb128 0xb
+ 1761 015b 27       		.uleb128 0x27
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 43
+
+
+ 1762 015c 19       		.uleb128 0x19
+ 1763 015d 49       		.uleb128 0x49
+ 1764 015e 13       		.uleb128 0x13
+ 1765 015f 3C       		.uleb128 0x3c
+ 1766 0160 19       		.uleb128 0x19
+ 1767 0161 00       		.byte	0
+ 1768 0162 00       		.byte	0
+ 1769 0163 17       		.uleb128 0x17
+ 1770 0164 2E       		.uleb128 0x2e
+ 1771 0165 01       		.byte	0x1
+ 1772 0166 3F       		.uleb128 0x3f
+ 1773 0167 19       		.uleb128 0x19
+ 1774 0168 03       		.uleb128 0x3
+ 1775 0169 0E       		.uleb128 0xe
+ 1776 016a 3A       		.uleb128 0x3a
+ 1777 016b 0B       		.uleb128 0xb
+ 1778 016c 3B       		.uleb128 0x3b
+ 1779 016d 0B       		.uleb128 0xb
+ 1780 016e 27       		.uleb128 0x27
+ 1781 016f 19       		.uleb128 0x19
+ 1782 0170 3C       		.uleb128 0x3c
+ 1783 0171 19       		.uleb128 0x19
+ 1784 0172 01       		.uleb128 0x1
+ 1785 0173 13       		.uleb128 0x13
+ 1786 0174 00       		.byte	0
+ 1787 0175 00       		.byte	0
+ 1788 0176 18       		.uleb128 0x18
+ 1789 0177 05       		.uleb128 0x5
+ 1790 0178 00       		.byte	0
+ 1791 0179 49       		.uleb128 0x49
+ 1792 017a 13       		.uleb128 0x13
+ 1793 017b 00       		.byte	0
+ 1794 017c 00       		.byte	0
+ 1795 017d 19       		.uleb128 0x19
+ 1796 017e 2E       		.uleb128 0x2e
+ 1797 017f 01       		.byte	0x1
+ 1798 0180 3F       		.uleb128 0x3f
+ 1799 0181 19       		.uleb128 0x19
+ 1800 0182 03       		.uleb128 0x3
+ 1801 0183 0E       		.uleb128 0xe
+ 1802 0184 3A       		.uleb128 0x3a
+ 1803 0185 0B       		.uleb128 0xb
+ 1804 0186 3B       		.uleb128 0x3b
+ 1805 0187 0B       		.uleb128 0xb
+ 1806 0188 27       		.uleb128 0x27
+ 1807 0189 19       		.uleb128 0x19
+ 1808 018a 3C       		.uleb128 0x3c
+ 1809 018b 19       		.uleb128 0x19
+ 1810 018c 00       		.byte	0
+ 1811 018d 00       		.byte	0
+ 1812 018e 00       		.byte	0
+ 1813              		.section	.debug_loc,"",%progbits
+ 1814              	.Ldebug_loc0:
+ 1815              	.LLST0:
+ 1816 0000 08000000 		.4byte	.LVL1
+ 1817 0004 40000000 		.4byte	.LVL4
+ 1818 0008 0100     		.2byte	0x1
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 44
+
+
+ 1819 000a 54       		.byte	0x54
+ 1820 000b 00000000 		.4byte	0
+ 1821 000f 00000000 		.4byte	0
+ 1822              	.LLST1:
+ 1823 0013 06000000 		.4byte	.LVL5
+ 1824 0017 1D000000 		.4byte	.LVL6-1
+ 1825 001b 0100     		.2byte	0x1
+ 1826 001d 50       		.byte	0x50
+ 1827 001e 00000000 		.4byte	0
+ 1828 0022 00000000 		.4byte	0
+ 1829              	.LLST2:
+ 1830 0026 06000000 		.4byte	.LVL9
+ 1831 002a 13000000 		.4byte	.LVL10-1
+ 1832 002e 0100     		.2byte	0x1
+ 1833 0030 50       		.byte	0x50
+ 1834 0031 00000000 		.4byte	0
+ 1835 0035 00000000 		.4byte	0
+ 1836              	.LLST3:
+ 1837 0039 00000000 		.4byte	.LVL11
+ 1838 003d 07000000 		.4byte	.LVL12-1
+ 1839 0041 0100     		.2byte	0x1
+ 1840 0043 50       		.byte	0x50
+ 1841 0044 07000000 		.4byte	.LVL12-1
+ 1842 0048 1A000000 		.4byte	.LVL15
+ 1843 004c 0100     		.2byte	0x1
+ 1844 004e 54       		.byte	0x54
+ 1845 004f 1A000000 		.4byte	.LVL15
+ 1846 0053 20000000 		.4byte	.LFE7
+ 1847 0057 0400     		.2byte	0x4
+ 1848 0059 F3       		.byte	0xf3
+ 1849 005a 01       		.uleb128 0x1
+ 1850 005b 50       		.byte	0x50
+ 1851 005c 9F       		.byte	0x9f
+ 1852 005d 00000000 		.4byte	0
+ 1853 0061 00000000 		.4byte	0
+ 1854              	.LLST4:
+ 1855 0065 10000000 		.4byte	.LVL13
+ 1856 0069 19000000 		.4byte	.LVL14-1
+ 1857 006d 0100     		.2byte	0x1
+ 1858 006f 52       		.byte	0x52
+ 1859 0070 00000000 		.4byte	0
+ 1860 0074 00000000 		.4byte	0
+ 1861              	.LLST5:
+ 1862 0078 08000000 		.4byte	.LVL12
+ 1863 007c 19000000 		.4byte	.LVL14-1
+ 1864 0080 0100     		.2byte	0x1
+ 1865 0082 50       		.byte	0x50
+ 1866 0083 00000000 		.4byte	0
+ 1867 0087 00000000 		.4byte	0
+ 1868              	.LLST6:
+ 1869 008b 00000000 		.4byte	.LVL16
+ 1870 008f 04000000 		.4byte	.LVL17
+ 1871 0093 0100     		.2byte	0x1
+ 1872 0095 50       		.byte	0x50
+ 1873 0096 04000000 		.4byte	.LVL17
+ 1874 009a 2C000000 		.4byte	.LFE8
+ 1875 009e 0400     		.2byte	0x4
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 45
+
+
+ 1876 00a0 F3       		.byte	0xf3
+ 1877 00a1 01       		.uleb128 0x1
+ 1878 00a2 50       		.byte	0x50
+ 1879 00a3 9F       		.byte	0x9f
+ 1880 00a4 00000000 		.4byte	0
+ 1881 00a8 00000000 		.4byte	0
+ 1882              	.LLST7:
+ 1883 00ac 16000000 		.4byte	.LVL19
+ 1884 00b0 1A000000 		.4byte	.LVL20
+ 1885 00b4 0100     		.2byte	0x1
+ 1886 00b6 53       		.byte	0x53
+ 1887 00b7 00000000 		.4byte	0
+ 1888 00bb 00000000 		.4byte	0
+ 1889              	.LLST8:
+ 1890 00bf 10000000 		.4byte	.LVL18
+ 1891 00c3 1F000000 		.4byte	.LVL21-1
+ 1892 00c7 0100     		.2byte	0x1
+ 1893 00c9 50       		.byte	0x50
+ 1894 00ca 00000000 		.4byte	0
+ 1895 00ce 00000000 		.4byte	0
+ 1896              	.LLST9:
+ 1897 00d2 00000000 		.4byte	.LVL23
+ 1898 00d6 07000000 		.4byte	.LVL24-1
+ 1899 00da 0100     		.2byte	0x1
+ 1900 00dc 50       		.byte	0x50
+ 1901 00dd 07000000 		.4byte	.LVL24-1
+ 1902 00e1 0E000000 		.4byte	.LVL25
+ 1903 00e5 0100     		.2byte	0x1
+ 1904 00e7 54       		.byte	0x54
+ 1905 00e8 0E000000 		.4byte	.LVL25
+ 1906 00ec 1C000000 		.4byte	.LFE11
+ 1907 00f0 0400     		.2byte	0x4
+ 1908 00f2 F3       		.byte	0xf3
+ 1909 00f3 01       		.uleb128 0x1
+ 1910 00f4 50       		.byte	0x50
+ 1911 00f5 9F       		.byte	0x9f
+ 1912 00f6 00000000 		.4byte	0
+ 1913 00fa 00000000 		.4byte	0
+ 1914              	.LLST10:
+ 1915 00fe 08000000 		.4byte	.LVL24
+ 1916 0102 13000000 		.4byte	.LVL26-1
+ 1917 0106 0100     		.2byte	0x1
+ 1918 0108 50       		.byte	0x50
+ 1919 0109 00000000 		.4byte	0
+ 1920 010d 00000000 		.4byte	0
+ 1921              	.LLST11:
+ 1922 0111 00000000 		.4byte	.LVL27
+ 1923 0115 07000000 		.4byte	.LVL28-1
+ 1924 0119 0100     		.2byte	0x1
+ 1925 011b 50       		.byte	0x50
+ 1926 011c 07000000 		.4byte	.LVL28-1
+ 1927 0120 26000000 		.4byte	.LVL30
+ 1928 0124 0100     		.2byte	0x1
+ 1929 0126 54       		.byte	0x54
+ 1930 0127 26000000 		.4byte	.LVL30
+ 1931 012b 2C000000 		.4byte	.LFE12
+ 1932 012f 0400     		.2byte	0x4
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 46
+
+
+ 1933 0131 F3       		.byte	0xf3
+ 1934 0132 01       		.uleb128 0x1
+ 1935 0133 50       		.byte	0x50
+ 1936 0134 9F       		.byte	0x9f
+ 1937 0135 00000000 		.4byte	0
+ 1938 0139 00000000 		.4byte	0
+ 1939              	.LLST12:
+ 1940 013d 08000000 		.4byte	.LVL28
+ 1941 0141 25000000 		.4byte	.LVL29-1
+ 1942 0145 0100     		.2byte	0x1
+ 1943 0147 50       		.byte	0x50
+ 1944 0148 00000000 		.4byte	0
+ 1945 014c 00000000 		.4byte	0
+ 1946              	.LLST13:
+ 1947 0150 00000000 		.4byte	.LVL31
+ 1948 0154 07000000 		.4byte	.LVL32-1
+ 1949 0158 0100     		.2byte	0x1
+ 1950 015a 50       		.byte	0x50
+ 1951 015b 07000000 		.4byte	.LVL32-1
+ 1952 015f 26000000 		.4byte	.LVL34
+ 1953 0163 0100     		.2byte	0x1
+ 1954 0165 54       		.byte	0x54
+ 1955 0166 26000000 		.4byte	.LVL34
+ 1956 016a 2C000000 		.4byte	.LFE13
+ 1957 016e 0400     		.2byte	0x4
+ 1958 0170 F3       		.byte	0xf3
+ 1959 0171 01       		.uleb128 0x1
+ 1960 0172 50       		.byte	0x50
+ 1961 0173 9F       		.byte	0x9f
+ 1962 0174 00000000 		.4byte	0
+ 1963 0178 00000000 		.4byte	0
+ 1964              	.LLST14:
+ 1965 017c 08000000 		.4byte	.LVL32
+ 1966 0180 25000000 		.4byte	.LVL33-1
+ 1967 0184 0100     		.2byte	0x1
+ 1968 0186 50       		.byte	0x50
+ 1969 0187 00000000 		.4byte	0
+ 1970 018b 00000000 		.4byte	0
+ 1971              	.LLST15:
+ 1972 018f 22000000 		.4byte	.LVL37
+ 1973 0193 2E000000 		.4byte	.LVL38
+ 1974 0197 0100     		.2byte	0x1
+ 1975 0199 50       		.byte	0x50
+ 1976 019a 2E000000 		.4byte	.LVL38
+ 1977 019e 58000000 		.4byte	.LVL43
+ 1978 01a2 0100     		.2byte	0x1
+ 1979 01a4 55       		.byte	0x55
+ 1980 01a5 58000000 		.4byte	.LVL43
+ 1981 01a9 64000000 		.4byte	.LVL45
+ 1982 01ad 0100     		.2byte	0x1
+ 1983 01af 50       		.byte	0x50
+ 1984 01b0 64000000 		.4byte	.LVL45
+ 1985 01b4 96000000 		.4byte	.LVL50
+ 1986 01b8 0100     		.2byte	0x1
+ 1987 01ba 55       		.byte	0x55
+ 1988 01bb 00000000 		.4byte	0
+ 1989 01bf 00000000 		.4byte	0
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 47
+
+
+ 1990              	.LLST16:
+ 1991 01c3 2E000000 		.4byte	.LVL38
+ 1992 01c7 62000000 		.4byte	.LVL44
+ 1993 01cb 0100     		.2byte	0x1
+ 1994 01cd 54       		.byte	0x54
+ 1995 01ce 64000000 		.4byte	.LVL45
+ 1996 01d2 96000000 		.4byte	.LVL49
+ 1997 01d6 0100     		.2byte	0x1
+ 1998 01d8 54       		.byte	0x54
+ 1999 01d9 00000000 		.4byte	0
+ 2000 01dd 00000000 		.4byte	0
+ 2001              	.LLST17:
+ 2002 01e1 00000000 		.4byte	.LVL51
+ 2003 01e5 0C000000 		.4byte	.LVL52
+ 2004 01e9 0100     		.2byte	0x1
+ 2005 01eb 50       		.byte	0x50
+ 2006 01ec 0C000000 		.4byte	.LVL52
+ 2007 01f0 1C000000 		.4byte	.LFE16
+ 2008 01f4 0400     		.2byte	0x4
+ 2009 01f6 F3       		.byte	0xf3
+ 2010 01f7 01       		.uleb128 0x1
+ 2011 01f8 50       		.byte	0x50
+ 2012 01f9 9F       		.byte	0x9f
+ 2013 01fa 00000000 		.4byte	0
+ 2014 01fe 00000000 		.4byte	0
+ 2015              	.LLST18:
+ 2016 0202 00000000 		.4byte	.LVL53
+ 2017 0206 07000000 		.4byte	.LVL54-1
+ 2018 020a 0100     		.2byte	0x1
+ 2019 020c 50       		.byte	0x50
+ 2020 020d 07000000 		.4byte	.LVL54-1
+ 2021 0211 34000000 		.4byte	.LVL57
+ 2022 0215 0100     		.2byte	0x1
+ 2023 0217 54       		.byte	0x54
+ 2024 0218 34000000 		.4byte	.LVL57
+ 2025 021c 40000000 		.4byte	.LFE17
+ 2026 0220 0400     		.2byte	0x4
+ 2027 0222 F3       		.byte	0xf3
+ 2028 0223 01       		.uleb128 0x1
+ 2029 0224 50       		.byte	0x50
+ 2030 0225 9F       		.byte	0x9f
+ 2031 0226 00000000 		.4byte	0
+ 2032 022a 00000000 		.4byte	0
+ 2033              	.LLST19:
+ 2034 022e 12000000 		.4byte	.LVL55
+ 2035 0232 33000000 		.4byte	.LVL56-1
+ 2036 0236 0100     		.2byte	0x1
+ 2037 0238 51       		.byte	0x51
+ 2038 0239 00000000 		.4byte	0
+ 2039 023d 00000000 		.4byte	0
+ 2040              	.LLST20:
+ 2041 0241 08000000 		.4byte	.LVL54
+ 2042 0245 33000000 		.4byte	.LVL56-1
+ 2043 0249 0100     		.2byte	0x1
+ 2044 024b 50       		.byte	0x50
+ 2045 024c 00000000 		.4byte	0
+ 2046 0250 00000000 		.4byte	0
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 48
+
+
+ 2047              		.section	.debug_aranges,"",%progbits
+ 2048 0000 A4000000 		.4byte	0xa4
+ 2049 0004 0200     		.2byte	0x2
+ 2050 0006 00000000 		.4byte	.Ldebug_info0
+ 2051 000a 04       		.byte	0x4
+ 2052 000b 00       		.byte	0
+ 2053 000c 0000     		.2byte	0
+ 2054 000e 0000     		.2byte	0
+ 2055 0010 00000000 		.4byte	.LFB4
+ 2056 0014 58000000 		.4byte	.LFE4-.LFB4
+ 2057 0018 00000000 		.4byte	.LFB5
+ 2058 001c 28000000 		.4byte	.LFE5-.LFB5
+ 2059 0020 00000000 		.4byte	.LFB3
+ 2060 0024 20000000 		.4byte	.LFE3-.LFB3
+ 2061 0028 00000000 		.4byte	.LFB6
+ 2062 002c 1C000000 		.4byte	.LFE6-.LFB6
+ 2063 0030 00000000 		.4byte	.LFB7
+ 2064 0034 20000000 		.4byte	.LFE7-.LFB7
+ 2065 0038 00000000 		.4byte	.LFB8
+ 2066 003c 2C000000 		.4byte	.LFE8-.LFB8
+ 2067 0040 00000000 		.4byte	.LFB9
+ 2068 0044 0C000000 		.4byte	.LFE9-.LFB9
+ 2069 0048 00000000 		.4byte	.LFB10
+ 2070 004c 0C000000 		.4byte	.LFE10-.LFB10
+ 2071 0050 00000000 		.4byte	.LFB11
+ 2072 0054 1C000000 		.4byte	.LFE11-.LFB11
+ 2073 0058 00000000 		.4byte	.LFB12
+ 2074 005c 2C000000 		.4byte	.LFE12-.LFB12
+ 2075 0060 00000000 		.4byte	.LFB13
+ 2076 0064 2C000000 		.4byte	.LFE13-.LFB13
+ 2077 0068 00000000 		.4byte	.LFB14
+ 2078 006c 10000000 		.4byte	.LFE14-.LFB14
+ 2079 0070 00000000 		.4byte	.LFB15
+ 2080 0074 A8000000 		.4byte	.LFE15-.LFB15
+ 2081 0078 00000000 		.4byte	.LFB16
+ 2082 007c 1C000000 		.4byte	.LFE16-.LFB16
+ 2083 0080 00000000 		.4byte	.LFB17
+ 2084 0084 40000000 		.4byte	.LFE17-.LFB17
+ 2085 0088 00000000 		.4byte	.LFB18
+ 2086 008c 14000000 		.4byte	.LFE18-.LFB18
+ 2087 0090 00000000 		.4byte	.LFB19
+ 2088 0094 0C000000 		.4byte	.LFE19-.LFB19
+ 2089 0098 00000000 		.4byte	.LFB20
+ 2090 009c 0C000000 		.4byte	.LFE20-.LFB20
+ 2091 00a0 00000000 		.4byte	0
+ 2092 00a4 00000000 		.4byte	0
+ 2093              		.section	.debug_ranges,"",%progbits
+ 2094              	.Ldebug_ranges0:
+ 2095 0000 00000000 		.4byte	.LFB4
+ 2096 0004 58000000 		.4byte	.LFE4
+ 2097 0008 00000000 		.4byte	.LFB5
+ 2098 000c 28000000 		.4byte	.LFE5
+ 2099 0010 00000000 		.4byte	.LFB3
+ 2100 0014 20000000 		.4byte	.LFE3
+ 2101 0018 00000000 		.4byte	.LFB6
+ 2102 001c 1C000000 		.4byte	.LFE6
+ 2103 0020 00000000 		.4byte	.LFB7
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 49
+
+
+ 2104 0024 20000000 		.4byte	.LFE7
+ 2105 0028 00000000 		.4byte	.LFB8
+ 2106 002c 2C000000 		.4byte	.LFE8
+ 2107 0030 00000000 		.4byte	.LFB9
+ 2108 0034 0C000000 		.4byte	.LFE9
+ 2109 0038 00000000 		.4byte	.LFB10
+ 2110 003c 0C000000 		.4byte	.LFE10
+ 2111 0040 00000000 		.4byte	.LFB11
+ 2112 0044 1C000000 		.4byte	.LFE11
+ 2113 0048 00000000 		.4byte	.LFB12
+ 2114 004c 2C000000 		.4byte	.LFE12
+ 2115 0050 00000000 		.4byte	.LFB13
+ 2116 0054 2C000000 		.4byte	.LFE13
+ 2117 0058 00000000 		.4byte	.LFB14
+ 2118 005c 10000000 		.4byte	.LFE14
+ 2119 0060 00000000 		.4byte	.LFB15
+ 2120 0064 A8000000 		.4byte	.LFE15
+ 2121 0068 00000000 		.4byte	.LFB16
+ 2122 006c 1C000000 		.4byte	.LFE16
+ 2123 0070 00000000 		.4byte	.LFB17
+ 2124 0074 40000000 		.4byte	.LFE17
+ 2125 0078 00000000 		.4byte	.LFB18
+ 2126 007c 14000000 		.4byte	.LFE18
+ 2127 0080 00000000 		.4byte	.LFB19
+ 2128 0084 0C000000 		.4byte	.LFE19
+ 2129 0088 00000000 		.4byte	.LFB20
+ 2130 008c 0C000000 		.4byte	.LFE20
+ 2131 0090 00000000 		.4byte	0
+ 2132 0094 00000000 		.4byte	0
+ 2133              		.section	.debug_line,"",%progbits
+ 2134              	.Ldebug_line0:
+ 2135 0000 1A020000 		.section	.debug_str,"MS",%progbits,1
+ 2135      02005A00 
+ 2135      00000201 
+ 2135      FB0E0D00 
+ 2135      01010101 
+ 2136              	.LASF38:
+ 2137 0000 7472696D 		.ascii	"trimVal\000"
+ 2137      56616C00 
+ 2138              	.LASF22:
+ 2139 0008 436F6D70 		.ascii	"Comp_1_SetSpeed\000"
+ 2139      5F315F53 
+ 2139      65745370 
+ 2139      65656400 
+ 2140              	.LASF15:
+ 2141 0018 72656733 		.ascii	"reg32\000"
+ 2141      3200
+ 2142              	.LASF17:
+ 2143 001e 436F6D70 		.ascii	"Comp_1_Init\000"
+ 2143      5F315F49 
+ 2143      6E697400 
+ 2144              	.LASF12:
+ 2145 002a 666C6F61 		.ascii	"float\000"
+ 2145      7400
+ 2146              	.LASF24:
+ 2147 0030 436F6D70 		.ascii	"Comp_1_SetInterruptMode\000"
+ 2147      5F315F53 
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 50
+
+
+ 2147      6574496E 
+ 2147      74657272 
+ 2147      7570744D 
+ 2148              	.LASF3:
+ 2149 0048 73686F72 		.ascii	"short unsigned int\000"
+ 2149      7420756E 
+ 2149      7369676E 
+ 2149      65642069 
+ 2149      6E7400
+ 2150              	.LASF40:
+ 2151 005b 436F6D70 		.ascii	"Comp_1_SetInterruptMask\000"
+ 2151      5F315F53 
+ 2151      6574496E 
+ 2151      74657272 
+ 2151      7570744D 
+ 2152              	.LASF35:
+ 2153 0073 436F6D70 		.ascii	"Comp_1_GetCompare\000"
+ 2153      5F315F47 
+ 2153      6574436F 
+ 2153      6D706172 
+ 2153      6500
+ 2154              	.LASF7:
+ 2155 0085 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2155      206C6F6E 
+ 2155      6720756E 
+ 2155      7369676E 
+ 2155      65642069 
+ 2156              	.LASF19:
+ 2157 009c 656E6162 		.ascii	"enableInterrupts\000"
+ 2157      6C65496E 
+ 2157      74657272 
+ 2157      75707473 
+ 2157      00
+ 2158              	.LASF29:
+ 2159 00ad 436F6D70 		.ascii	"Comp_1_SetInterrupt\000"
+ 2159      5F315F53 
+ 2159      6574496E 
+ 2159      74657272 
+ 2159      75707400 
+ 2160              	.LASF1:
+ 2161 00c1 756E7369 		.ascii	"unsigned char\000"
+ 2161      676E6564 
+ 2161      20636861 
+ 2161      7200
+ 2162              	.LASF50:
+ 2163 00cf 436F6D70 		.ascii	"Comp_1_ZeroCal\000"
+ 2163      5F315F5A 
+ 2163      65726F43 
+ 2163      616C00
+ 2164              	.LASF5:
+ 2165 00de 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2165      20756E73 
+ 2165      69676E65 
+ 2165      6420696E 
+ 2165      7400
+ 2166              	.LASF9:
+ 2167 00f0 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 51
+
+
+ 2167      3800
+ 2168              	.LASF44:
+ 2169 00f6 436F6D70 		.ascii	"Comp_1_intrMaskRegState\000"
+ 2169      5F315F69 
+ 2169      6E74724D 
+ 2169      61736B52 
+ 2169      65675374 
+ 2170              	.LASF33:
+ 2171 010e 66696C74 		.ascii	"filter\000"
+ 2171      657200
+ 2172              	.LASF23:
+ 2173 0115 636F6E66 		.ascii	"config\000"
+ 2173      696700
+ 2174              	.LASF13:
+ 2175 011c 646F7562 		.ascii	"double\000"
+ 2175      6C6500
+ 2176              	.LASF41:
+ 2177 0123 436F6D70 		.ascii	"Comp_1_GetInterruptMask\000"
+ 2177      5F315F47 
+ 2177      6574496E 
+ 2177      74657272 
+ 2177      7570744D 
+ 2178              	.LASF10:
+ 2179 013b 75696E74 		.ascii	"uint16\000"
+ 2179      313600
+ 2180              	.LASF11:
+ 2181 0142 75696E74 		.ascii	"uint32\000"
+ 2181      333200
+ 2182              	.LASF45:
+ 2183 0149 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 2183      74657243 
+ 2183      72697469 
+ 2183      63616C53 
+ 2183      65637469 
+ 2184              	.LASF8:
+ 2185 0160 756E7369 		.ascii	"unsigned int\000"
+ 2185      676E6564 
+ 2185      20696E74 
+ 2185      00
+ 2186              	.LASF43:
+ 2187 016d 436F6D70 		.ascii	"Comp_1_internalIntr\000"
+ 2187      5F315F69 
+ 2187      6E746572 
+ 2187      6E616C49 
+ 2187      6E747200 
+ 2188              	.LASF52:
+ 2189 0181 43794578 		.ascii	"CyExitCriticalSection\000"
+ 2189      69744372 
+ 2189      69746963 
+ 2189      616C5365 
+ 2189      6374696F 
+ 2190              	.LASF21:
+ 2191 0197 436F6D70 		.ascii	"Comp_1_Stop\000"
+ 2191      5F315F53 
+ 2191      746F7000 
+ 2192              	.LASF34:
+ 2193 01a3 436F6D70 		.ascii	"Comp_1_GetInterruptSource\000"
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 52
+
+
+ 2193      5F315F47 
+ 2193      6574496E 
+ 2193      74657272 
+ 2193      75707453 
+ 2194              	.LASF26:
+ 2195 01bd 6D6F6465 		.ascii	"mode\000"
+ 2195      00
+ 2196              	.LASF37:
+ 2197 01c2 436F6D70 		.ascii	"Comp_1_LoadTrim\000"
+ 2197      5F315F4C 
+ 2197      6F616454 
+ 2197      72696D00 
+ 2198              	.LASF27:
+ 2199 01d2 436F6D70 		.ascii	"Comp_1_ClearInterrupt\000"
+ 2199      5F315F43 
+ 2199      6C656172 
+ 2199      496E7465 
+ 2199      72727570 
+ 2200              	.LASF31:
+ 2201 01e8 68797374 		.ascii	"hysteresis\000"
+ 2201      65726573 
+ 2201      697300
+ 2202              	.LASF25:
+ 2203 01f3 73706565 		.ascii	"speed\000"
+ 2203      6400
+ 2204              	.LASF16:
+ 2205 01f9 73697A65 		.ascii	"sizetype\000"
+ 2205      74797065 
+ 2205      00
+ 2206              	.LASF32:
+ 2207 0202 436F6D70 		.ascii	"Comp_1_SetFilter\000"
+ 2207      5F315F53 
+ 2207      65744669 
+ 2207      6C746572 
+ 2207      00
+ 2208              	.LASF6:
+ 2209 0213 6C6F6E67 		.ascii	"long long int\000"
+ 2209      206C6F6E 
+ 2209      6720696E 
+ 2209      7400
+ 2210              	.LASF30:
+ 2211 0221 436F6D70 		.ascii	"Comp_1_SetHysteresis\000"
+ 2211      5F315F53 
+ 2211      65744879 
+ 2211      73746572 
+ 2211      65736973 
+ 2212              	.LASF53:
+ 2213 0236 43794465 		.ascii	"CyDelayUs\000"
+ 2213      6C617955 
+ 2213      7300
+ 2214              	.LASF14:
+ 2215 0240 63686172 		.ascii	"char\000"
+ 2215      00
+ 2216              	.LASF47:
+ 2217 0245 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2217      4320342E 
+ 2217      392E3320 
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 53
+
+
+ 2217      32303135 
+ 2217      30333033 
+ 2218 0278 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 2218      20726576 
+ 2218      6973696F 
+ 2218      6E203232 
+ 2218      31323230 
+ 2219 02ab 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2219      66756E63 
+ 2219      74696F6E 
+ 2219      2D736563 
+ 2219      74696F6E 
+ 2220              	.LASF49:
+ 2221 02d3 433A5C55 		.ascii	"C:\\Users\\mlgjmoor\\Documents\\PSoC Creator\\Nodus"
+ 2221      73657273 
+ 2221      5C6D6C67 
+ 2221      6A6D6F6F 
+ 2221      725C446F 
+ 2222 0301 435C6E6F 		.ascii	"C\\nodusC.cydsn\000"
+ 2222      64757343 
+ 2222      2E637964 
+ 2222      736E00
+ 2223              	.LASF2:
+ 2224 0310 73686F72 		.ascii	"short int\000"
+ 2224      7420696E 
+ 2224      7400
+ 2225              	.LASF46:
+ 2226 031a 43795379 		.ascii	"CySysPmGetResetReason\000"
+ 2226      73506D47 
+ 2226      65745265 
+ 2226      73657452 
+ 2226      6561736F 
+ 2227              	.LASF36:
+ 2228 0330 636D704F 		.ascii	"cmpOut\000"
+ 2228      757400
+ 2229              	.LASF48:
+ 2230 0337 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Comp_1.c\000"
+ 2230      6E657261 
+ 2230      7465645F 
+ 2230      536F7572 
+ 2230      63655C50 
+ 2231              	.LASF28:
+ 2232 0359 696E7465 		.ascii	"interruptMask\000"
+ 2232      72727570 
+ 2232      744D6173 
+ 2232      6B00
+ 2233              	.LASF4:
+ 2234 0367 6C6F6E67 		.ascii	"long int\000"
+ 2234      20696E74 
+ 2234      00
+ 2235              	.LASF18:
+ 2236 0370 436F6D70 		.ascii	"Comp_1_Enable\000"
+ 2236      5F315F45 
+ 2236      6E61626C 
+ 2236      6500
+ 2237              	.LASF0:
+ 2238 037e 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccu21nGG.s 			page 54
+
+
+ 2238      65642063 
+ 2238      68617200 
+ 2239              	.LASF51:
+ 2240 038a 436F6D70 		.ascii	"Comp_1_initVar\000"
+ 2240      5F315F69 
+ 2240      6E697456 
+ 2240      617200
+ 2241              	.LASF42:
+ 2242 0399 436F6D70 		.ascii	"Comp_1_GetInterruptSourceMasked\000"
+ 2242      5F315F47 
+ 2242      6574496E 
+ 2242      74657272 
+ 2242      75707453 
+ 2243              	.LASF20:
+ 2244 03b9 436F6D70 		.ascii	"Comp_1_Start\000"
+ 2244      5F315F53 
+ 2244      74617274 
+ 2244      00
+ 2245              	.LASF39:
+ 2246 03c6 436F6D70 		.ascii	"Comp_1_SetOutputMode\000"
+ 2246      5F315F53 
+ 2246      65744F75 
+ 2246      74707574 
+ 2246      4D6F6465 
+ 2247              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
