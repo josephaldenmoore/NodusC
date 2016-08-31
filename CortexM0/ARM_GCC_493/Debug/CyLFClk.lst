@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
   31:.\Generated_Source\PSoC4/CyLFClk.c **** 
   32:.\Generated_Source\PSoC4/CyLFClk.c **** #if(CY_IP_SRSSV2)
   33:.\Generated_Source\PSoC4/CyLFClk.c ****     /* CySysClkLfclkPosedgeCatch() / CySysClkLfclkPosedgeRestore() */
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 2
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 2
 
 
   34:.\Generated_Source\PSoC4/CyLFClk.c ****     static uint32 lfclkPosedgeWdtCounter0Enabled = 0u;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
   88:.\Generated_Source\PSoC4/CyLFClk.c **** 
   89:.\Generated_Source\PSoC4/CyLFClk.c **** /*******************************************************************************
   90:.\Generated_Source\PSoC4/CyLFClk.c **** * Function Name: CySysClkIloStop
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 3
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 3
 
 
   91:.\Generated_Source\PSoC4/CyLFClk.c **** ****************************************************************************//**
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  145:.\Generated_Source\PSoC4/CyLFClk.c **** 
  146:.\Generated_Source\PSoC4/CyLFClk.c **** /******************************************************************************
  147:.\Generated_Source\PSoC4/CyLFClk.c **** * Function Name: CySysClkIloStartMeasurement
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 4
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 4
 
 
  148:.\Generated_Source\PSoC4/CyLFClk.c **** ***************************************************************************//**
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  202:.\Generated_Source\PSoC4/CyLFClk.c **** {
  203:.\Generated_Source\PSoC4/CyLFClk.c ****     /* Set default configurations in 11...8 DFT register bits to zero */
  204:.\Generated_Source\PSoC4/CyLFClk.c ****     CY_SYS_CLK_DFT_REG &= ~CY_SYS_CLK_DFT_SELECT_DEFAULT_MASK;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 5
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 5
 
 
  205:.\Generated_Source\PSoC4/CyLFClk.c ****     #if(CY_IP_SRSSLT)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  259:.\Generated_Source\PSoC4/CyLFClk.c **** * The user should call CySysClkIloStartMeasurement() API before calling 
  260:.\Generated_Source\PSoC4/CyLFClk.c **** * this API.
  261:.\Generated_Source\PSoC4/CyLFClk.c **** *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 6
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 6
 
 
  262:.\Generated_Source\PSoC4/CyLFClk.c **** * \note For a correct WDT or DeepSleep Timers functioning with ILO compensating 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  316:.\Generated_Source\PSoC4/CyLFClk.c ****                                                    (desiredDelayInCounts / CY_SYS_CLK_ILO_FREQ_3LSB
  317:.\Generated_Source\PSoC4/CyLFClk.c ****                         }
  318:.\Generated_Source\PSoC4/CyLFClk.c ****                         else
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 7
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 7
 
 
  319:.\Generated_Source\PSoC4/CyLFClk.c ****                         {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
   26              		.cfi_startproc
  372:.\Generated_Source\PSoC4/CyLFClk.c ****         /* Prohibits writing to WDT registers and ILO/WCO registers when not equal to 0 */
  373:.\Generated_Source\PSoC4/CyLFClk.c ****         return ((0u != (CY_SYS_CLK_ILO_CONFIG_REG & (uint32)(CY_SYS_CLK_ILO_CONFIG_ENABLE))) ?
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 8
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 8
 
 
   27              		.loc 1 373 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  400:.\Generated_Source\PSoC4/CyLFClk.c **** * \note SysClk should be sourced by IMO. Otherwise CySysClkIloTrim() and 
  401:.\Generated_Source\PSoC4/CyLFClk.c **** * CySysClkIloCompensate() API can give incorrect results.
  402:.\Generated_Source\PSoC4/CyLFClk.c **** *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 9
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 9
 
 
  403:.\Generated_Source\PSoC4/CyLFClk.c **** * \note If System clock frequency is changed in runtime, the CyDelayFreq() 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  457:.\Generated_Source\PSoC4/CyLFClk.c ****     checkStatus = (uint32) (CY_SYS_CLK_DFT_REG & (uint32) CY_SYS_TST_DDFT_CTRL_REG_DEFAULT_MASK);
  458:.\Generated_Source\PSoC4/CyLFClk.c **** 
  459:.\Generated_Source\PSoC4/CyLFClk.c ****     /* Check if DFT and CTRL registers were configures in CySysStartMeasurement*/
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 10
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 10
 
 
  460:.\Generated_Source\PSoC4/CyLFClk.c ****     if((checkStatus == CY_SYS_CLK_SEL_ILO_DFT_SOURCE) &&
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  514:.\Generated_Source\PSoC4/CyLFClk.c ****                     returnStatus = CySysClkIloUpdateTrimReg(iloAccuracyInPPT);
  515:.\Generated_Source\PSoC4/CyLFClk.c ****                     trimRunningStatus = CY_SYS_CLK_TRIM_OR_COMP_FINISHED;
  516:.\Generated_Source\PSoC4/CyLFClk.c ****                 }
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 11
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 11
 
 
  517:.\Generated_Source\PSoC4/CyLFClk.c ****                 else
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  571:.\Generated_Source\PSoC4/CyLFClk.c **** cystatus CySysClkIloUpdateTrimReg(int32* iloAccuracyInPPT)
  572:.\Generated_Source\PSoC4/CyLFClk.c **** {
  573:.\Generated_Source\PSoC4/CyLFClk.c ****     uint32 measuredIloFreq;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 12
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 12
 
 
  574:.\Generated_Source\PSoC4/CyLFClk.c ****     uint32 currentIloTrimValue;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  628:.\Generated_Source\PSoC4/CyLFClk.c **** }
  629:.\Generated_Source\PSoC4/CyLFClk.c **** 
  630:.\Generated_Source\PSoC4/CyLFClk.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 13
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 13
 
 
  631:.\Generated_Source\PSoC4/CyLFClk.c **** /*******************************************************************************
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  685:.\Generated_Source\PSoC4/CyLFClk.c ****     static uint32 CySysClkGetLfclkSource(void)
  686:.\Generated_Source\PSoC4/CyLFClk.c ****     {
   55              		.loc 1 686 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 14
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 14
 
 
   56              		.cfi_startproc
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  717:.\Generated_Source\PSoC4/CyLFClk.c **** * source
  718:.\Generated_Source\PSoC4/CyLFClk.c **** * CY_SYS_CLK_LFCLK_SRC_ILO - Internal Low Frequency (32 kHz) 
  719:.\Generated_Source\PSoC4/CyLFClk.c **** * Oscillator (ILO).<br>
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 15
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 15
 
 
  720:.\Generated_Source\PSoC4/CyLFClk.c **** * CY_SYS_CLK_LFCLK_SRC_WCO - Low Frequency Watch Crystal Oscillator (WCO).
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  774:.\Generated_Source\PSoC4/CyLFClk.c ****         CY_SYS_CLK_WCO_CONFIG_REG |= CY_SYS_CLK_WCO_CONFIG_LPM_ENABLE;
  775:.\Generated_Source\PSoC4/CyLFClk.c ****     }
  776:.\Generated_Source\PSoC4/CyLFClk.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 16
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 16
 
 
  777:.\Generated_Source\PSoC4/CyLFClk.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  831:.\Generated_Source\PSoC4/CyLFClk.c **** 
  832:.\Generated_Source\PSoC4/CyLFClk.c ****     /*******************************************************************************
  833:.\Generated_Source\PSoC4/CyLFClk.c ****     * Function Name: CySysClkWcoSetPowerMode
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 17
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 17
 
 
  834:.\Generated_Source\PSoC4/CyLFClk.c ****     ****************************************************************************//**
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  888:.\Generated_Source\PSoC4/CyLFClk.c **** * If you want to use external pin to drive WCO the next procedure is required:
  889:.\Generated_Source\PSoC4/CyLFClk.c **** * <br> 1) Disable the WCO.
  890:.\Generated_Source\PSoC4/CyLFClk.c **** * <br> 2) Drive the wco_out pin to an external signal source.
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 18
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 18
 
 
  891:.\Generated_Source\PSoC4/CyLFClk.c **** * <br> 3) Call CySysClkWcoClockOutSelect(CY_SYS_CLK_WCO_SEL_PIN).
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  945:.\Generated_Source\PSoC4/CyLFClk.c ****     * CySysWdtUnlock() is called.
  946:.\Generated_Source\PSoC4/CyLFClk.c ****     *
  947:.\Generated_Source\PSoC4/CyLFClk.c ****     *******************************************************************************/
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 19
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 19
 
 
  948:.\Generated_Source\PSoC4/CyLFClk.c ****     void CySysWdtLock(void)
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  108              	.LFB2:
   84:.\Generated_Source\PSoC4/CyLFClk.c ****     CY_SYS_CLK_ILO_CONFIG_REG |= CY_SYS_CLK_ILO_CONFIG_ENABLE;
  109              		.loc 1 84 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 20
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 20
 
 
  110              		.cfi_startproc
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  157 001c 1168     		ldr	r1, [r2]
  158 001e 0B4B     		ldr	r3, .L18+16
  159 0020 0B40     		and	r3, r1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 21
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 21
 
 
  160 0022 8021     		mov	r1, #128
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  209              		.align	2
  210              	.L21:
  211 000c 10010B40 		.word	1074462992
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 22
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 22
 
 
  212 0010 FFF0FFFF 		.word	-3841
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  259 0024 50D9     		bls	.L31
  281:.\Generated_Source\PSoC4/CyLFClk.c ****        (compensatedCycles !=  NULL))
  260              		.loc 1 281 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 23
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 23
 
 
  261 0026 0029     		cmp	r1, #0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  307              		.loc 1 296 0
  308 006e 7043     		mul	r0, r6
  309              	.LVL10:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 24
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 24
 
 
  310 0070 15E0     		b	.L27
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  356              	.L25:
  343:.\Generated_Source\PSoC4/CyLFClk.c ****             compensateRunningStatus = CY_SYS_CLK_TRIM_OR_COMP_STARTED;
  357              		.loc 1 343 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 25
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 25
 
 
  358 00a8 144B     		ldr	r3, .L35+36
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  407 00d4 1120     		mov	r0, #17
  408              	.LVL37:
  409              	.L24:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 26
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 26
 
 
  354:.\Generated_Source\PSoC4/CyLFClk.c **** 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  460 0016 890A     		lsr	r1, r1, #10
  461 0018 FFF7FEFF 		bl	__aeabi_uidiv
  462              	.LVL40:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 27
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 27
 
 
  585:.\Generated_Source\PSoC4/CyLFClk.c ****                             ((int32) CY_SYS_CLK_PERTHOUSAND)) / ((int32) CY_SYS_CLK_ILO_DESIRED_FRE
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  511 0062 1B68     		ldr	r3, [r3]
  512 0064 0F22     		mov	r2, #15
  513 0066 1340     		and	r3, r2
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 28
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 28
 
 
  514              	.LVL49:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  558              	.LVL60:
  559              	.L38:
  628:.\Generated_Source\PSoC4/CyLFClk.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 29
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 29
 
 
  560              		.loc 1 628 0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  609 0018 9A42     		cmp	r2, r3
  610 001a 45D1     		bne	.L59
  461:.\Generated_Source\PSoC4/CyLFClk.c ****        (iloAccuracyInPPT != NULL))
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 30
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 30
 
 
  611              		.loc 1 461 0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  655              		.loc 1 482 0
  656 0052 013E     		sub	r6, r6, #1
  657              	.LVL69:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 31
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 31
 
 
  487:.\Generated_Source\PSoC4/CyLFClk.c **** 
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  701 008a 124B     		ldr	r3, .L64+24
  702 008c 9A60     		str	r2, [r3, #8]
  703 008e 14E0     		b	.L50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 32
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 32
 
 
  704              	.LVL74:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  751              	.L50:
  537:.\Generated_Source\PSoC4/CyLFClk.c **** 
  752              		.loc 1 537 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 33
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 33
 
 
  753              		@ sp needed
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  801              	.L68:
  660:.\Generated_Source\PSoC4/CyLFClk.c ****         }
  802              		.loc 1 660 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 34
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 34
 
 
  803 0022 0120     		mov	r0, #1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
   21:.\Generated_Source\PSoC4/CyLFClk.h **** #include "cydevice_trm.h"
   22:.\Generated_Source\PSoC4/CyLFClk.h **** 
   23:.\Generated_Source\PSoC4/CyLFClk.h **** #define CY_IP_WCO_WDT_EN           (-1 == 1)
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 35
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 35
 
 
   24:.\Generated_Source\PSoC4/CyLFClk.h **** 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
   78:.\Generated_Source\PSoC4/CyLFClk.h **** */
   79:.\Generated_Source\PSoC4/CyLFClk.h ****     void   CySysClkWcoStart(void);
   80:.\Generated_Source\PSoC4/CyLFClk.h ****     void   CySysClkWcoStop(void);
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 36
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 36
 
 
   81:.\Generated_Source\PSoC4/CyLFClk.h ****     uint32 CySysClkWcoSetPowerMode(uint32 mode);
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  135:.\Generated_Source\PSoC4/CyLFClk.h ****     uint32 CySysWdtGetEnabledStatus(void);
  136:.\Generated_Source\PSoC4/CyLFClk.h ****     void   CySysWdtEnable(void);
  137:.\Generated_Source\PSoC4/CyLFClk.h ****     void   CySysWdtDisable(void);
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 37
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 37
 
 
  138:.\Generated_Source\PSoC4/CyLFClk.h ****     void   CySysWdtSetMatch(uint32 match);
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  192:.\Generated_Source\PSoC4/CyLFClk.h **** 
  193:.\Generated_Source\PSoC4/CyLFClk.h **** 
  194:.\Generated_Source\PSoC4/CyLFClk.h **** /*******************************************************************************
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 38
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 38
 
 
  195:.\Generated_Source\PSoC4/CyLFClk.h **** * Clock API Constants
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  249:.\Generated_Source\PSoC4/CyLFClk.h **** 
  250:.\Generated_Source\PSoC4/CyLFClk.h **** /* CySysClkSetTimerSource() - implementation definitions */
  251:.\Generated_Source\PSoC4/CyLFClk.h **** #if (CY_IP_SRSSLT && CY_IP_WCO && CY_IP_WCO_WDT_EN)
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 39
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 39
 
 
  252:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_CLK_TIMER_SEL_MASK                   ((uint32)(( uint32 )0x03u << 30u))
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  306:.\Generated_Source\PSoC4/CyLFClk.h **** 
  307:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_CLK_WCO_TRIM_XGM_3370NA              (( uint32 ) 0x00u)
  308:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_CLK_WCO_TRIM_XGM_2620NA              (( uint32 ) 0x01u)
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 40
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 40
 
 
  309:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_CLK_WCO_TRIM_XGM_2250NA              (( uint32 ) 0x02u)
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  363:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_WDT_CONFIG_BITS2_MASK        (uint32)(0x1Fu)
  364:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_WDT_CONFIG_BITS2_POS         (uint32)(24u)
  365:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_WDT_LOWER_16BITS_MASK        (uint32)(0x0000FFFFu)
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 41
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 41
 
 
  366:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_WDT_HIGHER_16BITS_MASK       (uint32)(0xFFFF0000u)
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  420:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_TIMER2_MASK                  ((uint32)((uint32)0x01u << 16u))    /**< Counter 2 
  421:.\Generated_Source\PSoC4/CyLFClk.h **** 
  422:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_TIMER0_RESET                 ((uint32)0x01u << 3u)       /**< Counter 0 */
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 42
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 42
 
 
  423:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_TIMER1_RESET                 ((uint32)0x01u << 11u)      /**< Counter 1 */
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  477:.\Generated_Source\PSoC4/CyLFClk.h **** 
  478:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_3TIMER_DELAY_US      \
  479:.\Generated_Source\PSoC4/CyLFClk.h ****         ((CY_SYS_CLK_TIMER_SRC_ILO == (CY_SYS_WCO_WDT_CONFIG_REG & CY_SYS_CLK_TIMER_SEL_MASK)) ? \
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 43
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 43
 
 
  480:.\Generated_Source\PSoC4/CyLFClk.h ****                                             (CY_SYS_TIMER_3ILO_DELAY_US) : \
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  534:.\Generated_Source\PSoC4/CyLFClk.h **** #define CY_SYS_CNT_CTRL_PTR                              ( (reg32*) CYREG_TST_DDFT_CTRL)
  535:.\Generated_Source\PSoC4/CyLFClk.h **** 
  536:.\Generated_Source\PSoC4/CyLFClk.h ****     /* DFT TST Counter 1 Register*/
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 44
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 44
 
 
  537:.\Generated_Source\PSoC4/CyLFClk.h **** #define CY_SYS_CNT_REG1_REG                              (*(reg32*) CYREG_TST_TRIM_CNTR1)
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  591:.\Generated_Source\PSoC4/CyLFClk.h **** * WDT API Registers
  592:.\Generated_Source\PSoC4/CyLFClk.h **** *******************************************************************************/
  593:.\Generated_Source\PSoC4/CyLFClk.h **** #if(CY_IP_SRSSV2)
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 45
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 45
 
 
  594:.\Generated_Source\PSoC4/CyLFClk.h ****     #define CY_SYS_WDT_CTRLOW_REG               (*(reg32 *) CYREG_WDT_CTRLOW)
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  648:.\Generated_Source\PSoC4/CyLFClk.h ****     /*******************************************************************************
  649:.\Generated_Source\PSoC4/CyLFClk.h ****     * Function Name: CySysClkWcoSetHighPowerMode
  650:.\Generated_Source\PSoC4/CyLFClk.h ****     ********************************************************************************
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 46
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 46
 
 
  651:.\Generated_Source\PSoC4/CyLFClk.h ****     *
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  868 002e 8021     		mov	r1, #128
  869 0030 0906     		lsl	r1, r1, #24
  870 0032 0A43     		orr	r2, r1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 47
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 47
 
 
  871 0034 1A60     		str	r2, [r3]
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  920              	CySysClkWcoSetPowerMode:
  921              	.LFB16:
  852:.\Generated_Source\PSoC4/CyLFClk.c ****         uint32 powerModeStatus;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 48
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 48
 
 
  922              		.loc 1 852 0
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  968              		.loc 2 667 0
  969 0034 1968     		ldr	r1, [r3]
  970 0036 0938     		sub	r0, r0, #9
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 49
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 49
 
 
  971 0038 8143     		bic	r1, r0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1002 005a 8143     		bic	r1, r0
  690:.\Generated_Source\PSoC4/CyLFClk.h ****                         | (uint32)(CY_SYS_CLK_WCO_TRIM_GM_LPM << CY_SYS_CLK_WCO_TRIM_GM_SHIFT);
  1003              		.loc 2 690 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 50
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 50
 
 
  1004 005c 1038     		sub	r0, r0, #16
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1051              		.cfi_offset 14, -4
  1052 0002 041C     		mov	r4, r0
  920:.\Generated_Source\PSoC4/CyLFClk.c ****         {
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 51
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 51
 
 
  1053              		.loc 1 920 0
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1100 0000 08B5     		push	{r3, lr}
  1101              		.cfi_def_cfa_offset 8
  1102              		.cfi_offset 3, -8
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 52
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 52
 
 
  1103              		.cfi_offset 14, -4
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  986:.\Generated_Source\PSoC4/CyLFClk.c ****         interruptState = CyEnterCriticalSection();
  1141              		.loc 1 986 0
  1142 0002 FFF7FEFF 		bl	CyEnterCriticalSection
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 53
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 53
 
 
  1143              	.LVL104:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1002:.\Generated_Source\PSoC4/CyLFClk.c ****     * \brief
 1003:.\Generated_Source\PSoC4/CyLFClk.c ****     *  Reads the enabled status of one of the three WDT counters.
 1004:.\Generated_Source\PSoC4/CyLFClk.c ****     *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 54
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 54
 
 
 1005:.\Generated_Source\PSoC4/CyLFClk.c ****     * \param counterNum: Valid range [0-2].  The number of the WDT counter.
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1219              		.section	.text.CySysWdtSetMode,"ax",%progbits
  1220              		.align	2
  1221              		.global	CySysWdtSetMode
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 55
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 55
 
 
  1222              		.code	16
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1246              	.L103:
 1052:.\Generated_Source\PSoC4/CyLFClk.c **** 
 1053:.\Generated_Source\PSoC4/CyLFClk.c ****         if(0u == CySysWdtGetEnabledStatus(counterNum))
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 56
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 56
 
 
  1247              		.loc 1 1053 0 is_stmt 1
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1061:.\Generated_Source\PSoC4/CyLFClk.c **** 
 1062:.\Generated_Source\PSoC4/CyLFClk.c **** 
 1063:.\Generated_Source\PSoC4/CyLFClk.c ****     /*******************************************************************************
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 57
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 57
 
 
 1064:.\Generated_Source\PSoC4/CyLFClk.c ****     * Function Name: CySysWdtGetMode
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1118:.\Generated_Source\PSoC4/CyLFClk.c **** 
 1119:.\Generated_Source\PSoC4/CyLFClk.c ****             CY_SYS_WDT_CONFIG_REG = configRegValue;
 1120:.\Generated_Source\PSoC4/CyLFClk.c ****         }
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 58
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 58
 
 
 1121:.\Generated_Source\PSoC4/CyLFClk.c ****     }
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1175:.\Generated_Source\PSoC4/CyLFClk.c ****     * source should be enabled and configured to be the source for LFCLK.
 1176:.\Generated_Source\PSoC4/CyLFClk.c ****     *
 1177:.\Generated_Source\PSoC4/CyLFClk.c ****     *******************************************************************************/
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 59
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 59
 
 
 1178:.\Generated_Source\PSoC4/CyLFClk.c ****     void CySysWdtEnable(uint32 counterMask)
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1232:.\Generated_Source\PSoC4/CyLFClk.c ****             if(0u != (counterMask & CY_SYS_WDT_COUNTER0_MASK))
 1233:.\Generated_Source\PSoC4/CyLFClk.c ****             {
 1234:.\Generated_Source\PSoC4/CyLFClk.c ****                 while (0u != CySysWdtGetEnabledStatus(CY_SYS_WDT_COUNTER0))
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 60
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 60
 
 
 1235:.\Generated_Source\PSoC4/CyLFClk.c ****                 {
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1289:.\Generated_Source\PSoC4/CyLFClk.c **** 
 1290:.\Generated_Source\PSoC4/CyLFClk.c ****         countersEnableStatus = CySysWdtGetEnabledStatus(CY_SYS_WDT_COUNTER0) |
 1291:.\Generated_Source\PSoC4/CyLFClk.c ****                             CySysWdtGetEnabledStatus(CY_SYS_WDT_COUNTER1) |
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 61
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 61
 
 
 1292:.\Generated_Source\PSoC4/CyLFClk.c ****                             CySysWdtGetEnabledStatus(CY_SYS_WDT_COUNTER2);
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1346:.\Generated_Source\PSoC4/CyLFClk.c ****         regValue = CY_SYS_WDT_MATCH_REG;
 1347:.\Generated_Source\PSoC4/CyLFClk.c ****         regValue &= (uint32)~((uint32)(CY_SYS_WDT_LOWER_16BITS_MASK << (counterNum * CY_SYS_WDT_CNT
 1348:.\Generated_Source\PSoC4/CyLFClk.c ****         CY_SYS_WDT_MATCH_REG = (regValue | (match << (counterNum * CY_SYS_WDT_CNT_MATCH_SHIFT)));
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 62
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 62
 
 
 1349:.\Generated_Source\PSoC4/CyLFClk.c **** 
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1403:.\Generated_Source\PSoC4/CyLFClk.c **** 
 1404:.\Generated_Source\PSoC4/CyLFClk.c ****     /*******************************************************************************
 1405:.\Generated_Source\PSoC4/CyLFClk.c ****     * Function Name: CySysWdtGetMatch
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 63
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 63
 
 
 1406:.\Generated_Source\PSoC4/CyLFClk.c ****     ****************************************************************************//**
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1460:.\Generated_Source\PSoC4/CyLFClk.c ****                 CYASSERT(0u != 0u);
 1461:.\Generated_Source\PSoC4/CyLFClk.c ****             break;
 1462:.\Generated_Source\PSoC4/CyLFClk.c ****         }
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 64
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 64
 
 
 1463:.\Generated_Source\PSoC4/CyLFClk.c **** 
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1517:.\Generated_Source\PSoC4/CyLFClk.c ****         if (0u != CySysWdtLocked())
 1518:.\Generated_Source\PSoC4/CyLFClk.c ****         {
 1519:.\Generated_Source\PSoC4/CyLFClk.c ****             wdtLockState = 1u;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 65
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 65
 
 
 1520:.\Generated_Source\PSoC4/CyLFClk.c ****             CySysWdtUnlock();
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1574:.\Generated_Source\PSoC4/CyLFClk.c ****         {
 1575:.\Generated_Source\PSoC4/CyLFClk.c ****             /* Wait for reset to come into effect */
 1576:.\Generated_Source\PSoC4/CyLFClk.c ****         }
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 66
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 66
 
 
 1577:.\Generated_Source\PSoC4/CyLFClk.c ****     }
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1631:.\Generated_Source\PSoC4/CyLFClk.c ****         }
 1632:.\Generated_Source\PSoC4/CyLFClk.c ****         else
 1633:.\Generated_Source\PSoC4/CyLFClk.c ****         {
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 67
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 67
 
 
 1634:.\Generated_Source\PSoC4/CyLFClk.c ****             CYASSERT(0u != 0u);
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1688:.\Generated_Source\PSoC4/CyLFClk.c **** 
 1689:.\Generated_Source\PSoC4/CyLFClk.c ****     /*******************************************************************************
 1690:.\Generated_Source\PSoC4/CyLFClk.c ****     * Function Name: CySysWdtIsr
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 68
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 68
 
 
 1691:.\Generated_Source\PSoC4/CyLFClk.c ****     ****************************************************************************//**
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1745:.\Generated_Source\PSoC4/CyLFClk.c ****                     (void)(cySysWdtCallback[CY_SYS_WDT_COUNTER2])();
 1746:.\Generated_Source\PSoC4/CyLFClk.c ****                 }
 1747:.\Generated_Source\PSoC4/CyLFClk.c ****             }
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 69
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 69
 
 
 1748:.\Generated_Source\PSoC4/CyLFClk.c ****             CySysWdtClearInterrupt(CY_SYS_WDT_COUNTER2_INT);
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1802:.\Generated_Source\PSoC4/CyLFClk.c ****             }
 1803:.\Generated_Source\PSoC4/CyLFClk.c ****             else
 1804:.\Generated_Source\PSoC4/CyLFClk.c ****             {
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 70
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 70
 
 
 1805:.\Generated_Source\PSoC4/CyLFClk.c ****                 /* Do nothing. */
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1859:.\Generated_Source\PSoC4/CyLFClk.c ****             /* Configure WDT counter # 0 */
 1860:.\Generated_Source\PSoC4/CyLFClk.c ****             lfclkPosedgeWdtCounter0Enabled = 1u;
 1861:.\Generated_Source\PSoC4/CyLFClk.c ****             lfclkPosedgeEnabledWdtCounter = CY_SYS_WDT_COUNTER0;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 71
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 71
 
 
 1862:.\Generated_Source\PSoC4/CyLFClk.c **** 
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1309 0012 1360     		str	r3, [r2]
 1900:.\Generated_Source\PSoC4/CyLFClk.c ****             CySysWdtSetMode(CY_SYS_WDT_COUNTER0, lfclkPosedgeWdtCounter0Mode);
  1310              		.loc 1 1900 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 72
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 72
 
 
  1311 0014 034C     		ldr	r4, .L109
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1359              	.LFE23:
  1360              		.size	CySysWdtGetMode, .-CySysWdtGetMode
  1361              		.section	.text.CySysWdtSetClearOnMatch,"ax",%progbits
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 73
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 73
 
 
  1362              		.align	2
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1408 0028 A540     		lsl	r5, r5, r4
  1409              	.LVL128:
  1410 002a 2C1C     		mov	r4, r5
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 74
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 74
 
 
  1411 002c 1C43     		orr	r4, r3
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1458 0014 0234     		add	r4, r4, #2
 1142:.\Generated_Source\PSoC4/CyLFClk.c ****                         ((counterNum * CY_SYS_WDT_CNT_SHIFT) + CY_SYS_WDT_CNT_MATCH_CLR_SHIFT)) & 0
  1459              		.loc 1 1142 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 75
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 75
 
 
  1460 0016 E040     		lsr	r0, r0, r4
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1508 001a E305     		lsl	r3, r4, #23
  1509 001c 04D5     		bpl	.L126
  1510              	.L127:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 76
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 76
 
 
 1196:.\Generated_Source\PSoC4/CyLFClk.c ****             {
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1559 0008 0028     		cmp	r0, #0
  1560 000a 18D1     		bne	.L132
 1230:.\Generated_Source\PSoC4/CyLFClk.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 77
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 77
 
 
  1561              		.loc 1 1230 0
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1608              	.LFE27:
  1609              		.size	CySysWdtDisable, .-CySysWdtDisable
  1610              		.section	.text.CySysWdtSetCascade,"ax",%progbits
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 78
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 78
 
 
  1611              		.align	2
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1656              	.LVL154:
 1298:.\Generated_Source\PSoC4/CyLFClk.c ****             CY_SYS_WDT_CONFIG_REG = configRegValue;
  1657              		.loc 1 1298 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 79
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 79
 
 
  1658 0026 1D43     		orr	r5, r3
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1707              	CySysWdtSetMatch:
  1708              	.LFB30:
 1337:.\Generated_Source\PSoC4/CyLFClk.c ****         uint32 regValue;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 80
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 80
 
 
  1709              		.loc 1 1337 0
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1756 0030 281C     		mov	r0, r5
  1757              	.LVL165:
  1758 0032 A040     		lsl	r0, r0, r4
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 81
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 81
 
 
  1759 0034 1843     		orr	r0, r3
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1807              	.LVL170:
  1808 0006 FFF7FEFF 		bl	CySysWdtGetEnabledStatus
  1809              	.LVL171:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 82
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 82
 
 
  1810 000a 0028     		cmp	r0, #0
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1401:.\Generated_Source\PSoC4/CyLFClk.c **** 
  1857              		.loc 1 1401 0
  1858              		@ sp needed
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 83
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 83
 
 
  1859 0008 7047     		bx	lr
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1906              		.align	2
  1907              	.L165:
  1908 001c 08020B40 		.word	1074463240
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 84
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 84
 
 
  1909              		.cfi_endproc
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  1957              	.L171:
 1456:.\Generated_Source\PSoC4/CyLFClk.c ****             break;
  1958              		.loc 1 1456 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 85
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 85
 
 
  1959 0022 054B     		ldr	r3, .L174+4
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2006 000c 0022     		mov	r2, #0
  2007 000e 184B     		ldr	r3, .L182
  2008 0010 5A61     		str	r2, [r3, #20]
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 86
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 86
 
 
  2009 0012 21E0     		b	.L178
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2054 0054 FFF7FEFF 		bl	CySysWdtEnable
  2055              	.LVL199:
  2056              	.L178:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 87
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 87
 
 
 1868:.\Generated_Source\PSoC4/CyLFClk.c ****         while (CySysWdtGetCount(lfclkPosedgeEnabledWdtCounter) == firstCount)
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2105 000e 0028     		cmp	r0, #0
  2106 0010 18D0     		beq	.L184
  120:.\Generated_Source\PSoC4/CyLFClk.c ****                 {
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 88
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 88
 
 
  2107              		.loc 1 120 0
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2154              		.align	2
  2155              		.global	CySysClkSetLfclkSource
  2156              		.code	16
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 89
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 89
 
 
  2157              		.thumb_func
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2202              	.LVL220:
  2203              	.L189:
  747:.\Generated_Source\PSoC4/CyLFClk.c **** #endif /* (CY_IP_WCO && CY_IP_SRSSV2) */
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 90
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 90
 
 
  2204              		.loc 1 747 0
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2252 0026 5B08     		lsr	r3, r3, #1
  2253 0028 1360     		str	r3, [r2]
  803:.\Generated_Source\PSoC4/CyLFClk.c ****                     CyExitCriticalSection(interruptState);
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 91
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 91
 
 
  2254              		.loc 1 803 0
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2302 000c 10020B40 		.word	1074463248
  2303 0010 04040400 		.word	263172
  2304              		.cfi_endproc
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 92
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 92
 
 
  2305              	.LFE35:
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2352              	.LVL237:
 1532:.\Generated_Source\PSoC4/CyLFClk.c ****                                                                            CY_SYS_WDT_COUNTER1_INT 
  2353              		.loc 1 1532 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 93
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 93
 
 
  2354 0022 084A     		ldr	r2, .L205+4
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2401 0000 054A     		ldr	r2, .L209
  2402 0002 1168     		ldr	r1, [r2]
  2403 0004 054B     		ldr	r3, .L209+4
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 94
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 94
 
 
  2404 0006 1840     		and	r0, r3
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2452              		.loc 1 1601 0
  2453 000e 9961     		str	r1, [r3, #24]
  2454 0010 03E0     		b	.L213
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 95
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 95
 
 
  2455              	.LVL250:
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2503              	.LVL258:
  2504              	.L217:
 1634:.\Generated_Source\PSoC4/CyLFClk.c ****         }
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 96
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 96
 
 
  2505              		.loc 1 1634 0 discriminator 1
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2553 0016 5368     		ldr	r3, [r2, #4]
  2554 0018 0B43     		orr	r3, r1
  2555 001a 5360     		str	r3, [r2, #4]
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 97
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 97
 
 
  2556 001c 02E0     		b	.L221
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2605              	.LVL269:
  2606              	.L227:
 1684:.\Generated_Source\PSoC4/CyLFClk.c ****         }
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 98
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 98
 
 
  2607              		.loc 1 1684 0 discriminator 1
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2656 0020 6260     		str	r2, [r4, #4]
 1716:.\Generated_Source\PSoC4/CyLFClk.c ****                 if(cySysWdtCallback[CY_SYS_WDT_COUNTER0] != (void *) 0)
  2657              		.loc 1 1716 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 99
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 99
 
 
  2658 0022 5A6A     		ldr	r2, [r3, #36]
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2703              		.loc 1 1733 0
  2704 0066 9847     		blx	r3
  2705              	.LVL274:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 100
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 100
 
 
  2706              	.L235:
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2753              		.global	CySysWatchdogFeed
  2754              		.code	16
  2755              		.thumb_func
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 101
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 101
 
 
  2756              		.type	CySysWatchdogFeed, %function
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2801 0032 FFF7FEFF 		bl	CySysWdtGetMode
  2802              	.LVL285:
  2803 0036 0328     		cmp	r0, #3
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 102
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 102
 
 
  2804 0038 04D1     		bne	.L244
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1913:.\Generated_Source\PSoC4/CyLFClk.c ****     * \return The status of the WDT counter:
 1914:.\Generated_Source\PSoC4/CyLFClk.c ****     * \return 0 - Counter is disabled
 1915:.\Generated_Source\PSoC4/CyLFClk.c ****     * \return 1 - Counter is enabled
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 103
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 103
 
 
 1916:.\Generated_Source\PSoC4/CyLFClk.c ****     *
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 1970:.\Generated_Source\PSoC4/CyLFClk.c ****     {
 1971:.\Generated_Source\PSoC4/CyLFClk.c ****         match &= CY_SYS_WDT_MATCH_MASK;
 1972:.\Generated_Source\PSoC4/CyLFClk.c ****         CY_SYS_WDT_MATCH_REG = (CY_SYS_WDT_MATCH_REG & (uint32)(~CY_SYS_WDT_MATCH_MASK)) | match;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 104
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 104
 
 
 1973:.\Generated_Source\PSoC4/CyLFClk.c ****     }
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2027:.\Generated_Source\PSoC4/CyLFClk.c ****     /*******************************************************************************
 2028:.\Generated_Source\PSoC4/CyLFClk.c ****     * Function Name: CySysWdtGetIgnoreBits
 2029:.\Generated_Source\PSoC4/CyLFClk.c ****     ****************************************************************************//**
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 105
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 105
 
 
 2030:.\Generated_Source\PSoC4/CyLFClk.c ****     *
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2084:.\Generated_Source\PSoC4/CyLFClk.c ****     *******************************************************************************/
 2085:.\Generated_Source\PSoC4/CyLFClk.c ****     void CySysWdtUnmaskInterrupt(void)
 2086:.\Generated_Source\PSoC4/CyLFClk.c ****     {
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 106
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 106
 
 
 2087:.\Generated_Source\PSoC4/CyLFClk.c ****         CY_SYS_SRSS_INTR_MASK_REG |= CY_SYS_WDT_LOWER_BIT_MASK;
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2141:.\Generated_Source\PSoC4/CyLFClk.c ****     * \details
 2142:.\Generated_Source\PSoC4/CyLFClk.c ****     * This function clears the WDT interrupt every time when it is called.
 2143:.\Generated_Source\PSoC4/CyLFClk.c ****     * Reset after the 3rd interrupt does not happen if this function is registered
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 107
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 107
 
 
 2144:.\Generated_Source\PSoC4/CyLFClk.c ****     * as the interrupt handler even if the "Watchdog with Interrupt" mode is
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2198:.\Generated_Source\PSoC4/CyLFClk.c **** *
 2199:.\Generated_Source\PSoC4/CyLFClk.c **** * \details Both the current source and the new source must be running and stable 
 2200:.\Generated_Source\PSoC4/CyLFClk.c **** * before calling this function.
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 108
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 108
 
 
 2201:.\Generated_Source\PSoC4/CyLFClk.c **** *
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2255:.\Generated_Source\PSoC4/CyLFClk.c ****         CYASSERT(counterNum < CY_SYS_TIMER_COUNTERS_MAX);
 2256:.\Generated_Source\PSoC4/CyLFClk.c ****         return ((CY_SYS_WCO_WDT_CONTROL_REG >> ((CY_SYS_TIMER_CNT_SHIFT * counterNum) + 
 2257:.\Generated_Source\PSoC4/CyLFClk.c ****                                                  CY_SYS_TIMER_CNT_STTS_SHIFT)) & 0x01u);
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 109
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 109
 
 
 2258:.\Generated_Source\PSoC4/CyLFClk.c ****     }
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2312:.\Generated_Source\PSoC4/CyLFClk.c ****     uint32 CySysTimerGetMode(uint32 counterNum)
 2313:.\Generated_Source\PSoC4/CyLFClk.c ****     {
 2314:.\Generated_Source\PSoC4/CyLFClk.c ****         return ((CY_SYS_WCO_WDT_CONFIG_REG >> (counterNum * CY_SYS_TIMER_CNT_SHIFT)) & CY_SYS_TIMER
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 110
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 110
 
 
 2315:.\Generated_Source\PSoC4/CyLFClk.c ****     }
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2369:.\Generated_Source\PSoC4/CyLFClk.c ****     *
 2370:.\Generated_Source\PSoC4/CyLFClk.c ****     * \return The "clear on match" status: <br>1 if enabled <br>0 if disabled
 2371:.\Generated_Source\PSoC4/CyLFClk.c ****     *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 111
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 111
 
 
 2372:.\Generated_Source\PSoC4/CyLFClk.c ****     *******************************************************************************/
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2426:.\Generated_Source\PSoC4/CyLFClk.c ****         }
 2427:.\Generated_Source\PSoC4/CyLFClk.c **** 
 2428:.\Generated_Source\PSoC4/CyLFClk.c ****         if(0u != (counterMask & CY_SYS_TIMER2_MASK))
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 112
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 112
 
 
 2429:.\Generated_Source\PSoC4/CyLFClk.c ****         {
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2483:.\Generated_Source\PSoC4/CyLFClk.c **** 
 2484:.\Generated_Source\PSoC4/CyLFClk.c **** 
 2485:.\Generated_Source\PSoC4/CyLFClk.c ****     /*******************************************************************************
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 113
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 113
 
 
 2486:.\Generated_Source\PSoC4/CyLFClk.c ****     * Function Name: CySysTimerSetCascade
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2540:.\Generated_Source\PSoC4/CyLFClk.c ****     * \return CY_SYS_TIMER_CASCADE_01 - Cascade 01
 2541:.\Generated_Source\PSoC4/CyLFClk.c ****     * \return CY_SYS_TIMER_CASCADE_12 - Cascade 12
 2542:.\Generated_Source\PSoC4/CyLFClk.c ****     *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 114
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 114
 
 
 2543:.\Generated_Source\PSoC4/CyLFClk.c ****     *******************************************************************************/
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2597:.\Generated_Source\PSoC4/CyLFClk.c ****     * the corresponding parameter to disable the specified counter and wait for it to
 2598:.\Generated_Source\PSoC4/CyLFClk.c ****     * stop. This may take up to three Timer source-cycles.
 2599:.\Generated_Source\PSoC4/CyLFClk.c ****     *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 115
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 115
 
 
 2600:.\Generated_Source\PSoC4/CyLFClk.c ****     *******************************************************************************/
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2654:.\Generated_Source\PSoC4/CyLFClk.c ****     ****************************************************************************//**
 2655:.\Generated_Source\PSoC4/CyLFClk.c ****     *
 2656:.\Generated_Source\PSoC4/CyLFClk.c ****     * \brief Reads the current DeepSleep Timer counter value.
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 116
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 116
 
 
 2657:.\Generated_Source\PSoC4/CyLFClk.c ****     *
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2711:.\Generated_Source\PSoC4/CyLFClk.c ****     }
 2712:.\Generated_Source\PSoC4/CyLFClk.c **** 
 2713:.\Generated_Source\PSoC4/CyLFClk.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 117
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 117
 
 
 2714:.\Generated_Source\PSoC4/CyLFClk.c ****     /*******************************************************************************
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2768:.\Generated_Source\PSoC4/CyLFClk.c ****     cyTimerCallback CySysTimerSetInterruptCallback(uint32 counterNum, cyTimerCallback function)
 2769:.\Generated_Source\PSoC4/CyLFClk.c ****     {
 2770:.\Generated_Source\PSoC4/CyLFClk.c ****         cyTimerCallback prevCallback = (void *)0;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 118
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 118
 
 
 2771:.\Generated_Source\PSoC4/CyLFClk.c **** 
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2825:.\Generated_Source\PSoC4/CyLFClk.c ****     * Value corresponds to appropriate Timer counter. For example value 1 
 2826:.\Generated_Source\PSoC4/CyLFClk.c ****     * corresponds to second Timer counter.
 2827:.\Generated_Source\PSoC4/CyLFClk.c ****     *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 119
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 119
 
 
 2828:.\Generated_Source\PSoC4/CyLFClk.c ****     *******************************************************************************/
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2882:.\Generated_Source\PSoC4/CyLFClk.c ****     void CySysTimerIsr(void)
 2883:.\Generated_Source\PSoC4/CyLFClk.c ****     {
 2884:.\Generated_Source\PSoC4/CyLFClk.c ****         if(0u != (CY_SYS_TIMER0_INT & CY_SYS_WCO_WDT_CONTROL_REG))
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 120
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 120
 
 
 2885:.\Generated_Source\PSoC4/CyLFClk.c ****         {
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2939:.\Generated_Source\PSoC4/CyLFClk.c ****     * take up to 3 DeepSleep Timer source-cycles. DeepSleep Timer source must be 
 2940:.\Generated_Source\PSoC4/CyLFClk.c ****     * enabled. Otherwise, the function will never exit.
 2941:.\Generated_Source\PSoC4/CyLFClk.c ****     *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 121
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 121
 
 
 2942:.\Generated_Source\PSoC4/CyLFClk.c ****     *******************************************************************************/
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 2996:.\Generated_Source\PSoC4/CyLFClk.c ****     * This can be configured in two ways:
 2997:.\Generated_Source\PSoC4/CyLFClk.c ****     * - Through the DWR page. Open the "Clocks" tab, click the "Edit Clocks..."
 2998:.\Generated_Source\PSoC4/CyLFClk.c ****     * button, in the "Configure System Clocks" window click on the
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 122
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 122
 
 
 2999:.\Generated_Source\PSoC4/CyLFClk.c ****     * "Low Frequency Clocks" tab and choose the appropriate option for the used
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 3053:.\Generated_Source\PSoC4/CyLFClk.c ****                                                             (delay <= CY_SYS_UINT16_MAX_VAL))
 3054:.\Generated_Source\PSoC4/CyLFClk.c ****             {
 3055:.\Generated_Source\PSoC4/CyLFClk.c ****                 regValue   = CySysTimerGetCount(counterNum);
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 123
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 123
 
 
 3056:.\Generated_Source\PSoC4/CyLFClk.c ****                 matchValue = (regValue + delay) & (uint32)CY_SYS_UINT16_MAX_VAL;
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 3110:.\Generated_Source\PSoC4/CyLFClk.c ****     * CySysWdtSetClearOnMatch() for WDT or CySysTimerSetClearOnMatch() for DeepSleep
 3111:.\Generated_Source\PSoC4/CyLFClk.c ****     * Timer function with the "enable" parameter equal to zero for the used WDT 
 3112:.\Generated_Source\PSoC4/CyLFClk.c ****     * or DeepSleep Timer counter.
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 124
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 124
 
 
 3113:.\Generated_Source\PSoC4/CyLFClk.c ****     *
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2849              		.cfi_offset 4, -16
  2850              		.cfi_offset 5, -12
  2851              		.cfi_offset 6, -8
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 125
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 125
 
 
  2852              		.cfi_offset 14, -4
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2889              	.LVL296:
  2890              	.L247:
 3179:.\Generated_Source\PSoC4/CyLFClk.c ****                 }
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 126
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 126
 
 
 3180:.\Generated_Source\PSoC4/CyLFClk.c ****                 else
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
 3205:.\Generated_Source\PSoC4/CyLFClk.c ****                 }while(tmpValue > match);
 3206:.\Generated_Source\PSoC4/CyLFClk.c **** 
 3207:.\Generated_Source\PSoC4/CyLFClk.c ****                 do
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 127
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 127
 
 
 3208:.\Generated_Source\PSoC4/CyLFClk.c ****                 {
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  2954 0006 151C     		mov	r5, r2
 3037:.\Generated_Source\PSoC4/CyLFClk.c ****                                                                 (delay <= CY_SYS_UINT16_MAX_VAL))
  2955              		.loc 1 3037 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 128
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 128
 
 
  2956 0008 0128     		cmp	r0, #1
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3003              		.set	.LANCHOR2,. + 0
  3004              		.type	counterIntMaskTbl, %object
  3005              		.size	counterIntMaskTbl, 12
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 129
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 129
 
 
  3006              	counterIntMaskTbl:
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3058              		.text
  3059              	.Letext0:
  3060              		.file 3 ".\\Generated_Source\\PSoC4\\cytypes.h"
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 130
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 130
 
 
  3061              		.file 4 ".\\Generated_Source\\PSoC4\\CyLib.h"
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3115 0067 28030000 		.4byte	.LASF8
  3116 006b 04       		.uleb128 0x4
  3117 006c 05020000 		.4byte	.LASF9
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 131
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 131
 
 
  3118 0070 03       		.byte	0x3
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3172 00e2 6B050000 		.4byte	.LASF18
  3173 00e6 00       		.sleb128 0
  3174 00e7 09       		.uleb128 0x9
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 132
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 132
 
 
  3175 00e8 12090000 		.4byte	.LASF19
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3229 0161 48040000 		.4byte	.LASF27
  3230 0165 01       		.byte	0x1
  3231 0166 53       		.byte	0x53
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 133
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 133
 
 
  3232 0167 00000000 		.4byte	.LFB2
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3286 01e8 01       		.byte	0x1
  3287 01e9 0D01     		.2byte	0x10d
  3288 01eb 83000000 		.4byte	0x83
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 134
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 134
 
 
  3289 01ef 4F010000 		.4byte	.LLST2
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3343 0277 16010000 		.4byte	.LASF40
  3344 027b 01       		.byte	0x1
  3345 027c 3E02     		.2byte	0x23e
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 135
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 135
 
 
  3346 027e 83000000 		.4byte	0x83
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3400 030c 01       		.byte	0x1
  3401 030d C401     		.2byte	0x1c4
  3402 030f 83000000 		.4byte	0x83
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 136
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 136
 
 
  3403 0313 3C040000 		.4byte	.LLST15
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3457 0389 FF040000 		.4byte	.LASF35
  3458 038d 01       		.byte	0x1
  3459 038e 8A02     		.2byte	0x28a
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 137
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 137
 
 
  3460 0390 B0000000 		.4byte	0xb0
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3514 0412 13       		.uleb128 0x13
  3515 0413 6E040000 		.4byte	.LASF55
  3516 0417 01       		.byte	0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 138
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 138
 
 
  3517 0418 5503     		.2byte	0x355
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3571 0492 8D010000 		.4byte	.LASF58
  3572 0496 01       		.byte	0x1
  3573 0497 B403     		.2byte	0x3b4
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 139
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 139
 
 
  3574 0499 00000000 		.4byte	.LFB18
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3628 0525 83000000 		.4byte	0x83
  3629 0529 A9050000 		.4byte	.LLST24
  3630 052d 17       		.uleb128 0x17
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 140
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 140
 
 
  3631 052e 0E000000 		.4byte	.LVL108
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3685 05a4 00       		.sleb128 0
  3686 05a5 00       		.byte	0
  3687 05a6 00       		.byte	0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 141
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 141
 
 
  3688 05a7 1D       		.uleb128 0x1d
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3742 0624 5004     		.2byte	0x450
  3743 0626 83000000 		.4byte	0x83
  3744 062a 98060000 		.4byte	.LLST30
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 142
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 142
 
 
  3745 062e 13       		.uleb128 0x13
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3799 069d D8020000 		.4byte	.LASF69
  3800 06a1 01       		.byte	0x1
  3801 06a2 9A04     		.2byte	0x49a
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 143
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 143
 
 
  3802 06a4 00000000 		.4byte	.LFB26
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3856 0716 83000000 		.4byte	0x83
  3857 071a 3A070000 		.4byte	.LLST34
  3858 071e 1C       		.uleb128 0x1c
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 144
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 144
 
 
  3859 071f 08000000 		.4byte	.LVL142
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3913 0794 B8020000 		.4byte	.LASF74
  3914 0798 01       		.byte	0x1
  3915 0799 0805     		.2byte	0x508
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 145
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 145
 
 
  3916 079b 83000000 		.4byte	0x83
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  3970 0809 3805     		.2byte	0x538
  3971 080b 83000000 		.4byte	0x83
  3972 080f BB070000 		.4byte	.LLST37
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 146
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 146
 
 
  3973 0813 12       		.uleb128 0x12
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4027 0899 01       		.uleb128 0x1
  4028 089a 50       		.byte	0x50
  4029 089b 01       		.uleb128 0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 147
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 147
 
 
  4030 089c 32       		.byte	0x32
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4084 0919 13       		.uleb128 0x13
  4085 091a F3010000 		.4byte	.LASF79
  4086 091e 01       		.byte	0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 148
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 148
 
 
  4087 091f A005     		.2byte	0x5a0
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4141 0995 31       		.byte	0x31
  4142 0996 00       		.byte	0
  4143 0997 15       		.uleb128 0x15
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 149
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 149
 
 
  4144 0998 2C000000 		.4byte	.LVL196
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4198 0a01 6C       		.byte	0x6c
  4199 0a02 00000000 		.4byte	.LFB3
  4200 0a06 4C000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 150
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 150
 
 
  4201 0a0a 01       		.uleb128 0x1
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4255 0a8d 82030000 		.4byte	.LASF59
  4256 0a91 01       		.byte	0x1
  4257 0a92 E002     		.2byte	0x2e0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 151
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 151
 
 
  4258 0a94 6B000000 		.4byte	0x6b
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4312 0b20 A7050000 		.4byte	0x5a7
  4313 0b24 17       		.uleb128 0x17
  4314 0b25 34000000 		.4byte	.LVL227
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 152
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 152
 
 
  4315 0b29 50100000 		.4byte	0x1050
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4369 0bac 1C       		.uleb128 0x1c
  4370 0bad 38000000 		.4byte	.LVL239
  4371 0bb1 91040000 		.4byte	0x491
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 153
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 153
 
 
  4372 0bb5 17       		.uleb128 0x17
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4426 0c33 030B0000 		.4byte	.LLST56
  4427 0c37 17       		.uleb128 0x17
  4428 0c38 18000000 		.4byte	.LVL252
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 154
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 154
 
 
  4429 0c3c 34100000 		.4byte	0x1034
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4483 0cb3 A90B0000 		.4byte	.LLST59
  4484 0cb7 17       		.uleb128 0x17
  4485 0cb8 24000000 		.4byte	.LVL266
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 155
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 155
 
 
  4486 0cbc 34100000 		.4byte	0x1034
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4540 0d2b 4B0B0000 		.4byte	0xb4b
  4541 0d2f 3B0D0000 		.4byte	0xd3b
  4542 0d33 16       		.uleb128 0x16
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 156
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 156
 
 
  4543 0d34 01       		.uleb128 0x1
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4597 0da0 02       		.uleb128 0x2
  4598 0da1 74       		.byte	0x74
  4599 0da2 00       		.sleb128 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 157
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 157
 
 
  4600 0da3 00       		.byte	0
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4654 0e11 01       		.uleb128 0x1
  4655 0e12 50       		.byte	0x50
  4656 0e13 03       		.uleb128 0x3
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 158
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 158
 
 
  4657 0e14 0A       		.byte	0xa
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4711 0e92 50       		.byte	0x50
  4712 0e93 02       		.uleb128 0x2
  4713 0e94 74       		.byte	0x74
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 159
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 159
 
 
  4714 0e95 00       		.sleb128 0
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4768 0ef7 150D0000 		.4byte	.LLST66
  4769 0efb 12       		.uleb128 0x12
  4770 0efc 00070000 		.4byte	.LASF108
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 160
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 160
 
 
  4771 0f00 01       		.byte	0x1
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4825 0f76 16       		.uleb128 0x16
  4826 0f77 01       		.uleb128 0x1
  4827 0f78 50       		.byte	0x50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 161
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 161
 
 
  4828 0f79 02       		.uleb128 0x2
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4882 0fe2 20       		.uleb128 0x20
  4883 0fe3 83000000 		.4byte	0x83
  4884 0fe7 F20F0000 		.4byte	0xff2
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 162
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 162
 
 
  4885 0feb 21       		.uleb128 0x21
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4939 1060 00       		.byte	0
  4940 1061 27       		.uleb128 0x27
  4941 1062 AE010000 		.4byte	.LASF128
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 163
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 163
 
 
  4942 1066 04       		.byte	0x4
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  4996 002e 3A       		.uleb128 0x3a
  4997 002f 0B       		.uleb128 0xb
  4998 0030 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 164
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 164
 
 
  4999 0031 05       		.uleb128 0x5
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5053 0067 0E       		.uleb128 0xe
  5054 0068 3A       		.uleb128 0x3a
  5055 0069 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 165
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 165
 
 
  5056 006a 3B       		.uleb128 0x3b
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5110 00a2 0D       		.uleb128 0xd
  5111 00a3 34       		.uleb128 0x34
  5112 00a4 00       		.byte	0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 166
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 166
 
 
  5113 00a5 03       		.uleb128 0x3
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5167 00dc 9742     		.uleb128 0x2117
  5168 00de 19       		.uleb128 0x19
  5169 00df 01       		.uleb128 0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 167
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 167
 
 
  5170 00e0 13       		.uleb128 0x13
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5224 0117 49       		.uleb128 0x49
  5225 0118 13       		.uleb128 0x13
  5226 0119 02       		.uleb128 0x2
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 168
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 168
 
 
  5227 011a 17       		.uleb128 0x17
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5281 0153 00       		.byte	0
  5282 0154 00       		.byte	0
  5283 0155 16       		.uleb128 0x16
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 169
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 169
 
 
  5284 0156 8A8201   		.uleb128 0x410a
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5338 0192 13       		.uleb128 0x13
  5339 0193 00       		.byte	0
  5340 0194 00       		.byte	0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 170
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 170
 
 
  5341 0195 1A       		.uleb128 0x1a
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5395 01ce 3A       		.uleb128 0x3a
  5396 01cf 0B       		.uleb128 0xb
  5397 01d0 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 171
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 171
 
 
  5398 01d1 05       		.uleb128 0x5
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5452 0209 00       		.byte	0
  5453 020a 20       		.uleb128 0x20
  5454 020b 01       		.uleb128 0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 172
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 172
 
 
  5455 020c 01       		.byte	0x1
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5509 0242 19       		.uleb128 0x19
  5510 0243 01       		.uleb128 0x1
  5511 0244 13       		.uleb128 0x13
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 173
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 173
 
 
  5512 0245 00       		.byte	0
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5566 000f 72000000 		.4byte	.LVL11
  5567 0013 0400     		.2byte	0x4
  5568 0015 F3       		.byte	0xf3
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 174
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 174
 
 
  5569 0016 01       		.uleb128 0x1
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5623 0092 F3       		.byte	0xf3
  5624 0093 01       		.uleb128 0x1
  5625 0094 50       		.byte	0x50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 175
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 175
 
 
  5626 0095 9F       		.byte	0x9f
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5680 0115 0100     		.2byte	0x1
  5681 0117 54       		.byte	0x54
  5682 0118 72000000 		.4byte	.LVL11
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 176
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 176
 
 
  5683 011c 7E000000 		.4byte	.LVL13
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5737 01a9 00000000 		.4byte	0
  5738              	.LLST4:
  5739 01ad 0A000000 		.4byte	.LVL2
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 177
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 177
 
 
  5740 01b1 14000000 		.4byte	.LVL3
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5794 023c 28000000 		.4byte	.LVL42
  5795 0240 0500     		.2byte	0x5
  5796 0242 70       		.byte	0x70
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 178
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 178
 
 
  5797 0243 80FA01   		.sleb128 32000
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5851 02d1 A4000000 		.4byte	.LFE9
  5852 02d5 0100     		.2byte	0x1
  5853 02d7 50       		.byte	0x50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 179
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 179
 
 
  5854 02d8 00000000 		.4byte	0
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5908 0359 F3       		.byte	0xf3
  5909 035a 01       		.uleb128 0x1
  5910 035b 50       		.byte	0x50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 180
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 180
 
 
  5911 035c 9F       		.byte	0x9f
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  5965 03e4 BA000000 		.4byte	.LVL85
  5966 03e8 D8000000 		.4byte	.LFE8
  5967 03ec 0400     		.2byte	0x4
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 181
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 181
 
 
  5968 03ee F3       		.byte	0xf3
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6022              	.LLST17:
  6023 0478 6E000000 		.4byte	.LVL70
  6024 047c 72000000 		.4byte	.LVL71
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 182
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 182
 
 
  6025 0480 0200     		.2byte	0x2
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6079 0503 6E000000 		.4byte	.LVL94
  6080 0507 0100     		.2byte	0x1
  6081 0509 50       		.byte	0x50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 183
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 183
 
 
  6082 050a 6E000000 		.4byte	.LVL94
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6136 058e 00000000 		.4byte	0
  6137 0592 00000000 		.4byte	0
  6138              	.LLST23:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 184
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 184
 
 
  6139 0596 06000000 		.4byte	.LVL104
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6193 0621 F3       		.byte	0xf3
  6194 0622 01       		.uleb128 0x1
  6195 0623 51       		.byte	0x51
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 185
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 185
 
 
  6196 0624 9F       		.byte	0x9f
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6250 06ad 55       		.byte	0x55
  6251 06ae 2A000000 		.4byte	.LVL128
  6252 06b2 38000000 		.4byte	.LFE24
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 186
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 186
 
 
  6253 06b6 0400     		.2byte	0x4
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6307              	.LLST34:
  6308 073a 00000000 		.4byte	.LVL141
  6309 073e 07000000 		.4byte	.LVL142-1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 187
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 187
 
 
  6310 0742 0100     		.2byte	0x1
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6364 07ca 28000000 		.4byte	.LVL162
  6365 07ce 0100     		.2byte	0x1
  6366 07d0 54       		.byte	0x54
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 188
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 188
 
 
  6367 07d1 28000000 		.4byte	.LVL162
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6421 085c F3       		.byte	0xf3
  6422 085d 01       		.uleb128 0x1
  6423 085e 50       		.byte	0x50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 189
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 189
 
 
  6424 085f 9F       		.byte	0x9f
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6478 08e9 0400     		.2byte	0x4
  6479 08eb F3       		.byte	0xf3
  6480 08ec 01       		.uleb128 0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 190
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 190
 
 
  6481 08ed 50       		.byte	0x50
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6535 096e 28000000 		.4byte	.LVL190
  6536 0972 30000000 		.4byte	.LVL193
  6537 0976 0200     		.2byte	0x2
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 191
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 191
 
 
  6538 0978 30       		.byte	0x30
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6592              	.LLST50:
  6593 0a05 00000000 		.4byte	.LVL229
  6594 0a09 07000000 		.4byte	.LVL230-1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 192
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 192
 
 
  6595 0a0d 0100     		.2byte	0x1
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6649 0a91 50       		.byte	0x50
  6650 0a92 08000000 		.4byte	.LVL245
  6651 0a96 20000000 		.4byte	.LFE37
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 193
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 193
 
 
  6652 0a9a 0400     		.2byte	0x4
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6706 0b17 0100     		.2byte	0x1
  6707 0b19 50       		.byte	0x50
  6708 0b1a 12000000 		.4byte	.LVL250
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 194
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 194
 
 
  6709 0b1e 1A000000 		.4byte	.LVL253
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6763 0ba1 00000000 		.4byte	0
  6764 0ba5 00000000 		.4byte	0
  6765              	.LLST59:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 195
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 195
 
 
  6766 0ba9 00000000 		.4byte	.LVL262
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6820 0c28 09000000 		.4byte	.LVL279-1
  6821 0c2c 2E000000 		.4byte	.LVL284
  6822 0c30 0100     		.2byte	0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 196
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 196
 
 
  6823 0c32 54       		.byte	0x54
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6877 0cb6 52       		.byte	0x52
  6878 0cb7 0F000000 		.4byte	.LVL292-1
  6879 0cbb 5A000000 		.4byte	.LVL303
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 197
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 197
 
 
  6880 0cbf 0100     		.2byte	0x1
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6934              	.LLST67:
  6935 0d41 00000000 		.4byte	.LVL304
  6936 0d45 0F000000 		.4byte	.LVL305-1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 198
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 198
 
 
  6937 0d49 0100     		.2byte	0x1
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  6991 001c 10000000 		.4byte	.LFE11-.LFB11
  6992 0020 00000000 		.4byte	.LFB19
  6993 0024 14000000 		.4byte	.LFE19-.LFB19
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 199
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 199
 
 
  6994 0028 00000000 		.4byte	.LFB2
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7048 0100 00000000 		.4byte	.LFB34
  7049 0104 3C000000 		.4byte	.LFE34-.LFB34
  7050 0108 00000000 		.4byte	.LFB44
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 200
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 200
 
 
  7051 010c 74000000 		.4byte	.LFE44-.LFB44
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7105 0054 40000000 		.4byte	.LFE13
  7106 0058 00000000 		.4byte	.LFB15
  7107 005c 14000000 		.4byte	.LFE15
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 201
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 201
 
 
  7108 0060 00000000 		.4byte	.LFB16
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7162 0138 00000000 		.4byte	.LFB39
  7163 013c 20000000 		.4byte	.LFE39
  7164 0140 00000000 		.4byte	.LFB40
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 202
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 202
 
 
  7165 0144 34000000 		.4byte	.LFE40
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7195              	.LASF39:
  7196 0065 6D656173 		.ascii	"measuredIloFreq\000"
  7196      75726564 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 203
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 203
 
 
  7196      496C6F46 
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7215              	.LASF43:
  7216 013d 6572726F 		.ascii	"errorRangeStatus\000"
  7216      7252616E 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 204
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 204
 
 
  7216      67655374 
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7239              	.LASF4:
  7240 01ea 6C6F6E67 		.ascii	"long int\000"
  7240      20696E74 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 205
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 205
 
 
  7240      00
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7264      77506F77 
  7265              	.LASF100:
  7266 029a 70726576 		.ascii	"prevCallback\000"
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 206
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 206
 
 
  7266      43616C6C 
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7286      6E7400
  7287              	.LASF102:
  7288 0357 72657443 		.ascii	"retCallback\000"
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 207
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 207
 
 
  7288      616C6C62 
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7308      6E746572 
  7308      72757074 
  7309              	.LASF26:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 208
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 208
 
 
  7310 0423 696C6F54 		.ascii	"iloTrimTrig\000"
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7330      74657243 
  7330      72697469 
  7330      63616C53 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 209
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 209
 
 
  7330      65637469 
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7351      31323230 
  7352 05e3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  7352      66756E63 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 210
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 210
 
 
  7352      74696F6E 
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7374      676E6564 
  7374      20636861 
  7374      7200
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 211
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 211
 
 
  7375              	.LASF33:
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7396      57636F53 
  7396      746F7000 
  7397              	.LASF54:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 212
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 212
 
 
  7398 0779 43795379 		.ascii	"CySysClkWcoSetPowerMode\000"
@@ -12718,7 +12718,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7418      73576474 
  7418      4765744D 
  7418      6F646500 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 213
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 213
 
 
  7419              	.LASF32:
@@ -12778,7 +12778,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 1
  7439      73436C6B 
  7439      496C6F43 
  7439      6F6D7065 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccf3Z9sG.s 			page 214
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\ccIOtkjf.s 			page 214
 
 
  7439      6E736174 

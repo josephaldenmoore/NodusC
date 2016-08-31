@@ -23,8 +23,8 @@ Clock: CapSense_SampleClk       | N/A  | Target: 0.19 MHz   |
 Clock: CapSense_SampleClk(FFB)  | N/A  | Target: 0.19 MHz   | 
 Clock: CapSense_SenseClk        | N/A  | Target: 0.19 MHz   | 
 Clock: CapSense_SenseClk(FFB)   | N/A  | Target: 0.19 MHz   | 
-Clock: Clock_1MHz               | N/A  | Target: 1.00 MHz   | 
-Clock: Clock_1MHz(FFB)          | N/A  | Target: 1.00 MHz   | 
+Clock: Clock_1kHz               | N/A  | Target: 0.00 MHz   | 
+Clock: Clock_1kHz(FFB)          | N/A  | Target: 0.00 MHz   | 
 Clock: CyECO                    | N/A  | Target: 24.00 MHz  | 
 Clock: CyHFCLK                  | N/A  | Target: 48.00 MHz  | 
 Clock: CyILO                    | N/A  | Target: 0.03 MHz   | 
@@ -72,9 +72,9 @@ Port Name  Setup to Clk  Clock Name:Phase
 
 Port Name         Clock to Out  Clock Name:Phase   
 ----------------  ------------  -----------------  
-PWM_0_Out(0)_PAD  20700         Clock_1MHz(FFB):R  
-PWM_1_Out(0)_PAD  20949         Clock_1MHz(FFB):R  
-PWM_2_Out(0)_PAD  20840         Clock_1MHz(FFB):R  
+PWM_0_Out(0)_PAD  20329         Clock_1kHz(FFB):R  
+PWM_1_Out(0)_PAD  20815         Clock_1kHz(FFB):R  
+PWM_2_Out(0)_PAD  20701         Clock_1kHz(FFB):R  
 
 
                          3.3::Pad to Pad

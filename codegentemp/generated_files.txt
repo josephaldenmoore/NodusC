@@ -60,14 +60,10 @@
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\BLE_eventHandler.h" value="NONE;BLE" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\BLE_ans.c" value="ARM_C_FILE;BLE" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\BLE_ans.h" value="NONE;BLE" />
-  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Timer_Pin.c" value="ARM_C_FILE;Timer_Pin" />
-  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Timer_Pin.h" value="NONE;Timer_Pin" />
-  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Timer_Pin_aliases.h" value="NONE;Timer_Pin" />
-  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Timer_Pin_PM.c" value="ARM_C_FILE;Timer_Pin" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Timer_Int.c" value="ARM_C_FILE;Timer_Int" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Timer_Int.h" value="NONE;Timer_Int" />
-  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Clock_1MHz.c" value="ARM_C_FILE;Clock_1MHz" />
-  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Clock_1MHz.h" value="NONE;Clock_1MHz" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Clock_1kHz.c" value="ARM_C_FILE;Clock_1kHz" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Clock_1kHz.h" value="NONE;Clock_1kHz" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PWM_0_Int.c" value="ARM_C_FILE;PWM_0_Int" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PWM_0_Int.h" value="NONE;PWM_0_Int" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PWM_0_Out.c" value="ARM_C_FILE;PWM_0_Out" />

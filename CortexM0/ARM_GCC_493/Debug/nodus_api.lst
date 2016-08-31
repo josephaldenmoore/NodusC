@@ -1,0 +1,1614 @@
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"nodus_api.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.sensor_create,"ax",%progbits
+  18              		.align	2
+  19              		.global	sensor_create
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	sensor_create, %function
+  23              	sensor_create:
+  24              	.LFB0:
+  25              		.file 1 ".\\nodus_api.c"
+   1:.\nodus_api.c **** /* ========================================
+   2:.\nodus_api.c ****  *
+   3:.\nodus_api.c ****  * Copyright FLEX, 2016
+   4:.\nodus_api.c ****  * All Rights Reserved
+   5:.\nodus_api.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\nodus_api.c ****  *
+   7:.\nodus_api.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\nodus_api.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\nodus_api.c ****  *
+  10:.\nodus_api.c ****  * ========================================
+  11:.\nodus_api.c **** */
+  12:.\nodus_api.c **** 
+  13:.\nodus_api.c **** 
+  14:.\nodus_api.c **** /*****************************************************************************
+  15:.\nodus_api.c **** //!
+  16:.\nodus_api.c **** //!                            Sensor Control
+  17:.\nodus_api.c **** //!
+  18:.\nodus_api.c **** *****************************************************************************/
+  19:.\nodus_api.c **** 
+  20:.\nodus_api.c **** // Create and initialize a sensor
+  21:.\nodus_api.c **** void sensor_create(){}
+  26              		.loc 1 21 0
+  27              		.cfi_startproc
+  28              		.loc 1 21 0
+  29              		@ sp needed
+  30 0000 7047     		bx	lr
+  31              		.cfi_endproc
+  32              	.LFE0:
+  33              		.size	sensor_create, .-sensor_create
+  34 0002 C046     		.section	.text.sensor_power_on,"ax",%progbits
+  35              		.align	2
+  36              		.global	sensor_power_on
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 2
+
+
+  37              		.code	16
+  38              		.thumb_func
+  39              		.type	sensor_power_on, %function
+  40              	sensor_power_on:
+  41              	.LFB1:
+  22:.\nodus_api.c **** 
+  23:.\nodus_api.c **** // Power on a sensor
+  24:.\nodus_api.c **** void sensor_power_on(){}
+  42              		.loc 1 24 0
+  43              		.cfi_startproc
+  44              		.loc 1 24 0
+  45              		@ sp needed
+  46 0000 7047     		bx	lr
+  47              		.cfi_endproc
+  48              	.LFE1:
+  49              		.size	sensor_power_on, .-sensor_power_on
+  50 0002 C046     		.section	.text.sensor_power_off,"ax",%progbits
+  51              		.align	2
+  52              		.global	sensor_power_off
+  53              		.code	16
+  54              		.thumb_func
+  55              		.type	sensor_power_off, %function
+  56              	sensor_power_off:
+  57              	.LFB2:
+  25:.\nodus_api.c **** 
+  26:.\nodus_api.c **** // Power off a sensor
+  27:.\nodus_api.c **** void sensor_power_off(){}
+  58              		.loc 1 27 0
+  59              		.cfi_startproc
+  60              		.loc 1 27 0
+  61              		@ sp needed
+  62 0000 7047     		bx	lr
+  63              		.cfi_endproc
+  64              	.LFE2:
+  65              		.size	sensor_power_off, .-sensor_power_off
+  66 0002 C046     		.section	.text.sensor_sleep_mode_set,"ax",%progbits
+  67              		.align	2
+  68              		.global	sensor_sleep_mode_set
+  69              		.code	16
+  70              		.thumb_func
+  71              		.type	sensor_sleep_mode_set, %function
+  72              	sensor_sleep_mode_set:
+  73              	.LFB3:
+  28:.\nodus_api.c **** 
+  29:.\nodus_api.c **** // Put a sensor in sleep mode
+  30:.\nodus_api.c **** void sensor_sleep_mode_set(){}
+  74              		.loc 1 30 0
+  75              		.cfi_startproc
+  76              		.loc 1 30 0
+  77              		@ sp needed
+  78 0000 7047     		bx	lr
+  79              		.cfi_endproc
+  80              	.LFE3:
+  81              		.size	sensor_sleep_mode_set, .-sensor_sleep_mode_set
+  82 0002 C046     		.section	.text.sensor_sleep_mode_wake,"ax",%progbits
+  83              		.align	2
+  84              		.global	sensor_sleep_mode_wake
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 3
+
+
+  85              		.code	16
+  86              		.thumb_func
+  87              		.type	sensor_sleep_mode_wake, %function
+  88              	sensor_sleep_mode_wake:
+  89              	.LFB4:
+  31:.\nodus_api.c **** 
+  32:.\nodus_api.c **** // Wake up a sensor
+  33:.\nodus_api.c **** void sensor_sleep_mode_wake(){}
+  90              		.loc 1 33 0
+  91              		.cfi_startproc
+  92              		.loc 1 33 0
+  93              		@ sp needed
+  94 0000 7047     		bx	lr
+  95              		.cfi_endproc
+  96              	.LFE4:
+  97              		.size	sensor_sleep_mode_wake, .-sensor_sleep_mode_wake
+  98 0002 C046     		.section	.text.sensor_calibrade,"ax",%progbits
+  99              		.align	2
+ 100              		.global	sensor_calibrade
+ 101              		.code	16
+ 102              		.thumb_func
+ 103              		.type	sensor_calibrade, %function
+ 104              	sensor_calibrade:
+ 105              	.LFB5:
+  34:.\nodus_api.c **** 
+  35:.\nodus_api.c **** // Calibrate a sensor
+  36:.\nodus_api.c **** void sensor_calibrade(){}
+ 106              		.loc 1 36 0
+ 107              		.cfi_startproc
+ 108              		.loc 1 36 0
+ 109              		@ sp needed
+ 110 0000 7047     		bx	lr
+ 111              		.cfi_endproc
+ 112              	.LFE5:
+ 113              		.size	sensor_calibrade, .-sensor_calibrade
+ 114 0002 C046     		.section	.text.sensor_config_set,"ax",%progbits
+ 115              		.align	2
+ 116              		.global	sensor_config_set
+ 117              		.code	16
+ 118              		.thumb_func
+ 119              		.type	sensor_config_set, %function
+ 120              	sensor_config_set:
+ 121              	.LFB6:
+  37:.\nodus_api.c **** 
+  38:.\nodus_api.c **** // Configure sensor
+  39:.\nodus_api.c **** void sensor_config_set(){}
+ 122              		.loc 1 39 0
+ 123              		.cfi_startproc
+ 124              		.loc 1 39 0
+ 125              		@ sp needed
+ 126 0000 7047     		bx	lr
+ 127              		.cfi_endproc
+ 128              	.LFE6:
+ 129              		.size	sensor_config_set, .-sensor_config_set
+ 130 0002 C046     		.section	.text.sensor_config_get,"ax",%progbits
+ 131              		.align	2
+ 132              		.global	sensor_config_get
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 4
+
+
+ 133              		.code	16
+ 134              		.thumb_func
+ 135              		.type	sensor_config_get, %function
+ 136              	sensor_config_get:
+ 137              	.LFB7:
+  40:.\nodus_api.c **** 
+  41:.\nodus_api.c **** // read sensor config
+  42:.\nodus_api.c **** void sensor_config_get(){}
+ 138              		.loc 1 42 0
+ 139              		.cfi_startproc
+ 140              		.loc 1 42 0
+ 141              		@ sp needed
+ 142 0000 7047     		bx	lr
+ 143              		.cfi_endproc
+ 144              	.LFE7:
+ 145              		.size	sensor_config_get, .-sensor_config_get
+ 146 0002 C046     		.section	.text.sensor_write,"ax",%progbits
+ 147              		.align	2
+ 148              		.global	sensor_write
+ 149              		.code	16
+ 150              		.thumb_func
+ 151              		.type	sensor_write, %function
+ 152              	sensor_write:
+ 153              	.LFB8:
+  43:.\nodus_api.c **** 
+  44:.\nodus_api.c **** // Write data to sensor
+  45:.\nodus_api.c **** void sensor_write(){}
+ 154              		.loc 1 45 0
+ 155              		.cfi_startproc
+ 156              		.loc 1 45 0
+ 157              		@ sp needed
+ 158 0000 7047     		bx	lr
+ 159              		.cfi_endproc
+ 160              	.LFE8:
+ 161              		.size	sensor_write, .-sensor_write
+ 162 0002 C046     		.section	.text.sensor_read,"ax",%progbits
+ 163              		.align	2
+ 164              		.global	sensor_read
+ 165              		.code	16
+ 166              		.thumb_func
+ 167              		.type	sensor_read, %function
+ 168              	sensor_read:
+ 169              	.LFB9:
+  46:.\nodus_api.c **** 
+  47:.\nodus_api.c **** // Read data from sensor
+  48:.\nodus_api.c **** void sensor_read(){}
+ 170              		.loc 1 48 0
+ 171              		.cfi_startproc
+ 172              		.loc 1 48 0
+ 173              		@ sp needed
+ 174 0000 7047     		bx	lr
+ 175              		.cfi_endproc
+ 176              	.LFE9:
+ 177              		.size	sensor_read, .-sensor_read
+ 178 0002 C046     		.section	.text.radio_power_on,"ax",%progbits
+ 179              		.align	2
+ 180              		.global	radio_power_on
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 5
+
+
+ 181              		.code	16
+ 182              		.thumb_func
+ 183              		.type	radio_power_on, %function
+ 184              	radio_power_on:
+ 185              	.LFB10:
+  49:.\nodus_api.c **** 
+  50:.\nodus_api.c **** /*****************************************************************************
+  51:.\nodus_api.c **** //!
+  52:.\nodus_api.c **** //!                            Radio Control
+  53:.\nodus_api.c **** //!
+  54:.\nodus_api.c **** *****************************************************************************/
+  55:.\nodus_api.c **** 
+  56:.\nodus_api.c **** // Power on radio interface
+  57:.\nodus_api.c **** void radio_power_on(){}
+ 186              		.loc 1 57 0
+ 187              		.cfi_startproc
+ 188              		.loc 1 57 0
+ 189              		@ sp needed
+ 190 0000 7047     		bx	lr
+ 191              		.cfi_endproc
+ 192              	.LFE10:
+ 193              		.size	radio_power_on, .-radio_power_on
+ 194 0002 C046     		.section	.text.radio_power_off,"ax",%progbits
+ 195              		.align	2
+ 196              		.global	radio_power_off
+ 197              		.code	16
+ 198              		.thumb_func
+ 199              		.type	radio_power_off, %function
+ 200              	radio_power_off:
+ 201              	.LFB11:
+  58:.\nodus_api.c **** 
+  59:.\nodus_api.c **** // Power off radio interface
+  60:.\nodus_api.c **** void radio_power_off(){}
+ 202              		.loc 1 60 0
+ 203              		.cfi_startproc
+ 204              		.loc 1 60 0
+ 205              		@ sp needed
+ 206 0000 7047     		bx	lr
+ 207              		.cfi_endproc
+ 208              	.LFE11:
+ 209              		.size	radio_power_off, .-radio_power_off
+ 210 0002 C046     		.section	.text.radio_sleep_mode_set,"ax",%progbits
+ 211              		.align	2
+ 212              		.global	radio_sleep_mode_set
+ 213              		.code	16
+ 214              		.thumb_func
+ 215              		.type	radio_sleep_mode_set, %function
+ 216              	radio_sleep_mode_set:
+ 217              	.LFB12:
+  61:.\nodus_api.c **** 
+  62:.\nodus_api.c **** // Put radio in sleep mode
+  63:.\nodus_api.c **** void radio_sleep_mode_set(){}
+ 218              		.loc 1 63 0
+ 219              		.cfi_startproc
+ 220              		.loc 1 63 0
+ 221              		@ sp needed
+ 222 0000 7047     		bx	lr
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 6
+
+
+ 223              		.cfi_endproc
+ 224              	.LFE12:
+ 225              		.size	radio_sleep_mode_set, .-radio_sleep_mode_set
+ 226 0002 C046     		.section	.text.radio_sleep_mode_wake,"ax",%progbits
+ 227              		.align	2
+ 228              		.global	radio_sleep_mode_wake
+ 229              		.code	16
+ 230              		.thumb_func
+ 231              		.type	radio_sleep_mode_wake, %function
+ 232              	radio_sleep_mode_wake:
+ 233              	.LFB13:
+  64:.\nodus_api.c **** 
+  65:.\nodus_api.c **** // Wake radio from sleep
+  66:.\nodus_api.c **** void radio_sleep_mode_wake(){}
+ 234              		.loc 1 66 0
+ 235              		.cfi_startproc
+ 236              		.loc 1 66 0
+ 237              		@ sp needed
+ 238 0000 7047     		bx	lr
+ 239              		.cfi_endproc
+ 240              	.LFE13:
+ 241              		.size	radio_sleep_mode_wake, .-radio_sleep_mode_wake
+ 242 0002 C046     		.section	.text.radio_data_send,"ax",%progbits
+ 243              		.align	2
+ 244              		.global	radio_data_send
+ 245              		.code	16
+ 246              		.thumb_func
+ 247              		.type	radio_data_send, %function
+ 248              	radio_data_send:
+ 249              	.LFB14:
+  67:.\nodus_api.c **** 
+  68:.\nodus_api.c **** // Send data over the radio interface
+  69:.\nodus_api.c **** void radio_data_send(){}
+ 250              		.loc 1 69 0
+ 251              		.cfi_startproc
+ 252              		.loc 1 69 0
+ 253              		@ sp needed
+ 254 0000 7047     		bx	lr
+ 255              		.cfi_endproc
+ 256              	.LFE14:
+ 257              		.size	radio_data_send, .-radio_data_send
+ 258 0002 C046     		.section	.text.radio_data_recv,"ax",%progbits
+ 259              		.align	2
+ 260              		.global	radio_data_recv
+ 261              		.code	16
+ 262              		.thumb_func
+ 263              		.type	radio_data_recv, %function
+ 264              	radio_data_recv:
+ 265              	.LFB15:
+  70:.\nodus_api.c **** 
+  71:.\nodus_api.c **** // recv data over the radio interface
+  72:.\nodus_api.c **** void radio_data_recv(){}
+ 266              		.loc 1 72 0
+ 267              		.cfi_startproc
+ 268              		.loc 1 72 0
+ 269              		@ sp needed
+ 270 0000 7047     		bx	lr
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 7
+
+
+ 271              		.cfi_endproc
+ 272              	.LFE15:
+ 273              		.size	radio_data_recv, .-radio_data_recv
+ 274 0002 C046     		.section	.text.radio_set_role,"ax",%progbits
+ 275              		.align	2
+ 276              		.global	radio_set_role
+ 277              		.code	16
+ 278              		.thumb_func
+ 279              		.type	radio_set_role, %function
+ 280              	radio_set_role:
+ 281              	.LFB16:
+  73:.\nodus_api.c **** 
+  74:.\nodus_api.c **** // Set the role of radio interface - master, slave, or dual
+  75:.\nodus_api.c **** void radio_set_role(){}
+ 282              		.loc 1 75 0
+ 283              		.cfi_startproc
+ 284              		.loc 1 75 0
+ 285              		@ sp needed
+ 286 0000 7047     		bx	lr
+ 287              		.cfi_endproc
+ 288              	.LFE16:
+ 289              		.size	radio_set_role, .-radio_set_role
+ 290 0002 C046     		.section	.text.task_app_start,"ax",%progbits
+ 291              		.align	2
+ 292              		.global	task_app_start
+ 293              		.code	16
+ 294              		.thumb_func
+ 295              		.type	task_app_start, %function
+ 296              	task_app_start:
+ 297              	.LFB17:
+  76:.\nodus_api.c **** 
+  77:.\nodus_api.c **** /*****************************************************************************
+  78:.\nodus_api.c **** //!
+  79:.\nodus_api.c **** //!                            Task Management
+  80:.\nodus_api.c **** //!
+  81:.\nodus_api.c **** *****************************************************************************/
+  82:.\nodus_api.c **** 
+  83:.\nodus_api.c **** // Start a customer application task
+  84:.\nodus_api.c **** void task_app_start(){}
+ 298              		.loc 1 84 0
+ 299              		.cfi_startproc
+ 300              		.loc 1 84 0
+ 301              		@ sp needed
+ 302 0000 7047     		bx	lr
+ 303              		.cfi_endproc
+ 304              	.LFE17:
+ 305              		.size	task_app_start, .-task_app_start
+ 306 0002 C046     		.section	.text.task_app_stop,"ax",%progbits
+ 307              		.align	2
+ 308              		.global	task_app_stop
+ 309              		.code	16
+ 310              		.thumb_func
+ 311              		.type	task_app_stop, %function
+ 312              	task_app_stop:
+ 313              	.LFB18:
+  85:.\nodus_api.c **** 
+  86:.\nodus_api.c **** // Stop a customer application task
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 8
+
+
+  87:.\nodus_api.c **** void task_app_stop(){}
+ 314              		.loc 1 87 0
+ 315              		.cfi_startproc
+ 316              		.loc 1 87 0
+ 317              		@ sp needed
+ 318 0000 7047     		bx	lr
+ 319              		.cfi_endproc
+ 320              	.LFE18:
+ 321              		.size	task_app_stop, .-task_app_stop
+ 322 0002 C046     		.section	.text.task_msg_send,"ax",%progbits
+ 323              		.align	2
+ 324              		.global	task_msg_send
+ 325              		.code	16
+ 326              		.thumb_func
+ 327              		.type	task_msg_send, %function
+ 328              	task_msg_send:
+ 329              	.LFB19:
+  88:.\nodus_api.c **** 
+  89:.\nodus_api.c **** // Send a message from one costumer task to another
+  90:.\nodus_api.c **** void task_msg_send(){}
+ 330              		.loc 1 90 0
+ 331              		.cfi_startproc
+ 332              		.loc 1 90 0
+ 333              		@ sp needed
+ 334 0000 7047     		bx	lr
+ 335              		.cfi_endproc
+ 336              	.LFE19:
+ 337              		.size	task_msg_send, .-task_msg_send
+ 338 0002 C046     		.section	.text.task_msg_recv,"ax",%progbits
+ 339              		.align	2
+ 340              		.global	task_msg_recv
+ 341              		.code	16
+ 342              		.thumb_func
+ 343              		.type	task_msg_recv, %function
+ 344              	task_msg_recv:
+ 345              	.LFB20:
+  91:.\nodus_api.c **** 
+  92:.\nodus_api.c **** // Receive a message from one costumer task to another
+  93:.\nodus_api.c **** void task_msg_recv(){}
+ 346              		.loc 1 93 0
+ 347              		.cfi_startproc
+ 348              		.loc 1 93 0
+ 349              		@ sp needed
+ 350 0000 7047     		bx	lr
+ 351              		.cfi_endproc
+ 352              	.LFE20:
+ 353              		.size	task_msg_recv, .-task_msg_recv
+ 354 0002 C046     		.section	.text.task_mutex_lock,"ax",%progbits
+ 355              		.align	2
+ 356              		.global	task_mutex_lock
+ 357              		.code	16
+ 358              		.thumb_func
+ 359              		.type	task_mutex_lock, %function
+ 360              	task_mutex_lock:
+ 361              	.LFB21:
+  94:.\nodus_api.c **** 
+  95:.\nodus_api.c **** // Lock a task mutex
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 9
+
+
+  96:.\nodus_api.c **** void task_mutex_lock(){}
+ 362              		.loc 1 96 0
+ 363              		.cfi_startproc
+ 364              		.loc 1 96 0
+ 365              		@ sp needed
+ 366 0000 7047     		bx	lr
+ 367              		.cfi_endproc
+ 368              	.LFE21:
+ 369              		.size	task_mutex_lock, .-task_mutex_lock
+ 370 0002 C046     		.section	.text.task_mutex_unlock,"ax",%progbits
+ 371              		.align	2
+ 372              		.global	task_mutex_unlock
+ 373              		.code	16
+ 374              		.thumb_func
+ 375              		.type	task_mutex_unlock, %function
+ 376              	task_mutex_unlock:
+ 377              	.LFB22:
+  97:.\nodus_api.c **** 
+  98:.\nodus_api.c **** // Unlock a task mutex
+  99:.\nodus_api.c **** void task_mutex_unlock(){}
+ 378              		.loc 1 99 0
+ 379              		.cfi_startproc
+ 380              		.loc 1 99 0
+ 381              		@ sp needed
+ 382 0000 7047     		bx	lr
+ 383              		.cfi_endproc
+ 384              	.LFE22:
+ 385              		.size	task_mutex_unlock, .-task_mutex_unlock
+ 386 0002 C046     		.section	.text.timer_create,"ax",%progbits
+ 387              		.align	2
+ 388              		.global	timer_create
+ 389              		.code	16
+ 390              		.thumb_func
+ 391              		.type	timer_create, %function
+ 392              	timer_create:
+ 393              	.LFB23:
+ 100:.\nodus_api.c **** 
+ 101:.\nodus_api.c **** /*****************************************************************************
+ 102:.\nodus_api.c **** //!
+ 103:.\nodus_api.c **** //!                            Timer management
+ 104:.\nodus_api.c **** //!
+ 105:.\nodus_api.c **** *****************************************************************************/
+ 106:.\nodus_api.c **** // create a periodic or one shot timer
+ 107:.\nodus_api.c **** void timer_create(){}
+ 394              		.loc 1 107 0
+ 395              		.cfi_startproc
+ 396              		.loc 1 107 0
+ 397              		@ sp needed
+ 398 0000 7047     		bx	lr
+ 399              		.cfi_endproc
+ 400              	.LFE23:
+ 401              		.size	timer_create, .-timer_create
+ 402 0002 C046     		.section	.text.timer_delete,"ax",%progbits
+ 403              		.align	2
+ 404              		.global	timer_delete
+ 405              		.code	16
+ 406              		.thumb_func
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 10
+
+
+ 407              		.type	timer_delete, %function
+ 408              	timer_delete:
+ 409              	.LFB24:
+ 108:.\nodus_api.c **** 
+ 109:.\nodus_api.c **** // delete a periodic or one shot timer
+ 110:.\nodus_api.c **** void timer_delete(){}
+ 410              		.loc 1 110 0
+ 411              		.cfi_startproc
+ 412              		.loc 1 110 0
+ 413              		@ sp needed
+ 414 0000 7047     		bx	lr
+ 415              		.cfi_endproc
+ 416              	.LFE24:
+ 417              		.size	timer_delete, .-timer_delete
+ 418 0002 C046     		.section	.text.timer_event_notify,"ax",%progbits
+ 419              		.align	2
+ 420              		.global	timer_event_notify
+ 421              		.code	16
+ 422              		.thumb_func
+ 423              		.type	timer_event_notify, %function
+ 424              	timer_event_notify:
+ 425              	.LFB25:
+ 111:.\nodus_api.c **** 
+ 112:.\nodus_api.c **** // get notification when timer expires
+ 113:.\nodus_api.c **** void timer_event_notify(){}
+ 426              		.loc 1 113 0
+ 427              		.cfi_startproc
+ 428              		.loc 1 113 0
+ 429              		@ sp needed
+ 430 0000 7047     		bx	lr
+ 431              		.cfi_endproc
+ 432              	.LFE25:
+ 433              		.size	timer_event_notify, .-timer_event_notify
+ 434 0002 C046     		.section	.text.ota_upgrade_app,"ax",%progbits
+ 435              		.align	2
+ 436              		.global	ota_upgrade_app
+ 437              		.code	16
+ 438              		.thumb_func
+ 439              		.type	ota_upgrade_app, %function
+ 440              	ota_upgrade_app:
+ 441              	.LFB26:
+ 114:.\nodus_api.c **** 
+ 115:.\nodus_api.c **** /*****************************************************************************
+ 116:.\nodus_api.c **** //!
+ 117:.\nodus_api.c **** //!                            OTA upgrade
+ 118:.\nodus_api.c **** //!
+ 119:.\nodus_api.c **** *****************************************************************************/
+ 120:.\nodus_api.c **** 
+ 121:.\nodus_api.c **** // OTA upgrade customer app
+ 122:.\nodus_api.c **** void ota_upgrade_app(){}
+ 442              		.loc 1 122 0
+ 443              		.cfi_startproc
+ 444              		.loc 1 122 0
+ 445              		@ sp needed
+ 446 0000 7047     		bx	lr
+ 447              		.cfi_endproc
+ 448              	.LFE26:
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 11
+
+
+ 449              		.size	ota_upgrade_app, .-ota_upgrade_app
+ 450 0002 C046     		.section	.text.ota_upgrade_sdk,"ax",%progbits
+ 451              		.align	2
+ 452              		.global	ota_upgrade_sdk
+ 453              		.code	16
+ 454              		.thumb_func
+ 455              		.type	ota_upgrade_sdk, %function
+ 456              	ota_upgrade_sdk:
+ 457              	.LFB27:
+ 123:.\nodus_api.c **** 
+ 124:.\nodus_api.c **** // OTA upgrade platform SDK
+ 125:.\nodus_api.c **** void ota_upgrade_sdk(){}
+ 458              		.loc 1 125 0
+ 459              		.cfi_startproc
+ 460              		.loc 1 125 0
+ 461              		@ sp needed
+ 462 0000 7047     		bx	lr
+ 463              		.cfi_endproc
+ 464              	.LFE27:
+ 465              		.size	ota_upgrade_sdk, .-ota_upgrade_sdk
+ 466 0002 C046     		.section	.text.security_initiate_pairing,"ax",%progbits
+ 467              		.align	2
+ 468              		.global	security_initiate_pairing
+ 469              		.code	16
+ 470              		.thumb_func
+ 471              		.type	security_initiate_pairing, %function
+ 472              	security_initiate_pairing:
+ 473              	.LFB28:
+ 126:.\nodus_api.c **** 
+ 127:.\nodus_api.c **** /*****************************************************************************
+ 128:.\nodus_api.c **** //!
+ 129:.\nodus_api.c **** //!                            Security
+ 130:.\nodus_api.c **** //!
+ 131:.\nodus_api.c **** *****************************************************************************/
+ 132:.\nodus_api.c **** 
+ 133:.\nodus_api.c **** // Initiate pairing
+ 134:.\nodus_api.c **** void security_initiate_pairing(){}
+ 474              		.loc 1 134 0
+ 475              		.cfi_startproc
+ 476              		.loc 1 134 0
+ 477              		@ sp needed
+ 478 0000 7047     		bx	lr
+ 479              		.cfi_endproc
+ 480              	.LFE28:
+ 481              		.size	security_initiate_pairing, .-security_initiate_pairing
+ 482 0002 C046     		.section	.text.security_initiate_bonding,"ax",%progbits
+ 483              		.align	2
+ 484              		.global	security_initiate_bonding
+ 485              		.code	16
+ 486              		.thumb_func
+ 487              		.type	security_initiate_bonding, %function
+ 488              	security_initiate_bonding:
+ 489              	.LFB29:
+ 135:.\nodus_api.c **** 
+ 136:.\nodus_api.c **** // Initiate bonding
+ 137:.\nodus_api.c **** void security_initiate_bonding(){}
+ 490              		.loc 1 137 0
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 12
+
+
+ 491              		.cfi_startproc
+ 492              		.loc 1 137 0
+ 493              		@ sp needed
+ 494 0000 7047     		bx	lr
+ 495              		.cfi_endproc
+ 496              	.LFE29:
+ 497              		.size	security_initiate_bonding, .-security_initiate_bonding
+ 498 0002 C046     		.section	.text.security_remove_pairing,"ax",%progbits
+ 499              		.align	2
+ 500              		.global	security_remove_pairing
+ 501              		.code	16
+ 502              		.thumb_func
+ 503              		.type	security_remove_pairing, %function
+ 504              	security_remove_pairing:
+ 505              	.LFB30:
+ 138:.\nodus_api.c **** 
+ 139:.\nodus_api.c **** // Remove pairing from a peer device
+ 140:.\nodus_api.c **** void security_remove_pairing(){}
+ 506              		.loc 1 140 0
+ 507              		.cfi_startproc
+ 508              		.loc 1 140 0
+ 509              		@ sp needed
+ 510 0000 7047     		bx	lr
+ 511              		.cfi_endproc
+ 512              	.LFE30:
+ 513              		.size	security_remove_pairing, .-security_remove_pairing
+ 514 0002 C046     		.section	.text.security_remove_bonding,"ax",%progbits
+ 515              		.align	2
+ 516              		.global	security_remove_bonding
+ 517              		.code	16
+ 518              		.thumb_func
+ 519              		.type	security_remove_bonding, %function
+ 520              	security_remove_bonding:
+ 521              	.LFB31:
+ 141:.\nodus_api.c **** 
+ 142:.\nodus_api.c **** // remove bonding froma peer device
+ 143:.\nodus_api.c **** void security_remove_bonding(){}
+ 522              		.loc 1 143 0
+ 523              		.cfi_startproc
+ 524              		.loc 1 143 0
+ 525              		@ sp needed
+ 526 0000 7047     		bx	lr
+ 527              		.cfi_endproc
+ 528              	.LFE31:
+ 529              		.size	security_remove_bonding, .-security_remove_bonding
+ 530 0002 C046     		.section	.text.security_setup_OOB_key,"ax",%progbits
+ 531              		.align	2
+ 532              		.global	security_setup_OOB_key
+ 533              		.code	16
+ 534              		.thumb_func
+ 535              		.type	security_setup_OOB_key, %function
+ 536              	security_setup_OOB_key:
+ 537              	.LFB32:
+ 144:.\nodus_api.c **** 
+ 145:.\nodus_api.c **** // Set up OOB key
+ 146:.\nodus_api.c **** void security_setup_OOB_key(){}
+ 538              		.loc 1 146 0
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 13
+
+
+ 539              		.cfi_startproc
+ 540              		.loc 1 146 0
+ 541              		@ sp needed
+ 542 0000 7047     		bx	lr
+ 543              		.cfi_endproc
+ 544              	.LFE32:
+ 545              		.size	security_setup_OOB_key, .-security_setup_OOB_key
+ 546 0002 C046     		.section	.text.security_delete_OOB_key,"ax",%progbits
+ 547              		.align	2
+ 548              		.global	security_delete_OOB_key
+ 549              		.code	16
+ 550              		.thumb_func
+ 551              		.type	security_delete_OOB_key, %function
+ 552              	security_delete_OOB_key:
+ 553              	.LFB33:
+ 147:.\nodus_api.c **** 
+ 148:.\nodus_api.c **** // Delete up OOB key
+ 149:.\nodus_api.c **** void security_delete_OOB_key(){}
+ 554              		.loc 1 149 0
+ 555              		.cfi_startproc
+ 556              		.loc 1 149 0
+ 557              		@ sp needed
+ 558 0000 7047     		bx	lr
+ 559              		.cfi_endproc
+ 560              	.LFE33:
+ 561              		.size	security_delete_OOB_key, .-security_delete_OOB_key
+ 562 0002 C046     		.section	.text.security_change_OOB_key,"ax",%progbits
+ 563              		.align	2
+ 564              		.global	security_change_OOB_key
+ 565              		.code	16
+ 566              		.thumb_func
+ 567              		.type	security_change_OOB_key, %function
+ 568              	security_change_OOB_key:
+ 569              	.LFB34:
+ 150:.\nodus_api.c **** 
+ 151:.\nodus_api.c **** // Change up OOB key
+ 152:.\nodus_api.c **** void security_change_OOB_key(){}
+ 570              		.loc 1 152 0
+ 571              		.cfi_startproc
+ 572              		.loc 1 152 0
+ 573              		@ sp needed
+ 574 0000 7047     		bx	lr
+ 575              		.cfi_endproc
+ 576              	.LFE34:
+ 577              		.size	security_change_OOB_key, .-security_change_OOB_key
+ 578 0002 C046     		.section	.text.sdk_version_check,"ax",%progbits
+ 579              		.align	2
+ 580              		.global	sdk_version_check
+ 581              		.code	16
+ 582              		.thumb_func
+ 583              		.type	sdk_version_check, %function
+ 584              	sdk_version_check:
+ 585              	.LFB35:
+ 153:.\nodus_api.c **** 
+ 154:.\nodus_api.c **** /*****************************************************************************
+ 155:.\nodus_api.c **** //!
+ 156:.\nodus_api.c **** //!                            General
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 14
+
+
+ 157:.\nodus_api.c **** //!
+ 158:.\nodus_api.c **** *****************************************************************************/
+ 159:.\nodus_api.c **** 
+ 160:.\nodus_api.c **** // Return SDK version
+ 161:.\nodus_api.c **** void sdk_version_check(){}
+ 586              		.loc 1 161 0
+ 587              		.cfi_startproc
+ 588              		.loc 1 161 0
+ 589              		@ sp needed
+ 590 0000 7047     		bx	lr
+ 591              		.cfi_endproc
+ 592              	.LFE35:
+ 593              		.size	sdk_version_check, .-sdk_version_check
+ 594 0002 C046     		.section	.text.sdk_fatal_error_notify,"ax",%progbits
+ 595              		.align	2
+ 596              		.global	sdk_fatal_error_notify
+ 597              		.code	16
+ 598              		.thumb_func
+ 599              		.type	sdk_fatal_error_notify, %function
+ 600              	sdk_fatal_error_notify:
+ 601              	.LFB36:
+ 162:.\nodus_api.c **** 
+ 163:.\nodus_api.c **** // Notify customer application about a fatal error
+ 164:.\nodus_api.c **** void sdk_fatal_error_notify(){}
+ 602              		.loc 1 164 0
+ 603              		.cfi_startproc
+ 604              		.loc 1 164 0
+ 605              		@ sp needed
+ 606 0000 7047     		bx	lr
+ 607              		.cfi_endproc
+ 608              	.LFE36:
+ 609              		.size	sdk_fatal_error_notify, .-sdk_fatal_error_notify
+ 610 0002 C046     		.text
+ 611              	.Letext0:
+ 612              		.section	.debug_info,"",%progbits
+ 613              	.Ldebug_info0:
+ 614 0000 97020000 		.4byte	0x297
+ 615 0004 0400     		.2byte	0x4
+ 616 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 617 000a 04       		.byte	0x4
+ 618 000b 01       		.uleb128 0x1
+ 619 000c 78020000 		.4byte	.LASF37
+ 620 0010 01       		.byte	0x1
+ 621 0011 8F000000 		.4byte	.LASF38
+ 622 0015 00000000 		.4byte	.LASF39
+ 623 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 624 001d 00000000 		.4byte	0
+ 625 0021 00000000 		.4byte	.Ldebug_line0
+ 626 0025 02       		.uleb128 0x2
+ 627 0026 52010000 		.4byte	.LASF0
+ 628 002a 01       		.byte	0x1
+ 629 002b 15       		.byte	0x15
+ 630 002c 00000000 		.4byte	.LFB0
+ 631 0030 02000000 		.4byte	.LFE0-.LFB0
+ 632 0034 01       		.uleb128 0x1
+ 633 0035 9C       		.byte	0x9c
+ 634 0036 02       		.uleb128 0x2
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 15
+
+
+ 635 0037 D8000000 		.4byte	.LASF1
+ 636 003b 01       		.byte	0x1
+ 637 003c 18       		.byte	0x18
+ 638 003d 00000000 		.4byte	.LFB1
+ 639 0041 02000000 		.4byte	.LFE1-.LFB1
+ 640 0045 01       		.uleb128 0x1
+ 641 0046 9C       		.byte	0x9c
+ 642 0047 02       		.uleb128 0x2
+ 643 0048 4D030000 		.4byte	.LASF2
+ 644 004c 01       		.byte	0x1
+ 645 004d 1B       		.byte	0x1b
+ 646 004e 00000000 		.4byte	.LFB2
+ 647 0052 02000000 		.4byte	.LFE2-.LFB2
+ 648 0056 01       		.uleb128 0x1
+ 649 0057 9C       		.byte	0x9c
+ 650 0058 02       		.uleb128 0x2
+ 651 0059 9B010000 		.4byte	.LASF3
+ 652 005d 01       		.byte	0x1
+ 653 005e 1E       		.byte	0x1e
+ 654 005f 00000000 		.4byte	.LFB3
+ 655 0063 02000000 		.4byte	.LFE3-.LFB3
+ 656 0067 01       		.uleb128 0x1
+ 657 0068 9C       		.byte	0x9c
+ 658 0069 02       		.uleb128 0x2
+ 659 006a 4E020000 		.4byte	.LASF4
+ 660 006e 01       		.byte	0x1
+ 661 006f 21       		.byte	0x21
+ 662 0070 00000000 		.4byte	.LFB4
+ 663 0074 02000000 		.4byte	.LFE4-.LFB4
+ 664 0078 01       		.uleb128 0x1
+ 665 0079 9C       		.byte	0x9c
+ 666 007a 02       		.uleb128 0x2
+ 667 007b 78010000 		.4byte	.LASF5
+ 668 007f 01       		.byte	0x1
+ 669 0080 24       		.byte	0x24
+ 670 0081 00000000 		.4byte	.LFB5
+ 671 0085 02000000 		.4byte	.LFE5-.LFB5
+ 672 0089 01       		.uleb128 0x1
+ 673 008a 9C       		.byte	0x9c
+ 674 008b 02       		.uleb128 0x2
+ 675 008c D4010000 		.4byte	.LASF6
+ 676 0090 01       		.byte	0x1
+ 677 0091 27       		.byte	0x27
+ 678 0092 00000000 		.4byte	.LFB6
+ 679 0096 02000000 		.4byte	.LFE6-.LFB6
+ 680 009a 01       		.uleb128 0x1
+ 681 009b 9C       		.byte	0x9c
+ 682 009c 02       		.uleb128 0x2
+ 683 009d 89010000 		.4byte	.LASF7
+ 684 00a1 01       		.byte	0x1
+ 685 00a2 2A       		.byte	0x2a
+ 686 00a3 00000000 		.4byte	.LFB7
+ 687 00a7 02000000 		.4byte	.LFE7-.LFB7
+ 688 00ab 01       		.uleb128 0x1
+ 689 00ac 9C       		.byte	0x9c
+ 690 00ad 02       		.uleb128 0x2
+ 691 00ae 82000000 		.4byte	.LASF8
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 16
+
+
+ 692 00b2 01       		.byte	0x1
+ 693 00b3 2D       		.byte	0x2d
+ 694 00b4 00000000 		.4byte	.LFB8
+ 695 00b8 02000000 		.4byte	.LFE8-.LFB8
+ 696 00bc 01       		.uleb128 0x1
+ 697 00bd 9C       		.byte	0x9c
+ 698 00be 02       		.uleb128 0x2
+ 699 00bf 42020000 		.4byte	.LASF9
+ 700 00c3 01       		.byte	0x1
+ 701 00c4 30       		.byte	0x30
+ 702 00c5 00000000 		.4byte	.LFB9
+ 703 00c9 02000000 		.4byte	.LFE9-.LFB9
+ 704 00cd 01       		.uleb128 0x1
+ 705 00ce 9C       		.byte	0x9c
+ 706 00cf 02       		.uleb128 0x2
+ 707 00d0 43010000 		.4byte	.LASF10
+ 708 00d4 01       		.byte	0x1
+ 709 00d5 39       		.byte	0x39
+ 710 00d6 00000000 		.4byte	.LFB10
+ 711 00da 02000000 		.4byte	.LFE10-.LFB10
+ 712 00de 01       		.uleb128 0x1
+ 713 00df 9C       		.byte	0x9c
+ 714 00e0 02       		.uleb128 0x2
+ 715 00e1 15020000 		.4byte	.LASF11
+ 716 00e5 01       		.byte	0x1
+ 717 00e6 3C       		.byte	0x3c
+ 718 00e7 00000000 		.4byte	.LFB11
+ 719 00eb 02000000 		.4byte	.LFE11-.LFB11
+ 720 00ef 01       		.uleb128 0x1
+ 721 00f0 9C       		.byte	0x9c
+ 722 00f1 02       		.uleb128 0x2
+ 723 00f2 BF010000 		.4byte	.LASF12
+ 724 00f6 01       		.byte	0x1
+ 725 00f7 3F       		.byte	0x3f
+ 726 00f8 00000000 		.4byte	.LFB12
+ 727 00fc 02000000 		.4byte	.LFE12-.LFB12
+ 728 0100 01       		.uleb128 0x1
+ 729 0101 9C       		.byte	0x9c
+ 730 0102 02       		.uleb128 0x2
+ 731 0103 5E000000 		.4byte	.LASF13
+ 732 0107 01       		.byte	0x1
+ 733 0108 42       		.byte	0x42
+ 734 0109 00000000 		.4byte	.LFB13
+ 735 010d 02000000 		.4byte	.LFE13-.LFB13
+ 736 0111 01       		.uleb128 0x1
+ 737 0112 9C       		.byte	0x9c
+ 738 0113 02       		.uleb128 0x2
+ 739 0114 F5010000 		.4byte	.LASF14
+ 740 0118 01       		.byte	0x1
+ 741 0119 45       		.byte	0x45
+ 742 011a 00000000 		.4byte	.LFB14
+ 743 011e 02000000 		.4byte	.LFE14-.LFB14
+ 744 0122 01       		.uleb128 0x1
+ 745 0123 9C       		.byte	0x9c
+ 746 0124 02       		.uleb128 0x2
+ 747 0125 C8000000 		.4byte	.LASF15
+ 748 0129 01       		.byte	0x1
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 17
+
+
+ 749 012a 48       		.byte	0x48
+ 750 012b 00000000 		.4byte	.LFB15
+ 751 012f 02000000 		.4byte	.LFE15-.LFB15
+ 752 0133 01       		.uleb128 0x1
+ 753 0134 9C       		.byte	0x9c
+ 754 0135 02       		.uleb128 0x2
+ 755 0136 E6010000 		.4byte	.LASF16
+ 756 013a 01       		.byte	0x1
+ 757 013b 4B       		.byte	0x4b
+ 758 013c 00000000 		.4byte	.LFB16
+ 759 0140 02000000 		.4byte	.LFE16-.LFB16
+ 760 0144 01       		.uleb128 0x1
+ 761 0145 9C       		.byte	0x9c
+ 762 0146 02       		.uleb128 0x2
+ 763 0147 3D000000 		.4byte	.LASF17
+ 764 014b 01       		.byte	0x1
+ 765 014c 54       		.byte	0x54
+ 766 014d 00000000 		.4byte	.LFB17
+ 767 0151 02000000 		.4byte	.LFE17-.LFB17
+ 768 0155 01       		.uleb128 0x1
+ 769 0156 9C       		.byte	0x9c
+ 770 0157 02       		.uleb128 0x2
+ 771 0158 BA000000 		.4byte	.LASF18
+ 772 015c 01       		.byte	0x1
+ 773 015d 57       		.byte	0x57
+ 774 015e 00000000 		.4byte	.LFB18
+ 775 0162 02000000 		.4byte	.LFE18-.LFB18
+ 776 0166 01       		.uleb128 0x1
+ 777 0167 9C       		.byte	0x9c
+ 778 0168 02       		.uleb128 0x2
+ 779 0169 74000000 		.4byte	.LASF19
+ 780 016d 01       		.byte	0x1
+ 781 016e 5A       		.byte	0x5a
+ 782 016f 00000000 		.4byte	.LFB19
+ 783 0173 02000000 		.4byte	.LFE19-.LFB19
+ 784 0177 01       		.uleb128 0x1
+ 785 0178 9C       		.byte	0x9c
+ 786 0179 02       		.uleb128 0x2
+ 787 017a B1010000 		.4byte	.LASF20
+ 788 017e 01       		.byte	0x1
+ 789 017f 5D       		.byte	0x5d
+ 790 0180 00000000 		.4byte	.LFB20
+ 791 0184 02000000 		.4byte	.LFE20-.LFB20
+ 792 0188 01       		.uleb128 0x1
+ 793 0189 9C       		.byte	0x9c
+ 794 018a 02       		.uleb128 0x2
+ 795 018b 9D000000 		.4byte	.LASF21
+ 796 018f 01       		.byte	0x1
+ 797 0190 60       		.byte	0x60
+ 798 0191 00000000 		.4byte	.LFB21
+ 799 0195 02000000 		.4byte	.LFE21-.LFB21
+ 800 0199 01       		.uleb128 0x1
+ 801 019a 9C       		.byte	0x9c
+ 802 019b 02       		.uleb128 0x2
+ 803 019c 31010000 		.4byte	.LASF22
+ 804 01a0 01       		.byte	0x1
+ 805 01a1 63       		.byte	0x63
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 18
+
+
+ 806 01a2 00000000 		.4byte	.LFB22
+ 807 01a6 02000000 		.4byte	.LFE22-.LFB22
+ 808 01aa 01       		.uleb128 0x1
+ 809 01ab 9C       		.byte	0x9c
+ 810 01ac 02       		.uleb128 0x2
+ 811 01ad 35020000 		.4byte	.LASF23
+ 812 01b1 01       		.byte	0x1
+ 813 01b2 6B       		.byte	0x6b
+ 814 01b3 00000000 		.4byte	.LFB23
+ 815 01b7 02000000 		.4byte	.LFE23-.LFB23
+ 816 01bb 01       		.uleb128 0x1
+ 817 01bc 9C       		.byte	0x9c
+ 818 01bd 02       		.uleb128 0x2
+ 819 01be AD000000 		.4byte	.LASF24
+ 820 01c2 01       		.byte	0x1
+ 821 01c3 6E       		.byte	0x6e
+ 822 01c4 00000000 		.4byte	.LFB24
+ 823 01c8 02000000 		.4byte	.LFE24-.LFB24
+ 824 01cc 01       		.uleb128 0x1
+ 825 01cd 9C       		.byte	0x9c
+ 826 01ce 02       		.uleb128 0x2
+ 827 01cf 65020000 		.4byte	.LASF25
+ 828 01d3 01       		.byte	0x1
+ 829 01d4 71       		.byte	0x71
+ 830 01d5 00000000 		.4byte	.LFB25
+ 831 01d9 02000000 		.4byte	.LFE25-.LFB25
+ 832 01dd 01       		.uleb128 0x1
+ 833 01de 9C       		.byte	0x9c
+ 834 01df 02       		.uleb128 0x2
+ 835 01e0 25020000 		.4byte	.LASF26
+ 836 01e4 01       		.byte	0x1
+ 837 01e5 7A       		.byte	0x7a
+ 838 01e6 00000000 		.4byte	.LFB26
+ 839 01ea 02000000 		.4byte	.LFE26-.LFB26
+ 840 01ee 01       		.uleb128 0x1
+ 841 01ef 9C       		.byte	0x9c
+ 842 01f0 02       		.uleb128 0x2
+ 843 01f1 05020000 		.4byte	.LASF27
+ 844 01f5 01       		.byte	0x1
+ 845 01f6 7D       		.byte	0x7d
+ 846 01f7 00000000 		.4byte	.LFB27
+ 847 01fb 02000000 		.4byte	.LFE27-.LFB27
+ 848 01ff 01       		.uleb128 0x1
+ 849 0200 9C       		.byte	0x9c
+ 850 0201 02       		.uleb128 0x2
+ 851 0202 5E030000 		.4byte	.LASF28
+ 852 0206 01       		.byte	0x1
+ 853 0207 86       		.byte	0x86
+ 854 0208 00000000 		.4byte	.LFB28
+ 855 020c 02000000 		.4byte	.LFE28-.LFB28
+ 856 0210 01       		.uleb128 0x1
+ 857 0211 9C       		.byte	0x9c
+ 858 0212 02       		.uleb128 0x2
+ 859 0213 17010000 		.4byte	.LASF29
+ 860 0217 01       		.byte	0x1
+ 861 0218 89       		.byte	0x89
+ 862 0219 00000000 		.4byte	.LFB29
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 19
+
+
+ 863 021d 02000000 		.4byte	.LFE29-.LFB29
+ 864 0221 01       		.uleb128 0x1
+ 865 0222 9C       		.byte	0x9c
+ 866 0223 02       		.uleb128 0x2
+ 867 0224 06030000 		.4byte	.LASF30
+ 868 0228 01       		.byte	0x1
+ 869 0229 8C       		.byte	0x8c
+ 870 022a 00000000 		.4byte	.LFB30
+ 871 022e 02000000 		.4byte	.LFE30-.LFB30
+ 872 0232 01       		.uleb128 0x1
+ 873 0233 9C       		.byte	0x9c
+ 874 0234 02       		.uleb128 0x2
+ 875 0235 E8000000 		.4byte	.LASF31
+ 876 0239 01       		.byte	0x1
+ 877 023a 8F       		.byte	0x8f
+ 878 023b 00000000 		.4byte	.LFB31
+ 879 023f 02000000 		.4byte	.LFE31-.LFB31
+ 880 0243 01       		.uleb128 0x1
+ 881 0244 9C       		.byte	0x9c
+ 882 0245 02       		.uleb128 0x2
+ 883 0246 36030000 		.4byte	.LASF32
+ 884 024a 01       		.byte	0x1
+ 885 024b 92       		.byte	0x92
+ 886 024c 00000000 		.4byte	.LFB32
+ 887 0250 02000000 		.4byte	.LFE32-.LFB32
+ 888 0254 01       		.uleb128 0x1
+ 889 0255 9C       		.byte	0x9c
+ 890 0256 02       		.uleb128 0x2
+ 891 0257 60010000 		.4byte	.LASF33
+ 892 025b 01       		.byte	0x1
+ 893 025c 95       		.byte	0x95
+ 894 025d 00000000 		.4byte	.LFB33
+ 895 0261 02000000 		.4byte	.LFE33-.LFB33
+ 896 0265 01       		.uleb128 0x1
+ 897 0266 9C       		.byte	0x9c
+ 898 0267 02       		.uleb128 0x2
+ 899 0268 1E030000 		.4byte	.LASF34
+ 900 026c 01       		.byte	0x1
+ 901 026d 98       		.byte	0x98
+ 902 026e 00000000 		.4byte	.LFB34
+ 903 0272 02000000 		.4byte	.LFE34-.LFB34
+ 904 0276 01       		.uleb128 0x1
+ 905 0277 9C       		.byte	0x9c
+ 906 0278 02       		.uleb128 0x2
+ 907 0279 4C000000 		.4byte	.LASF35
+ 908 027d 01       		.byte	0x1
+ 909 027e A1       		.byte	0xa1
+ 910 027f 00000000 		.4byte	.LFB35
+ 911 0283 02000000 		.4byte	.LFE35-.LFB35
+ 912 0287 01       		.uleb128 0x1
+ 913 0288 9C       		.byte	0x9c
+ 914 0289 02       		.uleb128 0x2
+ 915 028a 00010000 		.4byte	.LASF36
+ 916 028e 01       		.byte	0x1
+ 917 028f A4       		.byte	0xa4
+ 918 0290 00000000 		.4byte	.LFB36
+ 919 0294 02000000 		.4byte	.LFE36-.LFB36
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 20
+
+
+ 920 0298 01       		.uleb128 0x1
+ 921 0299 9C       		.byte	0x9c
+ 922 029a 00       		.byte	0
+ 923              		.section	.debug_abbrev,"",%progbits
+ 924              	.Ldebug_abbrev0:
+ 925 0000 01       		.uleb128 0x1
+ 926 0001 11       		.uleb128 0x11
+ 927 0002 01       		.byte	0x1
+ 928 0003 25       		.uleb128 0x25
+ 929 0004 0E       		.uleb128 0xe
+ 930 0005 13       		.uleb128 0x13
+ 931 0006 0B       		.uleb128 0xb
+ 932 0007 03       		.uleb128 0x3
+ 933 0008 0E       		.uleb128 0xe
+ 934 0009 1B       		.uleb128 0x1b
+ 935 000a 0E       		.uleb128 0xe
+ 936 000b 55       		.uleb128 0x55
+ 937 000c 17       		.uleb128 0x17
+ 938 000d 11       		.uleb128 0x11
+ 939 000e 01       		.uleb128 0x1
+ 940 000f 10       		.uleb128 0x10
+ 941 0010 17       		.uleb128 0x17
+ 942 0011 00       		.byte	0
+ 943 0012 00       		.byte	0
+ 944 0013 02       		.uleb128 0x2
+ 945 0014 2E       		.uleb128 0x2e
+ 946 0015 00       		.byte	0
+ 947 0016 3F       		.uleb128 0x3f
+ 948 0017 19       		.uleb128 0x19
+ 949 0018 03       		.uleb128 0x3
+ 950 0019 0E       		.uleb128 0xe
+ 951 001a 3A       		.uleb128 0x3a
+ 952 001b 0B       		.uleb128 0xb
+ 953 001c 3B       		.uleb128 0x3b
+ 954 001d 0B       		.uleb128 0xb
+ 955 001e 11       		.uleb128 0x11
+ 956 001f 01       		.uleb128 0x1
+ 957 0020 12       		.uleb128 0x12
+ 958 0021 06       		.uleb128 0x6
+ 959 0022 40       		.uleb128 0x40
+ 960 0023 18       		.uleb128 0x18
+ 961 0024 9742     		.uleb128 0x2117
+ 962 0026 19       		.uleb128 0x19
+ 963 0027 00       		.byte	0
+ 964 0028 00       		.byte	0
+ 965 0029 00       		.byte	0
+ 966              		.section	.debug_aranges,"",%progbits
+ 967 0000 3C010000 		.4byte	0x13c
+ 968 0004 0200     		.2byte	0x2
+ 969 0006 00000000 		.4byte	.Ldebug_info0
+ 970 000a 04       		.byte	0x4
+ 971 000b 00       		.byte	0
+ 972 000c 0000     		.2byte	0
+ 973 000e 0000     		.2byte	0
+ 974 0010 00000000 		.4byte	.LFB0
+ 975 0014 02000000 		.4byte	.LFE0-.LFB0
+ 976 0018 00000000 		.4byte	.LFB1
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 21
+
+
+ 977 001c 02000000 		.4byte	.LFE1-.LFB1
+ 978 0020 00000000 		.4byte	.LFB2
+ 979 0024 02000000 		.4byte	.LFE2-.LFB2
+ 980 0028 00000000 		.4byte	.LFB3
+ 981 002c 02000000 		.4byte	.LFE3-.LFB3
+ 982 0030 00000000 		.4byte	.LFB4
+ 983 0034 02000000 		.4byte	.LFE4-.LFB4
+ 984 0038 00000000 		.4byte	.LFB5
+ 985 003c 02000000 		.4byte	.LFE5-.LFB5
+ 986 0040 00000000 		.4byte	.LFB6
+ 987 0044 02000000 		.4byte	.LFE6-.LFB6
+ 988 0048 00000000 		.4byte	.LFB7
+ 989 004c 02000000 		.4byte	.LFE7-.LFB7
+ 990 0050 00000000 		.4byte	.LFB8
+ 991 0054 02000000 		.4byte	.LFE8-.LFB8
+ 992 0058 00000000 		.4byte	.LFB9
+ 993 005c 02000000 		.4byte	.LFE9-.LFB9
+ 994 0060 00000000 		.4byte	.LFB10
+ 995 0064 02000000 		.4byte	.LFE10-.LFB10
+ 996 0068 00000000 		.4byte	.LFB11
+ 997 006c 02000000 		.4byte	.LFE11-.LFB11
+ 998 0070 00000000 		.4byte	.LFB12
+ 999 0074 02000000 		.4byte	.LFE12-.LFB12
+ 1000 0078 00000000 		.4byte	.LFB13
+ 1001 007c 02000000 		.4byte	.LFE13-.LFB13
+ 1002 0080 00000000 		.4byte	.LFB14
+ 1003 0084 02000000 		.4byte	.LFE14-.LFB14
+ 1004 0088 00000000 		.4byte	.LFB15
+ 1005 008c 02000000 		.4byte	.LFE15-.LFB15
+ 1006 0090 00000000 		.4byte	.LFB16
+ 1007 0094 02000000 		.4byte	.LFE16-.LFB16
+ 1008 0098 00000000 		.4byte	.LFB17
+ 1009 009c 02000000 		.4byte	.LFE17-.LFB17
+ 1010 00a0 00000000 		.4byte	.LFB18
+ 1011 00a4 02000000 		.4byte	.LFE18-.LFB18
+ 1012 00a8 00000000 		.4byte	.LFB19
+ 1013 00ac 02000000 		.4byte	.LFE19-.LFB19
+ 1014 00b0 00000000 		.4byte	.LFB20
+ 1015 00b4 02000000 		.4byte	.LFE20-.LFB20
+ 1016 00b8 00000000 		.4byte	.LFB21
+ 1017 00bc 02000000 		.4byte	.LFE21-.LFB21
+ 1018 00c0 00000000 		.4byte	.LFB22
+ 1019 00c4 02000000 		.4byte	.LFE22-.LFB22
+ 1020 00c8 00000000 		.4byte	.LFB23
+ 1021 00cc 02000000 		.4byte	.LFE23-.LFB23
+ 1022 00d0 00000000 		.4byte	.LFB24
+ 1023 00d4 02000000 		.4byte	.LFE24-.LFB24
+ 1024 00d8 00000000 		.4byte	.LFB25
+ 1025 00dc 02000000 		.4byte	.LFE25-.LFB25
+ 1026 00e0 00000000 		.4byte	.LFB26
+ 1027 00e4 02000000 		.4byte	.LFE26-.LFB26
+ 1028 00e8 00000000 		.4byte	.LFB27
+ 1029 00ec 02000000 		.4byte	.LFE27-.LFB27
+ 1030 00f0 00000000 		.4byte	.LFB28
+ 1031 00f4 02000000 		.4byte	.LFE28-.LFB28
+ 1032 00f8 00000000 		.4byte	.LFB29
+ 1033 00fc 02000000 		.4byte	.LFE29-.LFB29
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 22
+
+
+ 1034 0100 00000000 		.4byte	.LFB30
+ 1035 0104 02000000 		.4byte	.LFE30-.LFB30
+ 1036 0108 00000000 		.4byte	.LFB31
+ 1037 010c 02000000 		.4byte	.LFE31-.LFB31
+ 1038 0110 00000000 		.4byte	.LFB32
+ 1039 0114 02000000 		.4byte	.LFE32-.LFB32
+ 1040 0118 00000000 		.4byte	.LFB33
+ 1041 011c 02000000 		.4byte	.LFE33-.LFB33
+ 1042 0120 00000000 		.4byte	.LFB34
+ 1043 0124 02000000 		.4byte	.LFE34-.LFB34
+ 1044 0128 00000000 		.4byte	.LFB35
+ 1045 012c 02000000 		.4byte	.LFE35-.LFB35
+ 1046 0130 00000000 		.4byte	.LFB36
+ 1047 0134 02000000 		.4byte	.LFE36-.LFB36
+ 1048 0138 00000000 		.4byte	0
+ 1049 013c 00000000 		.4byte	0
+ 1050              		.section	.debug_ranges,"",%progbits
+ 1051              	.Ldebug_ranges0:
+ 1052 0000 00000000 		.4byte	.LFB0
+ 1053 0004 02000000 		.4byte	.LFE0
+ 1054 0008 00000000 		.4byte	.LFB1
+ 1055 000c 02000000 		.4byte	.LFE1
+ 1056 0010 00000000 		.4byte	.LFB2
+ 1057 0014 02000000 		.4byte	.LFE2
+ 1058 0018 00000000 		.4byte	.LFB3
+ 1059 001c 02000000 		.4byte	.LFE3
+ 1060 0020 00000000 		.4byte	.LFB4
+ 1061 0024 02000000 		.4byte	.LFE4
+ 1062 0028 00000000 		.4byte	.LFB5
+ 1063 002c 02000000 		.4byte	.LFE5
+ 1064 0030 00000000 		.4byte	.LFB6
+ 1065 0034 02000000 		.4byte	.LFE6
+ 1066 0038 00000000 		.4byte	.LFB7
+ 1067 003c 02000000 		.4byte	.LFE7
+ 1068 0040 00000000 		.4byte	.LFB8
+ 1069 0044 02000000 		.4byte	.LFE8
+ 1070 0048 00000000 		.4byte	.LFB9
+ 1071 004c 02000000 		.4byte	.LFE9
+ 1072 0050 00000000 		.4byte	.LFB10
+ 1073 0054 02000000 		.4byte	.LFE10
+ 1074 0058 00000000 		.4byte	.LFB11
+ 1075 005c 02000000 		.4byte	.LFE11
+ 1076 0060 00000000 		.4byte	.LFB12
+ 1077 0064 02000000 		.4byte	.LFE12
+ 1078 0068 00000000 		.4byte	.LFB13
+ 1079 006c 02000000 		.4byte	.LFE13
+ 1080 0070 00000000 		.4byte	.LFB14
+ 1081 0074 02000000 		.4byte	.LFE14
+ 1082 0078 00000000 		.4byte	.LFB15
+ 1083 007c 02000000 		.4byte	.LFE15
+ 1084 0080 00000000 		.4byte	.LFB16
+ 1085 0084 02000000 		.4byte	.LFE16
+ 1086 0088 00000000 		.4byte	.LFB17
+ 1087 008c 02000000 		.4byte	.LFE17
+ 1088 0090 00000000 		.4byte	.LFB18
+ 1089 0094 02000000 		.4byte	.LFE18
+ 1090 0098 00000000 		.4byte	.LFB19
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 23
+
+
+ 1091 009c 02000000 		.4byte	.LFE19
+ 1092 00a0 00000000 		.4byte	.LFB20
+ 1093 00a4 02000000 		.4byte	.LFE20
+ 1094 00a8 00000000 		.4byte	.LFB21
+ 1095 00ac 02000000 		.4byte	.LFE21
+ 1096 00b0 00000000 		.4byte	.LFB22
+ 1097 00b4 02000000 		.4byte	.LFE22
+ 1098 00b8 00000000 		.4byte	.LFB23
+ 1099 00bc 02000000 		.4byte	.LFE23
+ 1100 00c0 00000000 		.4byte	.LFB24
+ 1101 00c4 02000000 		.4byte	.LFE24
+ 1102 00c8 00000000 		.4byte	.LFB25
+ 1103 00cc 02000000 		.4byte	.LFE25
+ 1104 00d0 00000000 		.4byte	.LFB26
+ 1105 00d4 02000000 		.4byte	.LFE26
+ 1106 00d8 00000000 		.4byte	.LFB27
+ 1107 00dc 02000000 		.4byte	.LFE27
+ 1108 00e0 00000000 		.4byte	.LFB28
+ 1109 00e4 02000000 		.4byte	.LFE28
+ 1110 00e8 00000000 		.4byte	.LFB29
+ 1111 00ec 02000000 		.4byte	.LFE29
+ 1112 00f0 00000000 		.4byte	.LFB30
+ 1113 00f4 02000000 		.4byte	.LFE30
+ 1114 00f8 00000000 		.4byte	.LFB31
+ 1115 00fc 02000000 		.4byte	.LFE31
+ 1116 0100 00000000 		.4byte	.LFB32
+ 1117 0104 02000000 		.4byte	.LFE32
+ 1118 0108 00000000 		.4byte	.LFB33
+ 1119 010c 02000000 		.4byte	.LFE33
+ 1120 0110 00000000 		.4byte	.LFB34
+ 1121 0114 02000000 		.4byte	.LFE34
+ 1122 0118 00000000 		.4byte	.LFB35
+ 1123 011c 02000000 		.4byte	.LFE35
+ 1124 0120 00000000 		.4byte	.LFB36
+ 1125 0124 02000000 		.4byte	.LFE36
+ 1126 0128 00000000 		.4byte	0
+ 1127 012c 00000000 		.4byte	0
+ 1128              		.section	.debug_line,"",%progbits
+ 1129              	.Ldebug_line0:
+ 1130 0000 92020000 		.section	.debug_str,"MS",%progbits,1
+ 1130      02002400 
+ 1130      00000201 
+ 1130      FB0E0D00 
+ 1130      01010101 
+ 1131              	.LASF39:
+ 1132 0000 433A5C55 		.ascii	"C:\\Users\\mlgjmoor\\Documents\\PSoC Creator\\Nodus"
+ 1132      73657273 
+ 1132      5C6D6C67 
+ 1132      6A6D6F6F 
+ 1132      725C446F 
+ 1133 002e 435C6E6F 		.ascii	"C\\nodusC.cydsn\000"
+ 1133      64757343 
+ 1133      2E637964 
+ 1133      736E00
+ 1134              	.LASF17:
+ 1135 003d 7461736B 		.ascii	"task_app_start\000"
+ 1135      5F617070 
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 24
+
+
+ 1135      5F737461 
+ 1135      727400
+ 1136              	.LASF35:
+ 1137 004c 73646B5F 		.ascii	"sdk_version_check\000"
+ 1137      76657273 
+ 1137      696F6E5F 
+ 1137      63686563 
+ 1137      6B00
+ 1138              	.LASF13:
+ 1139 005e 72616469 		.ascii	"radio_sleep_mode_wake\000"
+ 1139      6F5F736C 
+ 1139      6565705F 
+ 1139      6D6F6465 
+ 1139      5F77616B 
+ 1140              	.LASF19:
+ 1141 0074 7461736B 		.ascii	"task_msg_send\000"
+ 1141      5F6D7367 
+ 1141      5F73656E 
+ 1141      6400
+ 1142              	.LASF8:
+ 1143 0082 73656E73 		.ascii	"sensor_write\000"
+ 1143      6F725F77 
+ 1143      72697465 
+ 1143      00
+ 1144              	.LASF38:
+ 1145 008f 2E5C6E6F 		.ascii	".\\nodus_api.c\000"
+ 1145      6475735F 
+ 1145      6170692E 
+ 1145      6300
+ 1146              	.LASF21:
+ 1147 009d 7461736B 		.ascii	"task_mutex_lock\000"
+ 1147      5F6D7574 
+ 1147      65785F6C 
+ 1147      6F636B00 
+ 1148              	.LASF24:
+ 1149 00ad 74696D65 		.ascii	"timer_delete\000"
+ 1149      725F6465 
+ 1149      6C657465 
+ 1149      00
+ 1150              	.LASF18:
+ 1151 00ba 7461736B 		.ascii	"task_app_stop\000"
+ 1151      5F617070 
+ 1151      5F73746F 
+ 1151      7000
+ 1152              	.LASF15:
+ 1153 00c8 72616469 		.ascii	"radio_data_recv\000"
+ 1153      6F5F6461 
+ 1153      74615F72 
+ 1153      65637600 
+ 1154              	.LASF1:
+ 1155 00d8 73656E73 		.ascii	"sensor_power_on\000"
+ 1155      6F725F70 
+ 1155      6F776572 
+ 1155      5F6F6E00 
+ 1156              	.LASF31:
+ 1157 00e8 73656375 		.ascii	"security_remove_bonding\000"
+ 1157      72697479 
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 25
+
+
+ 1157      5F72656D 
+ 1157      6F76655F 
+ 1157      626F6E64 
+ 1158              	.LASF36:
+ 1159 0100 73646B5F 		.ascii	"sdk_fatal_error_notify\000"
+ 1159      66617461 
+ 1159      6C5F6572 
+ 1159      726F725F 
+ 1159      6E6F7469 
+ 1160              	.LASF29:
+ 1161 0117 73656375 		.ascii	"security_initiate_bonding\000"
+ 1161      72697479 
+ 1161      5F696E69 
+ 1161      74696174 
+ 1161      655F626F 
+ 1162              	.LASF22:
+ 1163 0131 7461736B 		.ascii	"task_mutex_unlock\000"
+ 1163      5F6D7574 
+ 1163      65785F75 
+ 1163      6E6C6F63 
+ 1163      6B00
+ 1164              	.LASF10:
+ 1165 0143 72616469 		.ascii	"radio_power_on\000"
+ 1165      6F5F706F 
+ 1165      7765725F 
+ 1165      6F6E00
+ 1166              	.LASF0:
+ 1167 0152 73656E73 		.ascii	"sensor_create\000"
+ 1167      6F725F63 
+ 1167      72656174 
+ 1167      6500
+ 1168              	.LASF33:
+ 1169 0160 73656375 		.ascii	"security_delete_OOB_key\000"
+ 1169      72697479 
+ 1169      5F64656C 
+ 1169      6574655F 
+ 1169      4F4F425F 
+ 1170              	.LASF5:
+ 1171 0178 73656E73 		.ascii	"sensor_calibrade\000"
+ 1171      6F725F63 
+ 1171      616C6962 
+ 1171      72616465 
+ 1171      00
+ 1172              	.LASF7:
+ 1173 0189 73656E73 		.ascii	"sensor_config_get\000"
+ 1173      6F725F63 
+ 1173      6F6E6669 
+ 1173      675F6765 
+ 1173      7400
+ 1174              	.LASF3:
+ 1175 019b 73656E73 		.ascii	"sensor_sleep_mode_set\000"
+ 1175      6F725F73 
+ 1175      6C656570 
+ 1175      5F6D6F64 
+ 1175      655F7365 
+ 1176              	.LASF20:
+ 1177 01b1 7461736B 		.ascii	"task_msg_recv\000"
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 26
+
+
+ 1177      5F6D7367 
+ 1177      5F726563 
+ 1177      7600
+ 1178              	.LASF12:
+ 1179 01bf 72616469 		.ascii	"radio_sleep_mode_set\000"
+ 1179      6F5F736C 
+ 1179      6565705F 
+ 1179      6D6F6465 
+ 1179      5F736574 
+ 1180              	.LASF6:
+ 1181 01d4 73656E73 		.ascii	"sensor_config_set\000"
+ 1181      6F725F63 
+ 1181      6F6E6669 
+ 1181      675F7365 
+ 1181      7400
+ 1182              	.LASF16:
+ 1183 01e6 72616469 		.ascii	"radio_set_role\000"
+ 1183      6F5F7365 
+ 1183      745F726F 
+ 1183      6C6500
+ 1184              	.LASF14:
+ 1185 01f5 72616469 		.ascii	"radio_data_send\000"
+ 1185      6F5F6461 
+ 1185      74615F73 
+ 1185      656E6400 
+ 1186              	.LASF27:
+ 1187 0205 6F74615F 		.ascii	"ota_upgrade_sdk\000"
+ 1187      75706772 
+ 1187      6164655F 
+ 1187      73646B00 
+ 1188              	.LASF11:
+ 1189 0215 72616469 		.ascii	"radio_power_off\000"
+ 1189      6F5F706F 
+ 1189      7765725F 
+ 1189      6F666600 
+ 1190              	.LASF26:
+ 1191 0225 6F74615F 		.ascii	"ota_upgrade_app\000"
+ 1191      75706772 
+ 1191      6164655F 
+ 1191      61707000 
+ 1192              	.LASF23:
+ 1193 0235 74696D65 		.ascii	"timer_create\000"
+ 1193      725F6372 
+ 1193      65617465 
+ 1193      00
+ 1194              	.LASF9:
+ 1195 0242 73656E73 		.ascii	"sensor_read\000"
+ 1195      6F725F72 
+ 1195      65616400 
+ 1196              	.LASF4:
+ 1197 024e 73656E73 		.ascii	"sensor_sleep_mode_wake\000"
+ 1197      6F725F73 
+ 1197      6C656570 
+ 1197      5F6D6F64 
+ 1197      655F7761 
+ 1198              	.LASF25:
+ 1199 0265 74696D65 		.ascii	"timer_event_notify\000"
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cc28QXEg.s 			page 27
+
+
+ 1199      725F6576 
+ 1199      656E745F 
+ 1199      6E6F7469 
+ 1199      667900
+ 1200              	.LASF37:
+ 1201 0278 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1201      4320342E 
+ 1201      392E3320 
+ 1201      32303135 
+ 1201      30333033 
+ 1202 02ab 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1202      20726576 
+ 1202      6973696F 
+ 1202      6E203232 
+ 1202      31323230 
+ 1203 02de 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1203      66756E63 
+ 1203      74696F6E 
+ 1203      2D736563 
+ 1203      74696F6E 
+ 1204              	.LASF30:
+ 1205 0306 73656375 		.ascii	"security_remove_pairing\000"
+ 1205      72697479 
+ 1205      5F72656D 
+ 1205      6F76655F 
+ 1205      70616972 
+ 1206              	.LASF34:
+ 1207 031e 73656375 		.ascii	"security_change_OOB_key\000"
+ 1207      72697479 
+ 1207      5F636861 
+ 1207      6E67655F 
+ 1207      4F4F425F 
+ 1208              	.LASF32:
+ 1209 0336 73656375 		.ascii	"security_setup_OOB_key\000"
+ 1209      72697479 
+ 1209      5F736574 
+ 1209      75705F4F 
+ 1209      4F425F6B 
+ 1210              	.LASF2:
+ 1211 034d 73656E73 		.ascii	"sensor_power_off\000"
+ 1211      6F725F70 
+ 1211      6F776572 
+ 1211      5F6F6666 
+ 1211      00
+ 1212              	.LASF28:
+ 1213 035e 73656375 		.ascii	"security_initiate_pairing\000"
+ 1213      72697479 
+ 1213      5F696E69 
+ 1213      74696174 
+ 1213      655F7061 
+ 1214              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

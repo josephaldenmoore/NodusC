@@ -2,7 +2,7 @@
 --	Conversion of nodusC.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Aug 18 09:34:02 2016
+--	Tue Aug 30 08:12:12 2016
 --
 
 USE cypress.cypress.all;
@@ -109,11 +109,6 @@ SIGNAL Net_4078 : bit;
 SIGNAL \BLE:Net_53\ : bit;
 SIGNAL Net_4077 : bit;
 SIGNAL \BLE:Net_55\ : bit;
-SIGNAL tmpOE__Timer_Pin_net_0 : bit;
-SIGNAL Net_3276 : bit;
-SIGNAL tmpIO_0__Timer_Pin_net_0 : bit;
-TERMINAL tmpSIOVREF__Timer_Pin_net_0 : bit;
-SIGNAL tmpINTERRUPT_0__Timer_Pin_net_0 : bit;
 SIGNAL Net_4079 : bit;
 SIGNAL Net_4214 : bit;
 SIGNAL Net_4081 : bit;
@@ -802,85 +797,15 @@ one <=  ('1') ;
 		is_digital=>'0')
 	PORT MAP(clock_out=>\BLE:Net_53\,
 		dig_domain_out=>open);
-Timer_Pin:cy_psoc3_pins_v1_10
-	GENERIC MAP(id=>"b2e995a3-8707-4f23-863c-c4376e243667",
-		drive_mode=>"001",
-		ibuf_enabled=>"1",
-		init_dr_st=>"0",
-		input_sync=>"1",
-		input_clk_en=>'0',
-		input_sync_mode=>"0",
-		intr_mode=>"00",
-		invert_in_clock=>'0',
-		invert_in_clock_en=>'0',
-		invert_in_reset=>'0',
-		invert_out_clock=>'0',
-		invert_out_clock_en=>'0',
-		invert_out_reset=>'0',
-		io_voltage=>"",
-		layout_mode=>"CONTIGUOUS",
-		output_conn=>"0",
-		output_sync=>"0",
-		output_clk_en=>'0',
-		output_mode=>"0",
-		output_reset=>'0',
-		output_clock_mode=>"0",
-		oe_sync=>"0",
-		oe_conn=>"0",
-		oe_reset=>'0',
-		pin_aliases=>"",
-		pin_mode=>"I",
-		por_state=>4,
-		sio_group_cnt=>0,
-		sio_hifreq=>"00000000",
-		sio_hyst=>"1",
-		sio_ibuf=>"00000000",
-		sio_info=>"00",
-		sio_obuf=>"00000000",
-		sio_refsel=>"00000000",
-		sio_vtrip=>"00000000",
-		sio_vohsel=>"00000000",
-		slew_rate=>"0",
-		spanning=>'0',
-		sw_only=>'0',
-		vtrip=>"00",
-		width=>1,
-		port_alias_required=>'0',
-		port_alias_group=>"",
-		use_annotation=>"0",
-		pa_in_clock=>-1,
-		pa_in_clock_en=>-1,
-		pa_in_reset=>-1,
-		pa_out_clock=>-1,
-		pa_out_clock_en=>-1,
-		pa_out_reset=>-1,
-		ovt_needed=>"0",
-		ovt_slew_control=>"00",
-		ovt_hyst_trim=>"0",
-		input_buffer_sel=>"00")
-	PORT MAP(oe=>(one),
-		y=>(zero),
-		fb=>Net_3276,
-		analog=>(open),
-		io=>(tmpIO_0__Timer_Pin_net_0),
-		siovref=>(tmpSIOVREF__Timer_Pin_net_0),
-		annotation=>(open),
-		in_clock=>zero,
-		in_clock_en=>one,
-		in_reset=>zero,
-		out_clock=>zero,
-		out_clock_en=>one,
-		out_reset=>zero,
-		interrupt=>tmpINTERRUPT_0__Timer_Pin_net_0);
 Timer_Int:cy_isr_v1_0
 	GENERIC MAP(int_type=>"01")
 	PORT MAP(int_signal=>Net_4079);
-Clock_1MHz:cy_clock_v1_0
+Clock_1kHz:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"82f6be1f-6a7b-4297-bdf4-59b7e11b0a8c",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"1000000000",
+		period=>"1000000000000",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>Net_4214,
@@ -1103,9 +1028,9 @@ PWM_2_Out:cy_psoc3_pins_v1_10
 	PORT MAP(clock=>Net_4214,
 		capture=>zero,
 		count=>one,
-		reload=>Net_3276,
-		stop=>Net_3276,
-		start=>Net_3276,
+		reload=>zero,
+		stop=>zero,
+		start=>zero,
 		underflow=>Net_4088,
 		overflow=>Net_4087,
 		compare_match=>Net_4089,

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
   30:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     uint16 CapSense_rawFilterData1[CapSense_TOTAL_SENSOR_COUNT];
   31:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     uint16 CapSense_rawFilterData2[CapSense_TOTAL_SENSOR_COUNT];
   32:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 2
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/CapSense_CSHL.c **** #elif ( (0u != (CapSense_RAW_FILTER_MASK & CapSense_IIR2_FILTER))   || \
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
   87:.\Generated_Source\PSoC4/CapSense_CSHL.c **** };
   88:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
   89:.\Generated_Source\PSoC4/CapSense_CSHL.c **** const uint8 CapSense_rawDataIndex[] = {
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 3
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 3
 
 
   90:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     0u, /* Button0__BTN */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
   32              		.cfi_offset 5, -8
   33              		.cfi_offset 14, -4
  138:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     #if ((CapSense_TOTAL_BUTTONS_COUNT) || (CapSense_TOTAL_MATRIX_BUTTONS_COUNT) || \
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 4
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 4
 
 
  139:.\Generated_Source\PSoC4/CapSense_CSHL.c ****          (CapSense_TOTAL_GENERICS_COUNT))
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  170:.\Generated_Source\PSoC4/CapSense_CSHL.c ****            (CapSense_RAW_FILTER_MASK & CapSense_IIR8_FILTER) ||\
  171:.\Generated_Source\PSoC4/CapSense_CSHL.c ****            (CapSense_RAW_FILTER_MASK & CapSense_IIR16_FILTER))
  172:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 5
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 5
 
 
  173:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         CapSense_rawFilterData1[sensor] = CapSense_sensorRaw[sensor];
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  202:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Return:
  203:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  None
  204:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 6
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 6
 
 
  205:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Global Variables:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  117              	.LFB38:
  224:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
  225:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 7
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 7
 
 
  226:.\Generated_Source\PSoC4/CapSense_CSHL.c **** /*******************************************************************************
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  140 0010 F9D9     		bls	.L8
  256:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     }
  257:.\Generated_Source\PSoC4/CapSense_CSHL.c **** }
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 8
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 8
 
 
  141              		.loc 1 257 0 is_stmt 1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  163 0002 FFF7FEFF 		bl	CapSense_ScanEnabledWidgets
  164              	.LVL14:
  165              	.L10:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 9
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 9
 
 
  290:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     while(CapSense_IsBusy() != 0u)
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  201              		.align	2
  202              	.L14:
  203 002c 00000000 		.word	CapSense_sensorEnableMask
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 10
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 10
 
 
  204              		.cfi_endproc
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  350:.\Generated_Source\PSoC4/CapSense_CSHL.c **** {
  351:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     uint32 calc;
  352:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     uint32 sign;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 11
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 11
 
 
  353:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     uint16 tempRaw;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  407:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     }
  408:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     #endif  /* (CapSense_RAW_FILTER_MASK != 0u) */
  409:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 12
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 12
 
 
  410:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     #if (CapSense_TUNING_METHOD == CapSense__TUNING_AUTO)
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  464:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
  465:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 /* Add Raw Data to Baseline */
  466:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 calc += filteredRawData;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 13
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 13
 
 
  467:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  521:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  If the auto reset option is disabled, the baseline stops updating.
  522:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  Baseline is loaded with raw count value if a signal is greater than zero and
  523:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  if signal is less than noise threshold.
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 14
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 14
 
 
  524:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  Raw data filters are applied to the values if enabled before baseline
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  578:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Return:
  579:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  None
  580:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 15
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 15
 
 
  581:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Global Variables:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  635:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
  636:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Side Effects:
  637:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  None
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 16
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 16
 
 
  638:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  216              		.cfi_startproc
  217              	.LVL22:
  691:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     return (CapSense_sensorBaseline[sensor]);
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 17
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 17
 
 
  218              		.loc 1 691 0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  245 0000 4000     		lsl	r0, r0, #1
  246              	.LVL25:
  247 0002 014B     		ldr	r3, .L20
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 18
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 18
 
 
  248 0004 C152     		strh	r1, [r0, r3]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  746:.\Generated_Source\PSoC4/CapSense_CSHL.c **** }
  275              		.loc 1 746 0
  276              		@ sp needed
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 19
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 19
 
 
  277 0006 7047     		bx	lr
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  304              	.L27:
  305              		.align	2
  306              	.L26:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 20
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 20
 
 
  307 0008 00000000 		.word	.LANCHOR0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  334              	.LFE48:
  335              		.size	CapSense_GetFingerThreshold, .-CapSense_GetFingerThreshold
  336              		.section	.text.CapSense_GetNoiseThreshold,"ax",%progbits
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 21
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 21
 
 
  337              		.align	2
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  364              		.code	16
  365              		.thumb_func
  366              		.type	CapSense_GetFingerHysteresis, %function
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 22
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 22
 
 
  367              	CapSense_GetFingerHysteresis:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  393              	.LFB51:
  856:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
  857:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 23
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 23
 
 
  858:.\Generated_Source\PSoC4/CapSense_CSHL.c **** /*******************************************************************************
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  418              	.LFB52:
  888:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
  889:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 24
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 24
 
 
  890:.\Generated_Source\PSoC4/CapSense_CSHL.c **** #if(CapSense_TUNING_METHOD != CapSense__TUNING_NONE)
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  920:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Function Name: CapSense_SetNoiseThreshold
  921:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     ********************************************************************************
  922:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 25
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 25
 
 
  923:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Summary:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  953:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
  954:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Parameters:
  955:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  value:  Hysteresis value for widgets.
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 26
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 26
 
 
  956:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  widget:  widget number
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  986:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Return Value:
  987:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  None
  988:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 27
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 27
 
 
  989:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Global Variables:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1019:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  CapSense_debounce[] - This array contains the debounce value for each widget.
 1020:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  CapSense_widgetNumberSld - structure with dynamic sliders' parameters.
 1021:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 28
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 28
 
 
 1022:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Side Effects:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1052:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
 1053:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *******************************************************************************/
 1054:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     void CapSense_SetLowBaselineReset(uint32 sensor, uint8 value)
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 29
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 29
 
 
 1055:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     {
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1083:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  the current value of raw data and a previous value of the baseline.
 1084:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  CapSense_debounceCounter[]   - used to store the current debounce
 1085:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  counter of the sensor. the widget which have this parameter are buttons, matrix
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 30
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 30
 
 
 1086:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  buttons, proximity, and guard. All other widgets don't have the  debounce parameter
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  590              	.LVL47:
 1115:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     debounce = CapSense_debounce[widget];
  591              		.loc 1 1115 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 31
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 31
 
 
  592 0014 224B     		ldr	r3, .L63+12
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1134:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         if (CapSense_sensorSignal[sensor] >= (fingerThreshold + hysteresis))
  628              		.loc 1 1134 0
  629 004a 164B     		ldr	r3, .L63+16
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 32
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 32
 
 
  630 004c 1B19     		add	r3, r3, r4
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  668 0088 00D0     		beq	.L62
  669 008a 0120     		mov	r0, #1
  670              	.L62:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 33
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 33
 
 
 1151:.\Generated_Source\PSoC4/CapSense_CSHL.c **** }
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1178:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Side Effects:
 1179:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  None
 1180:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 34
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 34
 
 
 1181:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *******************************************************************************/
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  735 001c AC42     		cmp	r4, r5
  736 001e F6D3     		bcc	.L67
 1198:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 35
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 35
 
 
 1199:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  760              		.cfi_startproc
  761 0000 38B5     		push	{r3, r4, r5, lr}
  762              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 36
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 36
 
 
  763              		.cfi_offset 3, -16
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  799              	.LFE60:
  800              		.size	CapSense_CheckIsAnyWidgetActive, .-CapSense_CheckIsAnyWidgetActive
  801 001e C046     		.section	.text.CapSense_EnableWidget,"ax",%progbits
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 37
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 37
 
 
  802              		.align	2
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  822              		.loc 1 1279 0
  823 0006 1818     		add	r0, r3, r0
  824              	.LVL80:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 38
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 38
 
 
  825 0008 0579     		ldrb	r5, [r0, #4]
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1294:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
 1295:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Summary:
 1296:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  Disables all the widget elements (sensors) from the scanning process.
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 39
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 39
 
 
 1297:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  888 0010 211C     		mov	r1, r4
  889 0012 0022     		mov	r2, #0
  890 0014 FFF7FEFF 		bl	CapSense_SetBitValue
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 40
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 40
 
 
  891              	.LVL91:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1352:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  diplex:   pointer to diplex table.
 1353:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
 1354:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Return:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 41
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 41
 
 
 1355:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  Returns the index of the maximum element within a defined centroid.
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1409:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     else   /* Select biggest and indicate zero start */
 1410:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     {
 1411:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         if(curCntrdSize > 0u)
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 42
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 42
 
 
 1412:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         {
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1466:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         #elif (CapSense_IS_DIPLEX_SLIDER)
 1467:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             curPos = diplex[i];
 1468:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         #endif /* (CapSense_IS_DIPLEX_SLIDER && CapSense_IS_NON_DIPLEX_SLIDER) */
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 43
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 43
 
 
 1469:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         /* Looking for greater element within centroid */
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1523:.\Generated_Source\PSoC4/CapSense_CSHL.c **** #if (CapSense_TOTAL_TRACKPAD_GESTURES_COUNT > 0u)
 1524:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     uint8 CapSense_CalcCentroid(uint8 maximum, uint8 offset,
 1525:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                         uint8 count, uint32 resolution, uint8 noiseThreshold)
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 44
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 44
 
 
 1526:.\Generated_Source\PSoC4/CapSense_CSHL.c **** #else
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1580:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             #endif /* (CapSense_TOTAL_RADIAL_SLIDERS_COUNT > 0u) */
 1581:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
 1582:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         #if (CapSense_ADD_SLIDER_TYPE)
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 45
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 45
 
 
 1583:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             }
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1637:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 else                                /* Not first Not last */
 1638:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 {
 1639:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     CapSense_centroid[CapSense_POS_PREV] = startOfSlider[posPrev];
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 46
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 46
 
 
 1640:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     CapSense_centroid[CapSense_POS_NEXT] = startOfSlider[posNext];
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1694:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         /* Round result and put it to uint8 */
 1695:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         position = ((uint8) HI16((uint32)denominator + CapSense_CENTROID_ROUND_VALUE));
 1696:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 47
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 47
 
 
 1697:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         return (position);
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1751:.\Generated_Source\PSoC4/CapSense_CSHL.c ****              (0u != (CapSense_AVERAGING_FILTER & CapSense_LINEAR_SLIDERS_POS_FILTERS_MASK)))
 1752:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             uint8 tempPos;
 1753:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         #endif /* ((0u != (CapSense_MEDIAN_FILTER & CapSense_LINEAR_SLIDERS_POS_FILTERS_MASK)) || \
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 48
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 48
 
 
 1754:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                *   (0u != (CapSense_AVERAGING_FILTER & CapSense_LINEAR_SLIDERS_POS_FILTERS_MASK)))
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1808:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         #endif /* ((0u != (CapSense_MEDIAN_FILTER & \
 1809:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                *           CapSense_LINEAR_SLIDERS_POS_FILTERS_MASK)) || \
 1810:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                *   (0u != (CapSense_AVERAGING_FILTER & \
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 49
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 49
 
 
 1811:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                *           CapSense_LINEAR_SLIDERS_POS_FILTERS_MASK)))
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1865:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             }
 1866:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         #endif /* (0u != (CapSense_IIR4_FILTER & \
 1867:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                *          CapSense_LINEAR_SLIDERS_POS_FILTERS_MASK))
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 50
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 50
 
 
 1868:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                */
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1922:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  Returns a position value of the radial slider.
 1923:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
 1924:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Global Variables:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 51
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 51
 
 
 1925:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  None.
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 1979:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     posIndex  = firstTimeIndex + 1u;
 1980:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
 1981:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     if (0u == CapSense_posFiltersData[firstTimeIndex])
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 52
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 52
 
 
 1982:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     {
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2036:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         #if (0u != (CapSense_IIR2_FILTER & CapSense_RADIAL_SLIDERS_POS_FILTERS_MASK
 2037:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             if (0u != (posFiltersMask & CapSense_IIR2_FILTER))
 2038:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             {
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 53
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 53
 
 
 2039:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                 position = CapSense_IIR2Filter(position,
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2093:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     /*******************************************************************************
 2094:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Function Name: CapSense_GetTouchCentroidPos
 2095:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     ********************************************************************************
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 54
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 54
 
 
 2096:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2150:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         uint8 count = CapSense_numberOfSensors[widget];
 2151:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
 2152:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         /* Find Maximum within X centroid */
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 55
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 55
 
 
 2153:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         #if (CapSense_IS_DIPLEX_SLIDER)
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2207:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                      (0u != (posFiltersMask & CapSense_AVERAGING_FILTER)) )
 2208:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                 {
 2209:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                     CapSense_posFiltersData[posXIndex + 1u] = posX;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 56
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 56
 
 
 2210:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                     CapSense_posFiltersData[posYIndex + 1u] = posY;
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2264:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                     CapSense_posFiltersData[posYIndex] = tempPos;
 2265:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                 }
 2266:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 57
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 57
 
 
 2267:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             #endif /* (0u != (CapSense_AVERAGING_FILTER & \
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2321:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 /* Save positions */
 2322:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 pos[0u] = posX;
 2323:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 pos[1u] = posY;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 58
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 58
 
 
 2324:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             }
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  924              		.loc 1 2374 0
  925 0000 8842     		cmp	r0, r1
  926 0002 02D9     		bls	.L85
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 59
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 59
 
 
  927 0004 031C     		mov	r3, r0
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2391:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
 2392:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
 2393:.\Generated_Source\PSoC4/CapSense_CSHL.c **** #if ( (0u != (CapSense_RAW_FILTER_MASK & CapSense_AVERAGING_FILTER)) || \
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 60
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 60
 
 
 2394:.\Generated_Source\PSoC4/CapSense_CSHL.c ****       (0u != (CapSense_POS_FILTERS_MASK & CapSense_AVERAGING_FILTER)) )
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2448:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Side Effects:
 2449:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  None
 2450:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 61
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 61
 
 
 2451:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *******************************************************************************/
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  972              	.LVL103:
  973 0004 C818     		add	r0, r1, r3
  974              	.LVL104:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 62
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 62
 
 
 2497:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         tmp >>= 2u;
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1021 0014 4200     		lsl	r2, r0, #1
  1022 0016 3A4B     		ldr	r3, .L102+8
  1023 0018 D75A     		ldrh	r7, [r2, r3]
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 63
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 63
 
 
  1024              	.LVL109:
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1070              	.L93:
  424:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         sign = 0u;    /* Negative difference - Do NOT calculate the Signal */
  1071              		.loc 1 424 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 64
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 64
 
 
  1072 0058 D51B     		sub	r5, r2, r7
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  450:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                && (sign == 0u)))
  1118              		.loc 1 450 0 discriminator 1
  1119 009a 1F4B     		ldr	r3, .L102+32
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 65
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 65
 
 
  1120 009c 9B5D     		ldrb	r3, [r3, r6]
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1163 00ce 002B     		cmp	r3, #0
  1164 00d0 0AD0     		beq	.L99
  1165              	.LVL125:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 66
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 66
 
 
  486:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             {
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1215              		.cfi_endproc
  1216              	.LFE40:
  1217              		.size	CapSense_UpdateBaselineNoThreshold, .-CapSense_UpdateBaselineNoThreshold
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 67
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 67
 
 
  1218              		.section	.text.CapSense_UpdateSensorBaseline,"ax",%progbits
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1266              	.LVL140:
  1267              	.L108:
  602:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 68
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 68
 
 
  1268              		.loc 1 602 0
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1316              		.cfi_offset 14, -4
  649:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
  1317              		.loc 1 649 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 69
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 69
 
 
  1318 0002 094B     		ldr	r3, .L115
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1363              		.cfi_endproc
  1364              	.LFE43:
  1365              		.size	CapSense_UpdateWidgetBaseline, .-CapSense_UpdateWidgetBaseline
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 70
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 70
 
 
  1366              		.section	.text.CapSense_GetWidgetNumber,"ax",%progbits
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2547:.\Generated_Source\PSoC4/CapSense_CSHL.c ****        *    (0u != (CapSense_POS_FILTERS_MASK & CapSense_JITTER_FILTER)) )
 2548:.\Generated_Source\PSoC4/CapSense_CSHL.c ****        *    (0u != (CapSense_TRACKPAD_GEST_POS_FILTERS_MASK & CapSense_JITTER_FILTER)) )
 2549:.\Generated_Source\PSoC4/CapSense_CSHL.c ****        */
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 71
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 71
 
 
 2550:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2604:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
 2605:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Global Variables:
 2606:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  None.
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 72
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 72
 
 
 2607:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2661:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         uint16 col_sig_max = 0u;
 2662:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         uint8 row_ind = 0u;
 2663:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         uint8 col_ind = 0u;
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 73
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 73
 
 
 2664:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2718:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
 2719:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Side Effects:
 2720:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  None
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 74
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 74
 
 
 2721:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
 2750:.\Generated_Source\PSoC4/CapSense_CSHL.c **** {
  1399              		.loc 1 2750 0
  1400              		.cfi_startproc
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 75
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 75
 
 
  1401              	.LVL159:
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1428              		.loc 1 2777 0
  1429 0000 014B     		ldr	r3, .L124
  1430 0002 185C     		ldrb	r0, [r3, r0]
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 76
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 76
 
 
  1431              	.LVL162:
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1458 0006 7047     		bx	lr
  1459              	.L128:
  1460              		.align	2
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 77
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 77
 
 
  1461              	.L127:
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1490              		.global	CapSense_numberOfSensors
  1491              		.global	CapSense_rawDataIndex
  1492              		.global	CapSense_debounce
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 78
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 78
 
 
  1493              		.comm	CapSense_hysteresis,2,4
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1547 0004 0000     		.space	2
  1548 0006 0000     		.space	2
  1549              		.type	CapSense_sensorSignal, %object
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 79
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 79
 
 
  1550              		.size	CapSense_sensorSignal, 2
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1604 004a 07       		.byte	0x7
  1605 004b 59080000 		.4byte	.LASF5
  1606 004f 02       		.uleb128 0x2
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 80
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 80
 
 
  1607 0050 08       		.byte	0x8
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1661 00b6 18050000 		.4byte	.LASF16
  1662 00ba 03       		.byte	0x3
  1663 00bb 31       		.byte	0x31
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 81
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 81
 
 
  1664 00bc CA010000 		.4byte	0x1ca
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1718 0128 CA010000 		.4byte	0x1ca
  1719 012c 24       		.byte	0x24
  1720 012d 07       		.uleb128 0x7
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 82
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 82
 
 
  1721 012e 21060000 		.4byte	.LASF26
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1775 019a BF050000 		.4byte	.LASF35
  1776 019e 03       		.byte	0x3
  1777 019f 44       		.byte	0x44
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 83
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 83
 
 
  1778 01a0 07020000 		.4byte	0x207
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1832 0212 21020000 		.4byte	0x221
  1833 0216 0B       		.uleb128 0xb
  1834 0217 D0010000 		.4byte	0x1d0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 84
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 84
 
 
  1835 021b 0B       		.uleb128 0xb
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1889 028a 03       		.byte	0x3
  1890 028b 50       		.byte	0x50
  1891 028c 77000000 		.4byte	0x77
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 85
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 85
 
 
  1892 0290 06       		.byte	0x6
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  1946 0308 34000000 		.4byte	.LLST2
  1947 030c 11       		.uleb128 0x11
  1948 030d 08000000 		.4byte	.LVL5
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 86
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 86
 
 
  1949 0311 900D0000 		.4byte	0xd90
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2003 0379 30000000 		.4byte	.LFE39-.LFB39
  2004 037d 01       		.uleb128 0x1
  2005 037e 9C       		.byte	0x9c
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 87
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 87
 
 
  2006 037f D8030000 		.4byte	0x3d8
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2060 03f8 B102     		.2byte	0x2b1
  2061 03fa 83000000 		.4byte	0x83
  2062 03fe A5000000 		.4byte	.LLST6
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 88
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 88
 
 
  2063 0402 00       		.byte	0
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2117 0481 83000000 		.4byte	0x83
  2118 0485 08010000 		.4byte	.LLST9
  2119 0489 1B       		.uleb128 0x1b
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 89
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 89
 
 
  2120 048a 94030000 		.4byte	.LASF59
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2174 050e 5403     		.2byte	0x354
  2175 0510 83000000 		.4byte	0x83
  2176 0514 6B010000 		.4byte	.LLST12
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 90
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 90
 
 
  2177 0518 00       		.byte	0
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2231 0593 AD03     		.2byte	0x3ad
  2232 0595 83000000 		.4byte	0x83
  2233 0599 01       		.uleb128 0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 91
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 91
 
 
  2234 059a 50       		.byte	0x50
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2288 060d 01       		.uleb128 0x1
  2289 060e 51       		.byte	0x51
  2290 060f 00       		.byte	0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 92
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 92
 
 
  2291 0610 16       		.uleb128 0x16
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2345 068c 01       		.uleb128 0x1
  2346 068d 9C       		.byte	0x9c
  2347 068e 62070000 		.4byte	0x762
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 93
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 93
 
 
  2348 0692 1A       		.uleb128 0x1a
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2402 0710 26070000 		.4byte	0x726
  2403 0714 12       		.uleb128 0x12
  2404 0715 01       		.uleb128 0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 94
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 94
 
 
  2405 0716 52       		.byte	0x52
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2459 0761 00       		.byte	0
  2460 0762 19       		.uleb128 0x19
  2461 0763 150A0000 		.4byte	.LASF75
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 95
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 95
 
 
  2462 0767 01       		.byte	0x1
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2516 07e8 6900     		.ascii	"i\000"
  2517 07ea 01       		.byte	0x1
  2518 07eb CF04     		.2byte	0x4cf
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 96
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 96
 
 
  2519 07ed 83000000 		.4byte	0x83
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2573 086a 12       		.uleb128 0x12
  2574 086b 01       		.uleb128 0x1
  2575 086c 51       		.byte	0x51
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 97
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 97
 
 
  2576 086d 02       		.uleb128 0x2
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2630 08de 1C000000 		.4byte	.LFE63-.LFB63
  2631 08e2 01       		.uleb128 0x1
  2632 08e3 9C       		.byte	0x9c
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 98
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 98
 
 
  2633 08e4 20090000 		.4byte	0x920
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2687 0968 00       		.byte	0
  2688 0969 16       		.uleb128 0x16
  2689 096a 72000000 		.4byte	.LASF84
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 99
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 99
 
 
  2690 096e 01       		.byte	0x1
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2744 09f7 12       		.uleb128 0x12
  2745 09f8 01       		.uleb128 0x1
  2746 09f9 50       		.byte	0x50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 100
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 100
 
 
  2747 09fa 02       		.uleb128 0x2
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2801 0a62 69090000 		.4byte	0x969
  2802 0a66 12       		.uleb128 0x12
  2803 0a67 01       		.uleb128 0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 101
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 101
 
 
  2804 0a68 50       		.byte	0x50
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2858 0ad3 30000000 		.4byte	.LFE43-.LFB43
  2859 0ad7 01       		.uleb128 0x1
  2860 0ad8 9C       		.byte	0x9c
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 102
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 102
 
 
  2861 0ad9 600B0000 		.4byte	0xb60
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2915 0b5b 02       		.uleb128 0x2
  2916 0b5c 74       		.byte	0x74
  2917 0b5d 00       		.sleb128 0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 103
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 103
 
 
  2918 0b5e 00       		.byte	0
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  2972 0be2 F6070000 		.4byte	.LASF99
  2973 0be6 01       		.byte	0x1
  2974 0be7 F10A     		.2byte	0xaf1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 104
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 104
 
 
  2975 0be9 00000000 		.4byte	.LFB68
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3029 0c65 23       		.uleb128 0x23
  3030 0c66 A4000000 		.4byte	0xa4
  3031 0c6a 01       		.byte	0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 105
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 105
 
 
  3032 0c6b 00       		.byte	0
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3086 0cdd 03       		.byte	0x3
  3087 0cde 00000000 		.4byte	CapSense_lowBaselineReset
  3088 0ce2 26       		.uleb128 0x26
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 106
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 106
 
 
  3089 0ce3 2A030000 		.4byte	.LASF111
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3143 0d58 05       		.uleb128 0x5
  3144 0d59 03       		.byte	0x3
  3145 0d5a 00000000 		.4byte	CapSense_numberOfSensors
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 107
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 107
 
 
  3146 0d5e 09       		.uleb128 0x9
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3200 0dd3 6B       		.byte	0x6b
  3201 0dd4 E80D0000 		.4byte	0xde8
  3202 0dd8 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 108
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 108
 
 
  3203 0dd9 CA010000 		.4byte	0x1ca
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3257 0015 00       		.byte	0
  3258 0016 0B       		.uleb128 0xb
  3259 0017 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 109
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 109
 
 
  3260 0018 3E       		.uleb128 0x3e
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3314 004e 0E       		.uleb128 0xe
  3315 004f 3A       		.uleb128 0x3a
  3316 0050 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 110
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 110
 
 
  3317 0051 3B       		.uleb128 0x3b
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3371 0087 03       		.uleb128 0x3
  3372 0088 0E       		.uleb128 0xe
  3373 0089 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 111
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 111
 
 
  3374 008a 0B       		.uleb128 0xb
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3428 00c1 3B       		.uleb128 0x3b
  3429 00c2 0B       		.uleb128 0xb
  3430 00c3 49       		.uleb128 0x49
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 112
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 112
 
 
  3431 00c4 13       		.uleb128 0x13
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3485 0103 02       		.uleb128 0x2
  3486 0104 17       		.uleb128 0x17
  3487 0105 00       		.byte	0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 113
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 113
 
 
  3488 0106 00       		.byte	0
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3542 013d 00       		.byte	0
  3543 013e 00       		.byte	0
  3544 013f 19       		.uleb128 0x19
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 114
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 114
 
 
  3545 0140 2E       		.uleb128 0x2e
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3599 0177 00       		.byte	0
  3600 0178 00       		.byte	0
  3601 0179 1C       		.uleb128 0x1c
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 115
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 115
 
 
  3602 017a 34       		.uleb128 0x34
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3656 01b0 00       		.byte	0
  3657 01b1 20       		.uleb128 0x20
  3658 01b2 34       		.uleb128 0x34
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 116
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 116
 
 
  3659 01b3 00       		.byte	0
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3713 01ea 24       		.uleb128 0x24
  3714 01eb 34       		.uleb128 0x34
  3715 01ec 00       		.byte	0
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 117
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 117
 
 
  3716 01ed 03       		.uleb128 0x3
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3770 0223 0B       		.uleb128 0xb
  3771 0224 3B       		.uleb128 0x3b
  3772 0225 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 118
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 118
 
 
  3773 0226 27       		.uleb128 0x27
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3827 025c 0B       		.uleb128 0xb
  3828 025d 27       		.uleb128 0x27
  3829 025e 19       		.uleb128 0x19
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 119
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 119
 
 
  3830 025f 49       		.uleb128 0x49
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3884 003f 07000000 		.4byte	.LVL5-1
  3885 0043 16000000 		.4byte	.LVL8
  3886 0047 0100     		.2byte	0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 120
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 120
 
 
  3887 0049 54       		.byte	0x54
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3941 00d0 50       		.byte	0x50
  3942 00d1 02000000 		.4byte	.LVL25
  3943 00d5 0C000000 		.4byte	.LFE45
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 121
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 121
 
 
  3944 00d9 0400     		.2byte	0x4
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  3998 0155 04000000 		.4byte	.LVL33
  3999 0159 0C000000 		.4byte	.LFE49
  4000 015d 0400     		.2byte	0x4
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 122
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 122
 
 
  4001 015f F3       		.byte	0xf3
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4055 01dd 8C000000 		.4byte	.LVL57
  4056 01e1 0100     		.2byte	0x1
  4057 01e3 54       		.byte	0x54
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 123
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 123
 
 
  4058 01e4 8C000000 		.4byte	.LVL57
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4112 026e 00000000 		.4byte	0
  4113              	.LLST21:
  4114 0272 0C000000 		.4byte	.LVL63
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 124
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 124
 
 
  4115 0276 22000000 		.4byte	.LVL69
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4169 02e3 08000000 		.4byte	.LVL72
  4170 02e7 1C000000 		.4byte	.LVL76
  4171 02eb 0100     		.2byte	0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 125
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 125
 
 
  4172 02ed 54       		.byte	0x54
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4226 0376 50       		.byte	0x50
  4227 0377 03       		.byte	0x3
  4228 0378 04000000 		.4byte	.LANCHOR2+4
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 126
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 126
 
 
  4229 037c 22       		.byte	0x22
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4283 03ee F3       		.byte	0xf3
  4284 03ef 01       		.uleb128 0x1
  4285 03f0 50       		.byte	0x50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 127
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 127
 
 
  4286 03f1 03       		.byte	0x3
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4340 0462 06000000 		.4byte	.LVL104
  4341 0466 0100     		.2byte	0x1
  4342 0468 50       		.byte	0x50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 128
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 128
 
 
  4343 0469 06000000 		.4byte	.LVL104
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4397 04e6 DA000000 		.4byte	.LVL127
  4398 04ea E0000000 		.4byte	.LVL128
  4399 04ee 0400     		.2byte	0x4
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 129
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 129
 
 
  4400 04f0 F3       		.byte	0xf3
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4454 056f D2000000 		.4byte	.LVL125
  4455 0573 D8000000 		.4byte	.LVL126
  4456 0577 0100     		.2byte	0x1
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 130
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 130
 
 
  4457 0579 53       		.byte	0x53
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4511 060b 01       		.uleb128 0x1
  4512 060c 50       		.byte	0x50
  4513 060d 9F       		.byte	0x9f
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 131
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 131
 
 
  4514 060e 00000000 		.4byte	0
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4568 0690 F3       		.byte	0xf3
  4569 0691 01       		.uleb128 0x1
  4570 0692 50       		.byte	0x50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 132
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 132
 
 
  4571 0693 03       		.byte	0x3
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4625 06f8 50       		.byte	0x50
  4626 06f9 03       		.byte	0x3
  4627 06fa 00000000 		.4byte	.LANCHOR2
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 133
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 133
 
 
  4628 06fe 22       		.byte	0x22
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4682 077a 04000000 		.4byte	.LVL162
  4683 077e 0100     		.2byte	0x1
  4684 0780 50       		.byte	0x50
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 134
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 134
 
 
  4685 0781 04000000 		.4byte	.LVL162
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4739 00a4 A8000000 		.4byte	.LFE58-.LFB58
  4740 00a8 00000000 		.4byte	.LFB59
  4741 00ac 28000000 		.4byte	.LFE59-.LFB59
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 135
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 135
 
 
  4742 00b0 00000000 		.4byte	.LFB60
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4796 0058 00000000 		.4byte	.LFB51
  4797 005c 0C000000 		.4byte	.LFE51
  4798 0060 00000000 		.4byte	.LFB52
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 136
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 136
 
 
  4799 0064 0C000000 		.4byte	.LFE52
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4848      656E7365 
  4848      5F73656E 
  4848      736F7242 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 137
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 137
 
 
  4848      6173656C 
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4868      656E7365 
  4868      5F636F6E 
  4868      66696700 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 138
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 138
 
 
  4869              	.LASF53:
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4890 01c6 43617053 		.ascii	"CapSense_SetBaselineData\000"
  4890      656E7365 
  4890      5F536574 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 139
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 139
 
 
  4890      42617365 
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4910      6F6E7354 
  4910      626C00
  4911              	.LASF61:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 140
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 140
 
 
  4912 02a4 43617053 		.ascii	"CapSense_GetNoiseThreshold\000"
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4930      61626C65 
  4930      52617744 
  4931              	.LASF59:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 141
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 141
 
 
  4932 0394 76616C75 		.ascii	"value\000"
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4954 043d 43617053 		.ascii	"CapSense_CheckIsAnyWidgetActive\000"
  4954      656E7365 
  4954      5F436865 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 142
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 142
 
 
  4954      636B4973 
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  4977              	.LASF16:
  4978 0518 69646163 		.ascii	"idac1LevelsTbl\000"
  4978      314C6576 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 143
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 143
 
 
  4978      656C7354 
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  5000 05f1 43617053 		.ascii	"CapSense_UpdateSensorBaseline\000"
  5000      656E7365 
  5000      5F557064 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 144
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 144
 
 
  5000      61746553 
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  5020      7A00
  5021              	.LASF21:
  5022 06da 77696467 		.ascii	"widgetNubmersTbl\000"
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 145
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 145
 
 
  5022      65744E75 
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  5041 07f6 43617053 		.ascii	"CapSense_EnableRawDataFilters\000"
  5041      656E7365 
  5041      5F456E61 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 146
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 146
 
 
  5041      626C6552 
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  5062              	.LASF19:
  5063 08ba 63686172 		.ascii	"chargeDivTbl\000"
  5063      67654469 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 147
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 147
 
 
  5063      7654626C 
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  5083 098a 73746174 		.ascii	"state\000"
  5083      6500
  5084              	.LASF120:
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 148
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 148
 
 
  5085 0990 43617053 		.ascii	"CapSense_enableRawFilters\000"
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 1
  5107      5F434F4E 
  5107      4649475F 
  5107      54595045 
-ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cceNfTVM.s 			page 149
+ARM GAS  C:\Users\mlgjmoor\AppData\Local\Temp\cccG5TSt.s 			page 149
 
 
  5108              	.LASF118:

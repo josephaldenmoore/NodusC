@@ -1,5 +1,11 @@
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|79aeee6e-03cb-4820-80bd-38adad8013d9
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|a1627f30-12ca-48a4-839e-c9c3a0957a24
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|65e43bf7-3629-4faa-b1f3-4a5d63c81b8e
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|9c8ea1bd-8b30-4602-a295-0b116e668b9f
-C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\nodusC.cyprj|ebcae7a3-b9d5-4e6a-8412-7215e8d1312c
+C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\nodusC.cyprj|1dfb8310-32f3-42a7-8f66-3516e4c2ad47
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|94008b34-bf95-43db-9be8-a1ab7d3ff1a9
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|5a9125f8-3d7d-4764-a6c1-557c6f714c44
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|70265a52-6fc1-405c-a79f-bff8bc5abfc4
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|d4a44896-f264-4c18-a87e-43c7538db56c
+C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\SCB_UartComm.cydsn\SCB_UartComm.cyprj|3c68111b-f2a6-4d76-ba09-f9ae4ced313f
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|add0c6e5-1683-4807-b960-1d2510837baa
+C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\TimerExample01.cydsn\TimerExample01.cyprj|e0899c53-c98a-41b8-8eda-536a99026ea9
+C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\CE210291_CapSense_P4_One_Button01.cydsn\CE210291_CapSense_P4_One_Button01.cyprj|8d3ebc36-2d44-4db2-9e5f-6de43e0f4f34
+C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\CE210290_CapSense_P4_Ganged_Sensor01.cydsn\CE210290_CapSense_P4_Ganged_Sensor01.cyprj|e8682f66-e2db-458a-8488-99402e6422d8
+C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\ADC_SAR_Seq_DieTemp_PSoC401.cydsn\ADC_SAR_Seq_DieTemp_PSoC401.cyprj|509fdc22-9721-483b-8901-fe57db5863f0
