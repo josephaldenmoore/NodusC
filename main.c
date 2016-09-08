@@ -9,45 +9,105 @@
  *
  * ========================================
 */
-#define INPUT_BUFFER_MAX    100
+#define INPUT_BUFFER_MAX            100
+#define ADC_BUFFER_SIZE             64
+#define SCHEDULER_NUM_OF_TASKS      2
+#define CAL_TABLE_NUM_OF_POINTS     3
 
 #include <project.h>
 #include <stdbool.h>
 #include <string.h>
+#include <queue.h>
 #include <nodus_api.h>
 
 void StackEventHandler( uint32 eventCode, void *eventParam );
 
-typedef enum game_state
+typedef struct cal_point
 {
-    STATE_GAME_START,
-    STATE_GAME_NORTH,
-    STATE_GAME_SOUTH
-}game_state;
-
-typedef struct inventory
-{
-    bool has_sword;
-    bool has_sheild;
-}inventory;
-
+    float force;
+    uint16 adc_val;
+}cal_point;
 
 typedef struct task
 {
-    void* task_cb;
+    void  (*task_cb)(struct task*, queue*);
     bool  is_active;
-    int   times_to_run;
 }task;
 
 typedef struct scheduler
 {
-    task tasks[2];
+    task tasks[SCHEDULER_NUM_OF_TASKS];
 }scheduler;
 
+typedef enum scheduler_task
+{
+    TASK_CALIBRATE,
+    TASK_READ_ADC,
+    MAX_SCHEDULER_TASK
+} scheduler_task;
+
 // Static declarations
-static game_state state = STATE_GAME_START;
+static cal_point cal_table[CAL_TABLE_NUM_OF_POINTS];
+
 static uint16 adc_result = 0;
+static bool adc_read = false;
+static int count64 = 0;
 static bool timer_flag = false;
+static bool input_ready = false;
+static bool calibrated = false;
+
+
+// converts a string into a float
+float str2float(char* str)
+{
+    int whole = 0;
+    int dec = 0;
+    int dec_len = 0;
+    float result = 0.0;
+    char* str_cpy = str;
+    char cur_c;
+    bool in_dec = false;
+    
+    cur_c = *str_cpy;
+    while (cur_c != '\0')
+    {
+        // if char is a letter
+        if (cur_c >= '0' && cur_c <= '9')
+        {
+            if (in_dec == false)
+            {
+                whole *= 10;
+                whole += (cur_c - '0');
+            }
+            else
+            {
+                dec *= 10;
+                dec += (cur_c - '0');
+                dec_len++;
+            }
+        }
+        else if (cur_c == '.')
+        {
+            in_dec = true;
+        }
+        else if ( !(cur_c == '\n' || cur_c == '\r') )
+        {
+            UART_UartPutString("WARNING: Unrecognized char\r\n");
+        }
+        
+        cur_c = *(++str_cpy);
+    }
+    result = (float)dec;
+    while (dec_len != 0)
+    {
+        result /= 10.0;
+        dec_len--;
+    }
+    result += (float)whole;
+    UART_UartPutString("DEBUG: float conversion complete\r\n");
+    return result;
+}
+
 // converts an integer to a string
 void int2string(uint16 n, char str[6])
 {
@@ -88,66 +148,35 @@ void int2string(uint16 n, char str[6])
     }
 }
 
-
-void printNumOnTimerInterrupt()
+// Reads the ADC every second
+void printNumOnTimerInterrupt(task* self, queue* ipc_queue)
 {
     char numAsStr[6];
-    int2string(adc_result, numAsStr);
-
-    UART_UartPutString(numAsStr);
-    UART_UartPutString("\r\n");
-
-}
-
-void count_to_ten()
-{
-    char numAsStr[4];
-    int i;
     
-    for (i = 1; i < 11; i++)
+    if (timer_flag)
     {
-        int2string(i, numAsStr);
+        int2string(adc_result, numAsStr);
+
         UART_UartPutString(numAsStr);
         UART_UartPutString("\r\n");
+        
+        timer_flag = false;
     }
 }
 
-
+// Print an initial message on UART
 void print_user_message()
 {
-    switch (state){
-        case STATE_GAME_START:
-        UART_UartPutString("\r\n***********************************************************************************\r\n");
-        UART_UartPutString("Welcome Hero!\r\n");
-        UART_UartPutString("Civil War has broken out between the feuding lords of the realm\r\n");
-        UART_UartPutString("After King Henry died without an heir, two claiments to the throne arose\r\n");
-        UART_UartPutString("The charismatic Crusader Charles the Lionhearted in the north has rallied several banners to the cause\r\n");
-        UART_UartPutString("He is opposed by the corpulent cousin of the late king, William the Strong, who controls the capital and surrounding area\r\n");
-        UART_UartPutString("\r\n");
-
-        UART_UartPutString("You stand, like most great adventurers at one point, at a crossroads\r\n");
-        UART_UartPutString("Do you go (N)orth to Charles, or (S)outh to William\r\n");
-
-        UART_UartPutString("\r\n");
-        break;
-        
-        case STATE_GAME_NORTH:
-        UART_UartPutString("You take the winding road north to Newcastle\r\n");
-        UART_UartPutString("As your horse walks, and bobs up and down your mind wanders.\r\n");
-        UART_UartPutString("You think about how quickly things have turned for the worse.\r\n");
-        UART_UartPutString("\r\n");
-        UART_UartPutString("Why, it was only three months prior that you had a family, and were a hard working,\r\n");
-        UART_UartPutString("god fearing, member of the local community.\r\n");
-        UART_UartPutString("\r\n");
-        UART_UartPutString("\r\n");
-        break;
-        
-        case STATE_GAME_SOUTH:
-        break;
-    }
+    UART_UartPutString("\r\n***********************************************************************************\r\n");
+    UART_UartPutString("---Force Sensor Test---\r\n");
+    UART_UartPutString("Press 'c' to calibrate\r\n");
+    UART_UartPutString("Press 'r' to toggle continuous read\r\n");
+    UART_UartPutString("\r\n***********************************************************************************\r\n");
+    UART_UartPutString("\r\n");
 }
 
-
+// string -> string
+// Changes all characters in an ASCII string to lower case equivalent
 char* lower(char* str)
 {
     char* str_cpy = str;
@@ -182,101 +211,143 @@ bool str_eq(char* s1, char* s2)
 
 void get_user_input(char buffer[INPUT_BUFFER_MAX])
 {
+    static int index = 0;
     char in_char;
-    int index = 0;
+    
     
     in_char = (char)UART_UartGetChar();
     
-    while ((index < (INPUT_BUFFER_MAX -1)) && !(in_char == '\n' || in_char == '\r'))
+    if ( index < (INPUT_BUFFER_MAX -1) )
     {
         // local echo
         if (0u != in_char)
-        {
-            /* Transmit the data through UART.
-            * This functions is blocking and waits until there is a place in
-            * the buffer.
-            */
-            if (in_char == '\n' || in_char == '\r')
-            {
-                UART_UartPutString("newline");
-            }
+        {            
             UART_UartPutChar(in_char);
             buffer[index] = in_char;
             index++;
+            
+            // A newline char indicates a command is entered
+            if (in_char == '\n' || in_char == '\r')
+            {
+                UART_UartPutString("DEBUG: Input Accepted\r\n");
+                // index was already incremented, so this terminates the string
+                buffer[index] = '\0';
+                UART_UartPutString(buffer);
+                UART_UartPutString("\r\n");
+                input_ready = true;
+                index = 0;
+            }
         }
-        in_char = (char)UART_UartGetChar();
-    }
-    
-    UART_UartPutString("DEBUG: Out of the collctor\r\n");
-    
-    index++;
-    buffer[index] = '\0';
-}
-
-void respond(char input[INPUT_BUFFER_MAX])
-{
-    UART_UartPutString("DEBUG: Lowering input\r\n");
-    lower(input);
-    UART_UartPutString("DEBUG: ");
-    UART_UartPutString(input);
-    UART_UartPutString("\r\n");
-    
-    if (str_eq(input, "n") || str_eq(input, "north"))
-    {
-        UART_UartPutString("DEBUG: Setting state to North\r\n");
-        state = STATE_GAME_NORTH;
-    }
-    else if (str_eq(input, "s") || str_eq(input, "south"))
-    {
-        UART_UartPutString("DEBUG: Setting state to South\r\n");
-        state = STATE_GAME_SOUTH;
     }
 }
 
-
-#if 0
-void run_scheduler(scheduler* sched)
+void run_scheduler(scheduler* sched, queue* ipc_queue)
 {
     int i;
     // Iterate through all the tasks
-    for (i = 0; i < 2; i++)
+    for (i = 0; i < SCHEDULER_NUM_OF_TASKS; i++)
     {
-        task cur_task = (sched->tasks)[i];
+        task* cur_task = &(sched->tasks)[i];
         
-        if (cur_task.is_active)
+        if (cur_task->is_active)
         {
-            // Run continuously
-            if (cur_task.times_to_run == 0)
+            // if the task is active, call the task
+            (cur_task->task_cb)(cur_task, ipc_queue);
+        }
+        
+    }
+}
+
+// The function for the task 
+void calibrate_sensor(task* self, queue* ipc_queue)
+{
+    static uint16 adc_buffer[ADC_BUFFER_SIZE];
+    static int buffer_counter = 0;
+    static uint32 sum;
+    static int cal_point_ind = 0;
+    
+    if (cal_point_ind < CAL_TABLE_NUM_OF_POINTS)
+    {
+        if (buffer_counter < ADC_BUFFER_SIZE)
+        {
+            adc_buffer[buffer_counter] = adc_result;
+            sum += adc_buffer[buffer_counter];
+            buffer_counter++;
+        }
+        // kind of a hack, think of a better way to do this later
+        else if (buffer_counter == ADC_BUFFER_SIZE)
+        {
+            // Ask for corresponding foce
+            UART_UartPutString("Enter force on sensor: ");
+            buffer_counter++;
+        }
+        else
+        {
+            if (is_empty(ipc_queue) == false)
             {
-                (*(cur_task.task_cb))();
+                UART_UartPutString("DEBUG: Message Received\r\n");
+                ipc_message* m = peek(ipc_queue);
+                if (m->address == TASK_CALIBRATE)
+                {
+                    UART_UartPutString("DEBUG: Dequeing Message\r\n");
+                    m = dequeue(ipc_queue);
+                    
+                    UART_UartPutString("DEBUG: Message Reads: ");
+                    UART_UartPutString(m->data);
+                    UART_UartPutString("\r\n");
+                    
+                    cal_table[cal_point_ind].force = str2float(m->data);
+                    cal_table[cal_point_ind].adc_val = sum >> 6; // sum / 64
+                    
+                    cal_point_ind++;
+                    buffer_counter = 0;
+                }
             }
         }
         
     }
+    else
+    {
+        UART_UartPutString("DEBUG: Exiting calibration task\r\n");
+        self->is_active = false;
+        cal_point_ind = 0;
+        calibrated = true;
+    }
 }
-#endif
 
 CY_ISR(timer_isr)
 {
-    timer_flag = true;
+    
+    count64++;
+    
+    // Clock rate = 64 khz, interrupt will fire 64 times per second
+    if (count64 == 64) {
+        timer_flag = true;
+        count64 = 0;
+    }
     
     Timer_ClearInterrupt( Timer_INTR_MASK_CC_MATCH );
     Timer_ClearInterrupt(Timer_INTR_MASK_TC);
+    
+    adc_read = true;
 }
 
 CY_ISR(adc_isr)
 {
     uint32 intr_status;
     
-    /* Read interrupt status registers */
-    intr_status = ADC_SAR_INTR_MASKED_REG;
-    
-    adc_result = ADC_GetResult16(0);
-    
-    //ADC_StopConvert();
-    
-    /* Clear handled interrupt */
-    //ADC_SAR_INTR_REG = intr_status;
+    if (adc_read)
+    {
+        /* Read interrupt status registers */
+        intr_status = ADC_SAR_INTR_MASKED_REG;
+        
+        adc_result = ADC_GetResult16(0);
+        
+        //ADC_StopConvert();
+        
+        /* Clear handled interrupt */
+        //ADC_SAR_INTR_REG = intr_status;
+    }
 }
 
 int main()
@@ -307,49 +378,69 @@ int main()
     
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
 
-
+    char user_input_buf[INPUT_BUFFER_MAX];
     scheduler myScheduler;
     
-    #if 0
-    task countToTen;
-    countToTen.is_active = false;
-    countToTen.times_to_run = 1;
-    countToTen.task_cb = &(count_to_ten);
+    // Initialize ipc fifo
+    queue ipc_fifo;
+    init_queue(&ipc_fifo);
+    
+    // Initialize 'calibrate'
+    task calibrate;
+    calibrate.is_active = false;
+    calibrate.task_cb = &calibrate_sensor;
     // Add Task to Scheduler
-    myScheduler.tasks[0] = count_to_ten;
+    myScheduler.tasks[TASK_CALIBRATE] = calibrate;
     
-    task fizzBuzz;
-    fizzBuzz.is_active = true;
-    countToTen.times_to_run = 0;
-    fizzBuzz.task_cb = &(printNumOnTimerInterrupt);
+    task readADC;
+    readADC.is_active = false;
+    readADC.task_cb = &(printNumOnTimerInterrupt);
     // Add Task to Scheduler
-    myScheduler.tasks[1] = count_to_ten;
-    
-    
-    #endif
-    
+    myScheduler.tasks[TASK_READ_ADC] = readADC;
+
     
     //CyBle_Start( StackEventHandler );
     
-    
-    
-    //char user_input_buf[100];
     print_user_message();
     for(;;)
     {
         
-        if (timer_flag)
+        get_user_input(user_input_buf);
+        
+        if (input_ready)
         {
-        //get_user_input(user_input_buf);
-        //respond(user_input_buf);
-        
-        
-        //run_scheduler(&myScheduler);
-        printNumOnTimerInterrupt();
-        //ADC_StartConvert();
-        //CyBle_ProcessEvents();
-        timer_flag = false;
+            UART_UartPutString("Input Ready\r\n");
+            UART_UartPutString("Input is: ");
+            UART_UartPutString(user_input_buf);
+            UART_UartPutString("\r\n");
+            
+            if (str_eq(user_input_buf, "c\r") && !myScheduler.tasks[TASK_CALIBRATE].is_active)
+            {
+                UART_UartPutString("Activating Calibration task\r\n");
+                myScheduler.tasks[TASK_CALIBRATE].is_active = true;
+                calibrated = false;
+            }
+            
+            // toggle read
+            else if (str_eq(user_input_buf, "r\r"))
+            {
+                UART_UartPutString("Toggling Read ADC task\r\n");
+                myScheduler.tasks[TASK_READ_ADC].is_active = !myScheduler.tasks[TASK_READ_ADC].is_active;
+            }
+            
+            else if (myScheduler.tasks[TASK_CALIBRATE].is_active)
+            {
+                ipc_message m;
+                m.address = TASK_CALIBRATE;
+                m.data = user_input_buf;
+                UART_UartPutString("DEBUG: Enqueing message\r\n");
+                enqueue(&ipc_fifo, m);
+            }
+            
+            input_ready = false;
         }
+        
+        run_scheduler(&myScheduler, &ipc_fifo);
         CySysPmSleep();
     }
 }
