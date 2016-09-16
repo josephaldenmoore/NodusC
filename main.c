@@ -1,6 +1,6 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
+ * Copyright Flex, 2016
  * All Rights Reserved
  * UNPUBLISHED, LICENSED SOFTWARE.
  *
@@ -12,16 +12,19 @@
 #define INPUT_BUFFER_MAX            100
 #define ADC_BUFFER_SIZE             64
 #define SCHEDULER_NUM_OF_TASKS      2
-#define CAL_TABLE_NUM_OF_POINTS     3
+#define CAL_TABLE_NUM_OF_POINTS     5
 
 #include <project.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include <string.h>
 #include <queue.h>
 #include <nodus_api.h>
 
+// Function declarations
 void StackEventHandler( uint32 eventCode, void *eventParam );
 
+// Type definitions
 typedef struct cal_point
 {
     float force;
@@ -46,11 +49,10 @@ typedef enum scheduler_task
     MAX_SCHEDULER_TASK
 } scheduler_task;
 
-// Static declarations
+// Global declarations
+static adc_queue adc_in_queue;
 static cal_point cal_table[CAL_TABLE_NUM_OF_POINTS];
 
-static uint16 adc_result = 0;
-static bool adc_read = false;
 static int count64 = 0;
 static bool timer_flag = false;
 static bool input_ready = false;
@@ -108,6 +110,33 @@ float str2float(char* str)
     return result;
 }
 
+
+// raise a base to a power
+// fun with recursion, can prove it terminates
+int powr(int b, int p)
+{
+    int r;
+    int exp_h;
+    
+    if (p == 0)
+    {
+        return 1;
+    }
+    else 
+    {
+        exp_h = powr(b, p >> 1); // p >> 1 === p / 2
+        if (p%2 == 0)
+        {
+            return exp_h * exp_h;
+        }
+        else
+        {
+            return b * exp_h * exp_h;
+        }
+    }
+}
+
+
 // converts an integer to a string
 void int2string(uint16 n, char str[6])
 {
@@ -148,15 +177,151 @@ void int2string(uint16 n, char str[6])
     }
 }
 
+
+// Float -> String
+void float2str(float f, char str[64])
+{
+    int whole_part;
+    int fraction;
+    float temp;
+    int i = 0;
+    int dec_places = 2;  // Change this if you want more decimal places.
+    char c;
+    
+    whole_part = (int) f;
+    temp = f - whole_part;
+    fraction = (int)(powr(10, dec_places) * temp);
+    
+    int2string(whole_part, str);
+    for(i=0; i<64; i++)
+    {
+        c = str[i];
+        if (c == '\0')
+        {
+            str[i] = '.';
+            int2string(fraction, &str[i+1]);
+            break;
+        }
+    }
+}
+
+// linear interpolation of adc_result
+float linterp(uint16 adc_reading)
+{
+    // The whole configuration creates a strictly decreasing function of resistance / force
+    
+    float result = 0.0;
+    bool lower = false;
+    bool upper = false;
+    bool exact = false;
+    
+    // Find the index, assume the calibration point table is in ascending order
+    // ^^^ bad assumption
+    // the data isn't in an easy format in the table
+    // if a point is <adc_val, force>, then the adc_val goes from high to low as
+    // points are iterated across the table.
+    
+    int i;
+    i=0;
+    
+    if (adc_reading >= cal_table[0].adc_val)
+    {
+        lower = true;
+    }
+    else
+    {
+        for (i=1; i<CAL_TABLE_NUM_OF_POINTS; i++)
+        {
+            if (adc_reading > cal_table[i].adc_val) break;
+            else if (adc_reading == cal_table[i].adc_val)
+            {
+                exact = true;
+                break;
+            }
+        }
+        
+        if (adc_reading < cal_table[CAL_TABLE_NUM_OF_POINTS-1].adc_val) upper = true;
+    }
+    
+    if (lower)
+    {
+        result = 0.0;
+    }
+    else if (upper)
+    {
+        // We can extrapolate linearly from the last two points
+        int x1, x2;
+        float fx1, fx2;
+        
+        x1 = cal_table[CAL_TABLE_NUM_OF_POINTS-2].adc_val;
+        fx1 = cal_table[CAL_TABLE_NUM_OF_POINTS-2].force;
+        
+        x2 = cal_table[CAL_TABLE_NUM_OF_POINTS-1].adc_val;
+        fx2 = cal_table[CAL_TABLE_NUM_OF_POINTS-1].force;
+        
+        
+        result = ( (x2 - adc_reading)* fx1 + (adc_reading - x1) * fx2 ) / ((float)(x2 - x1)) ;
+    }
+    else if (exact)
+    {
+        result = cal_table[i].force;
+    }
+    else // do a linear interpolation
+    {
+        // Basic of linear interpolation: f(x) = (x2 - x)/lin_range * f(x1) + (x - x1)/lin_range * (fx2)
+        int x1, x2;
+        float fx1, fx2;
+        
+        x1 = cal_table[i - 1].adc_val;
+        fx1 = cal_table[i - 1].force;
+        
+        x2 = cal_table[i].adc_val;
+        fx2 = cal_table[i].force;
+        
+        result = ( (x2 - adc_reading)* fx1 + (adc_reading - x1) * fx2 ) / ((float)(x2 - x1)) ;
+    }
+    
+    return result;
+}
+
 // Reads the ADC every second
-void printNumOnTimerInterrupt(task* self, queue* ipc_queue)
+void readADC_routine(task* self, queue* ipc_queue)
 {
     char numAsStr[6];
+    char floatAsStr[64];
+    uint16 adc_cpy[256];
+    uint16 adc_cpy_ndx = 0;
+    uint16 adc_result;
     
-    if (timer_flag)
+    while (!adc_is_empty(&adc_in_queue))
+    {
+        adc_result = adc_dequeue(&adc_in_queue);
+        
+    }
+    
+    if (timer_flag && calibrated)
+    {
+        float force = 0.0;
+        
+        force = linterp(adc_result);
+        
+        int2string(adc_result, numAsStr);
+        UART_UartPutString("ADC Value: ");
+        UART_UartPutString(numAsStr);
+        UART_UartPutString("\tCalculated Force: ");
+        
+        float2str(force, floatAsStr);
+        
+        UART_UartPutString(floatAsStr);
+        UART_UartPutString("\r\n");
+        
+        timer_flag = false;
+    }
+    
+    else if (timer_flag && !calibrated)
     {
         int2string(adc_result, numAsStr);
-
+        UART_UartPutString("ADC Value: ");
         UART_UartPutString(numAsStr);
         UART_UartPutString("\r\n");
         
@@ -209,6 +374,10 @@ bool str_eq(char* s1, char* s2)
     return ret;
 }
 
+// Very basic input handler
+//  Called 64 times per second (I think, adc may mess with it)
+// Grabs a character from the UART, if \0 it ignores it, if a newline
+//  the input_ready flag is set to true
 void get_user_input(char buffer[INPUT_BUFFER_MAX])
 {
     static int index = 0;
@@ -241,6 +410,9 @@ void get_user_input(char buffer[INPUT_BUFFER_MAX])
     }
 }
 
+// Main scheduler task
+// It runs all the tasks flagged as active each clock tick (64 Hz)
+// (I think, adc may mess with it)
 void run_scheduler(scheduler* sched, queue* ipc_queue)
 {
     int i;
@@ -258,16 +430,22 @@ void run_scheduler(scheduler* sched, queue* ipc_queue)
     }
 }
 
-// The function for the task 
+// The function for the task of Calibrating the sensor
 void calibrate_sensor(task* self, queue* ipc_queue)
 {
+    // Static variable declarations
     static uint16 adc_buffer[ADC_BUFFER_SIZE];
     static int buffer_counter = 0;
     static uint32 sum;
     static int cal_point_ind = 0;
     
+    // Non-static (ephemeral?) variable declarations
+    char numAsStr[6];
+    
+    // basically do one loop of a for loop on the points in cal_table
     if (cal_point_ind < CAL_TABLE_NUM_OF_POINTS)
     {
+        // One loop of a for loop iterating over the buffer, collect ADC buffer data over 1 second
         if (buffer_counter < ADC_BUFFER_SIZE)
         {
             adc_buffer[buffer_counter] = adc_result;
@@ -283,10 +461,12 @@ void calibrate_sensor(task* self, queue* ipc_queue)
         }
         else
         {
+            // Wait for a message in the IPC queue
             if (is_empty(ipc_queue) == false)
             {
                 UART_UartPutString("DEBUG: Message Received\r\n");
                 ipc_message* m = peek(ipc_queue);
+                // Just making sure the message is the one we want
                 if (m->address == TASK_CALIBRATE)
                 {
                     UART_UartPutString("DEBUG: Dequeing Message\r\n");
@@ -296,11 +476,20 @@ void calibrate_sensor(task* self, queue* ipc_queue)
                     UART_UartPutString(m->data);
                     UART_UartPutString("\r\n");
                     
-                    cal_table[cal_point_ind].force = str2float(m->data);
-                    cal_table[cal_point_ind].adc_val = sum >> 6; // sum / 64
                     
+                    cal_table[cal_point_ind].force = str2float(m->data);
+                    cal_table[cal_point_ind].adc_val = (uint16)(sum >> 6); // sum / 64
+                    
+                    int2string((uint16)(sum >> 6), numAsStr);
+                    UART_UartPutString("INFO: Message Reads: ");
+                    UART_UartPutString(numAsStr);
+                    UART_UartPutString("\r\n");
+                    
+                    
+                    // Update/reset static variables at end of "loop"
                     cal_point_ind++;
                     buffer_counter = 0;
+                    sum = 0;
                 }
             }
         }
@@ -309,18 +498,22 @@ void calibrate_sensor(task* self, queue* ipc_queue)
     else
     {
         UART_UartPutString("DEBUG: Exiting calibration task\r\n");
+        // Turn self off
         self->is_active = false;
+        // Reset static vars for any future call
         cal_point_ind = 0;
+        buffer_counter = 0;
+        sum = 0;
+        // Set global static vars
         calibrated = true;
     }
 }
 
+// ISR for Interrupt triggered by timer (64 HZ)
 CY_ISR(timer_isr)
 {
-    
+    // Increment counter, it will set timer_flag once per second
     count64++;
-    
-    // Clock rate = 64 khz, interrupt will fire 64 times per second
     if (count64 == 64) {
         timer_flag = true;
         count64 = 0;
@@ -328,26 +521,12 @@ CY_ISR(timer_isr)
     
     Timer_ClearInterrupt( Timer_INTR_MASK_CC_MATCH );
     Timer_ClearInterrupt(Timer_INTR_MASK_TC);
-    
-    adc_read = true;
 }
 
+// ISR triggered when ADC finished conversion
 CY_ISR(adc_isr)
 {
-    uint32 intr_status;
-    
-    if (adc_read)
-    {
-        /* Read interrupt status registers */
-        intr_status = ADC_SAR_INTR_MASKED_REG;
-        
-        adc_result = ADC_GetResult16(0);
-        
-        //ADC_StopConvert();
-        
-        /* Clear handled interrupt */
-        //ADC_SAR_INTR_REG = intr_status;
-    }
+    adc_enqueue(&adc_in_queue, ADC_GetResult16(0));
 }
 
 int main()
@@ -388,13 +567,13 @@ int main()
     // Initialize 'calibrate'
     task calibrate;
     calibrate.is_active = false;
-    calibrate.task_cb = &calibrate_sensor;
+    calibrate.task_cb = calibrate_sensor;
     // Add Task to Scheduler
     myScheduler.tasks[TASK_CALIBRATE] = calibrate;
     
     task readADC;
     readADC.is_active = false;
-    readADC.task_cb = &(printNumOnTimerInterrupt);
+    readADC.task_cb = readADC_routine;
     // Add Task to Scheduler
     myScheduler.tasks[TASK_READ_ADC] = readADC;
 
@@ -419,7 +598,7 @@ int main()
                 UART_UartPutString("Activating Calibration task\r\n");
                 myScheduler.tasks[TASK_CALIBRATE].is_active = true;
                 calibrated = false;
-            }
+            } 
             
             // toggle read
             else if (str_eq(user_input_buf, "r\r"))

@@ -12,7 +12,8 @@
 #include <stdbool.h>
 #include <project.h>
 
-#define QUEUE_SIZE  256
+#define QUEUE_SIZE      256
+#define ADC_QUEUE_SIZE  256
 
 typedef struct ipc_message
 {
@@ -30,11 +31,26 @@ typedef struct queue
     ipc_message container[QUEUE_SIZE];
 }queue;
 
-extern queue create_queue();
+typedef struct adc_queue
+{
+    uint16 front;
+    uint16 rear;
+    uint16 count;
+    uint16 container[ADC_QUEUE_SIZE];
+}adc_queue;
+
 extern void enqueue(queue* q, ipc_message message);
 extern ipc_message* dequeue(queue* q);
 extern ipc_message* peek(queue* q);
 extern bool is_empty(queue* q);
+
+// ADC queue functions, basically just copy-paste with different types
+// would like to know if there were any ways to make container for diff
+// function types like in C++, ie. foo<T>
+extern void adc_enqueue(adc_queue* q, uint16 message);
+extern uint16* adc_dequeue(adc_queue* q);
+extern uint16* adc_peek(adc_queue* q);
+extern bool adc_is_empty(adc_queue* q);
 
 
 /* [] END OF FILE */
