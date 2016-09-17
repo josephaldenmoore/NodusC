@@ -11,7 +11,7 @@
 */
 #define INPUT_BUFFER_MAX            100
 #define ADC_BUFFER_SIZE             64
-#define SCHEDULER_NUM_OF_TASKS      2
+#define SCHEDULER_NUM_OF_TASKS      3
 #define CAL_TABLE_NUM_OF_POINTS     5
 
 #include <project.h>
@@ -46,14 +46,16 @@ typedef enum scheduler_task
 {
     TASK_CALIBRATE,
     TASK_READ_ADC,
+    TASK_SMOOTH_ADC,
     MAX_SCHEDULER_TASK
 } scheduler_task;
 
 // Global declarations
-static adc_queue adc_in_queue;
+static adc_queue raw_adc_queue;
 static cal_point cal_table[CAL_TABLE_NUM_OF_POINTS];
 
-static int count64 = 0;
+static uint16 cooked_adc = 0;
+
 static bool timer_flag = false;
 static bool input_ready = false;
 static bool calibrated = false;
@@ -284,46 +286,77 @@ float linterp(uint16 adc_reading)
     return result;
 }
 
-// Reads the ADC every second
-void readADC_routine(task* self, queue* ipc_queue)
+
+void bgTask_smoothADC_func(task* self, queue* ipc_queue)
 {
-    char numAsStr[6];
-    char floatAsStr[64];
-    uint16 adc_cpy[256];
-    uint16 adc_cpy_ndx = 0;
+    static bool adc_buf_full = false;
+    static uint16 adc_cpy_ndx = 0;
+    static uint16 adc_cpy[ADC_BUFFER_SIZE];
+    static uint32 sum = 0;
+    
+    uint8 InterruptState;
     uint16 adc_result;
     
-    while (!adc_is_empty(&adc_in_queue))
+    InterruptState = CyEnterCriticalSection();
+    while (!adc_is_empty(&raw_adc_queue))
     {
-        adc_result = adc_dequeue(&adc_in_queue);
-        
+        adc_result = *adc_dequeue(&raw_adc_queue);
+        sum -= adc_cpy[adc_cpy_ndx];
+        adc_cpy[adc_cpy_ndx] = adc_result;
+        sum += adc_result;
+        adc_cpy_ndx++;
+        if (adc_cpy_ndx == ADC_BUFFER_SIZE)
+        {
+            adc_cpy_ndx = 0;
+        }
+        else if (adc_cpy_ndx >= ADC_BUFFER_SIZE)
+        {
+            // Strange things are happening to me
+            adc_cpy_ndx = 0;
+        }
+        //UART_UartPutString("Dequed_ADC\r\n");
     }
+    CyExitCriticalSection(InterruptState);
     
-    if (timer_flag && calibrated)
-    {
-        float force = 0.0;
-        
-        force = linterp(adc_result);
-        
-        int2string(adc_result, numAsStr);
-        UART_UartPutString("ADC Value: ");
-        UART_UartPutString(numAsStr);
-        UART_UartPutString("\tCalculated Force: ");
-        
-        float2str(force, floatAsStr);
-        
-        UART_UartPutString(floatAsStr);
-        UART_UartPutString("\r\n");
-        
-        timer_flag = false;
-    }
+    // Update global value
+    cooked_adc = sum >> 6; // 6 = lg(64) = lg(ADC_BUFFER_SIZE)
+}
+
+
+// Reads the ADC every second
+void readADC_routine(task* self, queue* ipc_queue)
+{    
+    char numAsStr[6];
+    char floatAsStr[64];
+    uint8 InterruptState;
+    // This function uses the global cooked_adc
     
-    else if (timer_flag && !calibrated)
+    if (timer_flag)
     {
-        int2string(adc_result, numAsStr);
-        UART_UartPutString("ADC Value: ");
-        UART_UartPutString(numAsStr);
-        UART_UartPutString("\r\n");
+        if (calibrated)
+        {
+            float force = 0.0;
+            
+            force = linterp(cooked_adc);
+            
+            int2string(cooked_adc, numAsStr);
+            UART_UartPutString("ADC Value: ");
+            UART_UartPutString(numAsStr);
+            UART_UartPutString("\tCalculated Force: ");
+            
+            float2str(force, floatAsStr);
+            
+            UART_UartPutString(floatAsStr);
+            UART_UartPutString("\r\n");
+        }
+        
+        else
+        {
+            int2string(cooked_adc, numAsStr);
+            UART_UartPutString("ADC Value: ");
+            UART_UartPutString(numAsStr);
+            UART_UartPutString("\r\n");
+        }
         
         timer_flag = false;
     }
@@ -448,7 +481,7 @@ void calibrate_sensor(task* self, queue* ipc_queue)
         // One loop of a for loop iterating over the buffer, collect ADC buffer data over 1 second
         if (buffer_counter < ADC_BUFFER_SIZE)
         {
-            adc_buffer[buffer_counter] = adc_result;
+            adc_buffer[buffer_counter] = cooked_adc;
             sum += adc_buffer[buffer_counter];
             buffer_counter++;
         }
@@ -512,6 +545,7 @@ void calibrate_sensor(task* self, queue* ipc_queue)
 // ISR for Interrupt triggered by timer (64 HZ)
 CY_ISR(timer_isr)
 {
+    static int count64 = 0;
     // Increment counter, it will set timer_flag once per second
     count64++;
     if (count64 == 64) {
@@ -526,7 +560,7 @@ CY_ISR(timer_isr)
 // ISR triggered when ADC finished conversion
 CY_ISR(adc_isr)
 {
-    adc_enqueue(&adc_in_queue, ADC_GetResult16(0));
+    adc_enqueue(&raw_adc_queue, ADC_GetResult16(0));
 }
 
 int main()
@@ -576,8 +610,11 @@ int main()
     readADC.task_cb = readADC_routine;
     // Add Task to Scheduler
     myScheduler.tasks[TASK_READ_ADC] = readADC;
-
     
+    task bgTask_smoothADC;
+    bgTask_smoothADC.is_active = true;
+    bgTask_smoothADC.task_cb   = bgTask_smoothADC_func;
+    myScheduler.tasks[TASK_SMOOTH_ADC] = bgTask_smoothADC;
     //CyBle_Start( StackEventHandler );
     
     print_user_message();

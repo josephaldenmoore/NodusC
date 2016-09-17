@@ -19,19 +19,20 @@ void init_adc_queue(adc_queue* q)
     q->count = 0;
 }
 
-
+// important to remember, where the rear is, there should be no value
+// this means an array of 256 can only fit 255 elements
 void adc_enqueue(adc_queue* q, uint16 val)
 {
-    if (q->count == QUEUE_SIZE)
+    if (q->count >= QUEUE_SIZE - 1) // rear - front >= 255
     {
-        UART_UartPutString("Queue FULL");
+        UART_UartPutString("Queue FULL\r\n");
     }
     else
     {
         q->container[q->rear] = val;
         q->count += 1;
         // increment q->rear
-        if (q->rear < QUEUE_SIZE) q->rear += 1;
+        if (q->rear < QUEUE_SIZE - 1) q->rear += 1;
         else q->rear = 0;
     }
 }
@@ -41,7 +42,7 @@ uint16* adc_dequeue(adc_queue* q)
     uint16* to_return = NULL;
     if (q->count == 0)
     {
-        UART_UartPutString("Queue Empty");
+        UART_UartPutString("Queue Empty\r\n");
     }
     else
     {
@@ -56,10 +57,10 @@ uint16* adc_dequeue(adc_queue* q)
 
 uint16* adc_peek(adc_queue* q)
 {
-    ipc_message* to_return = NULL;
+    uint16* to_return = NULL;
     if (q->count == 0)
     {
-        UART_UartPutString("Queue Empty");
+        UART_UartPutString("Queue Empty\r\n");
     }
     else
     {
@@ -71,6 +72,6 @@ uint16* adc_peek(adc_queue* q)
 bool adc_is_empty(adc_queue* q)
 {
     return (q->count <= 0);
-
+}
 
 /* [] END OF FILE */
