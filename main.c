@@ -13,6 +13,15 @@
 #define ADC_BUFFER_SIZE             64
 #define SCHEDULER_NUM_OF_TASKS      3
 #define CAL_TABLE_NUM_OF_POINTS     5
+#define ADC_CYCLES_PER_SECOND       8
+//#define ADC_SENSORS                 1 //WILL BE 16 IN FINAL
+#define ADC_TEMPERATURE_CHANNEL     1
+#define IIR_WEIGHT                  8 // Should be power of 2 y = ((IIR_weight - 1)y + x) / IIR_WEIGHT 
+
+#define NUMBER_OF_SENSORS           4
+
+#define LOW                         0
+#define HIGH_Z                      1
 
 #include <project.h>
 #include <stdbool.h>
@@ -25,6 +34,14 @@
 void StackEventHandler( uint32 eventCode, void *eventParam );
 
 // Type definitions
+
+typedef struct fsr_params
+{
+    uint8 numberOfSensors;
+    uint8 samplesToAvg; // For most efficient result this aught to be a power of 2
+    
+} fsr_params;
+
 typedef struct cal_point
 {
     float force;
@@ -45,18 +62,26 @@ typedef struct scheduler
 typedef enum scheduler_task
 {
     TASK_CALIBRATE,
+    TASK_WRITE_UART,
     TASK_READ_ADC,
-    TASK_SMOOTH_ADC,
     MAX_SCHEDULER_TASK
 } scheduler_task;
 
+typedef struct pin
+{
+    int id;
+    void (*pin_write)(uint8 value);
+} pin;
+
 // Global declarations
-static adc_queue raw_adc_queue;
 static cal_point cal_table[CAL_TABLE_NUM_OF_POINTS];
+static uint16 filtered_adc[NUMBER_OF_SENSORS];
+static pin pins[NUMBER_OF_SENSORS + 1]; // the +1 is for the resistor
 
-static uint16 cooked_adc = 0;
+static volatile uint32 temperature = 0;
+static volatile bool temperature_convert = false;
 
-static bool timer_flag = false;
+static volatile bool timer_flag = false;
 static bool input_ready = false;
 static bool calibrated = false;
 
@@ -108,7 +133,7 @@ float str2float(char* str)
         dec_len--;
     }
     result += (float)whole;
-    UART_UartPutString("DEBUG: float conversion complete\r\n");
+    UART_UartPutString("DEBUG: float conversion complete\r\n");                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
     return result;
 }
 
@@ -286,50 +311,65 @@ float linterp(uint16 adc_reading)
     return result;
 }
 
-
-void bgTask_smoothADC_func(task* self, queue* ipc_queue)
+uint16 read_adc( volatile int index )
 {
-    static bool adc_buf_full = false;
-    static uint16 adc_cpy_ndx = 0;
-    static uint16 adc_cpy[ADC_BUFFER_SIZE];
-    static uint32 sum = 0;
+    uint16 result;
     
-    uint8 InterruptState;
-    uint16 adc_result;
+    pins[0].pin_write(LOW);
+    pins[index].pin_write(LOW);
     
-    InterruptState = CyEnterCriticalSection();
-    while (!adc_is_empty(&raw_adc_queue))
-    {
-        adc_result = *adc_dequeue(&raw_adc_queue);
-        sum -= adc_cpy[adc_cpy_ndx];
-        adc_cpy[adc_cpy_ndx] = adc_result;
-        sum += adc_result;
-        adc_cpy_ndx++;
-        if (adc_cpy_ndx == ADC_BUFFER_SIZE)
-        {
-            adc_cpy_ndx = 0;
-        }
-        else if (adc_cpy_ndx >= ADC_BUFFER_SIZE)
-        {
-            // Strange things are happening to me
-            adc_cpy_ndx = 0;
-        }
-        //UART_UartPutString("Dequed_ADC\r\n");
-    }
-    CyExitCriticalSection(InterruptState);
+    // Wait for transient response
+    CyDelay(5u);
     
-    // Update global value
-    cooked_adc = sum >> 6; // 6 = lg(64) = lg(ADC_BUFFER_SIZE)
+    ADC_StartConvert();
+    ADC_IsEndConversion(ADC_WAIT_FOR_RESULT);
+    result = ADC_GetResult16(0);
+    
+    pins[0].pin_write(HIGH_Z);
+    pins[index].pin_write(HIGH_Z);
+    
+    return result;
 }
 
+void read_fsr(int avg)
+{
+    uint32 buf[NUMBER_OF_SENSORS];
+    int loop;
+    int sensor;
+    
+    for (loop=0; loop < avg; loop++)
+    {
+        for (sensor=0; sensor < NUMBER_OF_SENSORS; sensor++)
+        {
+            buf[sensor] += read_adc(sensor+1);
+        }
+    }
+    
+    int i;
+    for (i=0; i<NUMBER_OF_SENSORS; i++)
+    {
+        filtered_adc[i] = (uint16) (buf[i] / avg);
+        buf[i] = 0;
+    }
+    
+}
 
-// Reads the ADC every second
+// This method has a few "waits" in here, that concerns me
 void readADC_routine(task* self, queue* ipc_queue)
 {    
+    read_fsr(4);
+}
+
+// Reads the ADC every second
+void writeUART_routine(task* self, queue* ipc_queue)
+{    
     char numAsStr[6];
+    char tempAsStr[6];
     char floatAsStr[64];
     uint8 InterruptState;
     // This function uses the global cooked_adc
+    uint32 adc_accumulator = filtered_adc[0];
+    
     
     if (timer_flag)
     {
@@ -337,9 +377,9 @@ void readADC_routine(task* self, queue* ipc_queue)
         {
             float force = 0.0;
             
-            force = linterp(cooked_adc);
+            force = linterp((uint16)adc_accumulator);
             
-            int2string(cooked_adc, numAsStr);
+            int2string((uint16)adc_accumulator, numAsStr);
             UART_UartPutString("ADC Value: ");
             UART_UartPutString(numAsStr);
             UART_UartPutString("\tCalculated Force: ");
@@ -352,9 +392,21 @@ void readADC_routine(task* self, queue* ipc_queue)
         
         else
         {
-            int2string(cooked_adc, numAsStr);
+            uint32 cels;
+            cels = DieTemp_CountsTo_Celsius(temperature);
+            int2string((uint16)cels, tempAsStr);
+            int2string((uint16)adc_accumulator, numAsStr);
             UART_UartPutString("ADC Value: ");
-            UART_UartPutString(numAsStr);
+            int i;
+            for (i=0; i<NUMBER_OF_SENSORS; i++)
+            {
+                UART_UartPutString("\t");
+                adc_accumulator = filtered_adc[i];
+                int2string((uint16)adc_accumulator, numAsStr);
+                UART_UartPutString(numAsStr);
+            }
+            UART_UartPutString("\tTemperature: ");
+            UART_UartPutString(tempAsStr);
             UART_UartPutString("\r\n");
         }
         
@@ -466,10 +518,8 @@ void run_scheduler(scheduler* sched, queue* ipc_queue)
 // The function for the task of Calibrating the sensor
 void calibrate_sensor(task* self, queue* ipc_queue)
 {
+    uint32 adc_accumulator = filtered_adc[0]; // KLUDGE: make this better for multisensor support
     // Static variable declarations
-    static uint16 adc_buffer[ADC_BUFFER_SIZE];
-    static int buffer_counter = 0;
-    static uint32 sum;
     static int cal_point_ind = 0;
     
     // Non-static (ephemeral?) variable declarations
@@ -478,55 +528,34 @@ void calibrate_sensor(task* self, queue* ipc_queue)
     // basically do one loop of a for loop on the points in cal_table
     if (cal_point_ind < CAL_TABLE_NUM_OF_POINTS)
     {
-        // One loop of a for loop iterating over the buffer, collect ADC buffer data over 1 second
-        if (buffer_counter < ADC_BUFFER_SIZE)
+        // Wait for a message in the IPC queue
+        if (is_empty(ipc_queue) == false)
         {
-            adc_buffer[buffer_counter] = cooked_adc;
-            sum += adc_buffer[buffer_counter];
-            buffer_counter++;
-        }
-        // kind of a hack, think of a better way to do this later
-        else if (buffer_counter == ADC_BUFFER_SIZE)
-        {
-            // Ask for corresponding foce
-            UART_UartPutString("Enter force on sensor: ");
-            buffer_counter++;
-        }
-        else
-        {
-            // Wait for a message in the IPC queue
-            if (is_empty(ipc_queue) == false)
+            UART_UartPutString("DEBUG: Message Received\r\n");
+            ipc_message* m = peek(ipc_queue);
+            // Just making sure the message is the one we want
+            if (m->address == TASK_CALIBRATE)
             {
-                UART_UartPutString("DEBUG: Message Received\r\n");
-                ipc_message* m = peek(ipc_queue);
-                // Just making sure the message is the one we want
-                if (m->address == TASK_CALIBRATE)
-                {
-                    UART_UartPutString("DEBUG: Dequeing Message\r\n");
-                    m = dequeue(ipc_queue);
-                    
-                    UART_UartPutString("DEBUG: Message Reads: ");
-                    UART_UartPutString(m->data);
-                    UART_UartPutString("\r\n");
-                    
-                    
-                    cal_table[cal_point_ind].force = str2float(m->data);
-                    cal_table[cal_point_ind].adc_val = (uint16)(sum >> 6); // sum / 64
-                    
-                    int2string((uint16)(sum >> 6), numAsStr);
-                    UART_UartPutString("INFO: Message Reads: ");
-                    UART_UartPutString(numAsStr);
-                    UART_UartPutString("\r\n");
-                    
-                    
-                    // Update/reset static variables at end of "loop"
-                    cal_point_ind++;
-                    buffer_counter = 0;
-                    sum = 0;
-                }
+                UART_UartPutString("DEBUG: Dequeing Message\r\n");
+                m = dequeue(ipc_queue);
+                
+                UART_UartPutString("DEBUG: Message Reads: ");
+                UART_UartPutString(m->data);
+                UART_UartPutString("\r\n");
+                
+                cal_table[cal_point_ind].force = str2float(m->data);
+                cal_table[cal_point_ind].adc_val = (uint16)(adc_accumulator);
+                
+                int2string((uint16)(adc_accumulator), numAsStr);
+                UART_UartPutString("INFO: Message Reads: ");
+                UART_UartPutString(numAsStr);
+                UART_UartPutString("\r\n");
+                
+                
+                // Update/reset static variables at end of "loop"
+                cal_point_ind++;
             }
         }
-        
     }
     else
     {
@@ -535,8 +564,6 @@ void calibrate_sensor(task* self, queue* ipc_queue)
         self->is_active = false;
         // Reset static vars for any future call
         cal_point_ind = 0;
-        buffer_counter = 0;
-        sum = 0;
         // Set global static vars
         calibrated = true;
     }
@@ -551,22 +578,36 @@ CY_ISR(timer_isr)
     if (count64 == 64) {
         timer_flag = true;
         count64 = 0;
+        //temperature_convert = true;
     }
     
     Timer_ClearInterrupt( Timer_INTR_MASK_CC_MATCH );
     Timer_ClearInterrupt(Timer_INTR_MASK_TC);
 }
 
+/*
 // ISR triggered when ADC finished conversion
 CY_ISR(adc_isr)
 {
-    adc_enqueue(&raw_adc_queue, ADC_GetResult16(0));
+    uint16 adc_result;
+    static uint8 sensor_index = 0;
+    if (temperature_convert)
+    {
+        adc_result = ADC_GetResult16(ADC_TEMPERATURE_CHANNEL);
+        temperature = ((IIR_WEIGHT - 1) * temperature + adc_result) / IIR_WEIGHT;
+        temperature_convert = false;
+    }
+    else
+    {
+        adc_result = ADC_GetResult16(sensor_index);
+        // Simple IIR Filter with a weighing of .875
+        adc_fsr_sensors[sensor_index] = ((IIR_WEIGHT - 1) * adc_fsr_sensors[sensor_index] + adc_result) / IIR_WEIGHT;
+    }
 }
+*/
 
 int main()
 {
-    
-    
     /* Enable interrupt component connected to interrupt */
     //TC_CC_ISR_StartEx(InterruptHandler);
     Timer_Int_StartEx(timer_isr);
@@ -579,12 +620,24 @@ int main()
     UART_Start();
     
     // ADC
-    ADC_IRQ_StartEx(adc_isr);
-    ADC_EOC_Int_StartEx(adc_isr);
+    //ADC_IRQ_StartEx(adc_isr);
+    
     ADC_Start();
-    ADC_StartConvert();
+    
+    // Delay 25us as per the specification
+    CyDelay(25u);   
+    
+    // Get an initial reading for the temperature
+    // this may have to move at some point outside init
     ADC_EnableInjection();
-    ADC_IRQ_Enable();
+	ADC_StartConvert();
+	ADC_IsEndConversion(ADC_WAIT_FOR_RESULT_INJ);
+    temperature = ADC_GetResult16(ADC_TEMPERATURE_CHANNEL);
+    //ADC_EnableInjection();
+    //ADC_StartConvert();
+    //ADC_EOC_Int_StartEx(adc_isr);
+        
+    //ADC_IRQ_Enable();
     
     
     CyGlobalIntEnable;   /* Enable global interrupts */
@@ -605,22 +658,39 @@ int main()
     // Add Task to Scheduler
     myScheduler.tasks[TASK_CALIBRATE] = calibrate;
     
+    task writeUART;
+    writeUART.is_active = false;
+    writeUART.task_cb = writeUART_routine;
+    // Add Task to Scheduler
+    myScheduler.tasks[TASK_WRITE_UART] = writeUART;
+    
     task readADC;
-    readADC.is_active = false;
+    readADC.is_active = true;
     readADC.task_cb = readADC_routine;
     // Add Task to Scheduler
     myScheduler.tasks[TASK_READ_ADC] = readADC;
     
-    task bgTask_smoothADC;
-    bgTask_smoothADC.is_active = true;
-    bgTask_smoothADC.task_cb   = bgTask_smoothADC_func;
-    myScheduler.tasks[TASK_SMOOTH_ADC] = bgTask_smoothADC;
-    //CyBle_Start( StackEventHandler );
+    
+    // initialize pins
+    pins[0].id = 0;
+    pins[0].pin_write = PIN_RESISTOR_Write;
+    pins[1].id = 1;
+    pins[1].pin_write = PIN_SENSOR_1_Write;
+    pins[2].id = 2;
+    pins[2].pin_write = PIN_SENSOR_2_Write;
+    pins[3].id = 3;
+    pins[3].pin_write = PIN_SENSOR_3_Write;
+    pins[4].id = 4;
+    pins[4].pin_write = PIN_SENSOR_4_Write;
+    
+    PIN_RESISTOR_Write(HIGH_Z);
+    PIN_SENSOR_1_Write(HIGH_Z);
+    PIN_SENSOR_2_Write(HIGH_Z);
     
     print_user_message();
     for(;;)
     {
-        
+
         get_user_input(user_input_buf);
         
         if (input_ready)
@@ -641,7 +711,7 @@ int main()
             else if (str_eq(user_input_buf, "r\r"))
             {
                 UART_UartPutString("Toggling Read ADC task\r\n");
-                myScheduler.tasks[TASK_READ_ADC].is_active = !myScheduler.tasks[TASK_READ_ADC].is_active;
+                myScheduler.tasks[TASK_WRITE_UART].is_active = !myScheduler.tasks[TASK_WRITE_UART].is_active;
             }
             
             else if (myScheduler.tasks[TASK_CALIBRATE].is_active)
@@ -661,7 +731,6 @@ int main()
     }
 }
 
-#if 0
 void StackEventHandler( uint32 eventCode, void *eventParam )
 {
     switch( eventCode )
@@ -905,5 +974,3 @@ void StackEventHandler( uint32 eventCode, void *eventParam )
         break;
     }
 }
-
-#endif
