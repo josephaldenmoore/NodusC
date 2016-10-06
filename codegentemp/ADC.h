@@ -111,13 +111,13 @@ typedef struct
 /***************************************
 *    Initial Parameter Constants
 ***************************************/
-#define ADC_DEFAULT_SAMPLE_MODE_SEL        (0u)
+#define ADC_DEFAULT_SAMPLE_MODE_SEL        (1u)
 #define ADC_DEFAULT_VREF_SEL               (1u)
-#define ADC_DEFAULT_NEG_INPUT_SEL          (1u)
+#define ADC_DEFAULT_NEG_INPUT_SEL          (0u)
 #define ADC_DEFAULT_ALT_RESOLUTION_SEL     (0u)
 #define ADC_DEFAULT_JUSTIFICATION_SEL      (0u)
 #define ADC_DEFAULT_DIFF_RESULT_FORMAT_SEL (1u)
-#define ADC_DEFAULT_SE_RESULT_FORMAT_SEL   (0u)
+#define ADC_DEFAULT_SE_RESULT_FORMAT_SEL   (1u)
 #define ADC_DEFAULT_CLOCK_SOURCE           (1u)
 #define ADC_DEFAULT_VREF_MV_VALUE          (3300)
 #define ADC_DEFAULT_BUFFER_GAIN            (0u)
@@ -128,20 +128,20 @@ typedef struct
 #define ADC_DEFAULT_LOW_LIMIT              (0u)
 #define ADC_DEFAULT_HIGH_LIMIT             (2047u)
 #define ADC_DEFAULT_COMPARE_MODE           (0u)
-#define ADC_DEFAULT_ACLKS_NUM              (1001u)
+#define ADC_DEFAULT_ACLKS_NUM              (4u)
 #define ADC_DEFAULT_BCLKS_NUM              (4u)
 #define ADC_DEFAULT_CCLKS_NUM              (4u)
 #define ADC_DEFAULT_DCLKS_NUM              (4u)
-#define ADC_TOTAL_CHANNELS_NUM             (5u)
-#define ADC_SEQUENCED_CHANNELS_NUM         (4u)
-#define ADC_DEFAULT_EN_CHANNELS            (15u)
+#define ADC_TOTAL_CHANNELS_NUM             (2u)
+#define ADC_SEQUENCED_CHANNELS_NUM         (1u)
+#define ADC_DEFAULT_EN_CHANNELS            (1u)
 #define ADC_NOMINAL_CLOCK_FREQ             (1000000)
 #define ADC_INJ_CHANNEL_ENABLED            (1u)
 #define ADC_IRQ_REMOVE                     (0u)
 
 /* Determines whether the configuration contains external negative input. */
 #define ADC_SINGLE_PRESENT                 (0u)
-#define ADC_CHANNELS_MODE                  (4u)
+#define ADC_CHANNELS_MODE                  (0u)
 #define ADC_MAX_CHANNELS_EN_MASK           (0xffffu >> (16u - ADC_SEQUENCED_CHANNELS_NUM))
 
 
