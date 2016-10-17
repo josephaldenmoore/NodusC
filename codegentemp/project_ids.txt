@@ -1,15 +1,5 @@
-C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\nodusC.cyprj|dcfd5fff-52e4-4481-bf04-a0e2e1c0d74f
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|20f8af56-bcbc-4c51-8eef-77c7be5915ae
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|867095a5-8f79-4674-b35b-db561eb55dfa
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|31d94c2e-8859-4c86-a827-82a5327956d0
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|fc5820e9-60b6-475b-9031-36c4be378b0a
-C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\SCB_UartComm.cydsn\SCB_UartComm.cyprj|95586a2e-454d-4049-be5f-a14441d80bfc
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|40eb01d2-137a-485b-96fa-c8295db59c28
-C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\TimerExample01.cydsn\TimerExample01.cyprj|b888f187-d24d-4ded-9d6a-e21f1f9cc0c5
-C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\CE210291_CapSense_P4_One_Button01.cydsn\CE210291_CapSense_P4_One_Button01.cyprj|e270ac3a-e76d-4767-80e5-c725cde29816
-C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\CE210290_CapSense_P4_Ganged_Sensor01.cydsn\CE210290_CapSense_P4_Ganged_Sensor01.cyprj|a39eaf50-fb02-48c9-8b15-85f83d295d77
-C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\ADC_SAR_Seq_DieTemp_PSoC401.cydsn\ADC_SAR_Seq_DieTemp_PSoC401.cyprj|1bb4c6b7-a3b1-4054-b2dc-913ad3960b37
-C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\SCB_SpiCommSlave01.cydsn\SCB_SpiCommSlave01.cyprj|101cc0a9-068c-4927-b46c-a8f12a7a3e7c
-C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\BLE_Heart_Rate_Sensor01.cydsn\BLE_Heart_Rate_Sensor01.cyprj|baf09a80-63b5-498c-b71c-e941b7dbf6e3
-C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\BLE_Temperature_Measurement01.cydsn\BLE_Temperature_Measurement01.cyprj|c4402167-7d0e-4ce9-b669-94a6cfe59deb
-C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\ADC_Differential_Preamplifier01.cydsn\ADC_Differential_Preamplifier01.cyprj|21bdb7b6-c12f-42ff-9bb8-2d21d9bf8611
+C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\nodusC.cyprj|6e26a362-886e-4508-b8af-b0cb24efd66a
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f3072ac5-28a8-495a-a07c-642e328d1ea8
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|fefe0112-3830-487f-987a-75f006c5934f
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|aa5d7441-9f5c-4271-a295-b30a2cf19af9
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|bf98db32-20a6-44ac-9395-b7fa8c92e5e2

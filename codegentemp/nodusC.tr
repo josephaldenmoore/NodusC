@@ -19,8 +19,8 @@
 Number of clocks: 16
 Clock: ADC_intClock       | N/A  | Target: 1.00 MHz   | 
 Clock: ADC_intClock(FFB)  | N/A  | Target: 1.00 MHz   | 
-Clock: Clock_1kHz         | N/A  | Target: 0.06 MHz   | 
-Clock: Clock_1kHz(FFB)    | N/A  | Target: 0.06 MHz   | 
+Clock: Clock_1kHz         | N/A  | Target: 0.50 MHz   | 
+Clock: Clock_1kHz(FFB)    | N/A  | Target: 0.50 MHz   | 
 Clock: CyECO              | N/A  | Target: 24.00 MHz  | 
 Clock: CyHFCLK            | N/A  | Target: 48.00 MHz  | 
 Clock: CyILO              | N/A  | Target: 0.03 MHz   | 

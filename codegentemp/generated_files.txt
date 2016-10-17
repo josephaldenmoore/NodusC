@@ -58,8 +58,8 @@
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\BLE_StackGattClient.h" value="NONE;BLE" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\BLE_Stack.h" value="NONE;BLE" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\BLE_eventHandler.h" value="NONE;BLE" />
-  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\BLE_ans.c" value="ARM_C_FILE;BLE" />
-  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\BLE_ans.h" value="NONE;BLE" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\BLE_custom.h" value="NONE;BLE" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\BLE_custom.c" value="ARM_C_FILE;BLE" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Timer_Int.c" value="ARM_C_FILE;Timer_Int" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Timer_Int.h" value="NONE;Timer_Int" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\Clock_1kHz.c" value="ARM_C_FILE;Clock_1kHz" />
@@ -97,6 +97,22 @@
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_4.h" value="NONE;PIN_SENSOR_4" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_4_aliases.h" value="NONE;PIN_SENSOR_4" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_4_PM.c" value="ARM_C_FILE;PIN_SENSOR_4" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_5.c" value="ARM_C_FILE;PIN_SENSOR_5" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_5.h" value="NONE;PIN_SENSOR_5" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_5_aliases.h" value="NONE;PIN_SENSOR_5" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_5_PM.c" value="ARM_C_FILE;PIN_SENSOR_5" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_6.c" value="ARM_C_FILE;PIN_SENSOR_6" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_6.h" value="NONE;PIN_SENSOR_6" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_6_aliases.h" value="NONE;PIN_SENSOR_6" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_6_PM.c" value="ARM_C_FILE;PIN_SENSOR_6" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_7.c" value="ARM_C_FILE;PIN_SENSOR_7" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_7.h" value="NONE;PIN_SENSOR_7" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_7_aliases.h" value="NONE;PIN_SENSOR_7" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_7_PM.c" value="ARM_C_FILE;PIN_SENSOR_7" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_8.c" value="ARM_C_FILE;PIN_SENSOR_8" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_8.h" value="NONE;PIN_SENSOR_8" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_8_aliases.h" value="NONE;PIN_SENSOR_8" />
+  <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\PIN_SENSOR_8_PM.c" value="ARM_C_FILE;PIN_SENSOR_8" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\UART_SCBCLK.c" value="ARM_C_FILE;UART_SCBCLK" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\UART_SCBCLK.h" value="NONE;UART_SCBCLK" />
   <file name="C:\Users\mlgjmoor\Documents\PSoC Creator\NodusC\nodusC.cydsn\codegentemp\UART_tx.c" value="ARM_C_FILE;UART_tx" />

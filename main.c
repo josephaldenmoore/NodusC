@@ -9,16 +9,19 @@
  *
  * ========================================
 */
+#define CLOCK_KHZ                   500
+#define ADC_REF_MV                  3300
 #define INPUT_BUFFER_MAX            100
 #define ADC_BUFFER_SIZE             64
-#define SCHEDULER_NUM_OF_TASKS      3
+#define SCHEDULER_NUM_OF_TASKS      4
 #define CAL_TABLE_NUM_OF_POINTS     5
 #define ADC_CYCLES_PER_SECOND       8
+#define BYTES_IN_BLE_PACKET         20
 //#define ADC_SENSORS                 1 //WILL BE 16 IN FINAL
 #define ADC_TEMPERATURE_CHANNEL     1
 #define IIR_WEIGHT                  8 // Should be power of 2 y = ((IIR_weight - 1)y + x) / IIR_WEIGHT 
 
-#define NUMBER_OF_SENSORS           4
+#define NUMBER_OF_SENSORS           8
 
 #define LOW                         0
 #define HIGH_Z                      1
@@ -52,6 +55,8 @@ typedef struct task
 {
     void  (*task_cb)(struct task*, queue*);
     bool  is_active;
+    uint8 times_per_second;
+    uint8 counter;
 }task;
 
 typedef struct scheduler
@@ -64,6 +69,7 @@ typedef enum scheduler_task
     TASK_CALIBRATE,
     TASK_WRITE_UART,
     TASK_READ_ADC,
+    TASK_READ_TEMPERATURE,
     MAX_SCHEDULER_TASK
 } scheduler_task;
 
@@ -73,17 +79,23 @@ typedef struct pin
     void (*pin_write)(uint8 value);
 } pin;
 
-// Global declarations
+// Global variable declarations
 static cal_point cal_table[CAL_TABLE_NUM_OF_POINTS];
-static uint16 filtered_adc[NUMBER_OF_SENSORS];
+static uint16 filtered_adc[BYTES_IN_BLE_PACKET/2];
 static pin pins[NUMBER_OF_SENSORS + 1]; // the +1 is for the resistor
 
 static volatile uint32 temperature = 0;
 static volatile bool temperature_convert = false;
 
-static volatile bool timer_flag = false;
 static bool input_ready = false;
 static bool calibrated = false;
+static bool deviceConnected = false;
+static volatile uint8 sampling_freq = 10;
+
+
+// function declarations
+void SendADCData(uint8 buffer[20]);
+void CustomEventHandler(uint32 event, void * eventParam);
 
 
 // converts a string into a float
@@ -315,49 +327,51 @@ uint16 read_adc( volatile int index )
 {
     uint16 result;
     
-    pins[0].pin_write(LOW);
+    
     pins[index].pin_write(LOW);
     
     // Wait for transient response
-    CyDelay(5u);
+    //CyDelay(5u);
     
     ADC_StartConvert();
     ADC_IsEndConversion(ADC_WAIT_FOR_RESULT);
     result = ADC_GetResult16(0);
     
-    pins[0].pin_write(HIGH_Z);
+    
     pins[index].pin_write(HIGH_Z);
     
     return result;
 }
 
-void read_fsr(int avg)
-{
-    uint32 buf[NUMBER_OF_SENSORS];
-    int loop;
-    int sensor;
-    
-    for (loop=0; loop < avg; loop++)
-    {
-        for (sensor=0; sensor < NUMBER_OF_SENSORS; sensor++)
-        {
-            buf[sensor] += read_adc(sensor+1);
-        }
-    }
-    
-    int i;
-    for (i=0; i<NUMBER_OF_SENSORS; i++)
-    {
-        filtered_adc[i] = (uint16) (buf[i] / avg);
-        buf[i] = 0;
-    }
-    
-}
-
 // This method has a few "waits" in here, that concerns me
 void readADC_routine(task* self, queue* ipc_queue)
-{    
-    read_fsr(4);
+{
+    
+    uint32 buf[NUMBER_OF_SENSORS];
+    int sensor;
+    
+    pins[0].pin_write(LOW);
+    //CyDelay(5u);
+    for (sensor=0; sensor < NUMBER_OF_SENSORS; sensor++)
+    {
+        // Sensors are indexed 1 after resistor pin
+        buf[sensor] = read_adc(sensor+1);
+    }
+    pins[0].pin_write(HIGH_Z);
+    
+    
+    
+    if (deviceConnected)
+    {
+        SendADCData((uint8*)filtered_adc);
+    }
+    
+    if (sampling_freq != self->times_per_second && sampling_freq != 0)
+    {
+        self->times_per_second = sampling_freq;
+        UART_UartPutString("We changed the Sampling Frequency\r\n");
+    }
+    
 }
 
 // Reads the ADC every second
@@ -370,48 +384,52 @@ void writeUART_routine(task* self, queue* ipc_queue)
     // This function uses the global cooked_adc
     uint32 adc_accumulator = filtered_adc[0];
     
-    
-    if (timer_flag)
+    if (calibrated)
     {
-        if (calibrated)
-        {
-            float force = 0.0;
-            
-            force = linterp((uint16)adc_accumulator);
-            
-            int2string((uint16)adc_accumulator, numAsStr);
-            UART_UartPutString("ADC Value: ");
-            UART_UartPutString(numAsStr);
-            UART_UartPutString("\tCalculated Force: ");
-            
-            float2str(force, floatAsStr);
-            
-            UART_UartPutString(floatAsStr);
-            UART_UartPutString("\r\n");
-        }
+        float force = 0.0;
         
-        else
-        {
-            uint32 cels;
-            cels = DieTemp_CountsTo_Celsius(temperature);
-            int2string((uint16)cels, tempAsStr);
-            int2string((uint16)adc_accumulator, numAsStr);
-            UART_UartPutString("ADC Value: ");
-            int i;
-            for (i=0; i<NUMBER_OF_SENSORS; i++)
-            {
-                UART_UartPutString("\t");
-                adc_accumulator = filtered_adc[i];
-                int2string((uint16)adc_accumulator, numAsStr);
-                UART_UartPutString(numAsStr);
-            }
-            UART_UartPutString("\tTemperature: ");
-            UART_UartPutString(tempAsStr);
-            UART_UartPutString("\r\n");
-        }
+        force = linterp((uint16)adc_accumulator);
         
-        timer_flag = false;
+        int2string((uint16)adc_accumulator, numAsStr);
+        UART_UartPutString("ADC Value: ");
+        UART_UartPutString(numAsStr);
+        UART_UartPutString("\tCalculated Force: ");
+        
+        float2str(force, floatAsStr);
+        
+        UART_UartPutString(floatAsStr);
+        UART_UartPutString("\r\n");
     }
+    
+    else
+    {
+        uint32 cels;
+        cels = DieTemp_CountsTo_Celsius(temperature);
+        int2string((uint16)cels, tempAsStr);
+        int2string((uint16)adc_accumulator, numAsStr);
+        UART_UartPutString("ADC Value: ");
+        int i;
+        for (i=0; i<NUMBER_OF_SENSORS; i++)
+        {
+            UART_UartPutString("\t");
+            adc_accumulator = filtered_adc[i];
+            int2string((uint16)adc_accumulator, numAsStr);
+            UART_UartPutString(numAsStr);
+        }
+        UART_UartPutString("\tTemperature: ");
+        UART_UartPutString(tempAsStr);
+        UART_UartPutString("\r\n");
+    }
+}
+
+void readTemperature_routine(task* self, queue* ipc_queue)
+{
+    int corrected_temp;
+    ADC_EnableInjection();
+	ADC_StartConvert();
+	ADC_IsEndConversion(ADC_WAIT_FOR_RESULT_INJ);
+    corrected_temp = ADC_GetResult16(ADC_TEMPERATURE_CHANNEL) * ADC_REF_MV / 1024;
+    temperature = (3 * temperature + corrected_temp) / 4;
 }
 
 // Print an initial message on UART
@@ -508,8 +526,16 @@ void run_scheduler(scheduler* sched, queue* ipc_queue)
         
         if (cur_task->is_active)
         {
-            // if the task is active, call the task
-            (cur_task->task_cb)(cur_task, ipc_queue);
+            if (cur_task->counter == 0 && cur_task->times_per_second != 0)
+            {
+                cur_task->counter = (uint8) (CLOCK_KHZ / cur_task->times_per_second);
+                // if the task is active, call the task
+                (cur_task->task_cb)(cur_task, ipc_queue);
+            }
+            else
+            {
+                cur_task->counter -= 1;
+            }
         }
         
     }
@@ -571,43 +597,14 @@ void calibrate_sensor(task* self, queue* ipc_queue)
 
 // ISR for Interrupt triggered by timer (64 HZ)
 CY_ISR(timer_isr)
-{
-    static int count64 = 0;
-    // Increment counter, it will set timer_flag once per second
-    count64++;
-    if (count64 == 64) {
-        timer_flag = true;
-        count64 = 0;
-        //temperature_convert = true;
-    }
-    
+{    
     Timer_ClearInterrupt( Timer_INTR_MASK_CC_MATCH );
     Timer_ClearInterrupt(Timer_INTR_MASK_TC);
 }
 
-/*
-// ISR triggered when ADC finished conversion
-CY_ISR(adc_isr)
-{
-    uint16 adc_result;
-    static uint8 sensor_index = 0;
-    if (temperature_convert)
-    {
-        adc_result = ADC_GetResult16(ADC_TEMPERATURE_CHANNEL);
-        temperature = ((IIR_WEIGHT - 1) * temperature + adc_result) / IIR_WEIGHT;
-        temperature_convert = false;
-    }
-    else
-    {
-        adc_result = ADC_GetResult16(sensor_index);
-        // Simple IIR Filter with a weighing of .875
-        adc_fsr_sensors[sensor_index] = ((IIR_WEIGHT - 1) * adc_fsr_sensors[sensor_index] + adc_result) / IIR_WEIGHT;
-    }
-}
-*/
-
 int main()
 {
+    CyBle_Start(CustomEventHandler);
     /* Enable interrupt component connected to interrupt */
     //TC_CC_ISR_StartEx(InterruptHandler);
     Timer_Int_StartEx(timer_isr);
@@ -629,15 +626,12 @@ int main()
     
     // Get an initial reading for the temperature
     // this may have to move at some point outside init
+    int corrected_temp;
     ADC_EnableInjection();
 	ADC_StartConvert();
 	ADC_IsEndConversion(ADC_WAIT_FOR_RESULT_INJ);
-    temperature = ADC_GetResult16(ADC_TEMPERATURE_CHANNEL);
-    //ADC_EnableInjection();
-    //ADC_StartConvert();
-    //ADC_EOC_Int_StartEx(adc_isr);
-        
-    //ADC_IRQ_Enable();
+    corrected_temp = ADC_GetResult16(ADC_TEMPERATURE_CHANNEL) * ADC_REF_MV / 1024;
+    temperature = corrected_temp;
     
     
     CyGlobalIntEnable;   /* Enable global interrupts */
@@ -655,21 +649,34 @@ int main()
     task calibrate;
     calibrate.is_active = false;
     calibrate.task_cb = calibrate_sensor;
+    calibrate.times_per_second = 64;
+    calibrate.counter = 0;
     // Add Task to Scheduler
     myScheduler.tasks[TASK_CALIBRATE] = calibrate;
     
     task writeUART;
     writeUART.is_active = false;
     writeUART.task_cb = writeUART_routine;
+    writeUART.times_per_second = 2;
+    writeUART.counter = 0;
     // Add Task to Scheduler
     myScheduler.tasks[TASK_WRITE_UART] = writeUART;
     
     task readADC;
     readADC.is_active = true;
     readADC.task_cb = readADC_routine;
+    readADC.times_per_second = 10;
+    readADC.counter = 0;
     // Add Task to Scheduler
     myScheduler.tasks[TASK_READ_ADC] = readADC;
     
+    task readTemperature;
+    readTemperature.is_active = false;
+    readTemperature.task_cb = readTemperature_routine;
+    readTemperature.times_per_second = 1;
+    readTemperature.counter = 0;
+    // Add Task to Scheduler
+    myScheduler.tasks[TASK_READ_TEMPERATURE] = readTemperature;
     
     // initialize pins
     pins[0].id = 0;
@@ -682,6 +689,14 @@ int main()
     pins[3].pin_write = PIN_SENSOR_3_Write;
     pins[4].id = 4;
     pins[4].pin_write = PIN_SENSOR_4_Write;
+    pins[5].id = 5;
+    pins[5].pin_write = PIN_SENSOR_5_Write;
+    pins[6].id = 6;
+    pins[6].pin_write = PIN_SENSOR_6_Write;
+    pins[7].id = 7;
+    pins[7].pin_write = PIN_SENSOR_7_Write;
+    pins[8].id = 8;
+    pins[8].pin_write = PIN_SENSOR_8_Write;
     
     PIN_RESISTOR_Write(HIGH_Z);
     PIN_SENSOR_1_Write(HIGH_Z);
@@ -690,7 +705,6 @@ int main()
     print_user_message();
     for(;;)
     {
-
         get_user_input(user_input_buf);
         
         if (input_ready)
@@ -710,7 +724,7 @@ int main()
             // toggle read
             else if (str_eq(user_input_buf, "r\r"))
             {
-                UART_UartPutString("Toggling Read ADC task\r\n");
+                UART_UartPutString("Toggling WRITE_UART task\r\n");
                 myScheduler.tasks[TASK_WRITE_UART].is_active = !myScheduler.tasks[TASK_WRITE_UART].is_active;
             }
             
@@ -727,250 +741,113 @@ int main()
         }
         
         run_scheduler(&myScheduler, &ipc_fifo);
+        CyBle_ProcessEvents();
+        
         CySysPmSleep();
     }
 }
 
-void StackEventHandler( uint32 eventCode, void *eventParam )
+/*******************************************************************************
+* Function Name: CustomEventHandler
+********************************************************************************
+* Summary:
+* Call back event function to handle various events from BLE stack
+*
+* Parameters:
+*  event:		event returned
+*  eventParam:	link to value of the events returned
+*
+* Return:
+*  void
+*
+*******************************************************************************/
+void CustomEventHandler(uint32 event, void * eventParam)
 {
-    switch( eventCode )
+	CYBLE_GATTS_WRITE_REQ_PARAM_T *wrReqParam;
+    
+    switch(event)
     {
-        /* Generic events */
-
-        case CYBLE_EVT_HOST_INVALID:
-        break;
-
         case CYBLE_EVT_STACK_ON:
-            /* CyBle_GappStartAdvertisement( CYBLE_ADVERTISING_FAST ); */
-        break;
-
-        case CYBLE_EVT_TIMEOUT:
-        break;
-
-        case CYBLE_EVT_HARDWARE_ERROR:
-        break;
-
-        case CYBLE_EVT_HCI_STATUS:
-        break;
-
-        case CYBLE_EVT_STACK_BUSY_STATUS:
-        break;
-
-        case CYBLE_EVT_PENDING_FLASH_WRITE:
-        break;
-
-
-        /* GAP events */
-
-        case CYBLE_EVT_GAP_AUTH_REQ:
-        break;
-
-        case CYBLE_EVT_GAP_PASSKEY_ENTRY_REQUEST:
-        break;
-
-        case CYBLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST:
-        break;
-
-        case CYBLE_EVT_GAP_AUTH_COMPLETE:
-        break;
-
-        case CYBLE_EVT_GAP_AUTH_FAILED:
-        break;
-
-        case CYBLE_EVT_GAP_DEVICE_CONNECTED:
-        break;
-
         case CYBLE_EVT_GAP_DEVICE_DISCONNECTED:
-            /* CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST); */
-        break;
-
-        case CYBLE_EVT_GAP_ENCRYPT_CHANGE:
-        break;
-
-        case CYBLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE:
-        break;
-
-        case CYBLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT:
-        break;
-
-
-        /* GAP Peripheral events */
-
-        case CYBLE_EVT_GAPP_ADVERTISEMENT_START_STOP:
-        break;
-
-
-        /* GAP Central events */
-
-        case CYBLE_EVT_GAPC_SCAN_PROGRESS_RESULT:
-        break;
-
-        case CYBLE_EVT_GAPC_SCAN_START_STOP:
-        break;
-
-
-        /* GATT events */
-
+			/* Start Advertisement and enter Discoverable mode*/
+        
+			CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
+			break;
+			
+		case CYBLE_EVT_GAPP_ADVERTISEMENT_START_STOP:
+			/* Set the BLE state variable to control LED status */
+            if(CYBLE_STATE_DISCONNECTED == CyBle_GetState())
+            {
+                /* Start Advertisement and enter Discoverable mode*/
+                CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
+            }
+            
+			break;
+			
         case CYBLE_EVT_GATT_CONNECT_IND:
-        break;
-
+			/* This flag is used in application to check connection status */
+			deviceConnected = true;
+			break;
+        
         case CYBLE_EVT_GATT_DISCONNECT_IND:
-        break;
+			/* Update deviceConnected flag*/
+			deviceConnected = false;
+			
+			/* Reset CapSense notification flag to prevent further notifications
+			 * being sent to Central device after next connection. */
+			
+			/* Reset the CCCD value to disable notifications */
+			
+			/* Reset the color coordinates */
 
+            
+            CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
+            //advertising = TRUE;
+			break;
+        
+            
+        case CYBLE_EVT_GATTS_WRITE_REQ: 							
+            /* This event is received when Central device sends a Write command 
+             * on an Attribute. 
+             * We first get the attribute handle from the event parameter and 
+             * then try to match that handle with an attribute in the database.
+             */
+            wrReqParam = (CYBLE_GATTS_WRITE_REQ_PARAM_T *) eventParam;
+            
 
-        /* GATT Client events (CYBLE_EVENT_T) */
+            /* This condition checks whether the RGB LED characteristic was
+             * written to by matching the attribute handle.
+             * If the attribute handle matches, then the value written to the 
+             * attribute is extracted and used to drive RGB LED.
+             */
+            
+            /* ADD_CODE to extract the attribute handle for the RGB LED 
+             * characteristic from the custom service data structure.
+             */
+            if(wrReqParam->handleValPair.attrHandle == CYBLE_NODUSC_SERVICE_CONFIG_SAMPLE_FREQUENCY_CHAR_HANDLE)
+            {
+                /* ADD_CODE to extract the value of the attribute from 
+                 * the handle-value pair database. */
+                sampling_freq = *wrReqParam->handleValPair.value.val;
+            }
 
-        case CYBLE_EVT_GATTC_ERROR_RSP:
-        break;
-
-        case CYBLE_EVT_GATTC_XCHNG_MTU_RSP:
-        break;
-
-        case CYBLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP:
-        break;
-
-        case CYBLE_EVT_GATTC_READ_BY_TYPE_RSP:
-        break;
-
-        case CYBLE_EVT_GATTC_FIND_INFO_RSP:
-        break;
-
-        case CYBLE_EVT_GATTC_FIND_BY_TYPE_VALUE_RSP:
-        break;
-
-        case CYBLE_EVT_GATTC_READ_RSP:
-        break;
-
-        case CYBLE_EVT_GATTC_READ_BLOB_RSP:
-        break;
-
-        case CYBLE_EVT_GATTC_READ_MULTI_RSP:
-        break;
-
-        case CYBLE_EVT_GATTC_WRITE_RSP:
-        break;
-
-        case CYBLE_EVT_GATTC_EXEC_WRITE_RSP:
-        break;
-
-        case CYBLE_EVT_GATTC_HANDLE_VALUE_NTF:
-        break;
-
-        case CYBLE_EVT_GATTC_HANDLE_VALUE_IND:
-        break;
-
-
-        /* GATT Client events (CYBLE_EVT_T) */
-
-        case CYBLE_EVT_GATTC_INDICATION:
-        break;
-
-        case CYBLE_EVT_GATTC_SRVC_DISCOVERY_FAILED:
-        break;
-
-        case CYBLE_EVT_GATTC_INCL_DISCOVERY_FAILED:
-        break;
-
-        case CYBLE_EVT_GATTC_CHAR_DISCOVERY_FAILED:
-        break;
-
-        case CYBLE_EVT_GATTC_DESCR_DISCOVERY_FAILED:
-        break;
-
-        case CYBLE_EVT_GATTC_SRVC_DUPLICATION:
-        break;
-
-        case CYBLE_EVT_GATTC_CHAR_DUPLICATION:
-        break;
-
-        case CYBLE_EVT_GATTC_DESCR_DUPLICATION:
-        break;
-
-        case CYBLE_EVT_GATTC_SRVC_DISCOVERY_COMPLETE:
-        break;
-
-        case CYBLE_EVT_GATTC_INCL_DISCOVERY_COMPLETE:
-        break;
-
-        case CYBLE_EVT_GATTC_CHAR_DISCOVERY_COMPLETE:
-        break;
-
-        case CYBLE_EVT_GATTC_DISCOVERY_COMPLETE:
-        break;
-
-
-        /* GATT Server events (CYBLE_EVENT_T) */
-
-        case CYBLE_EVT_GATTS_XCNHG_MTU_REQ:
-        break;
-
-        case CYBLE_EVT_GATTS_WRITE_REQ:
-        break;
-
-        case CYBLE_EVT_GATTS_WRITE_CMD_REQ:
-        break;
-
-        case CYBLE_EVT_GATTS_PREP_WRITE_REQ:
-        break;
-
-        case CYBLE_EVT_GATTS_EXEC_WRITE_REQ:
-        break;
-
-        case CYBLE_EVT_GATTS_HANDLE_VALUE_CNF:
-        break;
-
-        case CYBLE_EVT_GATTS_DATA_SIGNED_CMD_REQ:
-        break;
-
-
-        /* GATT Server events (CYBLE_EVT_T) */
-
-        case CYBLE_EVT_GATTS_INDICATION_ENABLED:
-        break;
-
-        case CYBLE_EVT_GATTS_INDICATION_DISABLED:
-        break;
-
-
-        /* L2CAP events */
-
-        case CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ:
-        break;
-
-        case CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP:
-        break;
-
-        case CYBLE_EVT_L2CAP_COMMAND_REJ:
-        break;
-
-        case CYBLE_EVT_L2CAP_CBFC_CONN_IND:
-        break;
-
-        case CYBLE_EVT_L2CAP_CBFC_CONN_CNF:
-        break;
-
-        case CYBLE_EVT_L2CAP_CBFC_DISCONN_IND:
-        break;
-
-        case CYBLE_EVT_L2CAP_CBFC_DISCONN_CNF:
-        break;
-
-        case CYBLE_EVT_L2CAP_CBFC_DATA_READ:
-        break;
-
-        case CYBLE_EVT_L2CAP_CBFC_RX_CREDIT_IND:
-        break;
-
-        case CYBLE_EVT_L2CAP_CBFC_TX_CREDIT_IND:
-        break;
-
-        case CYBLE_EVT_L2CAP_CBFC_DATA_WRITE_IND:
-        break;
-
-
-        /* default catch-all case */
-
+			/* ADD_CODE to send the response to the write request received. */
+			CyBle_GattsWriteRsp(cyBle_connHandle);
+			
+			break;
         default:
-        break;
+
+       	 	break;
     }
+}
+
+void SendADCData(uint8 buffer[BYTES_IN_BLE_PACKET])
+{
+    CYBLE_GATTS_HANDLE_VALUE_NTF_T NotificationHandle;
+    
+    NotificationHandle.attrHandle = CYBLE_NODUSC_SERVICE_NODUSC_CHARACTERISTIC_CHAR_HANDLE;
+    NotificationHandle.value.val = buffer;
+    NotificationHandle.value.len = BYTES_IN_BLE_PACKET;
+    
+    CyBle_GattsNotification(cyBle_connHandle, &NotificationHandle);
 }

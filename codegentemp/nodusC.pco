@@ -1,5 +1,5 @@
 # nodusC
-# 2016-10-06 15:38:04Z
+# 2016-10-12 18:20:48Z
 
 # IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
 dont_use_io iocell 0 6
@@ -21,6 +21,10 @@ set_io "PIN_SENSOR_2(0)" iocell 0 3
 set_io "PIN_RESISTOR(0)" iocell 0 4
 set_io "PIN_SENSOR_3(0)" iocell 0 5
 set_io "PIN_SENSOR_4(0)" iocell 1 0
+set_io "PIN_SENSOR_5(0)" iocell 1 1
+set_io "PIN_SENSOR_6(0)" iocell 1 2
+set_io "PIN_SENSOR_7(0)" iocell 1 3
+set_io "PIN_SENSOR_8(0)" iocell 1 6
 set_location "\UART:SCB\" m0s8scbcell -1 -1 0
 set_location "\I2C:SCB_IRQ\" interrupt -1 -1 10
 set_location "\I2C:SCB\" m0s8scbcell -1 -1 1
